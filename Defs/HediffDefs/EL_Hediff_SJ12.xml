@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- SJ12-TGLabs 战斗兴奋效果 -->
+  <!-- 900秒总持续: 前600秒主效果+恢复饮食, 后300秒体温副作用 -->
+  <!-- severity 1.0→0.333: 前600秒(主效果期) -->
+  <!-- severity 0.333→0: 后300秒(副作用期) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_SJ12_TGLabs</defName>
+    <label>SJ12内生代谢</label>
+    <labelNoun>SJ12内生代谢</labelNoun>
+    <description>SJ12正在发挥药效，身体机能被定向以调整恢复体能，药效后期会出现体温调节紊乱。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.85, 0.45, 0.25)</defaultLabelColor>
+    <comps>
+      <!-- 900秒 = 54000 ticks, severityPerDay = -1.0/(54000/60000) ≈ -1.111 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.111</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>54000</disappearsAfterTicks>
+      </li>
+      <!-- 分阶段饮食恢复: 前600秒(severity 1.0→0.333)每秒0.01, 共6.0 -->
+      <li Class="EL_HediffCompProperties_StageHungerGain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.333</endSeverity>
+            <hungerPerSecond>0.01</hungerPerSecond>
+            <description>每秒恢复0.01饮食值，持续600秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段2: severity 0.0~0.333 (600-900秒): 体温副作用(最高温度-12℃) -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <statOffsets>
+          <ComfyTemperatureMax>-12</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+      <!-- 阶段1: severity 0.333~1.0 (0-600秒): 主效果 -->
+      <li>
+        <minSeverity>0.333</minSeverity>
+        <label>高效期</label>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.30</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.30</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <ComfyTemperatureMin>-8</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- SJ9-TGLabs 战斗兴奋效果 -->
+  <!-- 420秒总持续: 前300秒温度适应+消化-20%, 全程每10秒损伤1点 -->
+  <!-- 后120秒(300-420秒)疼痛*1.15 -->
+  <!-- severityPerDay = -1.0/(25200/60000) ≈ -2.381 -->
+  <!-- severity 1.0→0.2857: 前300秒(温度+消化-20%+损伤) -->
+  <!-- severity 0.2857→0: 后120秒(损伤+疼痛*1.15) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_SJ9_TGLabs</defName>
+    <label>SJ9温度适应</label>
+    <labelNoun>SJ9温度适应</labelNoun>
+    <description>SJ9正在发挥药效，机体代谢减缓以适应极端环境，但会对身体组织造成持续的代谢损伤。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.25, 0.35, 0.55)</defaultLabelColor>
+    <comps>
+      <!-- 420秒 = 25200 ticks, severityPerDay ≈ -2.381 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.381</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>25200</disappearsAfterTicks>
+      </li>
+      <!-- 每10秒(600 ticks)对随机非solid部位造成1点代谢损伤 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartDamage">
+        <damageHediff>EL_Injury_MetabolicDamage</damageHediff>
+        <damageAmount>1</damageAmount>
+        <ticksInterval>600</ticksInterval>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段0: severity 0.0~0.2857 (300-420秒): 疼痛*1.15 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <painFactor>1.15</painFactor>
+      </li>
+      <!-- 阶段1: severity 0.2857~1.0 (0-300秒): 温度适应+消化-20% -->
+      <li>
+        <minSeverity>0.2858</minSeverity>
+        <label>高效期</label>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <ComfyTemperatureMax>14</ComfyTemperatureMax>
+          <ComfyTemperatureMin>-21</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

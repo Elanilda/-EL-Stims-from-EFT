@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <EL_Make_Neutroamine.label>Extract neutroamine</EL_Make_Neutroamine.label>
+  <EL_Make_Neutroamine.description>Extract psychoid components to produce neutroamine.</EL_Make_Neutroamine.description>
+  <EL_Make_Neutroamine.jobString>Extracting neutroamine</EL_Make_Neutroamine.jobString>
+
+  <EL_Make_Neutroamine_Bulk.label>Extract neutroamine in bulk</EL_Make_Neutroamine_Bulk.label>
+  <EL_Make_Neutroamine_Bulk.description>Extract psychoid components to produce neutroamine.</EL_Make_Neutroamine_Bulk.description>
+  <EL_Make_Neutroamine_Bulk.jobString>Extracting neutroamine</EL_Make_Neutroamine_Bulk.jobString>
+</LanguageData>

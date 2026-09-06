@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- EL_Hediff_2A2_bTG -->
+  <EL_Hediff_2A2_bTG.label>2A2-(b-TG) Physical Boost</EL_Hediff_2A2_bTG.label>
+  <EL_Hediff_2A2_bTG.labelNoun>2A2-(b-TG) physical boost</EL_Hediff_2A2_bTG.labelNoun>
+  <EL_Hediff_2A2_bTG.description>2A2-(b-TG) is in effect. The central nervous system is stabilized, with carrying capacity and perception fully enhanced.</EL_Hediff_2A2_bTG.description>
+  <EL_Hediff_2A2_bTG.stages.0.label>Peak</EL_Hediff_2A2_bTG.stages.0.label>
+
+  <!-- EL_Hediff_3_bTG -->
+  <EL_Hediff_3_bTG.label>3-(b-TG) Sensory Enhancement</EL_Hediff_3_bTG.label>
+  <EL_Hediff_3_bTG.labelNoun>3-(b-TG) sensory enhancement</EL_Hediff_3_bTG.labelNoun>
+  <EL_Hediff_3_bTG.description>3-(b-TG) is in effect. Perception and manipulation are significantly enhanced, and the central nervous system is stimulated.</EL_Hediff_3_bTG.description>
+  <EL_Hediff_3_bTG.stages.0.label>Fading</EL_Hediff_3_bTG.stages.0.label>
+  <EL_Hediff_3_bTG.stages.1.label>Sustained</EL_Hediff_3_bTG.stages.1.label>
+  <EL_Hediff_3_bTG.stages.2.label>Peak</EL_Hediff_3_bTG.stages.2.label>
+
+  <!-- EL_Hediff_Adrenaline -->
+  <EL_Hediff_Adrenaline.label>Adrenaline Rush</EL_Hediff_Adrenaline.label>
+  <EL_Hediff_Adrenaline.labelNoun>adrenaline rush</EL_Hediff_Adrenaline.labelNoun>
+  <EL_Hediff_Adrenaline.description>Adrenaline is in effect. Physical capacity and reaction speed are enhanced, and pain is suppressed.</EL_Hediff_Adrenaline.description>
+  <EL_Hediff_Adrenaline.stages.0.label>Peak</EL_Hediff_Adrenaline.stages.0.label>
+
+  <!-- EL_Hediff_AHF1M -->
+  <EL_Hediff_AHF1M.label>AHF1-M Hemostasis</EL_Hediff_AHF1M.label>
+  <EL_Hediff_AHF1M.labelNoun>AHF1-M hemostasis</EL_Hediff_AHF1M.labelNoun>
+  <EL_Hediff_AHF1M.description>AHF1-M is in effect. Bleeding has stopped, and the body's self-repair capacity is briefly enhanced.</EL_Hediff_AHF1M.description>
+  <EL_Hediff_AHF1M.stages.0.label>Fading</EL_Hediff_AHF1M.stages.0.label>
+  <EL_Hediff_AHF1M.stages.1.label>Peak</EL_Hediff_AHF1M.stages.1.label>
+
+  <!-- EL_Hediff_eTGchange -->
+  <EL_Hediff_eTGchange.label>eTG-change Regeneration</EL_Hediff_eTGchange.label>
+  <EL_Hediff_eTGchange.labelNoun>eTG-change regeneration</EL_Hediff_eTGchange.labelNoun>
+  <EL_Hediff_eTGchange.description>eTG-change is in effect. Extreme tissue regeneration is occurring throughout the body. Later stages bring reduced physical function and significant metabolic stress.</EL_Hediff_eTGchange.description>
+  <EL_Hediff_eTGchange.stages.0.label>Aftereffect</EL_Hediff_eTGchange.stages.0.label>
+  <EL_Hediff_eTGchange.stages.1.label>Transition</EL_Hediff_eTGchange.stages.1.label>
+  <EL_Hediff_eTGchange.stages.2.label>Transition</EL_Hediff_eTGchange.stages.2.label>
+  <EL_Hediff_eTGchange.stages.3.label>Peak</EL_Hediff_eTGchange.stages.3.label>
+
+  <!-- EL_Hediff_L1 -->
+  <EL_Hediff_L1.label>Norepinephrine Rush</EL_Hediff_L1.label>
+  <EL_Hediff_L1.labelNoun>norepinephrine rush</EL_Hediff_L1.labelNoun>
+  <EL_Hediff_L1.description>L1 is in effect. Pain is suppressed, physical capacity and reaction speed are enhanced, and rest consumption rate is reduced. Metabolic stress increases in later stages.</EL_Hediff_L1.description>
+  <EL_Hediff_L1.stages.0.label>Fading</EL_Hediff_L1.stages.0.label>
+  <EL_Hediff_L1.stages.1.label>Peak</EL_Hediff_L1.stages.1.label>
+
+  <!-- EL_Hediff_Meldonin -->
+  <EL_Hediff_Meldonin.label>Meldonin Physical Boost</EL_Hediff_Meldonin.label>
+  <EL_Hediff_Meldonin.labelNoun>Meldonin physical boost</EL_Hediff_Meldonin.labelNoun>
+  <EL_Hediff_Meldonin.description>Meldonin is in effect. Work efficiency and movement speed are enhanced, the body is recovering energy, and metabolic stress is present.</EL_Hediff_Meldonin.description>
+  <EL_Hediff_Meldonin.stages.0.label>Sustained</EL_Hediff_Meldonin.stages.0.label>
+  <EL_Hediff_Meldonin.stages.1.label>Peak</EL_Hediff_Meldonin.stages.1.label>
+
+  <!-- EL_Hediff_Morphine -->
+  <EL_Hediff_Morphine.label>Morphine Analgesia</EL_Hediff_Morphine.label>
+  <EL_Hediff_Morphine.labelNoun>morphine analgesia</EL_Hediff_Morphine.labelNoun>
+  <EL_Hediff_Morphine.description>Morphine's analgesic effect is active.</EL_Hediff_Morphine.description>
+
+  <!-- EL_Hediff_MULE -->
+  <EL_Hediff_MULE.label>M.U.L.E Physical Boost</EL_Hediff_MULE.label>
+  <EL_Hediff_MULE.labelNoun>M.U.L.E physical boost</EL_Hediff_MULE.labelNoun>
+  <EL_Hediff_MULE.description>The extreme muscle-stimulating stimulant is in effect. Carrying capacity is greatly enhanced, but every 10 seconds it deals 1 point of metabolic damage to a random body part.</EL_Hediff_MULE.description>
+  <EL_Hediff_MULE.stages.0.label>Peak</EL_Hediff_MULE.stages.0.label>
+
+  <!-- EL_Hediff_Obd2_cocktail -->
+  <EL_Hediff_Obd2_cocktail.label>Obd2 Overload</EL_Hediff_Obd2_cocktail.label>
+  <EL_Hediff_Obd2_cocktail.labelNoun>Obd2 overload</EL_Hediff_Obd2_cocktail.labelNoun>
+  <EL_Hediff_Obd2_cocktail.description>Obd2 is in effect, bringing extreme and long-lasting physical enhancement alongside severe and prolonged metabolic side effects.</EL_Hediff_Obd2_cocktail.description>
+  <EL_Hediff_Obd2_cocktail.stages.0.label>Peak</EL_Hediff_Obd2_cocktail.stages.0.label>
+
+  <!-- EL_Hediff_P22_22cpd -->
+  <EL_Hediff_P22_22cpd.label>P22 Physiological Improvement</EL_Hediff_P22_22cpd.label>
+  <EL_Hediff_P22_22cpd.labelNoun>P22 physiological improvement</EL_Hediff_P22_22cpd.labelNoun>
+  <EL_Hediff_P22_22cpd.description>P22 is in effect. The body's repair capacity is enhanced and tolerance is increased.</EL_Hediff_P22_22cpd.description>
+  <EL_Hediff_P22_22cpd.stages.0.label>Fading</EL_Hediff_P22_22cpd.stages.0.label>
+  <EL_Hediff_P22_22cpd.stages.1.label>Peak</EL_Hediff_P22_22cpd.stages.1.label>
+
+  <!-- EL_Hediff_Perfotoran -->
+  <EL_Hediff_Perfotoran.label>Perfotoran Regeneration</EL_Hediff_Perfotoran.label>
+  <EL_Hediff_Perfotoran.labelNoun>Perfotoran regeneration</EL_Hediff_Perfotoran.labelNoun>
+  <EL_Hediff_Perfotoran.description>Perfotoran is in effect. Artificial blood acts as a plasma substitute, continuously clearing toxins, stopping bleeding, and promoting tissue recovery.</EL_Hediff_Perfotoran.description>
+  <EL_Hediff_Perfotoran.stages.0.label>Fading</EL_Hediff_Perfotoran.stages.0.label>
+  <EL_Hediff_Perfotoran.stages.1.label>Peak</EL_Hediff_Perfotoran.stages.1.label>
+
+  <!-- EL_Hediff_PNB -->
+  <EL_Hediff_PNB.label>PNB Recovery</EL_Hediff_PNB.label>
+  <EL_Hediff_PNB.labelNoun>PNB recovery</EL_Hediff_PNB.labelNoun>
+  <EL_Hediff_PNB.description>PNB is in effect. Consciousness and work capacity are enhanced, and body tissues are recovering rapidly.</EL_Hediff_PNB.description>
+  <EL_Hediff_PNB.stages.0.label>Aftereffect</EL_Hediff_PNB.stages.0.label>
+  <EL_Hediff_PNB.stages.1.label>Fading</EL_Hediff_PNB.stages.1.label>
+  <EL_Hediff_PNB.stages.2.label>Peak</EL_Hediff_PNB.stages.2.label>
+
+  <!-- EL_Hediff_Propital -->
+  <EL_Hediff_Propital.label>Propital Analgesia &amp; Boost</EL_Hediff_Propital.label>
+  <EL_Hediff_Propital.labelNoun>Propital analgesia and boost</EL_Hediff_Propital.labelNoun>
+  <EL_Hediff_Propital.description>Propital is in effect. Pain is suppressed, and the body is undergoing continuous self-repair.</EL_Hediff_Propital.description>
+  <EL_Hediff_Propital.stages.0.label>Fading</EL_Hediff_Propital.stages.0.label>
+  <EL_Hediff_Propital.stages.1.label>Sustained</EL_Hediff_Propital.stages.1.label>
+  <EL_Hediff_Propital.stages.2.label>Peak</EL_Hediff_Propital.stages.2.label>
+
+  <!-- EL_Hediff_SJ1_TGLabs -->
+  <EL_Hediff_SJ1_TGLabs.label>SJ1 Physical Boost</EL_Hediff_SJ1_TGLabs.label>
+  <EL_Hediff_SJ1_TGLabs.labelNoun>SJ1 physical boost</EL_Hediff_SJ1_TGLabs.labelNoun>
+  <EL_Hediff_SJ1_TGLabs.description>SJ1 is in effect. Movement and work efficiency are enhanced, and stress resistance is increased. Severe metabolic burden follows in later stages.</EL_Hediff_SJ1_TGLabs.description>
+  <EL_Hediff_SJ1_TGLabs.stages.0.label>Fading</EL_Hediff_SJ1_TGLabs.stages.0.label>
+  <EL_Hediff_SJ1_TGLabs.stages.1.label>Sustained</EL_Hediff_SJ1_TGLabs.stages.1.label>
+  <EL_Hediff_SJ1_TGLabs.stages.2.label>Peak</EL_Hediff_SJ1_TGLabs.stages.2.label>
+
+  <!-- EL_Hediff_SJ12_TGLabs -->
+  <EL_Hediff_SJ12_TGLabs.label>SJ12 Endogenous Metabolism</EL_Hediff_SJ12_TGLabs.label>
+  <EL_Hediff_SJ12_TGLabs.labelNoun>SJ12 endogenous metabolism</EL_Hediff_SJ12_TGLabs.labelNoun>
+  <EL_Hediff_SJ12_TGLabs.description>SJ12 is in effect. Certain body functions are selectively slowed to redirect recovery, with thermoregulatory disruption in later stages.</EL_Hediff_SJ12_TGLabs.description>
+  <EL_Hediff_SJ12_TGLabs.stages.0.label>Fading</EL_Hediff_SJ12_TGLabs.stages.0.label>
+  <EL_Hediff_SJ12_TGLabs.stages.1.label>Peak</EL_Hediff_SJ12_TGLabs.stages.1.label>
+
+  <!-- EL_Hediff_SJ6_TGLabs -->
+  <EL_Hediff_SJ6_TGLabs.label>SJ6 Physical Boost</EL_Hediff_SJ6_TGLabs.label>
+  <EL_Hediff_SJ6_TGLabs.labelNoun>SJ6 physical boost</EL_Hediff_SJ6_TGLabs.labelNoun>
+  <EL_Hediff_SJ6_TGLabs.description>SJ6 is in effect. Rest consumption rate is reduced and rest is continuously restored. Central suppression with reduced consciousness and sight occurs at the end.</EL_Hediff_SJ6_TGLabs.description>
+  <EL_Hediff_SJ6_TGLabs.stages.0.label>Fading</EL_Hediff_SJ6_TGLabs.stages.0.label>
+  <EL_Hediff_SJ6_TGLabs.stages.1.label>Peak</EL_Hediff_SJ6_TGLabs.stages.1.label>
+
+  <!-- EL_Hediff_SJ9_TGLabs -->
+  <EL_Hediff_SJ9_TGLabs.label>SJ9 Thermal Adaptation</EL_Hediff_SJ9_TGLabs.label>
+  <EL_Hediff_SJ9_TGLabs.labelNoun>SJ9 thermal adaptation</EL_Hediff_SJ9_TGLabs.labelNoun>
+  <EL_Hediff_SJ9_TGLabs.description>SJ9 is in effect. Metabolism is slowed to adapt to extreme environments, but it inflicts continuous metabolic damage to body tissues.</EL_Hediff_SJ9_TGLabs.description>
+  <EL_Hediff_SJ9_TGLabs.stages.0.label>Fading</EL_Hediff_SJ9_TGLabs.stages.0.label>
+  <EL_Hediff_SJ9_TGLabs.stages.1.label>Peak</EL_Hediff_SJ9_TGLabs.stages.1.label>
+
+  <!-- EL_Hediff_Trimadol -->
+  <EL_Hediff_Trimadol.label>Trimadol Physical Boost</EL_Hediff_Trimadol.label>
+  <EL_Hediff_Trimadol.labelNoun>Trimadol physical boost</EL_Hediff_Trimadol.labelNoun>
+  <EL_Hediff_Trimadol.description>Trimadol is in effect. Pain is suppressed, and physical capacity and reaction speed are enhanced, but with significant metabolic stress.</EL_Hediff_Trimadol.description>
+  <EL_Hediff_Trimadol.stages.0.label>Peak</EL_Hediff_Trimadol.stages.0.label>
+
+  <!-- EL_Hediff_xTG12 -->
+  <EL_Hediff_xTG12.label>xTG-12 Antidote</EL_Hediff_xTG12.label>
+  <EL_Hediff_xTG12.labelNoun>xTG-12 antidote</EL_Hediff_xTG12.labelNoun>
+  <EL_Hediff_xTG12.description>xTG-12 is in effect. Its antitoxic components can neutralize most toxins, but the body's self-repair capacity is briefly reduced at the end.</EL_Hediff_xTG12.description>
+  <EL_Hediff_xTG12.stages.0.label>Fading</EL_Hediff_xTG12.stages.0.label>
+  <EL_Hediff_xTG12.stages.1.label>Immune</EL_Hediff_xTG12.stages.1.label>
+
+  <!-- EL_Hediff_Zagustin -->
+  <EL_Hediff_Zagustin.label>Zagustin Hemostasis</EL_Hediff_Zagustin.label>
+  <EL_Hediff_Zagustin.labelNoun>Zagustin hemostasis</EL_Hediff_Zagustin.labelNoun>
+  <EL_Hediff_Zagustin.description>Zagustin is in effect. Bleeding has stopped, and blood filtration capacity is greatly enhanced.</EL_Hediff_Zagustin.description>
+  <EL_Hediff_Zagustin.stages.0.label>Fading</EL_Hediff_Zagustin.stages.0.label>
+  <EL_Hediff_Zagustin.stages.1.label>Transition</EL_Hediff_Zagustin.stages.1.label>
+  <EL_Hediff_Zagustin.stages.2.label>Peak</EL_Hediff_Zagustin.stages.2.label>
+
+  <!-- EL_Injury_MetabolicDamage -->
+  <EL_Injury_MetabolicDamage.label>Metabolic Damage</EL_Injury_MetabolicDamage.label>
+  <EL_Injury_MetabolicDamage.labelNoun>metabolic damage</EL_Injury_MetabolicDamage.labelNoun>
+  <EL_Injury_MetabolicDamage.description>Metabolic tissue damage caused by stimulant side effects.</EL_Injury_MetabolicDamage.description>
+  <EL_Injury_MetabolicDamage.injuryProps.destroyedLabel>metabolic failure</EL_Injury_MetabolicDamage.injuryProps.destroyedLabel>
+  <!-- 注: HediffCompProperties_TendDuration 的 labelTendedWell 等字段路径需原版规范确认, 暂留待补 -->
+
+</LanguageData>

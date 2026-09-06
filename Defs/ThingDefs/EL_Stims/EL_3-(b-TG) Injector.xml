@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 3-(b-TG) 兴奋剂注射器 -->
+  <!-- 240秒: 操作+60%/视觉+60%/听觉+60%/工作+20%, 恢复休息+饮食消耗+意识-15% -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_3_bTG</defName>
+    <label>3-(b-TG)兴奋剂注射器</label>
+    <description>中枢神经刺激药物3-(b-苯基异丙基)活性物质，可以增加感知和注意力，并通过增强肌电信号的方式改善肌肉力量。
+
+【施加效果】
+操作能力+60%，延迟0秒/持续240秒；
+视觉能力+60%，延迟0秒/持续240秒；
+听觉能力+60%，延迟0秒/持续240秒；
+全局工作速度×120%，延迟0秒/持续240秒；
+每秒恢复0.01休息值，延迟0秒/持续240秒；
+每秒消耗0.0025饮食值，延迟120秒/持续120秒；
+意识-15%，延迟120秒/持续45秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_3_bTG</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/3-(b-TG)</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>144</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>300</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>14</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_3_bTG</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- 3-(b-TG) x1 单支生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_3_bTG</defName>
+    <label>制作3-(b-TG)兴奋剂注射器</label>
+    <description>制作1支3-(b-TG)兴奋剂注射器。</description>
+    <jobString>正在制作3-(b-TG)兴奋剂注射器。</jobString>
+    <workAmount>300</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>6</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>14</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_3_bTG>1</EL_Stim_3_bTG>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- 3-(b-TG) x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_3_bTG_Bulk</defName>
+    <label>制作4个3-(b-TG)兴奋剂注射器</label>
+    <description>制作一批4支3-(b-TG)兴奋剂注射器。</description>
+    <jobString>正在制作3-(b-TG)兴奋剂注射器。</jobString>
+    <workAmount>1200</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>6</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>56</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_3_bTG>4</EL_Stim_3_bTG>
+    </products>
+  </RecipeDef>
+
+</Defs>

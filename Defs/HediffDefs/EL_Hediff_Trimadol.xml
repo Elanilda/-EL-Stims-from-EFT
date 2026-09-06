@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Trimadol (曲马多) 体能提升效果 -->
+  <!-- 180秒: 痛觉*0.05, 工作+10%/移动+10%/操作+10% -->
+  <!-- 崩溃×0.9/休克×1.1, 休息下降×0.9, 每秒恢复0.03休息+消耗0.01饮食 -->
+  <!-- 单阶段, 所有效果同时生效 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Trimadol</defName>
+    <label>曲马多体能提升</label>
+    <labelNoun>曲马多体能提升</labelNoun>
+    <description>曲马多正在发挥药效，痛觉受到抑制，体能和反应力全面提升，但有巨大的代谢压力。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.75, 0.60, 0.40)</defaultLabelColor>
+    <comps>
+      <!-- 180秒 = 10800 ticks, severityPerDay = -1.0/(10800/60000) ≈ -5.56 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-5.56</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>10800</disappearsAfterTicks>
+      </li>
+      <!-- 全程180秒每秒恢复0.03休息值, 共5.4 -->
+      <li Class="EL_HediffCompProperties_StageRestGain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <restPerSecond>0.03</restPerSecond>
+            <description>每秒恢复0.03休息值，持续180秒。</description>
+          </li>
+        </stages>
+      </li>
+      <!-- 全程180秒每秒消耗0.01饮食, 共1.8 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.01</hungerPerSecond>
+            <description>每秒消耗0.01饮食值，持续180秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 单阶段: 全程180秒, 所有效果同时生效 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>高效期</label>
+        <painFactor>0.05</painFactor>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <WorkSpeedGlobal>1.1</WorkSpeedGlobal>
+          <MoveSpeed>1.1</MoveSpeed>
+          <MentalBreakThreshold>0.9</MentalBreakThreshold>
+          <PainShockThreshold>1.1</PainShockThreshold>
+          <RestFallRateFactor>0.9</RestFallRateFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

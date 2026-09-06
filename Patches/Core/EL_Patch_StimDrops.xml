@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ============================================================ -->
+  <!-- 方案A: 针剂非制造获取途径 -->
+  <!-- 双通道: 任务奖励池 + 古代综合建筑战利品 -->
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- 第一部分: 给所有针剂加 thingSetMakerTag -->
+  <!-- 加入 RewardStandardLowFreq 标签后, 针剂会自动出现在: -->
+  <!--   1. Reward_ItemsStandard (通用任务奖励, weight=1, 稀有) -->
+  <!--   2. Reward_ReliquaryPilgrims (Ideology朝圣者遗物) -->
+  <!-- 注意: 标签为 LowFreq 是为了保持针剂稀有度, 避免泛滥 -->
+  <!-- 注意: MapGen_AncientPodContents(cryptosleep casket)是C#硬编码, -->
+  <!--       不读thingSetMakerTags, 针剂无法出现在古代胶囊里 -->
+  <!-- ============================================================ -->
+
+  <!-- EL_Stim_2A2_bTG -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_2A2_bTG"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_3_bTG -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_3_bTG"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_AHF1M -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_AHF1M"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_L1_Norepinephrine -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_L1_Norepinephrine"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Meldonin -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Meldonin"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Morphine -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Morphine"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_P22_22cpd -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_P22_22cpd"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_SJ1_TGLabs -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_SJ1_TGLabs"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_SJ12_TGLabs -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_SJ12_TGLabs"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_SJ6_TGLabs -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_SJ6_TGLabs"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Trimadol -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Trimadol"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Zagustin -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Zagustin"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_MULE -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_MULE"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_SJ9_TGLabs -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_SJ9_TGLabs"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Adrenaline -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Adrenaline"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_PNB -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_PNB"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Propital -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Propital"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_xTG12_Antidote -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_xTG12_Antidote"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Perfotoran -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Perfotoran"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_eTGchange -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_eTGchange"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Obd2_cocktail -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Obd2_cocktail"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- EL_Stim_Obdolbos -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="EL_Stim_Obdolbos"]</xpath>
+    <value>
+      <thingSetMakerTags>
+        <li>RewardStandardLowFreq</li>
+      </thingSetMakerTags>
+    </value>
+  </Operation>
+
+  <!-- ============================================================ -->
+  <!-- 图纸系统已停用: 配方改为通过研究解锁 (DrugProduction/MedicineProduction) -->
+  <!-- 原图纸Patch已移除, 蓝图C#组件保留在Elanilda's Toolkit前置库中 -->
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- 第二部分: 往古代综合建筑战利品池注入针剂option -->
+  <!-- MapGen_AncientComplexRoomLoot_Default 用 ThingSetMaker_RandomOption -->
+  <!-- 添加一个新的li选项, weight=0.15(低概率, 与高级零部件/超科技药同级) -->
+  <!-- countRange 1~5: 单次掉落1~5支随机针剂 -->
+  <!-- ============================================================ -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingSetMakerDef[defName="MapGen_AncientComplexRoomLoot_Default"]/root/options</xpath>
+    <value>
+      <li>
+        <weight>0.2</weight>
+        <thingSetMaker Class="ThingSetMaker_StackCount">
+          <fixedParams>
+            <filter>
+              <thingDefs>
+                <li>EL_Stim_2A2_bTG</li>
+                <li>EL_Stim_3_bTG</li>
+                <li>EL_Stim_AHF1M</li>
+                <li>EL_Stim_L1_Norepinephrine</li>
+                <li>EL_Stim_Meldonin</li>
+                <li>EL_Stim_Morphine</li>
+                <li>EL_Stim_P22_22cpd</li>
+                <li>EL_Stim_SJ1_TGLabs</li>
+                <li>EL_Stim_SJ12_TGLabs</li>
+                <li>EL_Stim_SJ6_TGLabs</li>
+                <li>EL_Stim_Trimadol</li>
+                <li>EL_Stim_Zagustin</li>
+                <li>EL_Stim_Adrenaline</li>
+                <li>EL_Stim_PNB</li>
+                <li>EL_Stim_Propital</li>
+                <li>EL_Stim_MULE</li>
+                <li>EL_Stim_SJ9_TGLabs</li>
+                <li>EL_Stim_xTG12_Antidote</li>
+                <li>EL_Stim_Perfotoran</li>
+                <li>EL_Stim_eTGchange</li>
+                <li>EL_Stim_Obd2_cocktail</li>
+                <li>EL_Stim_Obdolbos</li>
+              </thingDefs>
+            </filter>
+            <countRange>1~5</countRange>
+          </fixedParams>
+        </thingSetMaker>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

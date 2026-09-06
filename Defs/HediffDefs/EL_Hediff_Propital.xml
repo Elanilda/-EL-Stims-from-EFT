@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Propital 止痛与体能增效 -->
+  <!-- 300秒总持续 -->
+  <!-- 0-245秒: 痛觉*0.10, 消化+20%, 愈合+20%, 血液过滤+20%, 回复器官(第二档) -->
+  <!-- 246-270秒: 消化+20%, 愈合+20%, 血液过滤+20%, 回复器官(第二档) -->
+  <!-- 271-300秒(30秒): 消化+20%, 愈合+20%, 血液过滤+20%, 视觉-15%, 意识-15%, 回复器官(第二档) -->
+  <!-- 第二档: canHealPermanent=false, bypassPermanentCheck=true -->
+  <!-- 直接改Severity不触发永久化检查, 治疗普通伤不留疤, 不治疤痕 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Propital</defName>
+    <label>Propital止痛与体能增效</label>
+    <labelNoun>Propital止痛与体能增效</labelNoun>
+    <description>Propital正在发挥药效，痛觉受到抑制，机体正在持续进行自修复。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.95, 0.85, 0.20)</defaultLabelColor>
+    <comps>
+      <!-- 300秒 = 18000 ticks, severityPerDay = -60000/18000 = -3.333 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.333</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>18000</disappearsAfterTicks>
+      </li>
+      <!-- 全程300秒每秒回复随机全部位1点耐久(第二档) -->
+      <!-- canHealPermanent=false: 不治疤痕 -->
+      <!-- bypassPermanentCheck=true: 直接改Severity, 不触发永久化, 不留疤 -->
+      <!-- includeSolidParts=true: 全部位(含骨骼), 战斗创伤长效恢复 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartHeal">
+        <healAmount>1</healAmount>
+        <ticksInterval>60</ticksInterval>
+        <canHealPermanent>false</canHealPermanent>
+        <bypassPermanentCheck>true</bypassPermanentCheck>
+        <includeSolidParts>true</includeSolidParts>
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段3: severity 0.0~0.1000 (271-300秒, 30秒): 消化+20%, 愈合+20%, 血液过滤+20%, 视觉-15%, 意识-15% -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <InjuryHealingFactor>1.2</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 阶段2: severity 0.1000~0.1833 (246-270秒, 25秒): 消化+20%, 愈合+20%, 血液过滤+20% -->
+      <li>
+        <minSeverity>0.1000</minSeverity>
+        <label>持续期</label>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <InjuryHealingFactor>1.2</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 阶段1: severity 0.1833~1.0 (0-245秒, 245秒): 痛觉*0.10, 消化+20%, 愈合+20%, 血液过滤+20% -->
+      <li>
+        <minSeverity>0.1833</minSeverity>
+        <label>高效期</label>
+        <painFactor>0.10</painFactor>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <InjuryHealingFactor>1.2</InjuryHealingFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- EL_Hediff_Obdolbos 主Hediff -->
+  <EL_Hediff_Obdolbos.label>Obd Dysfunction</EL_Hediff_Obdolbos.label>
+  <EL_Hediff_Obdolbos.labelNoun>Obd dysfunction</EL_Hediff_Obdolbos.labelNoun>
+  <EL_Hediff_Obdolbos.description>Obd's cocktail-like array of effects is in effect. Specifically, the ones in this list.</EL_Hediff_Obdolbos.description>
+
+  <!-- 15条子效果 -->
+  <EL_Hediff_Obd_Effect01.label>Obd Effect: Movement Boost</EL_Hediff_Obd_Effect01.label>
+  <EL_Hediff_Obd_Effect01.labelNoun>Obd effect: movement boost</EL_Hediff_Obd_Effect01.labelNoun>
+  <EL_Hediff_Obd_Effect01.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect01.description>
+
+  <EL_Hediff_Obd_Effect02.label>Obd Effect: Work Boost</EL_Hediff_Obd_Effect02.label>
+  <EL_Hediff_Obd_Effect02.labelNoun>Obd effect: work boost</EL_Hediff_Obd_Effect02.labelNoun>
+  <EL_Hediff_Obd_Effect02.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect02.description>
+
+  <EL_Hediff_Obd_Effect03.label>Obd Effect: Quick Hands</EL_Hediff_Obd_Effect03.label>
+  <EL_Hediff_Obd_Effect03.labelNoun>Obd effect: quick hands</EL_Hediff_Obd_Effect03.labelNoun>
+  <EL_Hediff_Obd_Effect03.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect03.description>
+
+  <EL_Hediff_Obd_Effect04.label>Obd Effect: Dexterity</EL_Hediff_Obd_Effect04.label>
+  <EL_Hediff_Obd_Effect04.labelNoun>Obd effect: dexterity</EL_Hediff_Obd_Effect04.labelNoun>
+  <EL_Hediff_Obd_Effect04.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect04.description>
+
+  <EL_Hediff_Obd_Effect05.label>Obd Effect: Stress Resistance</EL_Hediff_Obd_Effect05.label>
+  <EL_Hediff_Obd_Effect05.labelNoun>Obd effect: stress resistance</EL_Hediff_Obd_Effect05.labelNoun>
+  <EL_Hediff_Obd_Effect05.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect05.description>
+
+  <EL_Hediff_Obd_Effect06.label>Obd Effect: Charisma</EL_Hediff_Obd_Effect06.label>
+  <EL_Hediff_Obd_Effect06.labelNoun>Obd effect: charisma</EL_Hediff_Obd_Effect06.labelNoun>
+  <EL_Hediff_Obd_Effect06.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect06.description>
+
+  <EL_Hediff_Obd_Effect07.label>Obd Effect: Conserved Energy</EL_Hediff_Obd_Effect07.label>
+  <EL_Hediff_Obd_Effect07.labelNoun>Obd effect: conserved energy</EL_Hediff_Obd_Effect07.labelNoun>
+  <EL_Hediff_Obd_Effect07.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect07.description>
+
+  <EL_Hediff_Obd_Effect08.label>Obd Effect: Tissue Regeneration</EL_Hediff_Obd_Effect08.label>
+  <EL_Hediff_Obd_Effect08.labelNoun>Obd effect: tissue regeneration</EL_Hediff_Obd_Effect08.labelNoun>
+  <EL_Hediff_Obd_Effect08.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect08.description>
+
+  <EL_Hediff_Obd_Effect09.label>Obd Effect: Endurance Surge</EL_Hediff_Obd_Effect09.label>
+  <EL_Hediff_Obd_Effect09.labelNoun>Obd effect: endurance surge</EL_Hediff_Obd_Effect09.labelNoun>
+  <EL_Hediff_Obd_Effect09.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect09.description>
+
+  <EL_Hediff_Obd_Effect10.label>Obd Effect: Slight Load</EL_Hediff_Obd_Effect10.label>
+  <EL_Hediff_Obd_Effect10.labelNoun>Obd effect: slight load</EL_Hediff_Obd_Effect10.labelNoun>
+  <EL_Hediff_Obd_Effect10.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect10.description>
+
+  <EL_Hediff_Obd_Effect11.label>Obd Effect: Metabolic Strain A</EL_Hediff_Obd_Effect11.label>
+  <EL_Hediff_Obd_Effect11.labelNoun>Obd effect: metabolic strain A</EL_Hediff_Obd_Effect11.labelNoun>
+  <EL_Hediff_Obd_Effect11.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect11.description>
+
+  <EL_Hediff_Obd_Effect12.label>Obd Effect: Metabolic Strain B</EL_Hediff_Obd_Effect12.label>
+  <EL_Hediff_Obd_Effect12.labelNoun>Obd effect: metabolic strain B</EL_Hediff_Obd_Effect12.labelNoun>
+  <EL_Hediff_Obd_Effect12.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect12.description>
+
+  <EL_Hediff_Obd_Effect13.label>Obd Effect: Sudden Decay</EL_Hediff_Obd_Effect13.label>
+  <EL_Hediff_Obd_Effect13.labelNoun>Obd effect: sudden decay</EL_Hediff_Obd_Effect13.labelNoun>
+  <EL_Hediff_Obd_Effect13.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect13.description>
+
+  <EL_Hediff_Obd_Effect14.label>Obd Effect: Fragility</EL_Hediff_Obd_Effect14.label>
+  <EL_Hediff_Obd_Effect14.labelNoun>Obd effect: fragility</EL_Hediff_Obd_Effect14.labelNoun>
+  <EL_Hediff_Obd_Effect14.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect14.description>
+
+  <EL_Hediff_Obd_Effect15.label>Obd Effect: Confusion</EL_Hediff_Obd_Effect15.label>
+  <EL_Hediff_Obd_Effect15.labelNoun>Obd effect: confusion</EL_Hediff_Obd_Effect15.labelNoun>
+  <EL_Hediff_Obd_Effect15.description>One of Obdolbos's random effects.</EL_Hediff_Obd_Effect15.description>
+
+</LanguageData>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 2A2-(b-TG) 兴奋剂注射器 -->
+  <!-- 900秒: 携带能力+30%, 操作/视觉/听觉+20%, 每秒消耗0.001饮食 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_2A2_bTG</defName>
+    <label>2A2-(b-TG)兴奋剂注射器</label>
+    <description>用于侦察或战术移动时的战斗支撑药剂，能够维稳中枢神经系统，协助人员适应不同环境并提升承载能力，但使用这款针剂会提升脱水的速度。
+
+【施加效果】
+携带能力×130%，延迟0秒/持续900秒；
+操作能力+20%，延迟0秒/持续900秒；
+视觉能力+20%，延迟0秒/持续900秒；
+听觉能力+20%，延迟0秒/持续900秒；
+每秒消耗0.001饮食值，延迟0秒/持续900秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_2A2_bTG</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/2A2-(b-TG)</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>344</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>420</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>15</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_2A2_bTG</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- 2A2-(b-TG) x1 单支生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_2A2_bTG</defName>
+    <label>制作2A2-(b-TG)兴奋剂注射器</label>
+    <description>制作1支2A2-(b-TG)兴奋剂注射器。</description>
+    <jobString>正在制作2A2-(b-TG)兴奋剂注射器。</jobString>
+    <workAmount>420</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>8</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_2A2_bTG>1</EL_Stim_2A2_bTG>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- 2A2-(b-TG) x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_2A2_bTG_Bulk</defName>
+    <label>制作4个2A2-(b-TG)兴奋剂注射器</label>
+    <description>制作一批4支2A2-(b-TG)兴奋剂注射器。</description>
+    <jobString>正在制作2A2-(b-TG)兴奋剂注射器。</jobString>
+    <workAmount>1680</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>8</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_2A2_bTG>4</EL_Stim_2A2_bTG>
+    </products>
+  </RecipeDef>
+
+</Defs>

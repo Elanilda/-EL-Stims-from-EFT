@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- SJ1-TGLabs 战斗兴奋剂注射器 -->
+  <!-- 180秒主效果: 移动+20%, 工作速度+20%, 崩溃阈值+20%(负面), 疼痛休克阈值-20%(负面) -->
+  <!-- 100秒延迟后持续200秒每秒消耗0.05饮食, 共10.0 -->
+  <!-- 总持续300秒, severityPerDay ≈ -3.33 -->
+  <!-- severity 1.0→0.667: 前100秒(主效果, 无消耗) -->
+  <!-- severity 0.667→0.4: 100-180秒(主效果+消耗) -->
+  <!-- severity 0.4→0: 180-300秒(无主效果+消耗) -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_SJ1_TGLabs</defName>
+    <label>SJ1-TGLabs战斗兴奋剂注射器</label>
+    <description>军用战斗兴奋剂，在战斗前注射以提升体能并降低疼痛敏感度。有着较严重的代谢副作用。也作为前体药物参与药物合成。
+
+【施加效果】
+移动速度×120%，延迟0秒/持续180秒；
+全局工作速度×120%，延迟0秒/持续180秒；
+崩溃临界值×80%，延迟0秒/持续180秒；
+疼痛休克阈值×120%，延迟0秒/持续180秒；
+每秒消耗0.005饮食值，延迟100秒/持续200秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_SJ1_TGLabs</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/SJ1-TGLabs</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>190</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>280</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>10</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_SJ1_TGLabs</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ1 x1 单支生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_SJ1_TGLabs</defName>
+    <label>制作SJ1-TGLabs战斗兴奋剂注射器</label>
+    <description>制作1支SJ1-TGLabs战斗兴奋剂注射器。</description>
+    <jobString>正在制作SJ1-TGLabs战斗兴奋剂注射器。</jobString>
+    <workAmount>280</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>4</Medicine>
+      <Intellectual>4</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_SJ1_TGLabs>1</EL_Stim_SJ1_TGLabs>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ1 x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_SJ1_TGLabs_Bulk</defName>
+    <label>制作4个SJ1-TGLabs战斗兴奋剂注射器</label>
+    <description>制作一批4支SJ1-TGLabs战斗兴奋剂注射器。</description>
+    <jobString>正在制作SJ1-TGLabs战斗兴奋剂注射器。</jobString>
+    <workAmount>1120</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>4</Medicine>
+      <Intellectual>4</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_SJ1_TGLabs>4</EL_Stim_SJ1_TGLabs>
+    </products>
+  </RecipeDef>
+
+</Defs>

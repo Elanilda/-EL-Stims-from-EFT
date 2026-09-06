@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- xTG-12 解毒效果 -->
+  <!-- 总持续240秒 = 14400 ticks -->
+  <!-- 阶段划分(severity 1.0→0 线性下降): -->
+  <!--   免疫期: severity 1.0→0.25 (前180秒), ClearHediffs Comp运作清除毒素 -->
+  <!--   副作用期: severity 0.25→0 (末60秒, 即180秒延迟后), 愈合系数-10% -->
+  <!--   注: 免疫期与副作用期重叠, ClearHediffs全程240秒运作 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_xTG12</defName>
+    <label>xTG-12解毒</label>
+    <labelNoun>xTG-12解毒</labelNoun>
+    <description>xTG-12正在发挥药效，其抗毒成分可中和绝大多数毒素，但药效末期身体自修复能力会短暂下降。</description>
+    <hediffClass>EL_Hediff_RawLabel</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.75, 0.60, 0.85)</defaultLabelColor>
+    <comps>
+      <!-- 总持续240秒 = 14400 ticks, severityPerDay = -1.0/(14400/60000) ≈ -4.167 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.167</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>14400</disappearsAfterTicks>
+      </li>
+      <!-- 清除目标Hediff: ToxicBuildup/FoodPoisoning/ScariaInfection/LungRot -->
+      <!-- 施加时立即清除, 并在240秒=14400 ticks内每60tick检测清除新添加的 -->
+      <li Class="EL_HediffCompProperties_ClearHediffs">
+        <hediffDefs>
+          <li>ToxicBuildup</li>
+          <li>FoodPoisoning</li>
+          <li>ScariaInfection</li>
+          <li>LungRot</li>
+        </hediffDefs>
+        <immunityDurationTicks>14400</immunityDurationTicks>
+        <checkIntervalTicks>60</checkIntervalTicks>
+      </li>
+    </comps>
+    <stages>
+      <!-- 副作用期: severity 0~0.25 (末60秒, 180秒延迟后), 愈合系数-10% -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <statOffsets>
+          <InjuryHealingFactor>-0.10</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+      <!-- 免疫期: severity 0.25~1.0 (前180秒), ClearHediffs Comp运作 -->
+      <li>
+        <minSeverity>0.25</minSeverity>
+        <label>免疫期</label>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

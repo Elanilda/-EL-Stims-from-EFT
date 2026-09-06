@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Perfotoran 人造血效果 -->
+  <!-- 总持续120秒 = 7200 ticks -->
+  <!-- 阶段划分(severity 1.0→0 线性下降): -->
+  <!--   高效期: severity 0.5~1.0 (前60秒): 止血+消化+10%+减血+治疗+清毒 -->
+  <!--   副作用期: severity 0~0.5 (后60秒, 60秒延迟后): 止血+消化+10%+愈合-15%+饮食消耗+减血+治疗+清毒 -->
+  <!--   注: ClearHediffs/ReduceBloodLoss/RandomBodyPartHeal全程120秒运作 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Perfotoran</defName>
+    <label>Perfotoran再生修复</label>
+    <labelNoun>Perfotoran再生修复</labelNoun>
+    <description>Perfotoran正在发挥药效，人造血代行血浆功能，持续清除毒素、止血并促进组织恢复。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.30, 0.70, 0.85)</defaultLabelColor>
+    <comps>
+      <!-- 总持续120秒 = 7200 ticks, severityPerDay = -1.0/(7200/60000) ≈ -8.333 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-8.333</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>7200</disappearsAfterTicks>
+      </li>
+      <!-- 清除目标Hediff: ToxicBuildup/FoodPoisoning/ScariaInfection/LungRot -->
+      <!-- 施加时立即清除, 并在120秒=7200 ticks内每60tick检测清除新添加的 -->
+      <li Class="EL_HediffCompProperties_ClearHediffs">
+        <hediffDefs>
+          <li>ToxicBuildup</li>
+          <li>FoodPoisoning</li>
+          <li>ScariaInfection</li>
+          <li>LungRot</li>
+        </hediffDefs>
+        <immunityDurationTicks>7200</immunityDurationTicks>
+        <checkIntervalTicks>60</checkIntervalTicks>
+      </li>
+      <!-- 每秒减少BloodLoss Severity 0.015, 持续120秒 -->
+      <li Class="EL_HediffCompProperties_ReduceBloodLoss">
+        <reductionPerSecond>0.015</reductionPerSecond>
+        <durationTicks>7200</durationTicks>
+        <checkIntervalTicks>60</checkIntervalTicks>
+      </li>
+      <!-- 每秒回复随机非solid部位2点耐久(第三档: 治疤不留疤) -->
+      <!-- canHealPermanent=true: 可治疗永久损伤(疤痕) -->
+      <!-- bypassPermanentCheck=true: 直接改Severity, 不触发永久化检查, 不留疤 -->
+      <!-- includeSolidParts=false: 仅非solid部位 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartHeal">
+        <healAmount>2</healAmount>
+        <ticksInterval>60</ticksInterval>
+        <canHealPermanent>true</canHealPermanent>
+        <bypassPermanentCheck>true</bypassPermanentCheck>
+        <includeSolidParts>false</includeSolidParts>
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+          </li>
+        </stages>
+      </li>
+      <!-- 分阶段饮食消耗: 后60秒(severity 0.5~0)每秒0.011, 共0.66 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>0.5</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.011</hungerPerSecond>
+            <description>每秒消耗0.011饮食，持续60秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 副作用期: severity 0~0.5 (后60秒, 60秒延迟后): 止血+消化+10%+愈合-15% -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <totalBleedFactor>0</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <InjuryHealingFactor>0.85</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 高效期: severity 0.5~1.0 (前60秒): 止血+消化+10% -->
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>高效期</label>
+        <totalBleedFactor>0</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

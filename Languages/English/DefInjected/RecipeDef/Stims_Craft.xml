@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 2A2-(b-TG) -->
+  <EL_Make_2A2_bTG.label>Make 2A2-(b-TG) Stimulant Injector</EL_Make_2A2_bTG.label>
+  <EL_Make_2A2_bTG.description>Make 1 2A2-(b-TG) stimulant injector.</EL_Make_2A2_bTG.description>
+  <EL_Make_2A2_bTG.jobString>Making 2A2-(b-TG) stimulant injector.</EL_Make_2A2_bTG.jobString>
+  <EL_Make_2A2_bTG_Bulk.label>Make 4 2A2-(b-TG) Stimulant Injectors</EL_Make_2A2_bTG_Bulk.label>
+  <EL_Make_2A2_bTG_Bulk.description>Make a batch of 4 2A2-(b-TG) stimulant injectors.</EL_Make_2A2_bTG_Bulk.description>
+  <EL_Make_2A2_bTG_Bulk.jobString>Making 2A2-(b-TG) stimulant injectors.</EL_Make_2A2_bTG_Bulk.jobString>
+
+  <!-- 3-(b-TG) -->
+  <EL_Make_3_bTG.label>Make 3-(b-TG) Stimulant Injector</EL_Make_3_bTG.label>
+  <EL_Make_3_bTG.description>Make 1 3-(b-TG) stimulant injector.</EL_Make_3_bTG.description>
+  <EL_Make_3_bTG.jobString>Making 3-(b-TG) stimulant injector.</EL_Make_3_bTG.jobString>
+  <EL_Make_3_bTG_Bulk.label>Make 4 3-(b-TG) Stimulant Injectors</EL_Make_3_bTG_Bulk.label>
+  <EL_Make_3_bTG_Bulk.description>Make a batch of 4 3-(b-TG) stimulant injectors.</EL_Make_3_bTG_Bulk.description>
+  <EL_Make_3_bTG_Bulk.jobString>Making 3-(b-TG) stimulant injectors.</EL_Make_3_bTG_Bulk.jobString>
+
+  <!-- Adrenaline -->
+  <EL_Make_Adrenaline.label>Make Adrenaline Injector</EL_Make_Adrenaline.label>
+  <EL_Make_Adrenaline.description>Make 1 adrenaline injector.</EL_Make_Adrenaline.description>
+  <EL_Make_Adrenaline.jobString>Making adrenaline injector.</EL_Make_Adrenaline.jobString>
+  <EL_Make_Adrenaline_Bulk.label>Make 4 Adrenaline Injectors</EL_Make_Adrenaline_Bulk.label>
+  <EL_Make_Adrenaline_Bulk.description>Make a batch of 4 adrenaline injectors.</EL_Make_Adrenaline_Bulk.description>
+  <EL_Make_Adrenaline_Bulk.jobString>Making adrenaline injectors.</EL_Make_Adrenaline_Bulk.jobString>
+
+  <!-- AHF1-M -->
+  <EL_Make_AHF1M.label>Make AHF1-M Injector</EL_Make_AHF1M.label>
+  <EL_Make_AHF1M.description>Make 1 AHF1-M hemostatic injector.</EL_Make_AHF1M.description>
+  <EL_Make_AHF1M.jobString>Making AHF1-M injector.</EL_Make_AHF1M.jobString>
+  <EL_Make_AHF1M_Bulk.label>Make 4 AHF1-M Injectors</EL_Make_AHF1M_Bulk.label>
+  <EL_Make_AHF1M_Bulk.description>Make a batch of 4 AHF1-M hemostatic injectors.</EL_Make_AHF1M_Bulk.description>
+  <EL_Make_AHF1M_Bulk.jobString>Making AHF1-M injectors.</EL_Make_AHF1M_Bulk.jobString>
+
+  <!-- Cartridge -->
+  <EL_Make_Cartridge.label>Make 4 Injector Cartridges</EL_Make_Cartridge.label>
+  <EL_Make_Cartridge.description>Make 4 empty injector cartridges.</EL_Make_Cartridge.description>
+  <EL_Make_Cartridge.jobString>Making injector cartridges.</EL_Make_Cartridge.jobString>
+  <EL_Make_Cartridge_Bulk.label>Make 16 Injector Cartridges</EL_Make_Cartridge_Bulk.label>
+  <EL_Make_Cartridge_Bulk.description>Make 16 empty injector cartridges.</EL_Make_Cartridge_Bulk.description>
+  <EL_Make_Cartridge_Bulk.jobString>Making injector cartridges.</EL_Make_Cartridge_Bulk.jobString>
+
+  <!-- eTG-change -->
+  <EL_Make_eTGchange.label>Make eTG-change Regenerator Injector</EL_Make_eTGchange.label>
+  <EL_Make_eTGchange.description>Make 1 eTG-change regenerator injector.</EL_Make_eTGchange.description>
+  <EL_Make_eTGchange.jobString>Making eTG-change regenerator injector.</EL_Make_eTGchange.jobString>
+  <EL_Make_eTGchange_Bulk.label>Batch Make eTG-change Regenerator Injector</EL_Make_eTGchange_Bulk.label>
+  <EL_Make_eTGchange_Bulk.description>Make 4 eTG-change regenerator injectors.</EL_Make_eTGchange_Bulk.description>
+  <EL_Make_eTGchange_Bulk.jobString>Batch making eTG-change regenerator injectors.</EL_Make_eTGchange_Bulk.jobString>
+
+  <!-- L1 -->
+  <EL_Make_L1.label>Make L1 (Norepinephrine) Injector</EL_Make_L1.label>
+  <EL_Make_L1.description>Make 1 L1 norepinephrine injector.</EL_Make_L1.description>
+  <EL_Make_L1.jobString>Making L1 norepinephrine injector.</EL_Make_L1.jobString>
+  <EL_Make_L1_Bulk.label>Make 4 L1 (Norepinephrine) Injectors</EL_Make_L1_Bulk.label>
+  <EL_Make_L1_Bulk.description>Make a batch of 4 L1 norepinephrine injectors.</EL_Make_L1_Bulk.description>
+  <EL_Make_L1_Bulk.jobString>Making L1 norepinephrine injectors.</EL_Make_L1_Bulk.jobString>
+
+  <!-- M.U.L.E -->
+  <EL_Make_MULE.label>Make M.U.L.E Stimulant Injector</EL_Make_MULE.label>
+  <EL_Make_MULE.description>Make 1 M.U.L.E stimulant injector.</EL_Make_MULE.description>
+  <EL_Make_MULE.jobString>Making M.U.L.E stimulant injector.</EL_Make_MULE.jobString>
+  <EL_Make_MULE_Bulk.label>Make 4 M.U.L.E Stimulant Injectors</EL_Make_MULE_Bulk.label>
+  <EL_Make_MULE_Bulk.description>Make a batch of 4 M.U.L.E stimulant injectors.</EL_Make_MULE_Bulk.description>
+  <EL_Make_MULE_Bulk.jobString>Making M.U.L.E stimulant injectors.</EL_Make_MULE_Bulk.jobString>
+
+  <!-- Meldonin -->
+  <EL_Make_Meldonin.label>Make Meldonin Injector</EL_Make_Meldonin.label>
+  <EL_Make_Meldonin.description>Make 1 meldonin injector.</EL_Make_Meldonin.description>
+  <EL_Make_Meldonin.jobString>Making meldonin injector.</EL_Make_Meldonin.jobString>
+  <EL_Make_Meldonin_Bulk.label>Make 4 Meldonin Injectors</EL_Make_Meldonin_Bulk.label>
+  <EL_Make_Meldonin_Bulk.description>Make a batch of 4 meldonin injectors.</EL_Make_Meldonin_Bulk.description>
+  <EL_Make_Meldonin_Bulk.jobString>Making meldonin injectors.</EL_Make_Meldonin_Bulk.jobString>
+
+  <!-- Morphine -->
+  <EL_Make_Morphine.label>Make Morphine Injector</EL_Make_Morphine.label>
+  <EL_Make_Morphine.description>Make 1 morphine injector.</EL_Make_Morphine.description>
+  <EL_Make_Morphine.jobString>Making morphine injector.</EL_Make_Morphine.jobString>
+  <EL_Make_Morphine_Bulk.label>Make 4 Morphine Injectors</EL_Make_Morphine_Bulk.label>
+  <EL_Make_Morphine_Bulk.description>Make a batch of 4 morphine injectors.</EL_Make_Morphine_Bulk.description>
+  <EL_Make_Morphine_Bulk.jobString>Making morphine injectors.</EL_Make_Morphine_Bulk.jobString>
+
+  <!-- Obd2 -->
+  <EL_Make_Obd2_cocktail.label>Make Obdolbos 2 Cocktail Stimulant Injector</EL_Make_Obd2_cocktail.label>
+  <EL_Make_Obd2_cocktail.description>Make 1 Obdolbos 2 cocktail stimulant injector.</EL_Make_Obd2_cocktail.description>
+  <EL_Make_Obd2_cocktail.jobString>Making Obdolbos 2 cocktail stimulant injector.</EL_Make_Obd2_cocktail.jobString>
+  <EL_Make_Obd2_cocktail_Bulk.label>Batch Make Obdolbos 2 Cocktail Stimulant Injector</EL_Make_Obd2_cocktail_Bulk.label>
+  <EL_Make_Obd2_cocktail_Bulk.description>Make 4 Obdolbos 2 cocktail stimulant injectors.</EL_Make_Obd2_cocktail_Bulk.description>
+  <EL_Make_Obd2_cocktail_Bulk.jobString>Batch making Obdolbos 2 cocktail stimulant injectors.</EL_Make_Obd2_cocktail_Bulk.jobString>
+
+  <!-- Obdolbos -->
+  <EL_Make_Obdolbos.label>Make Obdolbos Cocktail Stimulant Injector</EL_Make_Obdolbos.label>
+  <EL_Make_Obdolbos.description>Make 1 Obdolbos cocktail stimulant injector.</EL_Make_Obdolbos.description>
+  <EL_Make_Obdolbos.jobString>Making Obdolbos cocktail stimulant injector.</EL_Make_Obdolbos.jobString>
+  <EL_Make_Obdolbos_Bulk.label>Batch Make Obdolbos Cocktail Stimulant Injector</EL_Make_Obdolbos_Bulk.label>
+  <EL_Make_Obdolbos_Bulk.description>Make 4 Obdolbos cocktail stimulant injectors.</EL_Make_Obdolbos_Bulk.description>
+  <EL_Make_Obdolbos_Bulk.jobString>Batch making Obdolbos cocktail stimulant injectors.</EL_Make_Obdolbos_Bulk.jobString>
+
+  <!-- P22 -->
+  <EL_Make_P22_22cpd.label>Make P22 (Compound 22) Stimulant Injector</EL_Make_P22_22cpd.label>
+  <EL_Make_P22_22cpd.description>Make 1 P22 stimulant injector.</EL_Make_P22_22cpd.description>
+  <EL_Make_P22_22cpd.jobString>Making P22 stimulant injector.</EL_Make_P22_22cpd.jobString>
+  <EL_Make_P22_22cpd_Bulk.label>Make 4 P22 (Compound 22) Stimulant Injectors</EL_Make_P22_22cpd_Bulk.label>
+  <EL_Make_P22_22cpd_Bulk.description>Make a batch of 4 P22 stimulant injectors.</EL_Make_P22_22cpd_Bulk.description>
+  <EL_Make_P22_22cpd_Bulk.jobString>Making P22 stimulant injectors.</EL_Make_P22_22cpd_Bulk.jobString>
+
+  <!-- Perfotoran -->
+  <EL_Make_Perfotoran.label>Make Perfotoran Artificial Blood Injector</EL_Make_Perfotoran.label>
+  <EL_Make_Perfotoran.description>Make 1 Perfotoran artificial blood injector.</EL_Make_Perfotoran.description>
+  <EL_Make_Perfotoran.jobString>Making Perfotoran artificial blood injector.</EL_Make_Perfotoran.jobString>
+  <EL_Make_Perfotoran_Bulk.label>Batch Make Perfotoran Artificial Blood Injector</EL_Make_Perfotoran_Bulk.label>
+  <EL_Make_Perfotoran_Bulk.description>Make 4 Perfotoran artificial blood injectors.</EL_Make_Perfotoran_Bulk.description>
+  <EL_Make_Perfotoran_Bulk.jobString>Batch making Perfotoran artificial blood injectors.</EL_Make_Perfotoran_Bulk.jobString>
+
+  <!-- PNB -->
+  <EL_Make_PNB.label>Make PNB Injector</EL_Make_PNB.label>
+  <EL_Make_PNB.description>Make 1 PNB injector.</EL_Make_PNB.description>
+  <EL_Make_PNB.jobString>Making PNB injector.</EL_Make_PNB.jobString>
+  <EL_Make_PNB_Bulk.label>Make 4 PNB Injectors</EL_Make_PNB_Bulk.label>
+  <EL_Make_PNB_Bulk.description>Make a batch of 4 PNB injectors.</EL_Make_PNB_Bulk.description>
+  <EL_Make_PNB_Bulk.jobString>Making PNB injectors.</EL_Make_PNB_Bulk.jobString>
+
+  <!-- Propital -->
+  <EL_Make_Propital.label>Make Propital Injector</EL_Make_Propital.label>
+  <EL_Make_Propital.description>Make 1 Propital injector.</EL_Make_Propital.description>
+  <EL_Make_Propital.jobString>Making Propital injector.</EL_Make_Propital.jobString>
+  <EL_Make_Propital_Bulk.label>Make 4 Propital Injectors</EL_Make_Propital_Bulk.label>
+  <EL_Make_Propital_Bulk.description>Make a batch of 4 Propital injectors.</EL_Make_Propital_Bulk.description>
+  <EL_Make_Propital_Bulk.jobString>Making Propital injectors.</EL_Make_Propital_Bulk.jobString>
+
+  <!-- SJ1-TGLabs -->
+  <EL_Make_SJ1_TGLabs.label>Make SJ1-TGLabs Combat Stimulant Injector</EL_Make_SJ1_TGLabs.label>
+  <EL_Make_SJ1_TGLabs.description>Make 1 SJ1-TGLabs combat stimulant injector.</EL_Make_SJ1_TGLabs.description>
+  <EL_Make_SJ1_TGLabs.jobString>Making SJ1-TGLabs combat stimulant injector.</EL_Make_SJ1_TGLabs.jobString>
+  <EL_Make_SJ1_TGLabs_Bulk.label>Make 4 SJ1-TGLabs Combat Stimulant Injectors</EL_Make_SJ1_TGLabs_Bulk.label>
+  <EL_Make_SJ1_TGLabs_Bulk.description>Make a batch of 4 SJ1-TGLabs combat stimulant injectors.</EL_Make_SJ1_TGLabs_Bulk.description>
+  <EL_Make_SJ1_TGLabs_Bulk.jobString>Making SJ1-TGLabs combat stimulant injectors.</EL_Make_SJ1_TGLabs_Bulk.jobString>
+
+  <!-- SJ12-TGLabs -->
+  <EL_Make_SJ12_TGLabs.label>Make SJ12-TGLabs Combat Stimulant Injector</EL_Make_SJ12_TGLabs.label>
+  <EL_Make_SJ12_TGLabs.description>Make 1 SJ12-TGLabs combat stimulant injector.</EL_Make_SJ12_TGLabs.description>
+  <EL_Make_SJ12_TGLabs.jobString>Making SJ12-TGLabs combat stimulant injector.</EL_Make_SJ12_TGLabs.jobString>
+  <EL_Make_SJ12_TGLabs_Bulk.label>Make 4 SJ12-TGLabs Combat Stimulant Injectors</EL_Make_SJ12_TGLabs_Bulk.label>
+  <EL_Make_SJ12_TGLabs_Bulk.description>Make a batch of 4 SJ12-TGLabs combat stimulant injectors.</EL_Make_SJ12_TGLabs_Bulk.description>
+  <EL_Make_SJ12_TGLabs_Bulk.jobString>Making SJ12-TGLabs combat stimulant injectors.</EL_Make_SJ12_TGLabs_Bulk.jobString>
+
+  <!-- SJ6-TGLabs -->
+  <EL_Make_SJ6_TGLabs.label>Make SJ6-TGLabs Combat Stimulant Injector</EL_Make_SJ6_TGLabs.label>
+  <EL_Make_SJ6_TGLabs.description>Make 1 SJ6-TGLabs combat stimulant injector.</EL_Make_SJ6_TGLabs.description>
+  <EL_Make_SJ6_TGLabs.jobString>Making SJ6-TGLabs combat stimulant injector.</EL_Make_SJ6_TGLabs.jobString>
+  <EL_Make_SJ6_TGLabs_Bulk.label>Make 4 SJ6-TGLabs Combat Stimulant Injectors</EL_Make_SJ6_TGLabs_Bulk.label>
+  <EL_Make_SJ6_TGLabs_Bulk.description>Make a batch of 4 SJ6-TGLabs combat stimulant injectors.</EL_Make_SJ6_TGLabs_Bulk.description>
+  <EL_Make_SJ6_TGLabs_Bulk.jobString>Making SJ6-TGLabs combat stimulant injectors.</EL_Make_SJ6_TGLabs_Bulk.jobString>
+
+  <!-- SJ9-TGLabs -->
+  <EL_Make_SJ9_TGLabs.label>Make SJ9-TGLabs Combat Stimulant Injector</EL_Make_SJ9_TGLabs.label>
+  <EL_Make_SJ9_TGLabs.description>Make 1 SJ9-TGLabs combat stimulant injector.</EL_Make_SJ9_TGLabs.description>
+  <EL_Make_SJ9_TGLabs.jobString>Making SJ9-TGLabs combat stimulant injector.</EL_Make_SJ9_TGLabs.jobString>
+  <EL_Make_SJ9_TGLabs_Bulk.label>Make 4 SJ9-TGLabs Combat Stimulant Injectors</EL_Make_SJ9_TGLabs_Bulk.label>
+  <EL_Make_SJ9_TGLabs_Bulk.description>Make a batch of 4 SJ9-TGLabs combat stimulant injectors.</EL_Make_SJ9_TGLabs_Bulk.description>
+  <EL_Make_SJ9_TGLabs_Bulk.jobString>Making SJ9-TGLabs combat stimulant injectors.</EL_Make_SJ9_TGLabs_Bulk.jobString>
+
+  <!-- Trimadol -->
+  <EL_Make_Trimadol.label>Make Trimadol Injector</EL_Make_Trimadol.label>
+  <EL_Make_Trimadol.description>Make 1 trimadol injector.</EL_Make_Trimadol.description>
+  <EL_Make_Trimadol.jobString>Making trimadol injector.</EL_Make_Trimadol.jobString>
+  <EL_Make_Trimadol_Bulk.label>Make 4 Trimadol Injectors</EL_Make_Trimadol_Bulk.label>
+  <EL_Make_Trimadol_Bulk.description>Make a batch of 4 trimadol injectors.</EL_Make_Trimadol_Bulk.description>
+  <EL_Make_Trimadol_Bulk.jobString>Making trimadol injectors.</EL_Make_Trimadol_Bulk.jobString>
+
+  <!-- xTG-12 -->
+  <EL_Make_xTG12.label>Make xTG-12 Antidote Injector</EL_Make_xTG12.label>
+  <EL_Make_xTG12.description>Make 1 xTG-12 antidote injector.</EL_Make_xTG12.description>
+  <EL_Make_xTG12.jobString>Making xTG-12 antidote injector.</EL_Make_xTG12.jobString>
+  <EL_Make_xTG12_Bulk.label>Batch Make xTG-12 Antidote Injector</EL_Make_xTG12_Bulk.label>
+  <EL_Make_xTG12_Bulk.description>Make 4 xTG-12 antidote injectors.</EL_Make_xTG12_Bulk.description>
+  <EL_Make_xTG12_Bulk.jobString>Batch making xTG-12 antidote injectors.</EL_Make_xTG12_Bulk.jobString>
+
+  <!-- Zagustin -->
+  <EL_Make_Zagustin.label>Make Zagustin Injector</EL_Make_Zagustin.label>
+  <EL_Make_Zagustin.description>Make 1 Zagustin hemostatic injector.</EL_Make_Zagustin.description>
+  <EL_Make_Zagustin.jobString>Making Zagustin injector.</EL_Make_Zagustin.jobString>
+  <EL_Make_Zagustin_Bulk.label>Make 4 Zagustin Injectors</EL_Make_Zagustin_Bulk.label>
+  <EL_Make_Zagustin_Bulk.description>Make a batch of 4 Zagustin hemostatic injectors.</EL_Make_Zagustin_Bulk.description>
+  <EL_Make_Zagustin_Bulk.jobString>Making Zagustin injectors.</EL_Make_Zagustin_Bulk.jobString>
+
+</LanguageData>

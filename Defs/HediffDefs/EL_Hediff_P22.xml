@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- P22 (22号化合物) 生理改善效果 -->
+  <!-- 125秒总持续: 前60秒主效果, 后65秒副作用 -->
+  <!-- severity 1.0→0.52: 前60秒(主效果期) -->
+  <!-- severity 0.52→0: 后65秒(副作用期: 移动-20%+扣休息) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_P22_22cpd</defName>
+    <label>P22生理改善</label>
+    <labelNoun>P22生理改善</labelNoun>
+    <description>P22正在发挥药效，机体修复能力增强，耐受力提升。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+    <comps>
+      <!-- 125秒 = 7500 ticks, severityPerDay = -1.0/(7500/60000) = -8.0 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-8.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>7500</disappearsAfterTicks>
+      </li>
+      <!-- 分阶段休息消耗: 后65秒(severity 0.52→0)每秒0.008, 共0.52 -->
+      <li Class="EL_HediffCompProperties_StageRestDrain">
+        <stages>
+          <li>
+            <startSeverity>0.52</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <restPerSecond>0.008</restPerSecond>
+            <description>每秒消耗0.008休息值，持续65秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段2: severity 0.0~0.52 (60-125秒): 移动-20%+扣休息 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <statFactors>
+          <MoveSpeed>0.8</MoveSpeed>
+        </statFactors>
+      </li>
+      <!-- 阶段1: severity 0.52~1.0 (0-60秒): 主效果 -->
+      <li>
+        <minSeverity>0.52</minSeverity>
+        <label>高效期</label>
+        <statOffsets>
+          <InjuryHealingFactor>0.30</InjuryHealingFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.30</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <MentalBreakThreshold>0.7</MentalBreakThreshold>
+          <PainShockThreshold>1.3</PainShockThreshold>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

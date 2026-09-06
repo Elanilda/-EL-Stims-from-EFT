@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- SJ9-TGLabs 战斗兴奋剂注射器 -->
+  <!-- 420秒总持续: 前300秒温度适应+消化-20%, 全程每10秒损伤1点 -->
+  <!-- 后120秒(300-420秒)疼痛*1.15 -->
+  <!-- severity 1.0→0.2857: 前300秒(温度+消化-20%+损伤) -->
+  <!-- severity 0.2857→0: 后120秒(损伤+疼痛增强) -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_SJ9_TGLabs</defName>
+    <label>SJ9-TGLabs战斗兴奋剂注射器</label>
+    <description>特殊环境适应性药物，通过显著减缓代谢的方式增加机体对极端环境的适应能力，还能减少机体向环境逸散的热量，减小热成像目标的同时让新陈代谢维持在较低但安全的水平上。
+
+【施加效果】
+最低舒适温度-21℃，延迟0秒/持续300秒；
+最高舒适温度+14℃，延迟0秒/持续300秒；
+消化能力-20%，延迟0秒/持续300秒；
+每10秒对随机非骨骼身体部位造成1点代谢损伤，延迟0秒/持续420秒；
+痛苦×115%，延迟300秒/持续120秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_SJ9_TGLabs</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/SJ9-TGLabs</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>148</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>320</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>16</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_SJ9_TGLabs</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ9 x1 单支生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_SJ9_TGLabs</defName>
+    <label>制作SJ9-TGLabs战斗兴奋剂注射器</label>
+    <description>制作1支SJ9-TGLabs战斗兴奋剂注射器。</description>
+    <jobString>正在制作SJ9-TGLabs战斗兴奋剂注射器。</jobString>
+    <workAmount>320</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>6</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_SJ9_TGLabs>1</EL_Stim_SJ9_TGLabs>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ9-TGLabs x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_SJ9_TGLabs_Bulk</defName>
+    <label>制作4个SJ9-TGLabs战斗兴奋剂注射器</label>
+    <description>制作一批4支SJ9-TGLabs战斗兴奋剂注射器。</description>
+    <jobString>正在制作SJ9-TGLabs战斗兴奋剂注射器。</jobString>
+    <workAmount>1280</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>6</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>64</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_SJ9_TGLabs>4</EL_Stim_SJ9_TGLabs>
+    </products>
+  </RecipeDef>
+
+</Defs>

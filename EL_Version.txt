@@ -1,0 +1,307 @@
+[EL]Stims from EFT  / Changelog
+========================================
+
+----------------------------------------
+v1.0.4
+[调整]
+- 修改了部分回复损伤针剂与效果附带损伤针剂的描述部位与实际部位范围不匹配的问题。
+    涉及针剂：Adrenaline / PNB / Perfotoran / M.U.L.E / Obd2 / SJ9
+
+----------------------------------------
+v1.0.3
+[调整]
+- 向上微调了item“针剂储存柜”的贴图渲染位置
+
+----------------------------------------
+v1.0.2
+[调整]
+- 为每种针剂的物品信息描述中增加了对应的效果文本
+
+----------------------------------------
+v1.0.1
+[新增]
+- Combat Extend补丁：
+    部分针剂添加补丁以适配CE属性
+    所有物品新增体积值
+
+----------------------------------------
+v1.0.0
+[新增]
+- Preview.png和EL_ModIcon.png
+
+[调整]
+- 完善发布前准备
+
+----------------------------------------
+v0.9.4
+[修复]
+- shift多选储存柜时检查面板每帧报错（ITab IsVisible空引用）
+----------------------------------------
+v0.9.3
+[新增]
+- 针剂储存柜 EL_Stim_Storage：2x1 家具，仅存放针剂与中性胺（每格上限16个），
+  隐藏内容物渲染，配备内容物列表标签页
+- 中性胺萃取配方：精神叶+草药 → 中性胺，药物实验台制作，需研究“精神叶制品提炼”
+
+[调整]
+- 注射工作 EL_Job_InjectStim 改为征召/非征召状态均可用
+- 针剂配方追加前置研究"精神叶制品提炼"
+- About.xml 描述修改
+
+[修复]
+- 储存柜贴图路径错误与缺失北向贴图导致的贴图加载失败
+
+----------------------------------------
+v0.9.2
+[调整]
+- Csharp组件按功能进行粗拆分
+- 针剂售价系数统一为 SellPriceFactor 0.8
+- 为Obdolbos的主效果在信息界面添加针对其所有15个子效果的超链接
+- 修改了Obdolbos子效果描述文本
+
+
+----------------------------------------
+v0.9.1
+[新增]
+- 补充部分English翻译
+- 添加组件：
+    EL_Building_HiddenStorage：隐藏容器内容物
+    EL_ITab_StimStorage：复用原版ITab_ContentsBase制作容器存储物列表
+- 正式创建EL_Version.txt
+
+[调整]
+- 部分Keyed翻译为ChineseSimplified
+- stage内描述文本多次尝试无法实现翻译，遂放弃
+- 蓝图解锁配方无法实现，移除蓝图配方解锁系统组件和蓝图相关文件：
+    Obdolbos、Obd2配方蓝图
+    EL_CompProperties_UseEffect_UnlockRecipe使用物品后解锁蓝图
+    EL_CompUseEffect_UnlockRecipe图纸解锁效果comp
+    EL_RecipeUnlockState存档全局解锁状态记录
+
+----------------------------------------
+v0.9.0
+[新增]
+- Obdolbos鸡尾酒注射器，使用后有15种随机产生的功能：
+- Obd2鸡尾酒注射器，有强大效果和副作用的针剂
+- 部分English语言支持
+- 蓝图配方解锁系统，Obdolbos、Obd2配方蓝图
+- 添加组件：
+    EL_HediffCompProperties_ObdolbosEffectPicker主效果仅作为计时器，获得主效果时随机添加子效果；
+    EL_HediffCompProperties_RandomBodyPartDamage新增是否允许部位归零词条
+    EL_CompProperties_UseEffect_UnlockRecipe使用物品后解锁蓝图
+    EL_CompUseEffect_UnlockRecipe图纸解锁效果comp
+    EL_RecipeUnlockState存档全局解锁状态记录
+
+----------------------------------------
+v0.8.4
+[修复]
+- Trader商品中出现两次M.U.L.E、米屈肼消失了，修改回正常
+
+----------------------------------------
+v0.8.3
+[新增]
+- eTG-change加入古代建筑掉落池
+
+[调整]
+- eTG-change治疗部位现在加入Solid部位
+
+----------------------------------------
+v0.8.2
+[调整]
+- xTG12的defname更新为EL_Stim_xTG12_Antidote，原因是hediff的defname不能以数字结尾
+
+----------------------------------------
+v0.8.1
+[修复]
+- CompDescriptionExtra误用于CompUseEffect，改为GetDescriptionPart()
+- 拼写错误HerbalMedicine → MedicineHerbal
+- About.xml 3处 & 转义为 &amp
+
+----------------------------------------
+v0.8.0
+[新增]
+- xTG-12解毒剂
+- Perfotoran人造血注射器
+- eTG-change再生剂注射器
+- 添加组件：
+    EL_HediffCompProperties_ClearHediffs：在获得hediff时清除指定的多种hediff，并在immunityDurationTicks期间持续检测(每checkIntervalTicks检测一次)
+    EL_Hediff_RawLabel：拥有这个标签的Hediff首字母保持小写（xTG-12、eTG-change）
+
+----------------------------------------
+v0.7.3
+[调整]
+- EL_HediffComp_RandomBodyPartDamage：伤害范围移除!ManipulationLimbDigit && !MovingLimbDigit以避免手指脚趾损伤大量挤占健康信息面板
+
+----------------------------------------
+v0.7.2
+[调整]
+- EL_HediffComp_RandomBodyPartDamage：伤害范围移除waist，原因是这个部位hitPoints=0，施加伤害会导致error，添加hitPoints > 0过滤
+
+----------------------------------------
+v0.7.1
+[调整]
+- AHF1-M、吗啡、P22的制作技能需求-Crafting统一为4
+- SJ1和SJ6的RecipeDef的defName统一添加“TGLabs”，保持一致性
+
+----------------------------------------
+v0.7.0
+[新增]
+- M.U.L.E兴奋剂注射器
+- SJ9-TGLabs战斗兴奋剂注射器
+- 添加组件：
+    EL_HediffComp_RandomBodyPartDamage：每N tick造成随机部位损伤
+- 添加defs：
+    EL_Injury_MetabolicDamage：代谢损伤，针剂副作用伤害，bleedRate=0，允许Tend和自然愈合，painPerSeverity=0.01，canMerge=true
+
+----------------------------------------
+v0.6.2
+[调整]
+- Propital回复部位改为 全部位（修改includeSolidParts=true）
+- EL_HediffCompProperties_RandomBodyPartHeal增加Solid部位筛选
+
+----------------------------------------
+v0.6.1
+[调整]
+- CompPostTick 添加 severity 范围检查
+- 添加组件：
+    EL_StageRandomBodyPartHeal： 含startSeverity/endSeverity字段以进行检查
+
+----------------------------------------
+v0.6.0
+[新增]
+- 肾上腺素注射器
+- PNB注射器
+- Propital注射器
+- EL_HediffCompProperties_RandomBodyPartHeal新增了canHealPermanent和bypassPermanentCheck两个字段
+
+----------------------------------------
+v0.5.0
+[新增]
+- EL_TGStimTrader:轨道针剂商船
+- EL_Patch_StimDrops：将针剂加入Reward_ItemsStandard、Reward_ReliquaryPilgrims和MapGen_AncientComplexRoomLoot_Default
+
+----------------------------------------
+v0.4.1
+[调整]
+- 调整部分针剂Hediff效果文本颜色
+
+----------------------------------------
+v0.4.0
+[新增]
+- 3-(b-TG)
+- Trimadol
+- Meldonin
+
+----------------------------------------
+v0.3.1
+[调整]
+- 按217*RUB=1*Sliver重新调整了所有针剂的MarketValue
+
+----------------------------------------
+v0.3.0
+[新增]
+- SJ12-TGLabs
+- P22
+- 添加组件：
+    EL_HediffCompProperties_StageHungerGain：每N ticks恢复x点饮食值
+    EL_HediffCompProperties_StageRestDrain：每N ticks扣除x点休息值
+
+----------------------------------------
+v0.2.3
+[调整]
+- StimsFromEFT.cs三处CompDescriptionExtra返回值前加\n换行符，后续新增的C#组件，其CompDescriptionExtra返回值也以\n开头
+
+----------------------------------------
+v0.2.2
+[调整]
+- MentalBreakThreshold和PainShockThreshold调整为正确的偏向，即两者的正面效果分别是-和+
+
+----------------------------------------
+v0.2.1
+[修复]
+- SJ1-TGLabs和SJ6-TGLabs贴图路径问题与命名问题，统一为EL_Stim_SJX_TGLabs
+
+----------------------------------------
+v0.2.0
+[新增]
+- SJ1-TGLabs
+- SJ6-TGLabs
+- 添加组件：
+    EL_HediffCompProperties_StageRestGain：每N ticks恢复x点休息值
+
+----------------------------------------
+v0.1.3
+[调整]
+- 笔式针筒的工作速度Stat改为DrugSynthesisSpeed
+
+----------------------------------------
+v0.1.2
+[调整]
+- EL_ThingCategories的icon更新为EL_Stims.png，位于Textures\UI\ThingCategory
+
+----------------------------------------
+v0.1.1
+[调整]
+- 已有针剂的marketvalue修改为原值的1/4，并为每个配方添加EL_Cartridge需求
+
+----------------------------------------
+v0.1.0
+[新增]
+- 笔式针筒
+
+----------------------------------------
+v0.0.6
+[修复]
+- 将label中的{}修改为rimworld支持的()
+- L1 defName 修改：从EL_Stim_L1至EL_Stim_L1_Norepinephrine
+
+----------------------------------------
+v0.0.5
+[新增]
+- 2A2-(b-TG)
+- l1
+
+----------------------------------------
+v0.0.4
+[调整]
+- AHF1-M的效果修改，使用InjuryHealingFactor
+- 重写PrepareTick，首次调用时播放音效
+
+----------------------------------------
+v0.0.3
+[新增]
+- 为针剂注射新增了音效EL_Stim_Inject.wav
+
+----------------------------------------
+v0.0.2
+[调整]
+- EL_StageHungerDrain添加description字段，CompDescriptionExtra改为按当前severity阶段返回对应文本
+- AHF1-M和Zagustin各添加一行<description>
+- 针剂的Graphic_StackCount修改为1
+
+----------------------------------------
+v0.0.1
+[新增]
+- AHF1-M
+- Zagustin
+- 添加组件：
+    EL_HediffCompProperties_StageHungerDrain：每N ticks消耗X点饮食值
+    EL_StageHungerDrain阶段定义：startSeverity/endSeverity/hungerPerSecond
+
+----------------------------------------
+Early version works
+[新增]
+- Morphine
+- 添加组件：
+    EL_StimUtility.InjectToTarget：对目标pawn施加效果，从user消耗针剂，冷却按user计算
+    EL_Recipe_InjectStim：自定义手术Worker，从ingredients取针剂并对目标pawn施加效果
+    EL_FloatMenuMaker_GetOptions_Patch：pawn携带针剂时，右键其他玩家阵营pawn时添加"为{target}注射针剂"选项
+
+
+
+ 
+
+
+
+
+

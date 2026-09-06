@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Meldonin (米屈肼) 兴奋剂注射器 -->
+  <!-- 900秒: 工作+20%/移动+40%, 每秒恢复0.005休息值 -->
+  <!-- 30秒延迟后持续870秒每秒消耗0.002饮食 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_Meldonin</defName>
+    <label>米屈肼注射器</label>
+    <description>面向运动员的兴奋药物，让使用者更快恢复精力并增强其力量和耐力，有效的减少疲惫感带来的影响，但有增加代谢压力的副作用。与此同时，米屈肼还有一项未被公布的特性——增加肌肉内部张力，提升人体组织的物理冲击抗性，这一性质也使得军方将其作为战斗兴奋剂。
+
+【施加效果】
+全局工作速度×120%，延迟0秒/持续900秒；
+移动速度×140%，延迟0秒/持续900秒；
+每秒恢复0.005休息值，延迟0秒/持续900秒；
+每秒消耗0.002饮食值，延迟30秒/持续870秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_Meldonin</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/Meldonin</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>431</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>750</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>24</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_Meldonin</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- Meldonin x1 单支生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Meldonin</defName>
+    <label>制作米屈肼注射器</label>
+    <description>制作1支米屈肼注射器。</description>
+    <jobString>正在制作米屈肼注射器。</jobString>
+    <workAmount>750</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>10</Medicine>
+      <Intellectual>8</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>24</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Meldonin>1</EL_Stim_Meldonin>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Meldonin x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Meldonin_Bulk</defName>
+    <label>制作4个米屈肼注射器</label>
+    <description>制作一批4支米屈肼注射器。</description>
+    <jobString>正在制作米屈肼注射器。</jobString>
+    <workAmount>3000</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>10</Medicine>
+      <Intellectual>8</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>96</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Meldonin>4</EL_Stim_Meldonin>
+    </products>
+  </RecipeDef>
+
+</Defs>

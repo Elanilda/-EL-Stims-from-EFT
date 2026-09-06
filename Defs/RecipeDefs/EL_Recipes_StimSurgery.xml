@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Abstract父类: 所有针剂注射手术的通用配置 -->
+  <!-- 继承原版SurgeryFlesh以获得手术界面默认属性 -->
+  <!-- 参考原版BloodTransfusion: 无身体部位目标、不麻醉、总是成功 -->
+  <!-- ============================================================ -->
+  <RecipeDef Abstract="True" Name="EL_StimSurgeryBase" ParentName="SurgeryFlesh">
+    <!-- 总是成功, 无失败/死亡风险 -->
+    <surgeryOutcomeEffect IsNull="True" />
+    <!-- 不针对具体身体部位 -->
+    <targetsBodyPart>false</targetsBodyPart>
+    <!-- 不需麻醉 -->
+    <anesthetize>false</anesthetize>
+    <!-- 隐藏身体部位名称列表 -->
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <!-- 自定义Worker: 消耗针剂并对目标pawn施加Hediff+扣饮食 -->
+    <workerClass>EL_Recipe_InjectStim</workerClass>
+    <!-- 工作速度: 医疗操作速度 -->
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <!-- 工作技能: 医学(影响learnFactor) -->
+    <workSkill>Medicine</workSkill>
+    <!-- 手术执行时间(120 = 约2秒, 体现注射动作耗时，与音效时长同步) -->
+    <workAmount>120</workAmount>
+    <!-- 覆盖父类SurgeryFlesh的effectWorking: 移除血液特效, 针剂注射不需要 -->
+    <effectWorking IsNull="True" />
+    <!-- 覆盖父类SurgeryFlesh的soundWorking: 使用自定义注射音效替代原版手术音效 -->
+    <soundWorking>EL_Stim_Inject</soundWorking>
+    <!-- 无技能要求: 任何医生可执行 -->
+    <!-- recipeUsers不填: 自动对所有Pawn可用, 同原版BloodTransfusion -->
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- 吗啡注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectMorphine</defName>
+    <label>注射吗啡</label>
+    <description>注射吗啡以镇痛。</description>
+    <jobString>正在为TargetA注射吗啡针剂。</jobString>
+    <!-- 手术图标: 使用吗啡注射器贴图(指向具体文件,不含扩展名) -->
+    <uiIconPath>Stims/Morphine/EL_Morphine</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_Morphine</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_Morphine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- AHF1-M 止血注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectAHF1M</defName>
+    <label>注射AHF1-M</label>
+    <description>注射AHF1-M以止血并短暂提升免疫力。</description>
+    <jobString>正在为TargetA注射AHF1-M针剂。</jobString>
+    <uiIconPath>Stims/AHF1-M/EL_AHF1-M</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_AHF1M</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_AHF1M</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Zagustin 止血注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectZagustin</defName>
+    <label>注射Zagustin</label>
+    <description>注射Zagustin以强效长时止血。</description>
+    <jobString>正在为TargetA注射Zagustin针剂。</jobString>
+    <uiIconPath>Stims/Zagustin/EL_Zagustin</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_Zagustin</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_Zagustin</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- 2A2-(b-TG) 体能提升注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_Inject2A2_bTG</defName>
+    <label>注射2A2-(b-TG)</label>
+    <description>注射2A2-(b-TG)以提升承载能力和感知能力。</description>
+    <jobString>正在为TargetA注射2A2-(b-TG)针剂。</jobString>
+    <uiIconPath>Stims/2A2-(b-TG)/EL_2A2-(b-TG)</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_2A2_bTG</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_2A2_bTG</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- L1 去甲肾上腺素注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectL1</defName>
+    <label>注射L1</label>
+    <description>注射L1去甲肾上腺素以提升体能并抑制疼痛。</description>
+    <jobString>正在为TargetA注射L1针剂。</jobString>
+    <uiIconPath>Stims/L1/EL_L1</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_L1_Norepinephrine</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_L1_Norepinephrine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ1-TGLabs 战斗兴奋剂注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectSJ1</defName>
+    <label>注射SJ1</label>
+    <description>注射SJ1-TGLabs以提升移动和工作效率。</description>
+    <jobString>正在为TargetA注射SJ1-TGLabs针剂。</jobString>
+    <uiIconPath>Stims/SJ1-TGLabs/EL_SJ1-TGLabs</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_SJ1_TGLabs</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_SJ1_TGLabs</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ6-TGLabs 战斗兴奋剂注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectSJ6</defName>
+    <label>注射SJ6</label>
+    <description>注射SJ6-TGLabs以降低休息消耗并持续恢复休息值，但药效末期有中枢抑制。</description>
+    <jobString>正在为TargetA注射SJ6-TGLabs针剂。</jobString>
+    <uiIconPath>Stims/SJ6-TGLabs/EL_SJ6-TGLabs</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_SJ6_TGLabs</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_SJ6_TGLabs</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ12-TGLabs 战斗兴奋剂注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectSJ12</defName>
+    <label>注射SJ12</label>
+    <description>注射SJ12-TGLabs以恢复体能。</description>
+    <jobString>正在为TargetA注射SJ12-TGLabs针剂。</jobString>
+    <uiIconPath>Stims/SJ12-TGLabs/EL_SJ12-TGLabs</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_SJ12_TGLabs</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_SJ12_TGLabs</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- P22 (22号化合物) 兴奋剂注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectP22</defName>
+    <label>注射P22</label>
+    <description>注射P22以扩展身体能力、加快修复并提升机体耐受力。</description>
+    <jobString>正在为TargetA注射P22针剂。</jobString>
+    <uiIconPath>Stims/P22/EL_P22(22cpd)</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_P22_22cpd</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_P22_22cpd</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- 3-(b-TG) 手术注射 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_Inject3_bTG</defName>
+    <label>注射3-(b-TG)</label>
+    <description>注射3-(b-TG)以提升感知和操作能力。</description>
+    <jobString>正在为TargetA注射3-(b-TG)针剂。</jobString>
+    <uiIconPath>Stims/3-(b-TG)/EL_3-(b-TG)</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_3_bTG</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_3_bTG</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Trimadol 手术注射 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectTrimadol</defName>
+    <label>注射曲马多</label>
+    <description>注射曲马多以提升体能并抑制痛感。</description>
+    <jobString>正在为TargetA注射曲马多针剂。</jobString>
+    <uiIconPath>Stims/Trimadol/EL_Trimadol</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_Trimadol</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_Trimadol</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Meldonin 手术注射 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectMeldonin</defName>
+    <label>注射米屈肼</label>
+    <description>注射米屈肼以恢复精力并增强力量和耐力。</description>
+    <jobString>正在为TargetA注射米屈肼针剂。</jobString>
+    <uiIconPath>Stims/Meldonin/EL_Meldonin</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_Meldonin</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_Meldonin</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Adrenaline 肾上腺素注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectAdrenaline</defName>
+    <label>注射肾上腺素</label>
+    <description>注射肾上腺素以短暂提升体能并抑制疼痛。</description>
+    <jobString>正在为TargetA注射肾上腺素针剂。</jobString>
+    <uiIconPath>Stims/Adrenaline/EL_Adrenaline</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_Adrenaline</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_Adrenaline</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- PNB (16号化合物) 注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectPNB</defName>
+    <label>注射PNB</label>
+    <description>注射PNB以激活内部肌肉并加速组织恢复。</description>
+    <jobString>正在为TargetA注射PNB针剂。</jobString>
+    <uiIconPath>Stims/PNB/EL_PNB(16cpd)</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_PNB</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_PNB</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Propital 再生兴奋剂注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectPropital</defName>
+    <label>注射Propital</label>
+    <description>注射Propital以刺激机体再生并抑制痛感。</description>
+    <jobString>正在为TargetA注射Propital针剂。</jobString>
+    <uiIconPath>Stims/Propital/EL_Propital</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_Propital</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_Propital</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- M.U.L.E 注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectMULE</defName>
+    <label>注射M.U.L.E</label>
+    <description>注射M.U.L.E兴奋剂以大幅提升携带能力。</description>
+    <jobString>正在为TargetA注射M.U.L.E针剂。</jobString>
+    <uiIconPath>Stims/M.U.L.E/EL_M.U.L.E</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_MULE</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_MULE</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ9-TGLabs 注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectSJ9_TGLabs</defName>
+    <label>注射SJ9-TGLabs</label>
+    <description>注射SJ9-TGLabs以适应极端环境温度。</description>
+    <jobString>正在为TargetA注射SJ9-TGLabs针剂。</jobString>
+    <uiIconPath>Stims/SJ9-TGLabs/EL_SJ9-TGLabs</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_SJ9_TGLabs</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_SJ9_TGLabs</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- xTG-12 解毒剂注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectxTG12</defName>
+    <label>注射xTG-12</label>
+    <description>注射xTG-12以清除体内毒素并获得短暂免疫。</description>
+    <jobString>正在为TargetA注射xTG-12解毒剂。</jobString>
+    <uiIconPath>Stims/xTG-12/EL_xTG-12</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_xTG12_Antidote</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_xTG12_Antidote</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Perfotoran 人造血注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjectPerfotoran</defName>
+    <label>注射Perfotoran</label>
+    <description>注射Perfotoran人造血以清除毒素、止血并促进组织恢复。</description>
+    <jobString>正在为TargetA注射Perfotoran人造血。</jobString>
+    <uiIconPath>Stims/Perfotoran/EL_Perfotoran</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_Perfotoran</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_Perfotoran</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- eTG-change 再生剂注射手术 -->
+  <!-- ============================================================ -->
+  <RecipeDef ParentName="EL_StimSurgeryBase">
+    <defName>EL_Surgery_InjecteTGchange</defName>
+    <label>注射eTG-change</label>
+    <description>注射eTG-change极效再生剂以快速恢复严重创伤。</description>
+    <jobString>正在为TargetA注射eTG-change再生剂。</jobString>
+    <uiIconPath>Stims/eTG-change/EL_eTG-change</uiIconPath>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Stim_eTGchange</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Stim_eTGchange</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+</Defs>

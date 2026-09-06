@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Obdolbos 2 鸡尾酒兴奋剂注射器 -->
+  <!-- 1800秒超载强化: 工作/移动/操作/视觉/听觉+40%, 携带+90%, 休息下降+20% -->
+  <!-- 每秒消耗0.01休息值, 每秒随机损伤非solid部位1点(可归零) -->
+  <!-- MarketValue=195400/217≈901, defName加_cocktail后缀避免数字结尾报错 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_Obd2_cocktail</defName>
+    <label>Obdolbos 2鸡尾酒兴奋剂注射器</label>
+    <description>某位前Terragroup医药专家的又一产品，是其前代产品的全新版本，看来Terragroup实验室的关闭并没有停止他的实验步伐。
+
+【施加效果】
+操作能力+40%，延迟0秒/持续1800秒；
+视觉能力+40%，延迟0秒/持续1800秒；
+听觉能力+40%，延迟0秒/持续1800秒；
+全局工作速度×140%，延迟0秒/持续1800秒；
+移动速度×140%，延迟0秒/持续1800秒；
+携带能力×190%，延迟0秒/持续1800秒；
+休息值下降速率×120%，延迟0秒/持续1800秒；
+每秒对随机非骨骼身体部位造成1点代谢损伤，延迟0秒/持续1800秒；
+每秒消耗0.01休息值，延迟0秒/持续1800秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_Obd2_cocktail</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/Obd2</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>901</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>1440</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>35</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_Obd2_cocktail</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- Obd2 x1 单支生产配方 -->
+  <!-- 制作技能: 医疗12 智识10 手工10 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Obd2_cocktail</defName>
+    <label>制作Obdolbos 2鸡尾酒兴奋剂注射器</label>
+    <description>制作1支Obdolbos 2鸡尾酒兴奋剂注射器。</description>
+    <jobString>正在制作Obdolbos 2鸡尾酒兴奋剂注射器。</jobString>
+    <workAmount>1440</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>12</Medicine>
+      <Intellectual>10</Intellectual>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>35</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Obd2_cocktail>1</EL_Stim_Obd2_cocktail>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Obd2 x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Obd2_cocktail_Bulk</defName>
+    <label>批量制作Obdolbos 2鸡尾酒兴奋剂注射器</label>
+    <description>制作4支Obdolbos 2鸡尾酒兴奋剂注射器。</description>
+    <jobString>正在批量制作Obdolbos 2鸡尾酒兴奋剂注射器。</jobString>
+    <workAmount>5760</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>12</Medicine>
+      <Intellectual>10</Intellectual>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>140</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Obd2_cocktail>4</EL_Stim_Obd2_cocktail>
+    </products>
+  </RecipeDef>
+
+</Defs>

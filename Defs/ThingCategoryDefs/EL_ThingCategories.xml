@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- EFT针剂统一分类 -->
+  <!-- 挂在原版"药物(Drugs)"大类下, 便于玩家在存储黑白名单中统一管理 -->
+  <!-- 所有针剂统一归入此分类, 平铺显示 -->
+  <!-- ============================================================ -->
+  <ThingCategoryDef>
+    <defName>EL_Stims</defName>
+    <label>针剂</label>
+    <parent>Drugs</parent>
+    <iconPath>UI/ThingCategory/EL_Stims</iconPath>
+  </ThingCategoryDef>
+
+</Defs>

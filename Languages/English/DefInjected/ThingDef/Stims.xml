@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- EL_Stim_Storage -->
+  <EL_Stim_Storage.label>Stimulant Storage Cabinet</EL_Stim_Storage.label>
+  <EL_Stim_Storage.description>A tall metal storage cabinet with divided compartments for various stimulants and neutroamine. </EL_Stim_Storage.description>
+
+  <!-- EL_Cartridge -->
+  <EL_Cartridge.label>Injector Cartridge</EL_Cartridge.label>
+  <EL_Cartridge.description>An unfilled cartridge made of an engineered-plastic shell, steel knob-piston, transparent glass vial, and stainless steel needle. Used as a universal precursor for stimulant synthesis.</EL_Cartridge.description>
+
+  <!-- 2A2-(b-TG) -->
+  <EL_Stim_2A2_bTG.label>2A2-(b-TG) Stimulant Injector</EL_Stim_2A2_bTG.label>
+  <EL_Stim_2A2_bTG.description>A combat-support drug for reconnaissance or tactical movement, capable of stabilizing the central nervous system, helping personnel adapt to different environments, and enhancing carrying capacity, though it accelerates dehydration.
+
+[Applied Effects]
+carrying capacity ×130%, 0s delay/900s duration;
+manipulation +20%, 0s delay/900s duration;
+sight +20%, 0s delay/900s duration;
+hearing +20%, 0s delay/900s duration;
+consumes 0.001 food/s, 0s delay/900s duration.</EL_Stim_2A2_bTG.description>
+  <EL_Stim_2A2_bTG.comps.CompUsable.useLabel>Inject {0}</EL_Stim_2A2_bTG.comps.CompUsable.useLabel>
+
+  <!-- 3-(b-TG) -->
+  <EL_Stim_3_bTG.label>3-(b-TG) Stimulant Injector</EL_Stim_3_bTG.label>
+  <EL_Stim_3_bTG.description>A central-nervous-system stimulant containing 3-(b-phenylisopropyl) active substance. Increases perception and attention, and improves muscle strength by enhancing electromyographic signals.
+
+[Applied Effects]
+manipulation +60%, 0s delay/240s duration;
+sight +60%, 0s delay/240s duration;
+hearing +60%, 0s delay/240s duration;
+global work speed ×120%, 0s delay/240s duration;
+restores 0.01 sleep/s, 0s delay/240s duration;
+consumes 0.0025 food/s, 120s delay/120s duration;
+consciousness -15%, 120s delay/45s duration.</EL_Stim_3_bTG.description>
+  <EL_Stim_3_bTG.comps.CompUsable.useLabel>Inject {0}</EL_Stim_3_bTG.comps.CompUsable.useLabel>
+
+  <!-- Adrenaline -->
+  <EL_Stim_Adrenaline.label>Adrenaline Injector</EL_Stim_Adrenaline.label>
+  <EL_Stim_Adrenaline.description>A pen-injector containing a dose of adrenaline, used to enhance physiological responses while preparing muscles for intense exertion. Briefly boosts physical capacity and suppresses pain.
+
+[Applied Effects]
+pain ×10%, 0s delay/65s duration;
+manipulation +20%, 0s delay/65s duration;
+global work speed ×120%, 0s delay/65s duration;
+move speed ×120%, 0s delay/65s duration;
+shooting accuracy ×120%, 0s delay/65s duration;
+repairs 4 HP/s to random non-solid body parts, 0s delay/15s duration;
+consumes 0.018 food/s, 30s delay/30s duration.</EL_Stim_Adrenaline.description>
+  <EL_Stim_Adrenaline.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Adrenaline.comps.CompUsable.useLabel>
+
+  <!-- AHF1-M -->
+  <EL_Stim_AHF1M.label>AHF1-M Injector</EL_Stim_AHF1M.label>
+  <EL_Stim_AHF1M.description>A potent hemostatic agent developed from hemophilia factors. After injection, it temporarily stops all wound bleeding, increases bleeding resistance for 60 seconds, continuously prevents new wounds from bleeding, and slightly enhances the body's self-repair. It increases metabolic stress and may cause mild dehydration during its effect.
+
+[Applied Effects]
+total bleed factor ×0%, 0s delay/60s duration;
+injury healing factor +10%, 0s delay/60s duration;
+consumes 0.003 food/s, 0s delay/120s duration.</EL_Stim_AHF1M.description>
+  <EL_Stim_AHF1M.comps.CompUsable.useLabel>Inject {0}</EL_Stim_AHF1M.comps.CompUsable.useLabel>
+
+  <!-- eTG-change -->
+  <EL_Stim_eTGchange.label>eTG-change Regenerator Injector</EL_Stim_eTGchange.label>
+  <EL_Stim_eTGchange.description>An extreme-potency tissue-regeneration promoter, used for treating severe trauma or rapid recovery of casualties during transport. It has strong side effects, so its use is strictly limited to professional medical personnel.
+
+[Applied Effects]
+metabolism +20%, 0s delay/60s duration;
+immunity gain speed +20%, 0s delay/60s duration;
+repairs 7 HP/s to random body parts (can heal scars), 0s delay/60s duration;
+reduces blood loss by 0.005/s, 0s delay/60s duration;
+restores 0.05 food/s, 0s delay/60s duration;
+consumes 0.03 food/s, 40s delay/40s duration;
+moving -10%, 60s delay/60s duration;
+injury healing factor ×90%, 60s delay/60s duration.</EL_Stim_eTGchange.description>
+  <EL_Stim_eTGchange.comps.CompUsable.useLabel>Inject {0}</EL_Stim_eTGchange.comps.CompUsable.useLabel>
+
+  <!-- L1 (Norepinephrine) -->
+  <EL_Stim_L1_Norepinephrine.label>L1 (Norepinephrine) Injector</EL_Stim_L1_Norepinephrine.label>
+  <EL_Stim_L1_Norepinephrine.description>A disposable pen-injector containing norepinephrine, used to briefly enhance physical capacity and reduce the impact of pain. It also enhances the execution of physiological responses such as "fight or flight", though it also increases metabolic consumption.
+
+[Applied Effects]
+pain ×10%, 0s delay/120s duration;
+global work speed ×140%, 0s delay/120s duration;
+move speed ×120%, 0s delay/120s duration;
+sleep fall rate ×70%, 0s delay/120s duration;
+consumes 0.009 food/s, 0s delay/60s duration.</EL_Stim_L1_Norepinephrine.description>
+  <EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>Inject {0}</EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>
+
+  <!-- M.U.L.E -->
+  <EL_Stim_MULE.label>M.U.L.E Stimulant Injector</EL_Stim_MULE.label>
+  <EL_Stim_MULE.description>An extreme muscle-stimulating stimulant, used before long marches to enhance the body's load-bearing capacity. It has proven effective in theaters with poor logistics, allowing soldiers to carry more weight for extended periods, as the name suggests.
+
+[Applied Effects]
+carrying capacity ×200%, 0s delay/900s duration;
+deals 1 metabolic damage to random non-solid body parts every 10s, 0s delay/900s duration.</EL_Stim_MULE.description>
+  <EL_Stim_MULE.comps.CompUsable.useLabel>Inject {0}</EL_Stim_MULE.comps.CompUsable.useLabel>
+
+  <!-- Meldonin -->
+  <EL_Stim_Meldonin.label>Meldonin Injector</EL_Stim_Meldonin.label>
+  <EL_Stim_Meldonin.description>An athletic-performance stimulant that helps the user recover energy faster and enhances strength and endurance, effectively reducing the impact of fatigue, though it has the side effect of increasing metabolic stress. Additionally, meldonin has an undisclosed property of increasing internal muscle tension and enhancing the physical-impact resistance of body tissues, which led the military to adopt it as a combat stimulant.
+
+[Applied Effects]
+global work speed ×120%, 0s delay/900s duration;
+move speed ×140%, 0s delay/900s duration;
+restores 0.005 sleep/s, 0s delay/900s duration;
+consumes 0.002 food/s, 30s delay/870s duration.</EL_Stim_Meldonin.description>
+  <EL_Stim_Meldonin.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Meldonin.comps.CompUsable.useLabel>
+
+  <!-- Morphine -->
+  <EL_Stim_Morphine.label>Morphine Injector</EL_Stim_Morphine.label>
+  <EL_Stim_Morphine.description>A disposable pen-injector containing a large dose of morphine. After use, it drastically suppresses pain but increases metabolic consumption.
+
+[Applied Effects]
+pain ×5%, 0s delay/305s duration;
+immediately consumes 15% food on use.</EL_Stim_Morphine.description>
+  <EL_Stim_Morphine.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Morphine.comps.CompUsable.useLabel>
+
+  <!-- Obd2 -->
+  <EL_Stim_Obd2_cocktail.label>Obdolbos 2 Cocktail Stimulant Injector</EL_Stim_Obd2_cocktail.label>
+  <EL_Stim_Obd2_cocktail.description>Another product from a former Terragroup medical expert, a brand-new version of its predecessor. It seems the closure of Terragroup's labs did not stop his experiments.
+
+[Applied Effects]
+manipulation +40%, 0s delay/1800s duration;
+sight +40%, 0s delay/1800s duration;
+hearing +40%, 0s delay/1800s duration;
+global work speed ×140%, 0s delay/1800s duration;
+move speed ×140%, 0s delay/1800s duration;
+carrying capacity ×190%, 0s delay/1800s duration;
+sleep fall rate ×120%, 0s delay/1800s duration;
+deals 1 metabolic damage to random non-solid body parts every second, 0s delay/1800s duration;
+consumes 0.01 sleep/s, 0s delay/1800s duration.</EL_Stim_Obd2_cocktail.description>
+  <EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>
+
+  <!-- Obdolbos -->
+  <EL_Stim_Obdolbos.label>Obdolbos Cocktail Stimulant Injector</EL_Stim_Obdolbos.label>
+  <EL_Stim_Obdolbos.description>An injector containing an unknown homemade drug, created by a former Terragroup medical expert. Each dose has different side effects. If you feel you have nothing left to lose, you might as well take the risk, at least the inventor of this stimulant did so himself.
+
+[Applied Effects]
+randomly triggers 15 effects in total, each with an independent 25% chance, lasting 600s.</EL_Stim_Obdolbos.description>
+  <EL_Stim_Obdolbos.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Obdolbos.comps.CompUsable.useLabel>
+
+  <!-- P22 -->
+  <EL_Stim_P22_22cpd.label>P22 (Compound 22) Stimulant Injector</EL_Stim_P22_22cpd.label>
+  <EL_Stim_P22_22cpd.description>A military muscle-promoting agent, used before combat to expand the body's capabilities, reduce damage taken, and accelerate recovery, though fatigue follows after the effect ends.
+
+[Applied Effects]
+injury healing factor +30%, 0s delay/60s duration;
+blood filtration +30%, 0s delay/60s duration;
+mental break threshold ×70%, 0s delay/60s duration;
+pain shock threshold ×130%, 0s delay/60s duration;
+move speed ×80%, 60s delay/65s duration;
+consumes 0.008 sleep/s, 60s delay/65s duration.</EL_Stim_P22_22cpd.description>
+  <EL_Stim_P22_22cpd.comps.CompUsable.useLabel>Inject {0}</EL_Stim_P22_22cpd.comps.CompUsable.useLabel>
+
+  <!-- Perfotoran -->
+  <EL_Stim_Perfotoran.label>Perfotoran Artificial Blood Injector</EL_Stim_Perfotoran.label>
+  <EL_Stim_Perfotoran.description>Artificial blood is a submicron emulsion based on a PFO mixture, a blood substitute that can transport oxygen. Once infused into the blood, it can temporarily act as plasma, accelerate metabolism, and promote tissue recovery. Used as a universal antidote for poisoning, radiation, and severe blood loss, though overuse still brings heavy negative physiological effects.
+
+[Applied Effects]
+instantly removes toxic buildup, food poisoning, scaria infection, and lung rot, and grants immunity while active, 0s delay/120s duration;
+total bleed factor ×0%, 0s delay/120s duration;
+reduces blood loss by 0.015/s, 0s delay/120s duration;
+repairs 2 HP/s to random non-solid body parts (can heal scars), 0s delay/120s duration;
+metabolism +10%, 0s delay/120s duration;
+injury healing factor ×85%, 60s delay/60s duration;
+consumes 0.011 food/s, 60s delay/60s duration.</EL_Stim_Perfotoran.description>
+  <EL_Stim_Perfotoran.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Perfotoran.comps.CompUsable.useLabel>
+
+  <!-- PNB -->
+  <EL_Stim_PNB.label>PNB Injector</EL_Stim_PNB.label>
+  <EL_Stim_PNB.description>A military stimulant that briefly activates internal muscles, making muscle tissue highly permeable to reduce damage taken. PNB also accelerates protein synthesis transport, speeding tissue recovery. It has side effects on immune compensation.
+
+[Applied Effects]
+consciousness +20%, 0s delay/40s duration;
+global work speed ×140%, 0s delay/40s duration;
+repairs 3 HP/s to random non-solid body parts, 0s delay/40s duration;
+consciousness -15%, 40s delay/20s duration;
+injury healing factor ×80%, 40s delay/181s duration;
+blood filtration -20%, 40s delay/181s duration.</EL_Stim_PNB.description>
+  <EL_Stim_PNB.comps.CompUsable.useLabel>Inject {0}</EL_Stim_PNB.comps.CompUsable.useLabel>
+
+  <!-- Propital -->
+  <EL_Stim_Propital.label>Propital Injector</EL_Stim_Propital.label>
+  <EL_Stim_Propital.description>A military physical-enhancement drug that stimulates the body's regeneration process by increasing the biosynthesis of purine and pyrimidine bases, RNA, and functional enzymes. It boosts metabolism and suppresses pain, but has severe terminal side effects, so it is generally limited to professional medical personnel.
+
+[Applied Effects]
+pain ×10%, 0s delay/245s duration;
+metabolism +20%, 0s delay/300s duration;
+blood filtration +20%, 0s delay/300s duration;
+injury healing factor ×120%, 0s delay/300s duration;
+repairs 1 HP/s to random body parts, 0s delay/300s duration;
+sight -15%, 270s delay/30s duration;
+consciousness -15%, 270s delay/30s duration.</EL_Stim_Propital.description>
+  <EL_Stim_Propital.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Propital.comps.CompUsable.useLabel>
+
+  <!-- SJ1-TGLabs -->
+  <EL_Stim_SJ1_TGLabs.label>SJ1-TGLabs Combat Stimulant Injector</EL_Stim_SJ1_TGLabs.label>
+  <EL_Stim_SJ1_TGLabs.description>A military combat stimulant, injected before combat to enhance physical capacity and reduce pain sensitivity. It has severe metabolic side effects. Also serves as a precursor drug in drug synthesis.
+
+[Applied Effects]
+move speed ×120%, 0s delay/180s duration;
+global work speed ×120%, 0s delay/180s duration;
+mental break threshold ×80%, 0s delay/180s duration;
+pain shock threshold ×120%, 0s delay/180s duration;
+consumes 0.005 food/s, 100s delay/200s duration.</EL_Stim_SJ1_TGLabs.description>
+  <EL_Stim_SJ1_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ1_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- SJ12-TGLabs -->
+  <EL_Stim_SJ12_TGLabs.label>SJ12-TGLabs Combat Stimulant Injector</EL_Stim_SJ12_TGLabs.label>
+  <EL_Stim_SJ12_TGLabs.description>A specialist combat stimulant that selectively slows certain body functions to redirect recovery. Its mechanism forces the hypothalamus to secrete vasopressin to shift adrenal function, lowering body temperature to enhance perception. After the effect ends, the body temperature rises due to organs not functioning normally.
+
+[Applied Effects]
+sight +30%, 0s delay/600s duration;
+hearing +30%, 0s delay/600s duration;
+minimum comfortable temperature -8°C, 0s delay/600s duration;
+restores 0.01 food/s, 0s delay/600s duration;
+maximum comfortable temperature -12°C, 600s delay/300s duration.</EL_Stim_SJ12_TGLabs.description>
+  <EL_Stim_SJ12_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ12_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- SJ6-TGLabs -->
+  <EL_Stim_SJ6_TGLabs.label>SJ6-TGLabs Combat Stimulant Injector</EL_Stim_SJ6_TGLabs.label>
+  <EL_Stim_SJ6_TGLabs.description>A high-efficiency military athletic stimulant, injected before combat to effectively enhance overall physical function and eliminate fatigue, though it has obvious central-suppression side effects at the end.
+
+[Applied Effects]
+sleep fall rate ×70%, 0s delay/200s duration;
+restores 0.02 sleep/s, 0s delay/200s duration;
+consciousness -15%, 200s delay/40s duration;
+sight -15%, 200s delay/40s duration.</EL_Stim_SJ6_TGLabs.description>
+  <EL_Stim_SJ6_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ6_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- SJ9-TGLabs -->
+  <EL_Stim_SJ9_TGLabs.label>SJ9-TGLabs Combat Stimulant Injector</EL_Stim_SJ9_TGLabs.label>
+  <EL_Stim_SJ9_TGLabs.description>A special environmental-adaptation drug that significantly slows metabolism to increase the body's adaptability to extreme environments. It also reduces heat dissipation, shrinking thermal-imaging signatures while keeping metabolism at a low but safe level.
+
+[Applied Effects]
+minimum comfortable temperature -21°C, 0s delay/300s duration;
+maximum comfortable temperature +14°C, 0s delay/300s duration;
+metabolism -20%, 0s delay/300s duration;
+deals 1 metabolic damage to random non-solid body parts every 10s, 0s delay/420s duration;
+pain ×115%, 300s delay/120s duration.</EL_Stim_SJ9_TGLabs.description>
+  <EL_Stim_SJ9_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ9_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- Trimadol -->
+  <EL_Stim_Trimadol.label>Trimadol Injector</EL_Stim_Trimadol.label>
+  <EL_Stim_Trimadol.description>A comprehensive opioid-based enhancer for special operations personnel, promoting the opening of potassium and calcium ion channels in central and spinal nerve cells, causing membrane hyperpolarization and suppressing pain, but it places enormous metabolic stress on the body.
+
+[Applied Effects]
+pain ×5%, 0s delay/180s duration;
+manipulation +10%, 0s delay/180s duration;
+global work speed ×110%, 0s delay/180s duration;
+move speed ×110%, 0s delay/180s duration;
+mental break threshold ×90%, 0s delay/180s duration;
+pain shock threshold ×110%, 0s delay/180s duration;
+sleep fall rate ×90%, 0s delay/180s duration;
+restores 0.03 sleep/s, 0s delay/180s duration;
+consumes 0.01 food/s, 0s delay/180s duration.</EL_Stim_Trimadol.description>
+  <EL_Stim_Trimadol.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Trimadol.comps.CompUsable.useLabel>
+
+  <!-- xTG-12 -->
+  <EL_Stim_xTG12_Antidote.label>xTG-12 Antidote Injector</EL_Stim_xTG12_Antidote.label>
+  <EL_Stim_xTG12_Antidote.description>A broad-spectrum antitoxin neutralizer, capable of neutralizing most artificial or natural toxins. When its components are distributed in the blood, it provides immunity to toxins. It has side effects on the body's self-repair function.
+
+[Applied Effects]
+instantly removes toxic buildup, food poisoning, scaria infection, and lung rot, and grants immunity while active, 0s delay/240s duration;
+injury healing factor -10%, 180s delay/60s duration.</EL_Stim_xTG12_Antidote.description>
+  <EL_Stim_xTG12_Antidote.comps.CompUsable.useLabel>Inject {0}</EL_Stim_xTG12_Antidote.comps.CompUsable.useLabel>
+
+  <!-- Zagustin -->
+  <EL_Stim_Zagustin.label>Zagustin Injector</EL_Stim_Zagustin.label>
+  <EL_Stim_Zagustin.description>A potent military hemostatic agent, inhibiting fibrin catalysis and slowing its conversion to plasmin. After injection, it temporarily stops all bleeding and increases bleeding resistance. The post-effect phase increases metabolic loss and causes dehydration, possibly with brief confusion.
+
+[Applied Effects]
+immediate hemostasis, 0s delay/180s duration;
+blood filtration +40%, 0s delay/180s duration;
+metabolism -10%, 0s delay/180s duration;
+consciousness -15%, 170s delay/40s duration;
+consumes 0.014 food/s, 170s delay/40s duration.</EL_Stim_Zagustin.description>
+  <EL_Stim_Zagustin.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Zagustin.comps.CompUsable.useLabel>
+
+  <!-- EL_Blueprint_Obdolbos -->
+  <EL_Blueprint_Obdolbos.label>Obdolbos Recipe Notes</EL_Blueprint_Obdolbos.label>
+  <EL_Blueprint_Obdolbos.description>A notebook stored in a blueprint case, recording the complete formula for the Obdolbos cocktail stimulant injector. It is a manuscript copy left by a former Terragroup medical expert. Using it unlocks the Obdolbos crafting recipe at the drug lab.</EL_Blueprint_Obdolbos.description>
+  <EL_Blueprint_Obdolbos.comps.CompUsable.useLabel>Study {0}</EL_Blueprint_Obdolbos.comps.CompUsable.useLabel>
+
+  <!-- EL_Blueprint_Obd2_cocktail -->
+  <EL_Blueprint_Obd2_cocktail.label>Obd2 Crafting Manual</EL_Blueprint_Obd2_cocktail.label>
+  <EL_Blueprint_Obd2_cocktail.description>A technical manual stored in a blueprint case, recording the complete formula for the Obdolbos 2 cocktail stimulant injector. It is a printed publication based on the manuscript, seemingly more standardized. Using it unlocks the Obd2 crafting recipe at the drug lab.</EL_Blueprint_Obd2_cocktail.description>
+  <EL_Blueprint_Obd2_cocktail.comps.CompUsable.useLabel>Study {0}</EL_Blueprint_Obd2_cocktail.comps.CompUsable.useLabel>
+
+</LanguageData>

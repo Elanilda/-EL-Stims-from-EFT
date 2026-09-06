@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- eTG-change 再生兴奋剂注射器 -->
+  <!-- 全部位第三档治疗(治疤不留疤) + 减血 + 回复饮食 + 消化/免疫 + 副作用 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_eTGchange</defName>
+    <label>eTG-change再生剂注射器</label>
+    <description>极效机体再生促进剂，用于处理严重创伤或重伤员在运输过程中的快速恢复，有着极强的副作用，因此严格限制由专业医师施用。
+
+【施加效果】
+消化能力+20%，延迟0秒/持续60秒；
+免疫速度+20%，延迟0秒/持续60秒；
+随机修复任意身体部位7点/秒（可修复疤痕），延迟0秒/持续60秒；
+每秒减少0.005失血度，延迟0秒/持续60秒；
+每秒恢复0.05饮食值，延迟0秒/持续60秒；
+每秒消耗0.03饮食值，延迟40秒/持续40秒；
+移动能力-10%，延迟60秒/持续60秒；
+愈合系数×90%，延迟60秒/持续60秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_eTGchange</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/eTG-change</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>626</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>880</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>28</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_eTGchange</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- eTG-change x1 单支生产配方 -->
+  <!-- 制作技能: 医疗12 智识12 手工6 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_eTGchange</defName>
+    <label>制作eTG-change再生剂注射器</label>
+    <description>制作1支eTG-change再生剂注射器。</description>
+    <jobString>正在制作eTG-change再生剂注射器。</jobString>
+    <workAmount>880</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>12</Medicine>
+      <Intellectual>12</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>28</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_eTGchange>1</EL_Stim_eTGchange>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- eTG-change x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_eTGchange_Bulk</defName>
+    <label>批量制作eTG-change再生剂注射器</label>
+    <description>制作4支eTG-change再生剂注射器。</description>
+    <jobString>正在批量制作eTG-change再生剂注射器。</jobString>
+    <workAmount>3520</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>12</Medicine>
+      <Intellectual>12</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>112</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_eTGchange>4</EL_Stim_eTGchange>
+    </products>
+  </RecipeDef>
+
+</Defs>

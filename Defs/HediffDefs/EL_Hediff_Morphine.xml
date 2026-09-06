@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 吗啡止痛效果 -->
+  <!-- 痛觉×0.05持续305秒 (18300 ticks, severityPerDay≈-3.28) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Morphine</defName>
+    <label>吗啡止痛</label>
+    <labelNoun>吗啡止痛</labelNoun>
+    <description>吗啡的止痛效果正在生效。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <!-- 浅蓝色标签, 区别于原版红色负面hediff -->
+    <defaultLabelColor>(0.4, 0.6, 1.0)</defaultLabelColor>
+    <comps>
+      <!-- 305秒 = 18300 ticks, severityPerDay = -3.28 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.28</severityPerDay>
+        <!-- HUD上显示剩余恢复时间(小时), 玩家可直观判断药效剩余 -->
+        <!-- showHoursToRecover属于SeverityPerDay的字段, 非Disappears -->
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>18300</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.01</minSeverity>
+        <painFactor>0.05</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

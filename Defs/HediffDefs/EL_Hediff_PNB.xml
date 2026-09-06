@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- PNB (16号化合物) 机体回复效果 -->
+  <!-- 221秒总持续 -->
+  <!-- 0-40秒: 意识+20%, 工作+40%, 回复器官损伤(第一档, 每秒3点) -->
+  <!-- 41-61秒(20秒): 意识-15%, 愈合-20%, 血液过滤-20% -->
+  <!-- 62-221秒(160秒): 愈合-20%, 血液过滤-20% -->
+  <!-- 第一档: canHealPermanent=false, bypassPermanentCheck=false -->
+  <!-- 治疗普通伤调用Heal(), 可能留下疤痕 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_PNB</defName>
+    <label>PNB机体回复</label>
+    <labelNoun>PNB机体回复</labelNoun>
+    <description>PNB正在发挥药效，意识和工作能力提升，机体组织正在快速恢复。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.20, 0.50)</defaultLabelColor>
+    <comps>
+      <!-- 221秒 = 13260 ticks, severityPerDay = -60000/13260 ≈ -4.525 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.525</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>13260</disappearsAfterTicks>
+      </li>
+      <!-- 前40秒每秒回复随机非solid部位3点耐久(第一档) -->
+      <!-- 40/221=0.1810, 1-0.1810=0.8190 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartHeal">
+        <healAmount>3</healAmount>
+        <ticksInterval>60</ticksInterval>
+        <canHealPermanent>false</canHealPermanent>
+        <bypassPermanentCheck>false</bypassPermanentCheck>
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.8190</endSeverity>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段3: severity 0.0~0.7240 (62-221秒, 160秒): 愈合-20%, 血液过滤-20% -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>后效期</label>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <InjuryHealingFactor>0.8</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 阶段2: severity 0.7240~0.8190 (41-61秒, 20秒): 意识-15%, 愈合-20%, 血液过滤-20% -->
+      <li>
+        <minSeverity>0.7240</minSeverity>
+        <label>消退期</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <InjuryHealingFactor>0.8</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 阶段1: severity 0.8190~1.0 (0-40秒): 意识+20%, 工作+40% -->
+      <li>
+        <minSeverity>0.8190</minSeverity>
+        <label>高效期</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <WorkSpeedGlobal>1.4</WorkSpeedGlobal>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- EL针剂储存柜 (以原版物品架Shelf为基础, 高大冰箱设定) -->
+  <!-- 只收EL_Stims分类物品和中性胺, 内容物隐藏不渲染 -->
+  <!-- thingClass为Toolkit前置的EL_Building_HiddenStorage -->
+  <!-- 2x1共2格, maxItemsInCell=16, 总容量32摞 -->
+  <!-- ============================================================ -->
+  <ThingDef Name="EL_Stim_StorageBase" Abstract="True">
+    <category>Building</category>
+    <thingClass>EL_Building_HiddenStorage</thingClass>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <statBases>
+      <SellPriceFactor>0.80</SellPriceFactor>
+      <Flammability>0.3</Flammability>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Mass>24</Mass>
+      <WorkToBuild>2400</WorkToBuild>
+    </statBases>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.8</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>50</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>12</maxItemsInCell>
+      <blueprintClass>Blueprint_Storage</blueprintClass>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <categories>
+            <li>EL_Stims</li>
+          </categories>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+          <disallowedCategories>
+            <li>Chunks</li>
+            <li>Plants</li>
+            <li>Buildings</li>
+          </disallowedCategories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>EL_Stims</li>
+          </categories>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+      <li>EL_ITab_StimStorage</li>
+    </inspectorTabs>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <modExtensions>
+      <li Class="EL_StorageExtension">
+        <hideContainedItems>true</hideContainedItems>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="EL_Stim_StorageBase">
+    <defName>EL_Stim_Storage</defName>
+    <label>针剂储存柜</label>
+    <description>高大的药品储存柜，内部有分格放置的针剂架存放各种针剂，并有下侧抽屉存放中性胺。</description>
+    <graphicData>
+      <texPath>Things/EL_Stims_Storage/EL_Stim_Storage</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.8,1.8)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+      <!-- 贴图整体上调: 第三位数值为向上偏移(单位:格), 位置不合适时微调此值 -->
+      <drawOffset>(0,0,0.3)</drawOffset>
+    </graphicData>
+    <statBases>
+      <Beauty>1</Beauty>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>MedicineProduction</li>
+    </researchPrerequisites>
+    <designationCategory>Furniture</designationCategory>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <size>(2,1)</size>
+  </ThingDef>
+
+</Defs>

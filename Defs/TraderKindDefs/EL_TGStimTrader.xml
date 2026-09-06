@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- TG轨道补给船 (Terragroup Orbital Supply Ship) -->
+  <!-- 方案C: 专属轨道商人, 通过OrbitalTraderArrival事件随机到访 -->
+  <!-- 不绑定派系(faction为空), 玩家无需关系门槛即可交易 -->
+  <!-- commonality=1.0 使其与原版轨道商人在同一权重池中抽签 -->
+  <!-- StockGenerator_MultiDef 同时承担生成库存与回收定价, 玩家可卖出多余针剂 -->
+  <!-- ============================================================ -->
+  <TraderKindDef>
+    <defName>EL_TGStimTrader</defName>
+    <label>TG轨道补给船</label>
+    <commonality>1.0</commonality>
+    <orbital>true</orbital>
+    <stockGenerators>
+
+      <!-- 银色找零池 (商人必备, 保证玩家有找零能力) -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>800~2000</countRange>
+      </li>
+
+      <!-- ============================================================ -->
+      <!-- 针剂货架 (StockGenerator_SingleDef分档供货) -->
+      <!-- StockGenerator_MultiDef每次只随机选一种生成, 无法保证每种都上架 -->
+      <!-- 改用多个SingleDef, 每种针剂独立countRange, 按MarketValue分4档 -->
+      <!-- SingleDef的HandlesThingDef自动回收该针剂(玩家可卖出多余库存) -->
+      <!-- ============================================================ -->
+
+      <!-- 低价值档 (MarketValue < 100): 8~12 支 -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_Morphine</thingDef>
+        <countRange>8~12</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_P22_22cpd</thingDef>
+        <countRange>8~12</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_L1_Norepinephrine</thingDef>
+        <countRange>8~12</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_Adrenaline</thingDef>
+        <countRange>8~12</countRange>
+      </li>
+
+      <!-- 中低价值档 (100~200): 5~8 支 -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_AHF1M</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_3_bTG</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_Zagustin</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_SJ1_TGLabs</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_SJ9_TGLabs</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_xTG12_Antidote</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_PNB</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_Propital</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+
+      <!-- 中高价值档 (200~350): 3~6 支 -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_SJ12_TGLabs</thingDef>
+        <countRange>3~6</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_2A2_bTG</thingDef>
+        <countRange>3~6</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_Perfotoran</thingDef>
+        <countRange>3~6</countRange>
+      </li>
+
+      <!-- 高价值档 (>350): 1~3 支 -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_Trimadol</thingDef>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_MULE</thingDef>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_eTGchange</thingDef>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_SJ6_TGLabs</thingDef>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Stim_Meldonin</thingDef>
+        <countRange>1~3</countRange>
+      </li>
+
+      <!-- ============================================================ -->
+      <!-- 原料供货 (针筒前体 + 合成材料) -->
+      <!-- ============================================================ -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>EL_Cartridge</thingDef>
+        <countRange>15~30</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Neutroamine</thingDef>
+        <countRange>45~120</countRange>
+      </li>
+
+      <!-- 原版工业药 (作为基础医疗物资补充) -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineIndustrial</thingDef>
+        <countRange>5~8</countRange>
+      </li>
+
+    </stockGenerators>
+  </TraderKindDef>
+
+</Defs>

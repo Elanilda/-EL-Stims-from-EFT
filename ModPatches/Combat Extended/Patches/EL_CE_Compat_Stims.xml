@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ============================================================
+  [EL]Stims from EFT - Combat Extended 兼容补丁
+  仅在CE启用时加载(由根目录LoadFolders.xml条件挂载Compatibility文件夹)
+  ============================================================
+  CE对相关词条的改动(依据CE 1.6源Defs/Patches):
+  1. 携带能力拆分: 原版CarryingCapacity拆为
+     - CarryWeight  重量携带能力(kg, 基础40)
+     - CarryBulk    体积携带能力(基础20)
+  2. 射击精度: 原版ShootingAccuracyPawn的defName被CE保留,
+     但label重定义为"weapon handling(武器掌握)", 数值体系重做为
+     sway=(4.5-武器掌握)*武器摆动系数, 上限13
+  ============================================================
+  补丁内容:
+  A. 四种提升携带能力的针剂: 在同一stage的statFactors中,
+     按原倍率同步添加CarryWeight与CarryBulk系数
+     (保留原CarryingCapacity系数, 不与CE冲突)
+  B. 肾上腺素(Adrenaline): 原ShootingAccuracyPawn 1.2倍率在CE下
+     自动映射为武器掌握+20%, 语义依旧成立, 无需补丁
+  C. 为全部22种针剂注射器添加Bulk(单件体积)0.1
+     注意: PatchOperationAdd只作用于第一个命中节点,
+     因此每个def必须单独一条Operation, 不能合并xpath
+  D. 针筒Bulk=0.1, 针剂储存柜Bulk=12
+  ============================================================
+-->
+<Patch>
+
+  <!-- ========== A. 携带能力 → CarryWeight + CarryBulk ========== -->
+
+  <!-- 2A2-(b-TG): 携带能力+30% -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="EL_Hediff_2A2_bTG"]/stages/li[1]/statFactors</xpath>
+    <value>
+      <CarryWeight>1.3</CarryWeight>
+      <CarryBulk>1.3</CarryBulk>
+    </value>
+  </Operation>
+
+  <!-- M.U.L.E: 携带能力+100% -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="EL_Hediff_MULE"]/stages/li[1]/statFactors</xpath>
+      <value>
+        <CarryWeight>2.0</CarryWeight>
+        <CarryBulk>2.0</CarryBulk>
+      </value>
+  </Operation>
+
+  <!-- Obd2鸡尾酒: 携带能力+90% -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="EL_Hediff_Obd2_cocktail"]/stages/li[1]/statFactors</xpath>
+    <value>
+      <CarryWeight>1.9</CarryWeight>
+      <CarryBulk>1.9</CarryBulk>
+    </value>
+  </Operation>
+
+  <!-- Obdolbos: 携带能力+1% (实际效果在子Hediff Effect10上, 主Hediff EL_Hediff_Obdolbos仅做调度无stages) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="EL_Hediff_Obd_Effect10"]/stages/li[1]/statFactors</xpath>
+    <value>
+      <CarryWeight>1.01</CarryWeight>
+      <CarryBulk>1.01</CarryBulk>
+    </value>
+  </Operation>
+
+  <!-- ========== C. 注射器单件体积Bulk(逐def, 不可合并) ========== -->
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_2A2_bTG"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_3_bTG"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_AHF1M"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Adrenaline"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_L1_Norepinephrine"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_MULE"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Meldonin"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Morphine"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Obd2_cocktail"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Obdolbos"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_P22_22cpd"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_PNB"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Perfotoran"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Propital"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_SJ1_TGLabs"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_SJ12_TGLabs"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_SJ6_TGLabs"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_SJ9_TGLabs"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Trimadol"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Zagustin"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_eTGchange"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_xTG12_Antidote"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <!-- ========== D. 针筒与储存柜的Bulk ========== -->
+  <!-- 针筒单件体积与注射器一致 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Cartridge"]/statBases</xpath>
+    <value>
+      <Bulk>0.1</Bulk>
+    </value>
+  </Operation>
+
+  <!-- 针剂储存柜: 可搬运建筑, 搬运时按体积计算 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="EL_Stim_Storage"]/statBases</xpath>
+    <value>
+      <Bulk>12</Bulk>
+    </value>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Obdolbos 2 鸡尾酒兴奋剂 超载强化效果 -->
+  <!-- 总持续1800秒 = 108000 ticks -->
+  <!-- 单阶段: 全程持续, 所有强化与副作用同时生效 -->
+  <!--   强化: 移动+40%/工作+40%/操作+40%/视觉+40%/听觉+40%/携带+90% -->
+  <!--   副作用: 休息下降速率+20%, 每秒消耗0.01休息值 -->
+  <!--   代谢损伤: 每秒(60 ticks)随机非solid部位1点, ignoreHPLimit=true允许归零 -->
+  <!-- severityPerDay = -1.0/(108000/60000) ≈ -0.556 -->
+  <!-- defName加_cocktail后缀避免数字结尾触发ErrorCheckAllDefs -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd2_cocktail</defName>
+    <label>Obd2超载</label>
+    <labelNoun>Obd2超载</labelNoun>
+    <description>Obd2正在发挥药效，带来了极致且长效的身体强化与严重且漫长的致命性代谢副作用。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.95, 0.15, 0.15)</defaultLabelColor>
+    <comps>
+      <!-- 1800秒 = 108000 ticks, severityPerDay ≈ -0.556 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.556</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>108000</disappearsAfterTicks>
+      </li>
+      <!-- 每秒(60 ticks)对随机非solid部位造成1点代谢损伤 -->
+      <!-- ignoreHPLimit=true: 忽略currentHP>damageAmount限制, 允许部位耐久归零 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartDamage">
+        <damageHediff>EL_Injury_MetabolicDamage</damageHediff>
+        <damageAmount>1</damageAmount>
+        <ticksInterval>60</ticksInterval>
+        <ignoreHPLimit>true</ignoreHPLimit>
+      </li>
+      <!-- 全程1800秒每秒消耗0.01休息值, 共18.0 -->
+      <li Class="EL_HediffCompProperties_StageRestDrain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <restPerSecond>0.01</restPerSecond>
+            <description>每秒消耗0.01休息值，持续1800秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 单阶段: 全程1800秒, 强化与副作用同时生效 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>高效期</label>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.40</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.40</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.40</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <WorkSpeedGlobal>1.40</WorkSpeedGlobal>
+          <MoveSpeed>1.40</MoveSpeed>
+          <CarryingCapacity>1.90</CarryingCapacity>
+          <RestFallRateFactor>1.20</RestFallRateFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

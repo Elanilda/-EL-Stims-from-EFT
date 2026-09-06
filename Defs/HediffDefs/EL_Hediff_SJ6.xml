@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- SJ6-TGLabs 战斗兴奋效果 -->
+  <!-- 240秒总持续: 前200秒恢复休息+休息下降-30%, 后40秒意识/视觉-15% -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_SJ6_TGLabs</defName>
+    <label>SJ6体能提升</label>
+    <labelNoun>SJ6体能提升</labelNoun>
+    <description>SJ6正在发挥药效，休息消耗速率降低并持续恢复休息值。药效末期会出现中枢抑制，导致意识和视觉下降。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.45, 0.75, 0.95)</defaultLabelColor>
+    <comps>
+      <!-- 240秒 = 14400 ticks, severityPerDay = -1.0/(14400/60000) ≈ -4.17 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.17</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>14400</disappearsAfterTicks>
+      </li>
+      <!-- 分阶段休息恢复: 前200秒(severity 1.0→0.167)每秒恢复0.02休息值, 共4.0 -->
+      <li Class="EL_HediffCompProperties_StageRestGain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.167</endSeverity>
+            <restPerSecond>0.02</restPerSecond>
+            <description>每秒恢复0.02休息值，持续200秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段2: severity 0.0~0.167 (后40秒): 中枢抑制副作用 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <!-- 阶段1: severity 0.167~1.0 (前200秒): 高效期, 休息下降-30%+恢复休息值 -->
+      <li>
+        <minSeverity>0.167</minSeverity>
+        <label>高效期</label>
+        <statFactors>
+          <RestFallRateFactor>0.7</RestFallRateFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

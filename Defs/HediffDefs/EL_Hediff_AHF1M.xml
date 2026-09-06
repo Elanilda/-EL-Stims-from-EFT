@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- AHF1-M 止血效果 -->
+  <!-- 止血60秒(前60秒), 免疫+10%持续60秒, 120秒内共消耗0.36饮食 -->
+  <!-- 总持续120秒, severityPerDay ≈ -8.33 -->
+  <!-- severity 1.0→0.5: 前60秒(止血+免疫) -->
+  <!-- severity 0.5→0: 后60秒(仅饮食消耗) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_AHF1M</defName>
+    <label>AHF1-M止血</label>
+    <labelNoun>AHF1-M止血</labelNoun>
+    <description>AHF1-M正在发挥药效，伤口停止出血，人体自修复能力短暂增强。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.85, 0.65, 0.25)</defaultLabelColor>
+    <comps>
+      <!-- 120秒 = 7200 ticks, severityPerDay = -1.0/(7200/60000) ≈ -8.33 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-8.33</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>7200</disappearsAfterTicks>
+      </li>
+      <!-- 分阶段饮食消耗: 全程120秒每秒0.003, 共0.36 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.003</hungerPerSecond>
+            <description>每秒消耗0.003饮食，持续120秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段1: severity 0.0~0.5 (后60秒): 仅饮食消耗, 无止血/愈合速度提升 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <!-- 无totalBleedFactor, 无capMods, 仅Comp继续扣饮食 -->
+      </li>
+      <!-- 阶段2: severity 0.5~1.0 (前60秒): 止血+伤口愈合速度+10% -->
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>高效期</label>
+        <!-- totalBleedFactor=0 强制所有伤口停止出血 -->
+        <totalBleedFactor>0</totalBleedFactor>
+        <!-- InjuryHealingFactor是StatDef(愈合系数), RimWorld的StatModifier解析格式: stat名作为节点名, value作为文本内容 -->
+        <statOffsets>
+          <InjuryHealingFactor>0.10</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

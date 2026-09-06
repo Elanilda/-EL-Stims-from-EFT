@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 注射针剂Job -->
+  <!-- 征召pawn右键其他pawn注射时分配的job: 走向目标+等待2秒+执行 -->
+  <!-- driverClass指向自定义EL_JobDriver_InjectStim -->
+  <!-- ============================================================ -->
+  <JobDef>
+    <defName>EL_Job_InjectStim</defName>
+    <driverClass>EL_JobDriver_InjectStim</driverClass>
+    <reportString>正在为TargetA注射针剂。</reportString>
+    <!-- 不是社交job, 是医疗操作 -->
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- ============================================================ -->
+  <!-- 自用注射Job -->
+  <!-- 点击"使用针剂"gizmo后分配: 原地等待2秒+执行注射+播放音效 -->
+  <!-- driverClass指向自定义EL_JobDriver_InjectStimSelf -->
+  <!-- ============================================================ -->
+  <JobDef>
+    <defName>EL_Job_InjectStimSelf</defName>
+    <driverClass>EL_JobDriver_InjectStimSelf</driverClass>
+    <reportString>正在注射针剂。</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

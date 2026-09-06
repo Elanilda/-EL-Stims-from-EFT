@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Zagustin 止血注射器 -->
+  <!-- 止血180秒, 血液过滤+40%持续180秒, 消化-10%持续180秒 -->
+  <!-- 使用170秒后意识-15%持续40秒, 后40秒共消耗0.56饮食(每秒0.014) -->
+  <!-- 总持续210秒, severityPerDay ≈ -4.76 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_Zagustin</defName>
+    <label>Zagustin注射器</label>
+    <description>强效的军用止血针剂，抑制血纤维蛋白催化并减慢其向溶纤维蛋白酵素的转化，注射后暂时停止所有出血并增加流血抗性。但药效消退期会增加代谢损耗并导致脱水，可能出现短暂的意识模糊。
+
+【施加效果】
+失血量系数×0%，延迟0秒/持续180秒；
+血液过滤+40%，延迟0秒/持续180秒；
+消化能力-10%，延迟0秒/持续180秒；
+意识-15%，延迟170秒/持续40秒；
+每秒消耗0.014饮食值，延迟170秒/持续40秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_Zagustin</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/Zagustin</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>156</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>424</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>16</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_Zagustin</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- Zagustin x1 单支生产配方 -->
+  <!-- 放在x4配方之前, 确保物品信息界面FirstOrDefault取到1倍配方显示原料 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Zagustin</defName>
+    <label>制作Zagustin注射器</label>
+    <description>制作1支Zagustin止血注射器。</description>
+    <jobString>正在制作Zagustin注射器。</jobString>
+    <workAmount>424</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>4</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Zagustin>1</EL_Stim_Zagustin>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Zagustin x4 批量生产配方 -->
+  <!-- 原材料与产物均为1倍配方的4倍, 工作量为4倍 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Zagustin_Bulk</defName>
+    <label>制作4个Zagustin注射器</label>
+    <description>制作一批4支Zagustin止血注射器。</description>
+    <jobString>正在制作Zagustin注射器。</jobString>
+    <workAmount>1696</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>4</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>64</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Zagustin>4</EL_Stim_Zagustin>
+    </products>
+  </RecipeDef>
+
+</Defs>

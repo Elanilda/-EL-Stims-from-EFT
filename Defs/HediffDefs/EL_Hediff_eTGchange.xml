@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- eTG-change 再生效果 -->
+  <!-- 总持续120秒 = 7200 ticks -->
+  <!-- 阶段划分(severity 1.0→0 线性下降): -->
+  <!--   高效期: severity 0.5~1.0 (前60秒): 治疗7点+减血+回复饮食+消化+免疫 -->
+  <!--   过渡期: severity 0.25~0.5 (中30秒, 60秒延迟后): 消化+免疫+移动-10%+愈合-10% -->
+  <!--   副作用期: severity 0~0.25 (末30秒, 90秒延迟后): 移动-10%+愈合-10% -->
+  <!--   注: 每秒0.03饮食消耗在第60~80秒(severity 0.333~0.667)由StageHungerDrain处理 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_eTGchange</defName>
+    <label>eTG-change再生修复</label>
+    <labelNoun>eTG-change再生修复</labelNoun>
+    <description>eTG-change正在发挥药效，极效化机体再生使得全身组织正在高速恢复，药效后期会出现身体机能下降与显著的代谢压力。</description>
+    <hediffClass>EL_Hediff_RawLabel</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.40, 0.85, 0.35)</defaultLabelColor>
+    <comps>
+      <!-- 总持续120秒 = 7200 ticks, severityPerDay = -1.0/(7200/60000) ≈ -8.333 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-8.333</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>7200</disappearsAfterTicks>
+      </li>
+      <!-- 每秒回复随机部位7点耐久(第三档: 全部位治疤不留疤) -->
+      <!-- canHealPermanent=true: 可治疗永久损伤(疤痕) -->
+      <!-- bypassPermanentCheck=true: 直接改Severity, 不触发永久化检查, 不留疤 -->
+      <!-- includeSolidParts=true: 全部位(含骨骼) -->
+      <!-- stages: 仅severity 1.0~0.5(前60秒)生效 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartHeal">
+        <healAmount>7</healAmount>
+        <ticksInterval>60</ticksInterval>
+        <canHealPermanent>true</canHealPermanent>
+        <bypassPermanentCheck>true</bypassPermanentCheck>
+        <includeSolidParts>true</includeSolidParts>
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.5</endSeverity>
+          </li>
+        </stages>
+      </li>
+      <!-- 每秒减少BloodLoss Severity 0.005, 仅前60秒(severity 0.5~1.0) -->
+      <li Class="EL_HediffCompProperties_ReduceBloodLoss">
+        <reductionPerSecond>0.005</reductionPerSecond>
+        <durationTicks>3600</durationTicks>
+        <checkIntervalTicks>60</checkIntervalTicks>
+      </li>
+      <!-- 分阶段饮食恢复: 前60秒(severity 0.5~1.0)每秒0.05, 共3.0 -->
+      <li Class="EL_HediffCompProperties_StageHungerGain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.5</endSeverity>
+            <hungerPerSecond>0.05</hungerPerSecond>
+            <description>每秒恢复0.05饮食值，持续60秒。</description>
+          </li>
+        </stages>
+      </li>
+      <!-- 分阶段饮食消耗: 第60~80秒(severity 0.333~0.667)每秒0.03, 共0.6 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>0.667</startSeverity>
+            <endSeverity>0.333</endSeverity>
+            <hungerPerSecond>0.03</hungerPerSecond>
+            <description>每秒消耗0.03饮食，持续20秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 副作用期: severity 0~0.25 (末30秒, 90秒延迟后): 移动-10%+愈合-10% -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>后效期</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <InjuryHealingFactor>0.90</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 过渡期: severity 0.25~0.333 (60秒延迟后, 第60~80秒): 移动-10%+愈合-10%+消化+免疫 -->
+      <li>
+        <minSeverity>0.25</minSeverity>
+        <label>过渡期</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <ImmunityGainSpeed>0.20</ImmunityGainSpeed>
+        </statOffsets>
+        <statFactors>
+          <InjuryHealingFactor>0.90</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 中间过渡: severity 0.333~0.5 (第80~90秒): 移动-10%+愈合-10%+消化+免疫 -->
+      <li>
+        <minSeverity>0.333</minSeverity>
+        <label>过渡期</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <ImmunityGainSpeed>0.20</ImmunityGainSpeed>
+        </statOffsets>
+        <statFactors>
+          <InjuryHealingFactor>0.90</InjuryHealingFactor>
+        </statFactors>
+      </li>
+      <!-- 高效期: severity 0.5~1.0 (前60秒): 消化+20%+免疫+20% -->
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>高效期</label>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <ImmunityGainSpeed>0.20</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

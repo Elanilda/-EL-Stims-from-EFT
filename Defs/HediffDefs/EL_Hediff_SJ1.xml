@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- SJ1-TGLabs 战斗兴奋效果 -->
+  <!-- 300秒总持续: 前100秒无消耗, 100-300秒每秒0.05消耗 -->
+  <!-- 主效果(移动+20%, 工作+20%, 崩溃+20%负面, 休克-20%负面)持续前180秒 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_SJ1_TGLabs</defName>
+    <label>SJ1体能提升</label>
+    <labelNoun>SJ1体能提升</labelNoun>
+    <description>SJ1正在发挥药效，移动能力和工作效率提升，抗压能力增强。药效后期会有严重代谢负担。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.95, 0.55, 0.75)</defaultLabelColor>
+    <comps>
+      <!-- 300秒 = 18000 ticks, severityPerDay = -1.0/(18000/60000) ≈ -3.33 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.33</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>18000</disappearsAfterTicks>
+      </li>
+      <!-- 分阶段饮食消耗: 100秒延迟后持续200秒每秒0.05, 共10.0 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.667</endSeverity>
+            <hungerPerSecond>0</hungerPerSecond>
+            <description>药效发挥中。</description>
+          </li>
+          <li>
+            <startSeverity>0.667</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.005</hungerPerSecond>
+            <description>每秒消耗0.005饮食值。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段3: severity 0.0~0.4 (180-300秒): 无主效果, 只有饮食消耗 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+      </li>
+      <!-- 阶段2: severity 0.4~0.667 (100-180秒): 主效果+饮食消耗 -->
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <label>持续期</label>
+        <statFactors>
+          <MoveSpeed>1.2</MoveSpeed>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+          <MentalBreakThreshold>0.8</MentalBreakThreshold>
+          <PainShockThreshold>1.2</PainShockThreshold>
+        </statFactors>
+      </li>
+      <!-- 阶段1: severity 0.667~1.0 (0-100秒): 主效果, 无饮食消耗 -->
+      <li>
+        <minSeverity>0.667</minSeverity>
+        <label>高效期</label>
+        <statFactors>
+          <MoveSpeed>1.2</MoveSpeed>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+          <MentalBreakThreshold>0.8</MentalBreakThreshold>
+          <PainShockThreshold>1.2</PainShockThreshold>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

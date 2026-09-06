@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Morphine -->
+  <EL_Surgery_InjectMorphine.label>Inject Morphine</EL_Surgery_InjectMorphine.label>
+  <EL_Surgery_InjectMorphine.description>Inject morphine for analgesia.</EL_Surgery_InjectMorphine.description>
+  <EL_Surgery_InjectMorphine.jobString>Injecting morphine into TargetA.</EL_Surgery_InjectMorphine.jobString>
+
+  <!-- AHF1-M -->
+  <EL_Surgery_InjectAHF1M.label>Inject AHF1-M</EL_Surgery_InjectAHF1M.label>
+  <EL_Surgery_InjectAHF1M.description>Inject AHF1-M to stop bleeding and briefly enhance immunity.</EL_Surgery_InjectAHF1M.description>
+  <EL_Surgery_InjectAHF1M.jobString>Injecting AHF1-M into TargetA.</EL_Surgery_InjectAHF1M.jobString>
+
+  <!-- Zagustin -->
+  <EL_Surgery_InjectZagustin.label>Inject Zagustin</EL_Surgery_InjectZagustin.label>
+  <EL_Surgery_InjectZagustin.description>Inject Zagustin for potent, long-lasting hemostasis.</EL_Surgery_InjectZagustin.description>
+  <EL_Surgery_InjectZagustin.jobString>Injecting Zagustin into TargetA.</EL_Surgery_InjectZagustin.jobString>
+
+  <!-- 2A2-(b-TG) -->
+  <EL_Surgery_Inject2A2_bTG.label>Inject 2A2-(b-TG)</EL_Surgery_Inject2A2_bTG.label>
+  <EL_Surgery_Inject2A2_bTG.description>Inject 2A2-(b-TG) to enhance carrying capacity and perception.</EL_Surgery_Inject2A2_bTG.description>
+  <EL_Surgery_Inject2A2_bTG.jobString>Injecting 2A2-(b-TG) into TargetA.</EL_Surgery_Inject2A2_bTG.jobString>
+
+  <!-- L1 -->
+  <EL_Surgery_InjectL1.label>Inject L1</EL_Surgery_InjectL1.label>
+  <EL_Surgery_InjectL1.description>Inject L1 norepinephrine to enhance physical capacity and suppress pain.</EL_Surgery_InjectL1.description>
+  <EL_Surgery_InjectL1.jobString>Injecting L1 into TargetA.</EL_Surgery_InjectL1.jobString>
+
+  <!-- SJ1 -->
+  <EL_Surgery_InjectSJ1.label>Inject SJ1</EL_Surgery_InjectSJ1.label>
+  <EL_Surgery_InjectSJ1.description>Inject SJ1-TGLabs to enhance movement and work efficiency.</EL_Surgery_InjectSJ1.description>
+  <EL_Surgery_InjectSJ1.jobString>Injecting SJ1-TGLabs into TargetA.</EL_Surgery_InjectSJ1.jobString>
+
+  <!-- SJ6 -->
+  <EL_Surgery_InjectSJ6.label>Inject SJ6</EL_Surgery_InjectSJ6.label>
+  <EL_Surgery_InjectSJ6.description>Inject SJ6-TGLabs to reduce rest consumption and continuously restore rest, with central suppression at the end.</EL_Surgery_InjectSJ6.description>
+  <EL_Surgery_InjectSJ6.jobString>Injecting SJ6-TGLabs into TargetA.</EL_Surgery_InjectSJ6.jobString>
+
+  <!-- SJ12 -->
+  <EL_Surgery_InjectSJ12.label>Inject SJ12</EL_Surgery_InjectSJ12.label>
+  <EL_Surgery_InjectSJ12.description>Inject SJ12-TGLabs to redirect recovery.</EL_Surgery_InjectSJ12.description>
+  <EL_Surgery_InjectSJ12.jobString>Injecting SJ12-TGLabs into TargetA.</EL_Surgery_InjectSJ12.jobString>
+
+  <!-- P22 -->
+  <EL_Surgery_InjectP22.label>Inject P22</EL_Surgery_InjectP22.label>
+  <EL_Surgery_InjectP22.description>Inject P22 to expand body capabilities, accelerate recovery, and enhance tolerance.</EL_Surgery_InjectP22.description>
+  <EL_Surgery_InjectP22.jobString>Injecting P22 into TargetA.</EL_Surgery_InjectP22.jobString>
+
+  <!-- 3-(b-TG) -->
+  <EL_Surgery_Inject3_bTG.label>Inject 3-(b-TG)</EL_Surgery_Inject3_bTG.label>
+  <EL_Surgery_Inject3_bTG.description>Inject 3-(b-TG) to enhance perception and manipulation.</EL_Surgery_Inject3_bTG.description>
+  <EL_Surgery_Inject3_bTG.jobString>Injecting 3-(b-TG) into TargetA.</EL_Surgery_Inject3_bTG.jobString>
+
+  <!-- Trimadol -->
+  <EL_Surgery_InjectTrimadol.label>Inject Trimadol</EL_Surgery_InjectTrimadol.label>
+  <EL_Surgery_InjectTrimadol.description>Inject trimadol to enhance physical capacity and suppress pain.</EL_Surgery_InjectTrimadol.description>
+  <EL_Surgery_InjectTrimadol.jobString>Injecting trimadol into TargetA.</EL_Surgery_InjectTrimadol.jobString>
+
+  <!-- Meldonin -->
+  <EL_Surgery_InjectMeldonin.label>Inject Meldonin</EL_Surgery_InjectMeldonin.label>
+  <EL_Surgery_InjectMeldonin.description>Inject meldonin to recover energy and enhance strength and endurance.</EL_Surgery_InjectMeldonin.description>
+  <EL_Surgery_InjectMeldonin.jobString>Injecting meldonin into TargetA.</EL_Surgery_InjectMeldonin.jobString>
+
+  <!-- Adrenaline -->
+  <EL_Surgery_InjectAdrenaline.label>Inject Adrenaline</EL_Surgery_InjectAdrenaline.label>
+  <EL_Surgery_InjectAdrenaline.description>Inject adrenaline to briefly enhance physical capacity and suppress pain.</EL_Surgery_InjectAdrenaline.description>
+  <EL_Surgery_InjectAdrenaline.jobString>Injecting adrenaline into TargetA.</EL_Surgery_InjectAdrenaline.jobString>
+
+  <!-- PNB -->
+  <EL_Surgery_InjectPNB.label>Inject PNB</EL_Surgery_InjectPNB.label>
+  <EL_Surgery_InjectPNB.description>Inject PNB to activate internal muscles and accelerate tissue recovery.</EL_Surgery_InjectPNB.description>
+  <EL_Surgery_InjectPNB.jobString>Injecting PNB into TargetA.</EL_Surgery_InjectPNB.jobString>
+
+  <!-- Propital -->
+  <EL_Surgery_InjectPropital.label>Inject Propital</EL_Surgery_InjectPropital.label>
+  <EL_Surgery_InjectPropital.description>Inject Propital to stimulate tissue regeneration and suppress pain.</EL_Surgery_InjectPropital.description>
+  <EL_Surgery_InjectPropital.jobString>Injecting Propital into TargetA.</EL_Surgery_InjectPropital.jobString>
+
+  <!-- M.U.L.E -->
+  <EL_Surgery_InjectMULE.label>Inject M.U.L.E</EL_Surgery_InjectMULE.label>
+  <EL_Surgery_InjectMULE.description>Inject M.U.L.E stimulant to greatly enhance carrying capacity.</EL_Surgery_InjectMULE.description>
+  <EL_Surgery_InjectMULE.jobString>Injecting M.U.L.E into TargetA.</EL_Surgery_InjectMULE.jobString>
+
+  <!-- SJ9 -->
+  <EL_Surgery_InjectSJ9_TGLabs.label>Inject SJ9-TGLabs</EL_Surgery_InjectSJ9_TGLabs.label>
+  <EL_Surgery_InjectSJ9_TGLabs.description>Inject SJ9-TGLabs to adapt to extreme environmental temperatures.</EL_Surgery_InjectSJ9_TGLabs.description>
+  <EL_Surgery_InjectSJ9_TGLabs.jobString>Injecting SJ9-TGLabs into TargetA.</EL_Surgery_InjectSJ9_TGLabs.jobString>
+
+  <!-- xTG-12 -->
+  <EL_Surgery_InjectxTG12.label>Inject xTG-12</EL_Surgery_InjectxTG12.label>
+  <EL_Surgery_InjectxTG12.description>Inject xTG-12 to clear toxins and gain temporary immunity.</EL_Surgery_InjectxTG12.description>
+  <EL_Surgery_InjectxTG12.jobString>Injecting xTG-12 antidote into TargetA.</EL_Surgery_InjectxTG12.jobString>
+
+  <!-- Perfotoran -->
+  <EL_Surgery_InjectPerfotoran.label>Inject Perfotoran</EL_Surgery_InjectPerfotoran.label>
+  <EL_Surgery_InjectPerfotoran.description>Inject Perfotoran artificial blood to clear toxins, stop bleeding, and promote tissue recovery.</EL_Surgery_InjectPerfotoran.description>
+  <EL_Surgery_InjectPerfotoran.jobString>Injecting Perfotoran artificial blood into TargetA.</EL_Surgery_InjectPerfotoran.jobString>
+
+  <!-- eTG-change -->
+  <EL_Surgery_InjecteTGchange.label>Inject eTG-change</EL_Surgery_InjecteTGchange.label>
+  <EL_Surgery_InjecteTGchange.description>Inject eTG-change extreme regenerator for rapid recovery from severe trauma.</EL_Surgery_InjecteTGchange.description>
+  <EL_Surgery_InjecteTGchange.jobString>Injecting eTG-change regenerator into TargetA.</EL_Surgery_InjecteTGchange.jobString>
+
+</LanguageData>

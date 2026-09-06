@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- AHF1-M 止血注射器 -->
+  <!-- 止血60秒, 免疫+10%持续60秒, 120秒内共消耗0.36饮食 -->
+  <!-- 通过totalBleedFactor=0强制所有伤口停止出血, 不操作BloodLoss -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_AHF1M</defName>
+    <label>AHF1-M注射器</label>
+    <description>高效止血针剂，基于血友病因子开发的军用凝血剂，注射后可以暂时停止所有伤口出血，并在60秒内增加流血抗性，持续阻止新伤口出血，同时轻度提升人体自修复能力。药效期间会增加一定代谢压力并可能导致轻微脱水。
+
+【施加效果】
+失血量系数×0%，延迟0秒/持续60秒；
+愈合系数+10%，延迟0秒/持续60秒；
+每秒消耗0.003饮食值，延迟0秒/持续120秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_AHF1M</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/AHF1-M</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>107</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>360</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>12</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_AHF1M</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- AHF1-M x1 单支生产配方 -->
+  <!-- 放在x4配方之前, 确保物品信息界面FirstOrDefault取到1倍配方显示原料 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_AHF1M</defName>
+    <label>制作AHF1-M注射器</label>
+    <description>制作1支AHF1-M止血注射器。</description>
+    <jobString>正在制作AHF1-M注射器。</jobString>
+    <workAmount>360</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>4</Medicine>
+      <Intellectual>2</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_AHF1M>1</EL_Stim_AHF1M>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- AHF1-M x4 批量生产配方 -->
+  <!-- 原材料与产物均为1倍配方的4倍, 工作量为4倍 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_AHF1M_Bulk</defName>
+    <label>制作4个AHF1-M注射器</label>
+    <description>制作一批4支AHF1-M止血注射器。</description>
+    <jobString>正在制作AHF1-M注射器。</jobString>
+    <workAmount>1440</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>4</Medicine>
+      <Intellectual>2</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>48</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_AHF1M>4</EL_Stim_AHF1M>
+    </products>
+  </RecipeDef>
+
+</Defs>

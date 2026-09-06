@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <EL_Stim_UseStim>Use Stimulants</EL_Stim_UseStim>
+  <EL_Stim_UseStimDesc>Select and inject a carried stimulant.</EL_Stim_UseStimDesc>
+  <EL_Stim_CompHealDesc>Randomly restores {0} HP to a body part every {1} seconds.</EL_Stim_CompHealDesc>
+  <EL_Stim_InjectTarget>Inject stimulant into {0}</EL_Stim_InjectTarget>
+  <EL_Stim_InjectTargetCooldown>Inject stimulant into {0} (cooldown)</EL_Stim_InjectTargetCooldown>
+
+  <!-- Blueprint System -->
+  <EL_Blueprint_Unlocked>Recipe unlocked: {0}</EL_Blueprint_Unlocked>
+  <EL_Blueprint_AlreadyUnlocked>This blueprint has already been studied.</EL_Blueprint_AlreadyUnlocked>
+  <EL_Blueprint_Desc>Unlocks recipes: {0}</EL_Blueprint_Desc>
+
+  <!-- Stimulant Storage Cabinet -->
+  <EL_Tab_StimStorageContents>Stored items</EL_Tab_StimStorageContents>
+</LanguageData>

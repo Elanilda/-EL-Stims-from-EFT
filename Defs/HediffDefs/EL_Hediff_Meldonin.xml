@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Meldonin (米屈肼) 体能提升效果 -->
+  <!-- 900秒总持续: 工作+20%/移动+40%, 每秒恢复0.005休息值 -->
+  <!-- 0-30秒: 主效果+恢复休息, 无消耗 -->
+  <!-- 30-900秒: 主效果+恢复休息+消耗饮食(每秒0.002) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Meldonin</defName>
+    <label>米屈肼体能提升</label>
+    <labelNoun>米屈肼体能提升</labelNoun>
+    <description>米屈肼正在发挥药效，工作效率和移动能力提升，机体正在恢复精力并承受代谢压力。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.70, 0.82, 0.95)</defaultLabelColor>
+    <comps>
+      <!-- 900秒 = 54000 ticks, severityPerDay = -1.0/(54000/60000) ≈ -1.111 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.111</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>54000</disappearsAfterTicks>
+      </li>
+      <!-- 全程900秒每秒恢复0.005休息值, 共4.5 -->
+      <li Class="EL_HediffCompProperties_StageRestGain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <restPerSecond>0.005</restPerSecond>
+            <description>每秒恢复0.005休息值，持续900秒。</description>
+          </li>
+        </stages>
+      </li>
+      <!-- 30秒后持续870秒(到900秒)每秒消耗0.002饮食, 共1.74 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>0.9667</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.002</hungerPerSecond>
+            <description>每秒消耗0.002饮食值，持续870秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段2: severity 0.0~0.9667 (30-900秒): 主效果+恢复休息+消耗饮食 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>持续期</label>
+        <statFactors>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+          <MoveSpeed>1.4</MoveSpeed>
+        </statFactors>
+      </li>
+      <!-- 阶段1: severity 0.9667~1.0 (0-30秒): 主效果+恢复休息 -->
+      <li>
+        <minSeverity>0.9667</minSeverity>
+        <label>高效期</label>
+        <statFactors>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+          <MoveSpeed>1.4</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

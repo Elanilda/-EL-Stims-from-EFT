@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- M.U.L.E 兴奋效果 -->
+  <!-- 900秒总持续: 携带能力+100%, 每10秒随机损伤非solid部位1点 -->
+  <!-- severityPerDay = -1.0/(54000/60000) ≈ -1.111 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_MULE</defName>
+    <label>M.U.L.E体能提升</label>
+    <labelNoun>M.U.L.E体能提升</labelNoun>
+    <description>极效肌肉激励兴奋剂正在发挥药效，携带能力大幅提升，但每10秒会对随机身体部位造成1点代谢损伤。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.45, 0.30, 0.20)</defaultLabelColor>
+    <comps>
+      <!-- 900秒 = 54000 ticks, severityPerDay ≈ -1.111 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.111</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>54000</disappearsAfterTicks>
+      </li>
+      <!-- 每10秒(600 ticks)对随机非solid部位造成1点代谢损伤 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartDamage">
+        <damageHediff>EL_Injury_MetabolicDamage</damageHediff>
+        <damageAmount>1</damageAmount>
+        <ticksInterval>600</ticksInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>高效期</label>
+        <statFactors>
+          <CarryingCapacity>2.0</CarryingCapacity>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 笔式针筒（通用前体材料） -->
+  <!-- 由工程塑料外壳、钢制旋钮活塞、玻璃卡式瓶和不锈钢针头组装而成 -->
+  <!-- 未灌装药液的空针筒，是各类针剂合成的通用前体 -->
+  <!-- defName字母序C在S前，自动排在EL_Stim_*针剂之前 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Cartridge</defName>
+    <label>笔式针筒</label>
+    <description>未灌装药液的空针筒，由工程塑料外壳、钢制旋钮活塞、透明玻璃卡式瓶和不锈钢针头组装而成，是各类针剂合成的通用前体材料。</description>
+    <tickerType>Never</tickerType>
+    <graphicData>
+      <texPath>Stims/Cartridge</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>24</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>180</WorkToMake>
+    </statBases>
+    <stackLimit>64</stackLimit>
+    <uiIconForStackCount>64</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Steel>4</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- 笔式针筒 x4 生产配方 -->
+  <!-- 钢铁×16 + 零部件×1 = 4×笔式针筒 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Cartridge</defName>
+    <label>制作4个笔式针筒</label>
+    <description>制作4个空的笔式针筒。</description>
+    <jobString>正在制作笔式针筒。</jobString>
+    <workAmount>180</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <skillRequirements>
+      <Medicine>2</Medicine>
+      <Intellectual>2</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Cartridge>4</EL_Cartridge>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- 笔式针筒 x16 批量生产配方 -->
+  <!-- 钢铁×64 + 零部件×4 = 16×笔式针筒 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Cartridge_Bulk</defName>
+    <label>制作16个笔式针筒</label>
+    <description>制作16个空的笔式针筒。</description>
+    <jobString>正在制作笔式针筒。</jobString>
+    <workAmount>720</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <skillRequirements>
+      <Medicine>2</Medicine>
+      <Intellectual>2</Intellectual>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>64</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Cartridge>16</EL_Cartridge>
+    </products>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Obdolbos 鸡尾酒兴奋剂注射器 -->
+  <!-- 600秒随机副作用: 15条效果每条独立25%几率判定, 每次用药都不同 -->
+  <!-- MarketValue=29420/217≈136, defName无数字结尾问题 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_Obdolbos</defName>
+    <label>Obdolbos鸡尾酒兴奋剂注射器</label>
+    <description>装有未知自制药物的注射器，由某位前Terragroup的医药专家制作，每次用药的副作用都不一样，如果觉得已经没什么可失去的了，也可以冒这个险，至少这款针剂的发明者已经这么做过了。
+
+【施加效果】
+随机触发共15种效果，每种独立25%几率，持续600秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_Obdolbos</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/Obdolbos</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>136</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>480</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>5</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_Obdolbos</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- Obdolbos x1 单支生产配方 -->
+  <!-- 制作技能: 医疗6 智识8 手工6 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Obdolbos</defName>
+    <label>制作Obdolbos鸡尾酒兴奋剂注射器</label>
+    <description>制作1支Obdolbos鸡尾酒兴奋剂注射器。</description>
+    <jobString>正在制作Obdolbos鸡尾酒兴奋剂注射器。</jobString>
+    <workAmount>480</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>8</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Obdolbos>1</EL_Stim_Obdolbos>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Obdolbos x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Obdolbos_Bulk</defName>
+    <label>批量制作Obdolbos鸡尾酒兴奋剂注射器</label>
+    <description>制作4支Obdolbos鸡尾酒兴奋剂注射器。</description>
+    <jobString>正在批量制作Obdolbos鸡尾酒兴奋剂注射器。</jobString>
+    <workAmount>1920</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>8</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Obdolbos>4</EL_Stim_Obdolbos>
+    </products>
+  </RecipeDef>
+
+</Defs>

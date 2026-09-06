@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Perfotoran 人造血注射器 -->
+  <!-- 立即清除ToxicBuildup/FoodPoisoning/ScariaInfection/LungRot -->
+  <!-- 120秒内持续清除新毒素+止血+减少BloodLoss+消化+10%+每秒回复非solid部位2点耐久(第三档) -->
+  <!-- 60秒延迟后持续60秒: 愈合系数-15%, 每秒消耗0.011饮食 -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_Perfotoran</defName>
+    <label>Perfotoran人造血注射器</label>
+    <description>人造血是基于PFO混合物的亚微米级乳化液，一种能够转运氧气的血液替代品，注入血液后能暂时代行血浆功能并加快代谢、促进组织恢复，被用作治疗中毒、辐射以及严重失血的超级解药，但是过量使用仍会带来较重的负面生理影响。
+
+【施加效果】
+立即清除中毒、食物中毒、狂暴症感染与肺瘟，药效期间免疫，延迟0秒/持续120秒；
+失血量系数×0%，延迟0秒/持续120秒；
+每秒减少0.015失血度，延迟0秒/持续120秒；
+随机修复非骨骼身体部位2点/秒（可修复疤痕），延迟0秒/持续120秒；
+消化能力+10%，延迟0秒/持续120秒；
+愈合系数×85%，延迟60秒/持续60秒；
+每秒消耗0.011饮食值，延迟60秒/持续60秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_Perfotoran</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/Perfotoran</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>318</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>640</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>20</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_Perfotoran</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- Perfotoran x1 单支生产配方 -->
+  <!-- 制作技能: 医疗10 智识10 手工8 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Perfotoran</defName>
+    <label>制作Perfotoran人造血注射器</label>
+    <description>制作1支Perfotoran人造血注射器。</description>
+    <jobString>正在制作Perfotoran人造血注射器。</jobString>
+    <workAmount>640</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>10</Medicine>
+      <Intellectual>10</Intellectual>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Perfotoran>1</EL_Stim_Perfotoran>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- Perfotoran x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Perfotoran_Bulk</defName>
+    <label>批量制作Perfotoran人造血注射器</label>
+    <description>制作4支Perfotoran人造血注射器。</description>
+    <jobString>正在批量制作Perfotoran人造血注射器。</jobString>
+    <workAmount>2560</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>10</Medicine>
+      <Intellectual>10</Intellectual>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>80</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_Perfotoran>4</EL_Stim_Perfotoran>
+    </products>
+  </RecipeDef>
+
+</Defs>

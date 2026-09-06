@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- SJ12-TGLabs 战斗兴奋剂注射器 -->
+  <!-- 900秒: 前600秒视觉+听觉+30%, 最低温度-8℃, 每秒恢复0.01饮食 -->
+  <!-- 后300秒最高温度-12℃(副作用) -->
+  <!-- ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>EL_Stim_SJ12_TGLabs</defName>
+    <label>SJ12-TGLabs战斗兴奋剂注射器</label>
+    <description>专业特种作战兴奋剂，能够选择性减缓部分身体机能转为恢复体能，其机理是强迫下丘脑分泌加压素以转变肾上腺工作模式，进而降低体温提升感知能力，但在药效过后由于机体未正常运转，会有体温升高的副作用。
+
+【施加效果】
+视觉能力+30%，延迟0秒/持续600秒；
+听觉能力+30%，延迟0秒/持续600秒；
+最低舒适温度-8℃，延迟0秒/持续600秒；
+每秒恢复0.01饮食值，延迟0秒/持续600秒；
+最高舒适温度-12℃，延迟600秒/持续300秒。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_SJ12_TGLabs</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Never</tickerType>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <graphicData>
+      <texPath>Stims/SJ12-TGLabs</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>247</MarketValue>
+      <SellPriceFactor>0.8</SellPriceFactor>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <WorkToMake>620</WorkToMake>
+    </statBases>
+    <stackLimit>16</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>EL_Stims</li>
+    </thingCategories>
+    <costList>
+      <Neutroamine>18</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射 {0}</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="EL_CompProperties_UseEffect_ApplyHediff">
+        <hediffDef>EL_Hediff_SJ12_TGLabs</hediffDef>
+      </li>
+      <li Class="EL_CompProperties_EFTStims" />
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ12-TGLabs x1 单支生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_SJ12_TGLabs</defName>
+    <label>制作SJ12-TGLabs战斗兴奋剂注射器</label>
+    <description>制作1支SJ12-TGLabs战斗兴奋剂注射器。</description>
+    <jobString>正在制作SJ12-TGLabs战斗兴奋剂注射器。</jobString>
+    <workAmount>620</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>6</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>18</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_SJ12_TGLabs>1</EL_Stim_SJ12_TGLabs>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- SJ12-TGLabs x4 批量生产配方 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_SJ12_TGLabs_Bulk</defName>
+    <label>制作4个SJ12-TGLabs战斗兴奋剂注射器</label>
+    <description>制作一批4支SJ12-TGLabs战斗兴奋剂注射器。</description>
+    <jobString>正在制作SJ12-TGLabs战斗兴奋剂注射器。</jobString>
+    <workAmount>2480</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+      <Intellectual>6</Intellectual>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <researchPrerequisites>
+      <li>PsychiteRefining</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EL_Cartridge</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>72</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EL_Cartridge</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EL_Stim_SJ12_TGLabs>4</EL_Stim_SJ12_TGLabs>
+    </products>
+  </RecipeDef>
+
+</Defs>

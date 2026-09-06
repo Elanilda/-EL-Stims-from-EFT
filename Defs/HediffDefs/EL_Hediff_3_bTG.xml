@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 3-(b-TG) 感觉增敏效果 -->
+  <!-- 240秒总持续 -->
+  <!-- 0-120秒: 主效果+恢复休息 -->
+  <!-- 120-165秒: 主效果+恢复休息+消耗饮食+意识-15% -->
+  <!-- 165-240秒: 主效果+恢复休息+消耗饮食 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_3_bTG</defName>
+    <label>3-(b-TG)感觉增敏</label>
+    <labelNoun>3-(b-TG)感觉增敏</labelNoun>
+    <description>3-(b-TG)正在发挥药效，感知能力和操作能力大幅提升，中枢神经受到刺激。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.10, 0.55, 0.10)</defaultLabelColor>
+    <comps>
+      <!-- 240秒 = 14400 ticks, severityPerDay = -1.0/(14400/60000) ≈ -4.17 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.17</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>14400</disappearsAfterTicks>
+      </li>
+      <!-- 全程240秒每秒恢复0.01休息值, 共2.4 -->
+      <li Class="EL_HediffCompProperties_StageRestGain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <restPerSecond>0.01</restPerSecond>
+            <description>每秒恢复0.01休息值，持续240秒。</description>
+          </li>
+        </stages>
+      </li>
+      <!-- 120秒后持续120秒(到240秒)每秒消耗0.0025饮食, 共0.3 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>0.5</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.0025</hungerPerSecond>
+            <description>每秒消耗0.0025饮食值，持续120秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段3: severity 0.0~0.3125 (165-240秒): 主效果+恢复休息+消耗饮食 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.60</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.60</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.60</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+        </statFactors>
+      </li>
+      <!-- 阶段2: severity 0.3125~0.5 (120-165秒): 主效果+恢复休息+消耗饮食+意识-15% -->
+      <li>
+        <minSeverity>0.3125</minSeverity>
+        <label>持续期</label>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.60</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.60</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.60</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+        </statFactors>
+      </li>
+      <!-- 阶段1: severity 0.5~1.0 (0-120秒): 主效果+恢复休息 -->
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>高效期</label>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.60</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.60</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.60</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 中性胺萃取配方 (单倍) -->
+  <!-- 8*精神叶 + 1*草药 → 4*中性胺 -->
+  <!-- 在药物实验台制作, workAmount=300 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Neutroamine</defName>
+    <label>萃取中性胺</label>
+    <description>提取精神叶成分以制作中性胺。</description>
+    <jobString>正在萃取中性胺</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>300</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>PsychiteRefining</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PsychoidLeaves</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PsychoidLeaves</li>
+        <li>MedicineHerbal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Neutroamine>4</Neutroamine>
+    </products>
+  </RecipeDef>
+
+  <!-- ============================================================ -->
+  <!-- 中性胺萃取配方 (4倍批量) -->
+  <!-- 32*精神叶 + 4*草药 → 16*中性胺 -->
+  <!-- ============================================================ -->
+  <RecipeDef>
+    <defName>EL_Make_Neutroamine_Bulk</defName>
+    <label>批量萃取中性胺</label>
+    <description>提取精神叶成分以制作中性胺。</description>
+    <jobString>正在萃取中性胺</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>1200</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <researchPrerequisite>PsychiteRefining</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PsychoidLeaves</li>
+          </thingDefs>
+        </filter>
+        <count>32</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PsychoidLeaves</li>
+        <li>MedicineHerbal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Neutroamine>16</Neutroamine>
+    </products>
+  </RecipeDef>
+
+</Defs>

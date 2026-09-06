@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Zagustin 止血效果 -->
+  <!-- 止血180秒, 血液过滤+40%持续180秒, 消化-10%持续180秒 -->
+  <!-- 使用170秒后意识-15%持续40秒, 后40秒共消耗0.56饮食(每秒0.014) -->
+  <!-- 总持续210秒 = 12600 ticks, severityPerDay ≈ -4.76 -->
+  <!-- severity 1.0→0.190: 前170秒(止血+血液过滤+消化) -->
+  <!-- severity 0.190→0.143: 170-180秒(止血+血液过滤+消化+意识-15%+饮食消耗) -->
+  <!-- severity 0.143→0: 180-210秒(意识-15%+饮食消耗) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Zagustin</defName>
+    <label>Zagustin止血</label>
+    <labelNoun>Zagustin止血</labelNoun>
+    <description>Zagustin正在发挥药效，伤口停止出血，血液过滤能力大幅提升。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.75, 0.55, 0.85)</defaultLabelColor>
+    <comps>
+      <!-- 210秒 = 12600 ticks, severityPerDay = -1.0/(12600/60000) ≈ -4.76 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.76</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>12600</disappearsAfterTicks>
+      </li>
+      <!-- 分阶段饮食消耗: 后40秒(severity 0.190~0)每秒0.014, 共0.56 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>0.190</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.014</hungerPerSecond>
+            <description>每秒消耗0.014饮食，持续40秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段1: severity 0~0.143 (180-210秒, 30秒): 意识-15% (止血/血液过滤/消化消失) -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <!-- 阶段2: severity 0.143~0.190 (170-180秒, 10秒): 止血+血液过滤+消化+意识-15% -->
+      <li>
+        <minSeverity>0.143</minSeverity>
+        <label>过渡期</label>
+        <totalBleedFactor>0</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.40</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <!-- 阶段3: severity 0.190~1.0 (前170秒): 止血+血液过滤+40%+消化-10% -->
+      <li>
+        <minSeverity>0.190</minSeverity>
+        <label>高效期</label>
+        <totalBleedFactor>0</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.40</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

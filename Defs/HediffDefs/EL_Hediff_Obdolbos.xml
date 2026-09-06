@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Obdolbos 鸡尾酒兴奋剂 主Hediff -->
+  <!-- 主Hediff仅做600秒计时与效果调度, 自身无任何效果 -->
+  <!-- 施加时由EL_HediffComp_ObdolbosEffectPicker对15条子Hediff每条独立25%判定 -->
+  <!-- 主Hediff移除时自动清除所有可能残留的子Hediff -->
+  <!-- severityPerDay = -1.0/(36000/60000) ≈ -1.667 -->
+  <!-- 注: 子Hediff独立计时(同为600秒), 可能在主Hediff移除前自行消失 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obdolbos</defName>
+    <label>Obd机能紊乱</label>
+    <labelNoun>Obd机能紊乱</labelNoun>
+    <description>Obd如同鸡尾酒一样繁多的效果正在发挥药效，具体点的话就是列表里这些。</description>
+    <descriptionHyperlinks>
+      <HediffDef>EL_Hediff_Obd_Effect01</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect02</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect03</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect04</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect05</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect06</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect07</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect08</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect09</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect10</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect11</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect12</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect13</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect14</HediffDef>
+      <HediffDef>EL_Hediff_Obd_Effect15</HediffDef>
+    </descriptionHyperlinks>
+    <hediffClass>EL_Hediff_RawLabel</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <!-- 600秒 = 36000 ticks, severityPerDay ≈ -1.667 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.667</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>36000</disappearsAfterTicks>
+      </li>
+      <!-- 随机效果选择器: 对15条子Hediff每条独立25%几率判定 -->
+      <li Class="EL_HediffCompProperties_ObdolbosEffectPicker">
+        <chance>0.25</chance>
+        <effectHediffs>
+          <li>EL_Hediff_Obd_Effect01</li>
+          <li>EL_Hediff_Obd_Effect02</li>
+          <li>EL_Hediff_Obd_Effect03</li>
+          <li>EL_Hediff_Obd_Effect04</li>
+          <li>EL_Hediff_Obd_Effect05</li>
+          <li>EL_Hediff_Obd_Effect06</li>
+          <li>EL_Hediff_Obd_Effect07</li>
+          <li>EL_Hediff_Obd_Effect08</li>
+          <li>EL_Hediff_Obd_Effect09</li>
+          <li>EL_Hediff_Obd_Effect10</li>
+          <li>EL_Hediff_Obd_Effect11</li>
+          <li>EL_Hediff_Obd_Effect12</li>
+          <li>EL_Hediff_Obd_Effect13</li>
+          <li>EL_Hediff_Obd_Effect14</li>
+          <li>EL_Hediff_Obd_Effect15</li>
+        </effectHediffs>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ============================================================ -->
+  <!-- 15条子Hediff: 每条600秒独立计时, 主Hediff移除时统一清除 -->
+  <!-- severityPerDay = -1.0/(36000/60000) ≈ -1.667 -->
+  <!-- ============================================================ -->
+
+  <!-- 效果1: 移动能力+20% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect01</defName>
+    <label>Obd效应·移动强化</label>
+    <labelNoun>Obd效应·移动强化</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <statFactors>
+          <MoveSpeed>1.20</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果2: 全局工作效率+20% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect02</defName>
+    <label>Obd效应·工作强化</label>
+    <labelNoun>Obd效应·工作强化</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <statFactors>
+          <WorkSpeedGlobal>1.20</WorkSpeedGlobal>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果3: 语言能力+10%、操作能力+10% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect03</defName>
+    <label>Obd效应·眼疾手快</label>
+    <labelNoun>Obd效应·眼疾手快</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <capMods>
+          <li><capacity>Talking</capacity><offset>0.10</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.10</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果4: 操作能力+20% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect04</defName>
+    <label>Obd效应·灵巧</label>
+    <labelNoun>Obd效应·灵巧</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <capMods>
+          <li><capacity>Manipulation</capacity><offset>0.20</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果5: 疼痛休克阈值+10%、崩溃临界值-10% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect05</defName>
+    <label>Obd效应·抗压强化</label>
+    <labelNoun>Obd效应·抗压强化</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <statFactors>
+          <PainShockThreshold>1.10</PainShockThreshold>
+          <MentalBreakThreshold>0.90</MentalBreakThreshold>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果6: 魅力+2.0 (PawnBeauty statOffset +2.0, 对应原版特性"沉鱼落雁") -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect06</defName>
+    <label>Obd效应·魅力四射</label>
+    <labelNoun>Obd效应·魅力四射</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <statOffsets>
+          <PawnBeauty>2.0</PawnBeauty>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果7: 休息值下降速率-20% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect07</defName>
+    <label>Obd效应·缓和体能</label>
+    <labelNoun>Obd效应·缓和体能</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <statFactors>
+          <RestFallRateFactor>0.80</RestFallRateFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果8: 每秒回复随机部位1点耐久(第三档: 全部位治疤不留疤) -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect08</defName>
+    <label>Obd效应·组织再生</label>
+    <labelNoun>Obd效应·组织再生</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+      <!-- 第三档: 全部位治疤不留疤 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartHeal">
+        <healAmount>1</healAmount>
+        <ticksInterval>60</ticksInterval>
+        <canHealPermanent>true</canHealPermanent>
+        <bypassPermanentCheck>true</bypassPermanentCheck>
+        <includeSolidParts>true</includeSolidParts>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- 效果9: 每秒恢复0.01休息值 -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect09</defName>
+    <label>Obd效应·耐力回涌</label>
+    <labelNoun>Obd效应·耐力回涌</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+      <li Class="EL_HediffCompProperties_StageRestGain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <restPerSecond>0.01</restPerSecond>
+            <description>每秒恢复0.01休息值，持续600秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- 效果10: 携带能力+1% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect10</defName>
+    <label>Obd效应·微幅负重</label>
+    <labelNoun>Obd效应·微幅负重</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <statFactors>
+          <CarryingCapacity>1.01</CarryingCapacity>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果11: 每秒扣除0.01饮食值 -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect11</defName>
+    <label>Obd效应·代谢压力A</label>
+    <labelNoun>Obd效应·代谢压力A</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.01</hungerPerSecond>
+            <description>每秒消耗0.01饮食值，持续600秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- 效果12: 每秒扣除0.012饮食值 (塔科夫原文如此, 与11可叠加) -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect12</defName>
+    <label>Obd效应·代谢压力B</label>
+    <labelNoun>Obd效应·代谢压力B</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.60, 0.85, 0.55)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.0</endSeverity>
+            <hungerPerSecond>0.012</hungerPerSecond>
+            <description>每秒消耗0.012饮食值，持续600秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- 效果13: 每秒随机扣除部位600点耐久(忽视HP限制可归零) -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect13</defName>
+    <label>Obd效应·突发衰败</label>
+    <labelNoun>Obd效应·突发衰败</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.85, 0.25, 0.25)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+      <!-- 每秒扣600点, ignoreHPLimit=true允许部位耐久归零被毁 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartDamage">
+        <damageHediff>EL_Injury_MetabolicDamage</damageHediff>
+        <damageAmount>600</damageAmount>
+        <ticksInterval>60</ticksInterval>
+        <ignoreHPLimit>true</ignoreHPLimit>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- 效果14: 受到的所有损伤严重度+20% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect14</defName>
+    <label>Obd效应·脆弱</label>
+    <labelNoun>Obd效应·脆弱</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.85, 0.25, 0.25)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <statFactors>
+          <IncomingDamageFactor>1.20</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 效果15: 意识-15% -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Obd_Effect15</defName>
+    <label>Obd效应·意识模糊</label>
+    <labelNoun>Obd效应·意识模糊</labelNoun>
+    <description>Obdolbos的随机效应之一。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.85, 0.25, 0.25)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-1.667</severityPerDay></li>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>36000</disappearsAfterTicks></li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.15</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

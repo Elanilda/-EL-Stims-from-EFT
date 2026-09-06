@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  条件加载配置:
+  - /ModPatches: 存放mod兼容补丁, 仅当对应mod启用时整个文件夹才被挂载
+    - ModPatches/Combat Extended/Patches/: Combat Extended (CETeam.CombatExtended) 兼容补丁
+      (携带能力拆分/武器掌握映射, 以及为所有StimsFromEFT物品添加Bulk属性)
+
+-->
+<loadFolders>
+  <v1.6>
+    <li>/</li>
+    <!-- 注意: 子文件夹不能带前导斜杠, Path.Combine会把"/xxx"当作根路径解析到盘符根目录, 导致文件夹静默不加载 -->
+    <li IfModActive="CETeam.CombatExtended">ModPatches/Combat Extended</li>
+  </v1.6>
+</loadFolders>

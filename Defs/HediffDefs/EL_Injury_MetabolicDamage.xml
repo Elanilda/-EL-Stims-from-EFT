@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 代谢损伤 (M.U.L.E / SJ9 共用) -->
+  <!-- 继承InjuryBase: 可tend, 可自然愈合, displayWound=true -->
+  <!-- hediffClass=Hediff_Injury: 源码处处兼容, GetPartHealth自动扣减 -->
+  <!-- bleedRate=0: 代谢损伤不流血 -->
+  <!-- painPerSeverity=0.01: 轻微疼痛 -->
+  <!-- canMerge=true: 允许同类合并, 避免健康面板条目爆炸 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="InjuryBase">
+    <defName>EL_Injury_MetabolicDamage</defName>
+    <label>代谢损伤</label>
+    <labelNoun>一处代谢损伤</labelNoun>
+    <description>针剂副作用导致的代谢性组织损伤。</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>处理</labelTendedWell>
+        <labelTendedWellInner>缝合</labelTendedWellInner>
+        <labelSolidTendedWell>固定</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>代谢瘢痕</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.01</painPerSeverity>
+      <bleedRate>0</bleedRate>
+      <canMerge>true</canMerge>
+      <destroyedLabel>代谢衰竭</destroyedLabel>
+    </injuryProps>
+  </HediffDef>
+
+</Defs>

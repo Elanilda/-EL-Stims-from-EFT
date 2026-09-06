@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- Adrenaline (肾上腺素) 兴奋效果 -->
+  <!-- 65秒总持续 -->
+  <!-- 0-15秒: 主效果+回复器官损伤(第一档, 每秒4点) -->
+  <!-- 15-30秒: 主效果 -->
+  <!-- 30-60秒: 主效果+消耗饮食(每秒0.018) -->
+  <!-- 60-65秒: 主效果 -->
+  <!-- 第一档: canHealPermanent=false, bypassPermanentCheck=false -->
+  <!-- 治疗普通伤调用Heal(), 可能留下疤痕 -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_Adrenaline</defName>
+    <label>肾上腺素兴奋</label>
+    <labelNoun>肾上腺素兴奋</labelNoun>
+    <description>肾上腺素正在发挥药效，体能和反应力提升，痛觉受到抑制。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.90, 0.20, 0.20)</defaultLabelColor>
+    <comps>
+      <!-- 65秒 = 3900 ticks, severityPerDay = -60000/3900 ≈ -15.38 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-15.38</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>3900</disappearsAfterTicks>
+      </li>
+      <!-- 前15秒每秒回复随机非solid部位4点耐久(第一档) -->
+      <!-- 15/65=0.2308, 1-0.2308=0.7692 -->
+      <li Class="EL_HediffCompProperties_RandomBodyPartHeal">
+        <healAmount>4</healAmount>
+        <ticksInterval>60</ticksInterval>
+        <canHealPermanent>false</canHealPermanent>
+        <bypassPermanentCheck>false</bypassPermanentCheck>
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.7692</endSeverity>
+          </li>
+        </stages>
+      </li>
+      <!-- 30秒后持续30秒每秒消耗0.018饮食, 共0.54 -->
+      <!-- 30/65=0.4615, 1-0.4615=0.5385; 60/65=0.9231, 1-0.9231=0.0769 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>0.5385</startSeverity>
+            <endSeverity>0.0769</endSeverity>
+            <hungerPerSecond>0.018</hungerPerSecond>
+            <description>每秒消耗0.018饮食值，持续30秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 单阶段: 全程65秒主效果一致 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>高效期</label>
+        <painFactor>0.10</painFactor>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+          <MoveSpeed>1.2</MoveSpeed>
+          <ShootingAccuracyPawn>1.2</ShootingAccuracyPawn>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

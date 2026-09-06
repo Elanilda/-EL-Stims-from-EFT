@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <EL_Stim_UseStim>使用针剂</EL_Stim_UseStim>
+  <EL_Stim_UseStimDesc>选择并注射携带的针剂</EL_Stim_UseStimDesc>
+  <EL_Stim_CompHealDesc>每{1}秒随机恢复{0}点部位HP</EL_Stim_CompHealDesc>
+  <EL_Stim_InjectTarget>为{0}注射针剂</EL_Stim_InjectTarget>
+  <EL_Stim_InjectTargetCooldown>为{0}注射针剂(冷却中)</EL_Stim_InjectTargetCooldown>
+
+  <!-- 图纸系统 -->
+  <EL_Blueprint_Unlocked>已解锁配方：{0}</EL_Blueprint_Unlocked>
+  <EL_Blueprint_AlreadyUnlocked>这份图纸已经研读过了。</EL_Blueprint_AlreadyUnlocked>
+  <EL_Blueprint_Desc>解锁配方：{0}</EL_Blueprint_Desc>
+
+  <!-- 药品储存柜 -->
+  <EL_Tab_StimStorageContents>存放物品</EL_Tab_StimStorageContents>
+</LanguageData>

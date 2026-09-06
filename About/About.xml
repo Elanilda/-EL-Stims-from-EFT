@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+
+  <name>[EL]Stims from EFT</name>
+  <author>Elanilda</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <packageId>Elanilda.StimsFromEFT</packageId>
+  <url></url>
+  <modVersion>1.0.4</modVersion>
+  <modIconPath>UI/EL_ModIcon</modIconPath>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>brrainz.harmony</li>
+    <li>CETeam.CombatExtended</li>
+  </loadAfter>
+  <description>添加了来自逃离塔科夫的针剂与多种便捷使用方式。
+Adds stimulants from Escape from Tarkov and multiple convenient usage methods.
+
+[功能 / Features]
+- 22种来自游戏《逃离塔科夫》的针剂
+  22 stimulant injectors from the game "Escape from Tarkov"
+- 涵盖止血、器官修复、镇痛、体能和感官增强等多种功能
+  Covers hemostasis, organ repair, analgesia, physical and sensory enhancement
+- 多种便捷的针剂使用方式：右键注射、殖民者互相注射、"使用针剂"能力、手术注射
+  Multiple convenient injection methods: right-click injection, pawn-to-pawn injection, "Use Stimulants" ability, and surgical injection
+- 针剂储存柜：可存放针剂与中性胺的高大冰箱，配备内容物列表标签页
+  Stimulant Storage: a tall cabinet for stims and neutroamine with a contents tab
+- 中性胺合成配方：在药物实验台将精神叶与草药加工为中性胺
+  Neutroamine extraction recipes: craft neutroamine from psychoid leaves and herbs at the drug lab
+
+[使用方式 / Usage]
+- 选中殖民者，右键散落地面的针剂，点击"注射"即可为该殖民者注射针剂
+  Select a colonist, right-click a stimulant on the ground, and click "Inject" to inject it into that colonist
+- 当殖民者携带针剂时，选中这个殖民者并右键其他殖民者，可由前者为后者注射针剂
+  When a colonist carries stimulants, select them and right-click another colonist to have the former inject the latter
+- 当殖民者携带针剂并处于征召状态时，可通过"使用针剂"能力选择所携带的针剂使用
+  When a drafted colonist carries stimulants, use the "Use Stimulants" ability to select and use a carried stimulant
+</description>
+
+</ModMetaData>

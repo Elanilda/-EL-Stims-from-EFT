@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- L1（去甲肾上腺素）兴奋效果 -->
+  <!-- 120秒: 痛觉×0.10, 全局工作速度+40%, 移动+20%, 休息下降速率-30% -->
+  <!-- 前60秒(severity 1.0→0.5)每秒消耗0.009饮食, 后60秒无消耗 -->
+  <!-- 总持续120秒, severityPerDay ≈ -8.33 -->
+  <!-- severity 1.0→0.5: 前60秒(高效期: 饮食消耗) -->
+  <!-- severity 0.5→0: 后60秒(消退期: 无饮食消耗, 效果持续) -->
+  <!-- ============================================================ -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>EL_Hediff_L1</defName>
+    <label>去甲肾上腺素兴奋</label>
+    <labelNoun>去甲肾上腺素兴奋</labelNoun>
+    <description>L1正在发挥药效，痛觉受到抑制，体能和反应力全面提升，休息消耗速率降低。药效后期会增加代谢压力。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <defaultLabelColor>(0.90, 0.50, 0.15)</defaultLabelColor>
+    <comps>
+      <!-- 120秒 = 7200 ticks, severityPerDay = -1.0/(7200/60000) ≈ -8.33 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-8.33</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>7200</disappearsAfterTicks>
+      </li>
+      <!-- 分阶段饮食消耗: 前60秒(severity 1.0→0.5)每秒0.009, 共0.54 -->
+      <li Class="EL_HediffCompProperties_StageHungerDrain">
+        <stages>
+          <li>
+            <startSeverity>1.0</startSeverity>
+            <endSeverity>0.5</endSeverity>
+            <hungerPerSecond>0.009</hungerPerSecond>
+            <description>每秒消耗0.009饮食，持续60秒。</description>
+          </li>
+        </stages>
+      </li>
+    </comps>
+    <stages>
+      <!-- 阶段1: severity 0.0~0.5 (后60秒): 效果持续, 无饮食消耗 -->
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>消退期</label>
+        <painFactor>0.10</painFactor>
+        <statFactors>
+          <WorkSpeedGlobal>1.4</WorkSpeedGlobal>
+          <MoveSpeed>1.2</MoveSpeed>
+          <RestFallRateFactor>0.7</RestFallRateFactor>
+        </statFactors>
+      </li>
+      <!-- 阶段2: severity 0.5~1.0 (前60秒): 效果+饮食消耗 -->
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>高效期</label>
+        <painFactor>0.10</painFactor>
+        <statFactors>
+          <WorkSpeedGlobal>1.4</WorkSpeedGlobal>
+          <MoveSpeed>1.2</MoveSpeed>
+          <RestFallRateFactor>0.7</RestFallRateFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>
