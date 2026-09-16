@@ -8,7 +8,7 @@
   <!-- severity 1.0→0.2857: 前300秒(温度+消化-20%+损伤) -->
   <!-- severity 0.2857→0: 后120秒(损伤+疼痛增强) -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_SJ9_TGLabs</defName>
     <label>SJ9-TGLabs战斗兴奋剂注射器</label>
     <description>特殊环境适应性药物，通过显著减缓代谢的方式增加机体对极端环境的适应能力，还能减少机体向环境逸散的热量，减小热成像目标的同时让新陈代谢维持在较低但安全的水平上。
@@ -23,7 +23,7 @@
       <HediffDef>EL_Hediff_SJ9_TGLabs</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/SJ9-TGLabs</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -47,7 +47,18 @@
     <costList>
       <Neutroamine>16</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_SJ9_TGLabs</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1022</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

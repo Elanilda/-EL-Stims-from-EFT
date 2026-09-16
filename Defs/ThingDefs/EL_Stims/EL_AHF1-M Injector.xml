@@ -6,7 +6,7 @@
   <!-- 止血60秒, 免疫+10%持续60秒, 120秒内共消耗0.36饮食 -->
   <!-- 通过totalBleedFactor=0强制所有伤口停止出血, 不操作BloodLoss -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_AHF1M</defName>
     <label>AHF1-M注射器</label>
     <description>高效止血针剂，基于血友病因子开发的军用凝血剂，注射后可以暂时停止所有伤口出血，并在60秒内增加流血抗性，持续阻止新伤口出血，同时轻度提升人体自修复能力。药效期间会增加一定代谢压力并可能导致轻微脱水。
@@ -19,7 +19,7 @@
       <HediffDef>EL_Hediff_AHF1M</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/AHF1-M</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -43,7 +43,18 @@
     <costList>
       <Neutroamine>12</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_AHF1M</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1003</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

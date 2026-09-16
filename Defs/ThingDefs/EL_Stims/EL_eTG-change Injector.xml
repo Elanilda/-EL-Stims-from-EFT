@@ -5,7 +5,7 @@
   <!-- eTG-change 再生兴奋剂注射器 -->
   <!-- 全部位第三档治疗(治疤不留疤) + 减血 + 回复饮食 + 消化/免疫 + 副作用 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_eTGchange</defName>
     <label>eTG-change再生剂注射器</label>
     <description>极效机体再生促进剂，用于处理严重创伤或重伤员在运输过程中的快速恢复，有着极强的副作用，因此严格限制由专业医师施用。
@@ -23,7 +23,7 @@
       <HediffDef>EL_Hediff_eTGchange</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/eTG-change</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -47,7 +47,18 @@
     <costList>
       <Neutroamine>28</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_eTGchange</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1006</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

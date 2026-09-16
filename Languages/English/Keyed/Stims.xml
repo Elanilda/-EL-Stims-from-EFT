@@ -13,4 +13,8 @@
 
   <!-- Stimulant Storage Cabinet -->
   <EL_Tab_StimStorageContents>Stored items</EL_Tab_StimStorageContents>
+
+  <!-- CE Loadouts: "Any Stimulant Injector" generic slot -->
+  <EL_CE_GenericStims>Any Stimulant Injector</EL_CE_GenericStims>
+  <EL_CE_GenericStimsDesc>Contains 22 stimulant injectors from [EL] Stims from EFT.</EL_CE_GenericStimsDesc>
 </LanguageData>

@@ -5,7 +5,7 @@
   <!-- M.U.L.E 兴奋剂注射器 -->
   <!-- 900秒: 携带能力+100%, 每10秒随机损伤非solid部位1点 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_MULE</defName>
     <label>M.U.L.E兴奋剂注射器</label>
     <description>极效肌肉激励兴奋剂，被用于在长途行军之前提升身体载荷能力，它在交通不便的作战地区显示了其有效性，能够让士兵如同这款针剂的名字一般长时间承载更多的重量。
@@ -17,7 +17,7 @@
       <HediffDef>EL_Hediff_MULE</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/M.U.L.E</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -41,7 +41,18 @@
     <costList>
       <Neutroamine>32</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_MULE</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1009</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

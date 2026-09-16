@@ -13,4 +13,8 @@
 
   <!-- 药品储存柜 -->
   <EL_Tab_StimStorageContents>存放物品</EL_Tab_StimStorageContents>
+
+  <!-- CE携带方案: "任意针剂"泛化槽位 -->
+  <EL_CE_GenericStims>任意针剂</EL_CE_GenericStims>
+  <EL_CE_GenericStimsDesc>包含[EL]Stims from EFT的22种针剂。</EL_CE_GenericStimsDesc>
 </LanguageData>

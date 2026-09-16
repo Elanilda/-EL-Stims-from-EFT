@@ -18,6 +18,7 @@
     <hediffClass>EL_Hediff_RawLabel</hediffClass>
     <isBad>false</isBad>
     <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
     <defaultLabelColor>(0.40, 0.85, 0.35)</defaultLabelColor>
     <comps>
       <!-- 总持续120秒 = 7200 ticks, severityPerDay = -1.0/(7200/60000) ≈ -8.333 -->

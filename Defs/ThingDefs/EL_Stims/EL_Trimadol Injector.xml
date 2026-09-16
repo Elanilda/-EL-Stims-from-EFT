@@ -3,29 +3,29 @@
 
   <!-- ============================================================ -->
   <!-- Trimadol (曲马多) 兴奋剂注射器 -->
-  <!-- 180秒: 痛觉*0.05, 工作+10%/移动+10%/操作+10%, 崩溃×0.9/休克×1.1 -->
-  <!-- 休息下降-10%, 每秒恢复0.03休息值, 每秒消耗0.01饮食 -->
+  <!-- 180秒: 痛觉*0.05, 工作+20%/移动+20%/操作+20%, 崩溃×0.8/休克×1.2 -->
+  <!-- 休息下降-20%, 每秒恢复0.03休息值, 每秒消耗0.01饮食 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_Trimadol</defName>
     <label>曲马多注射器</label>
     <description>服务特战人员的阿片类综合强化剂，能够促进中枢和脊髓神经细胞钾钙离子通道的开放，引起细胞膜超极化并抑制痛感，但会给身体带来巨大的代谢压力。
 
 【施加效果】
 疼痛×5%，延迟0秒/持续180秒；
-操作能力+10%，延迟0秒/持续180秒；
-全局工作速度×110%，延迟0秒/持续180秒；
-移动速度×110%，延迟0秒/持续180秒；
-崩溃临界值×90%，延迟0秒/持续180秒；
-疼痛休克阈值×110%，延迟0秒/持续180秒；
-休息值下降速率×90%，延迟0秒/持续180秒；
+操作能力+20%，延迟0秒/持续180秒；
+全局工作速度×120%，延迟0秒/持续180秒；
+移动速度×120%，延迟0秒/持续180秒；
+崩溃临界值×80%，延迟0秒/持续180秒；
+疼痛休克阈值×120%，延迟0秒/持续180秒；
+休息值下降速率×80%，延迟0秒/持续180秒；
 每秒恢复0.03休息值，延迟0秒/持续180秒；
 每秒消耗0.01饮食值，延迟0秒/持续180秒。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Trimadol</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/Trimadol</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -49,7 +49,18 @@
     <costList>
       <Neutroamine>22</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_Trimadol</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1021</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

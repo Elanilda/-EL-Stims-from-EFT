@@ -6,7 +6,7 @@
   <!-- 125秒: 前60秒愈合+30%/血液过滤+30%/崩溃×0.7/休克×1.3 -->
   <!-- 后65秒移动-20%+每秒扣0.008休息值 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_P22_22cpd</defName>
     <label>P22（22号化合物）兴奋剂注射器</label>
     <description>军用的肌肉促进剂，被用来在投入战斗前扩展身体能力，减少身体受到的损伤并加快身体修复，但药效过后有疲劳的副作用。
@@ -22,7 +22,7 @@
       <HediffDef>EL_Hediff_P22_22cpd</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/P22</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -46,7 +46,18 @@
     <costList>
       <Neutroamine>16</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_P22_22cpd</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1010</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

@@ -6,7 +6,7 @@
   <!-- 120秒: 痛觉×0.10, 全局工作速度+40%, 移动+20%, 休息下降-30% -->
   <!-- 前60秒每秒消耗0.009饮食 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_L1_Norepinephrine</defName>
     <label>L1（去甲肾上腺素）</label>
     <description>内部装有去甲肾上腺素的一次性笔式注射器，用来短期增强体能并减少疼痛的影响，并且能够增强生理反应的执行力比如"该打还是该跑"，当然，也会增加代谢消耗。
@@ -21,7 +21,7 @@
       <HediffDef>EL_Hediff_L1</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/L1</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -45,7 +45,18 @@
     <costList>
       <Neutroamine>12</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_L1</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1005</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

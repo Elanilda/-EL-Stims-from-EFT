@@ -6,7 +6,7 @@
   <!-- 900秒: 工作+20%/移动+40%, 每秒恢复0.005休息值 -->
   <!-- 30秒延迟后持续870秒每秒消耗0.002饮食 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_Meldonin</defName>
     <label>米屈肼注射器</label>
     <description>面向运动员的兴奋药物，让使用者更快恢复精力并增强其力量和耐力，有效的减少疲惫感带来的影响，但有增加代谢压力的副作用。与此同时，米屈肼还有一项未被公布的特性——增加肌肉内部张力，提升人体组织的物理冲击抗性，这一性质也使得军方将其作为战斗兴奋剂。
@@ -20,7 +20,7 @@
       <HediffDef>EL_Hediff_Meldonin</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/Meldonin</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -44,7 +44,18 @@
     <costList>
       <Neutroamine>24</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_Meldonin</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1008</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

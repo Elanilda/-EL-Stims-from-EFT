@@ -194,6 +194,32 @@ namespace RimWorld
         }
 
         /// <summary>
+        /// 三档适用范围判定: 档1玩家阵营 / 档2玩家关押囚犯(仅限囚犯) / 档3倒地无法行动者
+        /// 三档均要求血肉生物(排除机械体); 菜单与JobDriver共用此判定, 保证口径一致
+        /// </summary>
+        public static bool CanInjectToTarget(Pawn target)
+        {
+            if (target == null || target.Dead || target.Destroyed) return false;
+            if (!target.RaceProps.IsFlesh) return false;
+
+            // 档1: 玩家阵营, 拦截狂暴精神崩溃(清醒者可自行拒绝, 但狂暴者行为不可控)
+            if (target.Faction == Faction.OfPlayer)
+            {
+                return !target.InAggroMentalState;
+            }
+
+            // 档2: 玩家关押囚犯(仅限囚犯, 奴隶不含; 奴隶倒地走档3)
+            // PrisonerIsSecure内部已含狂暴/越狱/已释放/正在逃离地图判定, 对齐原版狱卒逻辑
+            if (target.IsPrisonerOfColony)
+            {
+                return target.guest.PrisonerIsSecure;
+            }
+
+            // 档3: 倒地无法行动者(任何阵营, 含敌军/中立路人/野生动物)
+            return target.Downed;
+        }
+
+        /// <summary>
         /// 启动pawn的注射冷却
         /// </summary>
         public static void StartCooldown(Pawn pawn)

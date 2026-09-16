@@ -9,7 +9,7 @@
   </supportedVersions>
   <packageId>Elanilda.StimsFromEFT</packageId>
   <url></url>
-  <modVersion>1.0.4</modVersion>
+  <modVersion>1.0.9</modVersion>
   <modIconPath>UI/EL_ModIcon</modIconPath>
   <modDependencies>
     <li>

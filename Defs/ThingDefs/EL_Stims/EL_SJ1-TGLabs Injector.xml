@@ -10,7 +10,7 @@
   <!-- severity 0.667→0.4: 100-180秒(主效果+消耗) -->
   <!-- severity 0.4→0: 180-300秒(无主效果+消耗) -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_SJ1_TGLabs</defName>
     <label>SJ1-TGLabs战斗兴奋剂注射器</label>
     <description>军用战斗兴奋剂，在战斗前注射以提升体能并降低疼痛敏感度。有着较严重的代谢副作用。也作为前体药物参与药物合成。
@@ -25,7 +25,7 @@
       <HediffDef>EL_Hediff_SJ1_TGLabs</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/SJ1-TGLabs</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -49,7 +49,18 @@
     <costList>
       <Neutroamine>10</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_SJ1_TGLabs</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1020</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

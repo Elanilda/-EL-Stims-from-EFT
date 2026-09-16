@@ -5,7 +5,7 @@
   <!-- 2A2-(b-TG) 兴奋剂注射器 -->
   <!-- 900秒: 携带能力+30%, 操作/视觉/听觉+20%, 每秒消耗0.001饮食 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_2A2_bTG</defName>
     <label>2A2-(b-TG)兴奋剂注射器</label>
     <description>用于侦察或战术移动时的战斗支撑药剂，能够维稳中枢神经系统，协助人员适应不同环境并提升承载能力，但使用这款针剂会提升脱水的速度。
@@ -20,7 +20,7 @@
       <HediffDef>EL_Hediff_2A2_bTG</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/2A2-(b-TG)</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -44,7 +44,18 @@
     <costList>
       <Neutroamine>15</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_2A2_bTG</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1002</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

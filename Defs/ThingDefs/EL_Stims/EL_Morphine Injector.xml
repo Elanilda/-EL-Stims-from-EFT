@@ -5,7 +5,7 @@
   <!-- 吗啡注射器 -->
   <!-- 痛觉×0.05持续305秒, 使用时立刻扣除15%饮食值 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_Morphine</defName>
     <label>吗啡注射器</label>
     <description>装有大剂量吗啡的一次性笔式注射器，使用后将大幅抑制痛觉，但会增加代谢消耗。
@@ -17,7 +17,7 @@
       <HediffDef>EL_Hediff_Morphine</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/Morphine</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -41,7 +41,22 @@
     <costList>
       <Neutroamine>10</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_Morphine</hediffDef>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Food</need>
+          <offset>-0.15</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1007</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

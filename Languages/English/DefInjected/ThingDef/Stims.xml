@@ -276,6 +276,52 @@ consciousness -15%, 170s delay/40s duration;
 consumes 0.014 food/s, 170s delay/40s duration.</EL_Stim_Zagustin.description>
   <EL_Stim_Zagustin.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Zagustin.comps.CompUsable.useLabel>
 
+  <!-- Ingest strings (drug policy integration; overrides the Chinese text inherited from EL_StimBase) -->
+  <EL_Stim_2A2_bTG.ingestible.ingestCommandString>Inject {0}</EL_Stim_2A2_bTG.ingestible.ingestCommandString>
+  <EL_Stim_2A2_bTG.ingestible.ingestReportString>Injecting {0}.</EL_Stim_2A2_bTG.ingestible.ingestReportString>
+  <EL_Stim_3_bTG.ingestible.ingestCommandString>Inject {0}</EL_Stim_3_bTG.ingestible.ingestCommandString>
+  <EL_Stim_3_bTG.ingestible.ingestReportString>Injecting {0}.</EL_Stim_3_bTG.ingestible.ingestReportString>
+  <EL_Stim_Adrenaline.ingestible.ingestCommandString>Inject {0}</EL_Stim_Adrenaline.ingestible.ingestCommandString>
+  <EL_Stim_Adrenaline.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Adrenaline.ingestible.ingestReportString>
+  <EL_Stim_AHF1M.ingestible.ingestCommandString>Inject {0}</EL_Stim_AHF1M.ingestible.ingestCommandString>
+  <EL_Stim_AHF1M.ingestible.ingestReportString>Injecting {0}.</EL_Stim_AHF1M.ingestible.ingestReportString>
+  <EL_Stim_eTGchange.ingestible.ingestCommandString>Inject {0}</EL_Stim_eTGchange.ingestible.ingestCommandString>
+  <EL_Stim_eTGchange.ingestible.ingestReportString>Injecting {0}.</EL_Stim_eTGchange.ingestible.ingestReportString>
+  <EL_Stim_L1_Norepinephrine.ingestible.ingestCommandString>Inject {0}</EL_Stim_L1_Norepinephrine.ingestible.ingestCommandString>
+  <EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>Injecting {0}.</EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>
+  <EL_Stim_MULE.ingestible.ingestCommandString>Inject {0}</EL_Stim_MULE.ingestible.ingestCommandString>
+  <EL_Stim_MULE.ingestible.ingestReportString>Injecting {0}.</EL_Stim_MULE.ingestible.ingestReportString>
+  <EL_Stim_Meldonin.ingestible.ingestCommandString>Inject {0}</EL_Stim_Meldonin.ingestible.ingestCommandString>
+  <EL_Stim_Meldonin.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Meldonin.ingestible.ingestReportString>
+  <EL_Stim_Morphine.ingestible.ingestCommandString>Inject {0}</EL_Stim_Morphine.ingestible.ingestCommandString>
+  <EL_Stim_Morphine.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Morphine.ingestible.ingestReportString>
+  <EL_Stim_Obd2_cocktail.ingestible.ingestCommandString>Inject {0}</EL_Stim_Obd2_cocktail.ingestible.ingestCommandString>
+  <EL_Stim_Obd2_cocktail.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Obd2_cocktail.ingestible.ingestReportString>
+  <EL_Stim_Obdolbos.ingestible.ingestCommandString>Inject {0}</EL_Stim_Obdolbos.ingestible.ingestCommandString>
+  <EL_Stim_Obdolbos.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Obdolbos.ingestible.ingestReportString>
+  <EL_Stim_P22_22cpd.ingestible.ingestCommandString>Inject {0}</EL_Stim_P22_22cpd.ingestible.ingestCommandString>
+  <EL_Stim_P22_22cpd.ingestible.ingestReportString>Injecting {0}.</EL_Stim_P22_22cpd.ingestible.ingestReportString>
+  <EL_Stim_Perfotoran.ingestible.ingestCommandString>Inject {0}</EL_Stim_Perfotoran.ingestible.ingestCommandString>
+  <EL_Stim_Perfotoran.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Perfotoran.ingestible.ingestReportString>
+  <EL_Stim_PNB.ingestible.ingestCommandString>Inject {0}</EL_Stim_PNB.ingestible.ingestCommandString>
+  <EL_Stim_PNB.ingestible.ingestReportString>Injecting {0}.</EL_Stim_PNB.ingestible.ingestReportString>
+  <EL_Stim_Propital.ingestible.ingestCommandString>Inject {0}</EL_Stim_Propital.ingestible.ingestCommandString>
+  <EL_Stim_Propital.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Propital.ingestible.ingestReportString>
+  <EL_Stim_SJ1_TGLabs.ingestible.ingestCommandString>Inject {0}</EL_Stim_SJ1_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>Injecting {0}.</EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ12_TGLabs.ingestible.ingestCommandString>Inject {0}</EL_Stim_SJ12_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>Injecting {0}.</EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ6_TGLabs.ingestible.ingestCommandString>Inject {0}</EL_Stim_SJ6_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>Injecting {0}.</EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ9_TGLabs.ingestible.ingestCommandString>Inject {0}</EL_Stim_SJ9_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>Injecting {0}.</EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_Trimadol.ingestible.ingestCommandString>Inject {0}</EL_Stim_Trimadol.ingestible.ingestCommandString>
+  <EL_Stim_Trimadol.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Trimadol.ingestible.ingestReportString>
+  <EL_Stim_xTG12_Antidote.ingestible.ingestCommandString>Inject {0}</EL_Stim_xTG12_Antidote.ingestible.ingestCommandString>
+  <EL_Stim_xTG12_Antidote.ingestible.ingestReportString>Injecting {0}.</EL_Stim_xTG12_Antidote.ingestible.ingestReportString>
+  <EL_Stim_Zagustin.ingestible.ingestCommandString>Inject {0}</EL_Stim_Zagustin.ingestible.ingestCommandString>
+  <EL_Stim_Zagustin.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Zagustin.ingestible.ingestReportString>
+
   <!-- EL_Blueprint_Obdolbos -->
   <EL_Blueprint_Obdolbos.label>Obdolbos Recipe Notes</EL_Blueprint_Obdolbos.label>
   <EL_Blueprint_Obdolbos.description>A notebook stored in a blueprint case, recording the complete formula for the Obdolbos cocktail stimulant injector. It is a manuscript copy left by a former Terragroup medical expert. Using it unlocks the Obdolbos crafting recipe at the drug lab.</EL_Blueprint_Obdolbos.description>

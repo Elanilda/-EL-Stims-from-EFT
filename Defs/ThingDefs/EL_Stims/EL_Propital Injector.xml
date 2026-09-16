@@ -6,7 +6,7 @@
   <!-- 300秒: 痛觉*0.10(245秒), 消化+20%/愈合+20%/血液过滤+20% -->
   <!-- 全程回复器官损伤(第二档), 270秒后视觉-15%/意识-15% -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_Propital</defName>
     <label>Propital注射器</label>
     <description>军用体能增强药物，通过增加嘌呤和嘧啶碱基、RNA以及功能性酶的生物合成来刺激机体再生过程，能够增加新陈代谢并抑制痛感，但有较严重的末端副作用，因此往往仅限专业医师施用。
@@ -23,7 +23,7 @@
       <HediffDef>EL_Hediff_Propital</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/Propital</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -44,7 +44,18 @@
     <thingCategories>
       <li>EL_Stims</li>
     </thingCategories>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_Propital</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1013</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

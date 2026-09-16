@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -277,9 +277,11 @@ namespace RimWorld
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            // 失败条件: 目标消失/禁止/死亡/非殖民者
-            this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-            this.FailOn(() => Target == null || Target.Dead || Target.Faction != Faction.OfPlayer);
+            // 目标有效性: 显式Spawned检查(不用FailOnDespawnedNullOrForbidden,
+            // 其forbid分支会受囚犯格子/倒地者身上被禁物品干扰, 三档语义已由CanInjectToTarget完全定义)
+            this.FailOn(() => Target == null || !Target.Spawned);
+            // 三档+血肉逐tick复验: 目标恢复行动/越狱/狂暴/死亡即失败
+            this.FailOn(() => !EL_StimUtility.CanInjectToTarget(Target));
             // 失败条件: 针剂物品失效
             this.FailOn(() => StimThing == null || StimThing.Destroyed);
 
@@ -290,15 +292,6 @@ namespace RimWorld
             // 2. 双方等待2秒, 目标保持姿势(进入"正在接受注射"状态)
             Toil wait = Toils_General.WaitWith(TargetIndex.A, InjectionDurationTicks,
                 useProgressBar: false, maintainPosture: true);
-            // 等待结束后执行注射
-            wait.AddFinishAction(() =>
-            {
-                if (Target != null && !Target.Dead
-                    && StimThing != null && !StimThing.Destroyed)
-                {
-                    EL_StimUtility.InjectToTarget(pawn, Target, StimThing.def);
-                }
-            });
             // 使用者持续面向目标
             wait.tickIntervalAction = (delta) =>
             {
@@ -309,6 +302,16 @@ namespace RimWorld
             // 注射音效
             wait.PlaySustainerOrSound(EL_StimUtility.IngestInjectSound);
             yield return wait;
+
+            // 3. 仅成功完成才注射: wait被FailOn打断时本toil不执行, 不消耗针剂不启动冷却
+            yield return Toils_General.Do(() =>
+            {
+                // 终点复验(FailOn与toil切换间的兜底)
+                if (!EL_StimUtility.CanInjectToTarget(Target)) return;
+                if (StimThing == null || StimThing.Destroyed) return;
+
+                EL_StimUtility.InjectToTarget(pawn, Target, StimThing.def);
+            });
         }
     }
 
@@ -339,15 +342,15 @@ namespace RimWorld
             Toil wait = Toils_General.Wait(InjectionDurationTicks);
             wait.WithProgressBarToilDelay(TargetIndex.A);
             wait.PlaySustainerOrSound(EL_StimUtility.IngestInjectSound);
-            // 等待结束后执行注射
-            wait.AddFinishAction(() =>
-            {
-                if (StimThing != null && !StimThing.Destroyed)
-                {
-                    EL_StimUtility.Inject(pawn, StimThing.def);
-                }
-            });
             yield return wait;
+
+            // 仅成功完成才注射: wait被打断时本toil不执行, 不消耗针剂不启动冷却
+            yield return Toils_General.Do(() =>
+            {
+                if (StimThing == null || StimThing.Destroyed) return;
+
+                EL_StimUtility.Inject(pawn, StimThing.def);
+            });
         }
     }
 
@@ -393,9 +396,9 @@ namespace RimWorld
         {
             Pawn user = context.FirstSelectedPawn;
 
-            // 仅殖民者目标(根据审批决策)
-            if (clickedPawn.Faction != Faction.OfPlayer) yield break;
+            // 三档适用范围: 玩家阵营 / 玩家关押囚犯 / 倒地者, 均要求血肉生物(排除机械体)
             if (clickedPawn.Dead) yield break;
+            if (!EL_StimUtility.CanInjectToTarget(clickedPawn)) yield break;
 
             // 携带针剂检查
             var stims = EL_StimUtility.GetCarriedStims(user);
@@ -468,13 +471,16 @@ namespace RimWorld
 
     // ============================================================
     // Harmony Patch: ThingDef.AllRecipes getter 后缀
-    // 对所有人形pawn的ThingDef动态追加注射手术recipe
-    // 解决手术不在手术清单显示的问题, 兼容所有race mod(ElanSupporian等)
+    // 1. 对所有血肉pawn(人形+动物)动态追加注射手术recipe
+    // 2. 对所有pawn移除原版自动生成的针剂"施用"手术recipe
+    //    (RecipeDefGenerator.DrugAdministerDefs对每个IsDrug隐式生成
+    //     Administer_<defName>, XML补丁阶段尚不存在, 只能在此拦截)
     // ============================================================
     [HarmonyPatch(typeof(ThingDef), nameof(ThingDef.AllRecipes), MethodType.Getter)]
     public static class EL_ThingDef_AllRecipes_Patch
     {
         private static List<RecipeDef> _stimSurgeryRecipes;
+        private static HashSet<RecipeDef> _stimAdministerRecipes;
         private static bool _initialized = false;
 
         private static void InitRecipes()
@@ -484,15 +490,31 @@ namespace RimWorld
             _stimSurgeryRecipes = DefDatabase<RecipeDef>.AllDefs
                 .Where(r => r.workerClass == typeof(EL_Recipe_InjectStim))
                 .ToList();
+
+            // 收集针剂"施用"配方: workerClass为Recipe_AdministerIngestible
+            // 且原料含任一带EL_CompProperties_EFTStims标记的def(改defName免疫)
+            _stimAdministerRecipes = new HashSet<RecipeDef>(
+                DefDatabase<RecipeDef>.AllDefs.Where(r =>
+                    r.workerClass == typeof(Recipe_AdministerIngestible)
+                    && r.ingredients != null
+                    && r.ingredients.Any(i => i.filter.AllowedThingDefs
+                        .Any(d => d.GetCompProperties<EL_CompProperties_EFTStims>() != null))));
         }
 
         public static void Postfix(ThingDef __instance, ref List<RecipeDef> __result)
         {
-            // 仅对人形pawn的ThingDef
             if (__instance.category != ThingCategory.Pawn) return;
-            if (__instance.race?.Humanlike != true) return;
 
             InitRecipes();
+
+            // 所有pawn: 移除针剂"施用"手术, 施用途径由自定义注射配方替代
+            if (_stimAdministerRecipes.Count > 0)
+            {
+                __result.RemoveAll(_stimAdministerRecipes.Contains);
+            }
+
+            // 所有血肉pawn(人形+动物)追加自定义注射手术
+            if (__instance.race?.IsFlesh != true) return;
             if (_stimSurgeryRecipes == null || _stimSurgeryRecipes.Count == 0) return;
 
             // 追加手术recipe(避免重复)

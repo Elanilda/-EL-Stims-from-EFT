@@ -5,7 +5,7 @@
   <!-- 3-(b-TG) 兴奋剂注射器 -->
   <!-- 240秒: 操作+60%/视觉+60%/听觉+60%/工作+20%, 恢复休息+饮食消耗+意识-15% -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_3_bTG</defName>
     <label>3-(b-TG)兴奋剂注射器</label>
     <description>中枢神经刺激药物3-(b-苯基异丙基)活性物质，可以增加感知和注意力，并通过增强肌电信号的方式改善肌肉力量。
@@ -22,7 +22,7 @@
       <HediffDef>EL_Hediff_3_bTG</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/3-(b-TG)</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -46,7 +46,18 @@
     <costList>
       <Neutroamine>14</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_3_bTG</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1001</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

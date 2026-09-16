@@ -6,7 +6,7 @@
   <!-- 221秒: 意识+20%/工作+40%, 前40秒回复器官损伤(第一档) -->
   <!-- 41秒后意识-15%, 愈合-20%/血液过滤-20%持续180秒 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_PNB</defName>
     <label>PNB注射器</label>
     <description>能够短期激活内部肌肉的军用兴奋剂，让这些肌肉组织变为高渗透状态，以降低人体所受伤害；PNB还能提高蛋白合成转运速度，加速组织恢复；有影响免疫代偿的副作用。
@@ -22,7 +22,7 @@
       <HediffDef>EL_Hediff_PNB</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/PNB</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -43,7 +43,18 @@
     <thingCategories>
       <li>EL_Stims</li>
     </thingCategories>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_PNB</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1014</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 针剂专用"计划携带"分组: 影响药物方案界面"携带数量"的上限 -->
+  <!-- 默认Medicine组max=3, 这里放宽到8, 供pawn按方案自动补货携带 -->
+  <!-- ============================================================ -->
+  <OrderedTakeGroupDef>
+    <defName>EL_StimCarry</defName>
+    <label>stimulant injector</label>
+    <max>8</max>
+  </OrderedTakeGroupDef>
+
+</Defs>

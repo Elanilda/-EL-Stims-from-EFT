@@ -6,7 +6,7 @@
   <!-- 立即清除ToxicBuildup/FoodPoisoning/ScariaInfection/LungRot -->
   <!-- 240秒内持续清除新添加的上述Hediff -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_xTG12_Antidote</defName>
     <label>xTG-12解毒剂注射器</label>
     <description>广谱抗毒中和剂，能够解除绝大多数人造或自然毒素，其成分分布在血液中时，可提供机体对毒素的免疫效果。对身体自修复功能有副作用。
@@ -18,7 +18,7 @@
       <HediffDef>EL_Hediff_xTG12</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/xTG-12</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -42,7 +42,18 @@
     <costList>
       <Neutroamine>16</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_xTG12</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1019</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

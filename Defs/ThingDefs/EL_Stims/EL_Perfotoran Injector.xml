@@ -7,7 +7,7 @@
   <!-- 120秒内持续清除新毒素+止血+减少BloodLoss+消化+10%+每秒回复非solid部位2点耐久(第三档) -->
   <!-- 60秒延迟后持续60秒: 愈合系数-15%, 每秒消耗0.011饮食 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_Perfotoran</defName>
     <label>Perfotoran人造血注射器</label>
     <description>人造血是基于PFO混合物的亚微米级乳化液，一种能够转运氧气的血液替代品，注入血液后能暂时代行血浆功能并加快代谢、促进组织恢复，被用作治疗中毒、辐射以及严重失血的超级解药，但是过量使用仍会带来较重的负面生理影响。
@@ -24,7 +24,7 @@
       <HediffDef>EL_Hediff_Perfotoran</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/Perfotoran</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -48,7 +48,18 @@
     <costList>
       <Neutroamine>20</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_Perfotoran</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1015</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

@@ -15,6 +15,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
     <defaultLabelColor>(0.60, 0.15, 0.15)</defaultLabelColor>
     <comps>
       <!-- 900秒 = 54000 ticks, severityPerDay = -1.0/(54000/60000) ≈ -1.11 -->

@@ -6,7 +6,7 @@
   <!-- 900秒: 前600秒视觉+听觉+30%, 最低温度-8℃, 每秒恢复0.01饮食 -->
   <!-- 后300秒最高温度-12℃(副作用) -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_SJ12_TGLabs</defName>
     <label>SJ12-TGLabs战斗兴奋剂注射器</label>
     <description>专业特种作战兴奋剂，能够选择性减缓部分身体机能转为恢复体能，其机理是强迫下丘脑分泌加压素以转变肾上腺工作模式，进而降低体温提升感知能力，但在药效过后由于机体未正常运转，会有体温升高的副作用。
@@ -21,7 +21,7 @@
       <HediffDef>EL_Hediff_SJ12_TGLabs</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/SJ12-TGLabs</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -45,7 +45,18 @@
     <costList>
       <Neutroamine>18</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_SJ12_TGLabs</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1018</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>

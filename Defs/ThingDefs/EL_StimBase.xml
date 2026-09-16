@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 这部分仅作为置入用药方案的前置要求 -->
+  <!-- 针剂基类: 接入原版成瘾品方案(药物类别=医疗) -->
+  <!-- pawn可按"用药方案"自动携带-->
+  <!-- ingestible公共字段参照原版青霉素(Penoxycyline)模板 -->
+  <!-- 各针剂的效果hediff由自身ingestible.outcomeDoers配置 -->
+  <!-- 服用音效复用注射音效EL_Stim_Inject; 英文文案在Languages/English/DefInjected覆盖 -->
+  <!-- ============================================================ -->
+  <ThingDef Name="EL_StimBase" ParentName="ResourceBase" Abstract="True">
+    <ingestible>
+      <preferability>NeverForNutrition</preferability>
+      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+      <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+      <chairSearchRadius>0</chairSearchRadius>
+      <foodType>Processed</foodType>
+      <baseIngestTicks>120</baseIngestTicks>
+      <ingestSound>EL_Stim_Inject</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>注射{0}</ingestCommandString>
+      <ingestReportString>正在注射{0}。</ingestReportString>
+      <!-- 针剂只能通过自定义job注射使用, 防止重复，移除地面物品右键"注射"菜单入口 -->
+      <!-- 也许选择做自定义job的时候就已经走远了 -->
+      <showIngestFloatOption>false</showIngestFloatOption>
+      <drugCategory>Medical</drugCategory>
+    </ingestible>
+    <storedConceptLearnOpportunity>DrugPolicies</storedConceptLearnOpportunity>
+  </ThingDef>
+
+</Defs>

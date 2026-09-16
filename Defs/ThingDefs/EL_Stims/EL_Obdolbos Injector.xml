@@ -6,7 +6,7 @@
   <!-- 600秒随机副作用: 15条效果每条独立25%几率判定, 每次用药都不同 -->
   <!-- MarketValue=29420/217≈136, defName无数字结尾问题 -->
   <!-- ============================================================ -->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_Obdolbos</defName>
     <label>Obdolbos鸡尾酒兴奋剂注射器</label>
     <description>装有未知自制药物的注射器，由某位前Terragroup的医药专家制作，每次用药的副作用都不一样，如果觉得已经没什么可失去的了，也可以冒这个险，至少这款针剂的发明者已经这么做过了。
@@ -17,7 +17,7 @@
       <HediffDef>EL_Hediff_Obdolbos</HediffDef>
     </descriptionHyperlinks>
     <tickerType>Never</tickerType>
-    <orderedTakeGroup>Medicine</orderedTakeGroup>
+    <orderedTakeGroup>EL_StimCarry</orderedTakeGroup>
     <graphicData>
       <texPath>Stims/Obdolbos</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -41,7 +41,18 @@
     <costList>
       <Neutroamine>5</Neutroamine>
     </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>EL_Hediff_Obdolbos</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
     <comps>
+      <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1011</listOrder>
+      </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>注射 {0}</useLabel>
