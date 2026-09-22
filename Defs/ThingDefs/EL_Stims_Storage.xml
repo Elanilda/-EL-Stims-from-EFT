@@ -4,12 +4,12 @@
   <!-- ============================================================ -->
   <!-- EL针剂储存柜 (以原版物品架Shelf为基础, 高大冰箱设定) -->
   <!-- 只收EL_Stims分类物品和中性胺, 内容物隐藏不渲染 -->
-  <!-- thingClass为Toolkit前置的EL_Building_HiddenStorage -->
+  <!-- thingClass为Toolkit前置的EL_Building_ExtendedStorage -->
   <!-- 2x1共2格, maxItemsInCell=16, 总容量32摞 -->
   <!-- ============================================================ -->
   <ThingDef Name="EL_Stim_StorageBase" Abstract="True">
     <category>Building</category>
-    <thingClass>EL_Building_HiddenStorage</thingClass>
+    <thingClass>EL_Building_ExtendedStorage</thingClass>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <selectable>true</selectable>
     <drawerType>MapMeshOnly</drawerType>
@@ -75,6 +75,7 @@
     <modExtensions>
       <li Class="EL_StorageExtension">
         <hideContainedItems>true</hideContainedItems>
+        <hideStackCount>true</hideStackCount>
       </li>
     </modExtensions>
   </ThingDef>
@@ -86,10 +87,10 @@
     <graphicData>
       <texPath>Things/EL_Stims_Storage/EL_Stim_Storage</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(2.8,1.8)</drawSize>
+      <drawSize>(2.6,2.1)</drawSize>
       <shaderType>CutoutComplex</shaderType>
       <!-- 贴图整体上调: 第三位数值为向上偏移(单位:格), 位置不合适时微调此值 -->
-      <drawOffset>(0,0,0.3)</drawOffset>
+      <drawOffset>(0,0,0.4)</drawOffset>
     </graphicData>
     <statBases>
       <Beauty>1</Beauty>

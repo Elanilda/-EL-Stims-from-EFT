@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 2A2-(b-TG) -->
+  <EL_Make_2A2_bTG.label>изготовить препарат 2А2-(b-ТГ)</EL_Make_2A2_bTG.label>
+  <EL_Make_2A2_bTG.description>Изготовить 1 препарат 2А2-(b-ТГ).</EL_Make_2A2_bTG.description>
+  <EL_Make_2A2_bTG.jobString>Изготавливает препарат 2А2-(b-ТГ)</EL_Make_2A2_bTG.jobString>
+  <EL_Make_2A2_bTG_Bulk.label>изготовить 4 препарата 2А2-(b-ТГ)</EL_Make_2A2_bTG_Bulk.label>
+  <EL_Make_2A2_bTG_Bulk.description>Изготовить партию из 4 препаратов 2А2-(b-ТГ).</EL_Make_2A2_bTG_Bulk.description>
+  <EL_Make_2A2_bTG_Bulk.jobString>Изготавливает препараты 2А2-(b-ТГ)</EL_Make_2A2_bTG_Bulk.jobString>
+
+  <!-- 3-(b-TG) -->
+  <EL_Make_3_bTG.label>изготовить препарат 3-(b-ТГ)</EL_Make_3_bTG.label>
+  <EL_Make_3_bTG.description>Изготовить 1 препарат 3-(b-ТГ).</EL_Make_3_bTG.description>
+  <EL_Make_3_bTG.jobString>Изготавливает препарат 3-(b-ТГ)</EL_Make_3_bTG.jobString>
+  <EL_Make_3_bTG_Bulk.label>изготовить 4 препарата 3-(b-ТГ)</EL_Make_3_bTG_Bulk.label>
+  <EL_Make_3_bTG_Bulk.description>Изготовить партию из 4 препаратов 3-(b-ТГ).</EL_Make_3_bTG_Bulk.description>
+  <EL_Make_3_bTG_Bulk.jobString>Изготавливает препараты 3-(b-ТГ)</EL_Make_3_bTG_Bulk.jobString>
+
+  <!-- Adrenaline -->
+  <EL_Make_Adrenaline.label>изготовить шприц с адреналином</EL_Make_Adrenaline.label>
+  <EL_Make_Adrenaline.description>Изготовить 1 шприц с адреналином.</EL_Make_Adrenaline.description>
+  <EL_Make_Adrenaline.jobString>Изготавливает шприц с адреналином</EL_Make_Adrenaline.jobString>
+  <EL_Make_Adrenaline_Bulk.label>изготовить 4 шприца с адреналином</EL_Make_Adrenaline_Bulk.label>
+  <EL_Make_Adrenaline_Bulk.description>Изготовить партию из 4 шприцев с адреналином.</EL_Make_Adrenaline_Bulk.description>
+  <EL_Make_Adrenaline_Bulk.jobString>Изготавливает шприцы с адреналином</EL_Make_Adrenaline_Bulk.jobString>
+
+  <!-- AHF1-M -->
+  <EL_Make_AHF1M.label>изготовить препарат AHF1-M</EL_Make_AHF1M.label>
+  <EL_Make_AHF1M.description>Изготовить 1 гемостатический препарат AHF1-M.</EL_Make_AHF1M.description>
+  <EL_Make_AHF1M.jobString>Изготавливает препарат AHF1-M</EL_Make_AHF1M.jobString>
+  <EL_Make_AHF1M_Bulk.label>изготовить 4 препарата AHF1-M</EL_Make_AHF1M_Bulk.label>
+  <EL_Make_AHF1M_Bulk.description>Изготовить партию из 4 гемостатических препаратов AHF1-M.</EL_Make_AHF1M_Bulk.description>
+  <EL_Make_AHF1M_Bulk.jobString>Изготавливает препараты AHF1-M</EL_Make_AHF1M_Bulk.jobString>
+
+  <!-- Cartridge -->
+  <EL_Make_Cartridge.label>изготовить 4 шприц-ручки (заготовки)</EL_Make_Cartridge.label>
+  <EL_Make_Cartridge.description>Изготовить 4 пустые заготовки шприц-ручек.</EL_Make_Cartridge.description>
+  <EL_Make_Cartridge.jobString>Изготавливает заготовки шприц-ручек</EL_Make_Cartridge.jobString>
+  <EL_Make_Cartridge_Bulk.label>изготовить 16 шприц-ручек (заготовок)</EL_Make_Cartridge_Bulk.label>
+  <EL_Make_Cartridge_Bulk.description>Изготовить 16 пустых заготовок шприц-ручек.</EL_Make_Cartridge_Bulk.description>
+  <EL_Make_Cartridge_Bulk.jobString>Изготавливает заготовки шприц-ручек</EL_Make_Cartridge_Bulk.jobString>
+
+  <!-- eTG-change -->
+  <EL_Make_eTGchange.label>изготовить регенеративный стимулятор eTG-change</EL_Make_eTGchange.label>
+  <EL_Make_eTGchange.description>Изготовить 1 регенеративный стимулятор eTG-change.</EL_Make_eTGchange.description>
+  <EL_Make_eTGchange.jobString>Изготавливает регенеративный стимулятор eTG-change</EL_Make_eTGchange.jobString>
+  <EL_Make_eTGchange_Bulk.label>изготовить 4 регенеративных стимулятора eTG-change</EL_Make_eTGchange_Bulk.label>
+  <EL_Make_eTGchange_Bulk.description>Изготовить 4 регенеративных стимулятора eTG-change.</EL_Make_eTGchange_Bulk.description>
+  <EL_Make_eTGchange_Bulk.jobString>Изготавливает регенеративные стимуляторы eTG-change</EL_Make_eTGchange_Bulk.jobString>
+
+  <!-- L1 -->
+  <EL_Make_L1.label>изготовить шприц с L1 (норадреналин)</EL_Make_L1.label>
+  <EL_Make_L1.description>Изготовить 1 шприц с L1 (норадреналин).</EL_Make_L1.description>
+  <EL_Make_L1.jobString>Изготавливает шприц с L1 (норадреналин)</EL_Make_L1.jobString>
+  <EL_Make_L1_Bulk.label>изготовить 4 шприца с L1 (норадреналин)</EL_Make_L1_Bulk.label>
+  <EL_Make_L1_Bulk.description>Изготовить партию из 4 шприцев с L1 (норадреналин).</EL_Make_L1_Bulk.description>
+  <EL_Make_L1_Bulk.jobString>Изготавливает шприцы с L1 (норадреналин)</EL_Make_L1_Bulk.jobString>
+
+  <!-- M.U.L.E -->
+  <EL_Make_MULE.label>изготовить стимулятор M.U.L.E</EL_Make_MULE.label>
+  <EL_Make_MULE.description>Изготовить 1 стимулятор M.U.L.E.</EL_Make_MULE.description>
+  <EL_Make_MULE.jobString>Изготавливает стимулятор M.U.L.E</EL_Make_MULE.jobString>
+  <EL_Make_MULE_Bulk.label>изготовить 4 стимулятора M.U.L.E</EL_Make_MULE_Bulk.label>
+  <EL_Make_MULE_Bulk.description>Изготовить партию из 4 стимуляторов M.U.L.E.</EL_Make_MULE_Bulk.description>
+  <EL_Make_MULE_Bulk.jobString>Изготавливает стимуляторы M.U.L.E</EL_Make_MULE_Bulk.jobString>
+
+  <!-- Meldonin -->
+  <EL_Make_Meldonin.label>изготовить препарат Мельдоний</EL_Make_Meldonin.label>
+  <EL_Make_Meldonin.description>Изготовить 1 препарат Мельдоний.</EL_Make_Meldonin.description>
+  <EL_Make_Meldonin.jobString>Изготавливает препарат Мельдоний</EL_Make_Meldonin.jobString>
+  <EL_Make_Meldonin_Bulk.label>изготовить 4 препарата Мельдоний</EL_Make_Meldonin_Bulk.label>
+  <EL_Make_Meldonin_Bulk.description>Изготовить партию из 4 препаратов Мельдоний.</EL_Make_Meldonin_Bulk.description>
+  <EL_Make_Meldonin_Bulk.jobString>Изготавливает препараты Мельдоний</EL_Make_Meldonin_Bulk.jobString>
+
+  <!-- Morphine -->
+  <EL_Make_Morphine.label>изготовить шприц с морфием</EL_Make_Morphine.label>
+  <EL_Make_Morphine.description>Изготовить 1 шприц с морфием.</EL_Make_Morphine.description>
+  <EL_Make_Morphine.jobString>Изготавливает шприц с морфием</EL_Make_Morphine.jobString>
+  <EL_Make_Morphine_Bulk.label>изготовить 4 шприца с морфием</EL_Make_Morphine_Bulk.label>
+  <EL_Make_Morphine_Bulk.description>Изготовить партию из 4 шприцев с морфием.</EL_Make_Morphine_Bulk.description>
+  <EL_Make_Morphine_Bulk.jobString>Изготавливает шприцы с морфием</EL_Make_Morphine_Bulk.jobString>
+
+  <!-- Obd2 -->
+  <EL_Make_Obd2_cocktail.label>изготовить коктейль «Обдолбос 2»</EL_Make_Obd2_cocktail.label>
+  <EL_Make_Obd2_cocktail.description>Изготовить 1 коктейль «Обдолбос 2».</EL_Make_Obd2_cocktail.description>
+  <EL_Make_Obd2_cocktail.jobString>Изготавливает коктейль «Обдолбос 2»</EL_Make_Obd2_cocktail.jobString>
+  <EL_Make_Obd2_cocktail_Bulk.label>изготовить 4 коктейля «Обдолбос 2»</EL_Make_Obd2_cocktail_Bulk.label>
+  <EL_Make_Obd2_cocktail_Bulk.description>Изготовить 4 коктейля «Обдолбос 2».</EL_Make_Obd2_cocktail_Bulk.description>
+  <EL_Make_Obd2_cocktail_Bulk.jobString>Изготавливает коктейли «Обдолбос 2»</EL_Make_Obd2_cocktail_Bulk.jobString>
+
+  <!-- Obdolbos -->
+  <EL_Make_Obdolbos.label>изготовить коктейль «Обдолбос»</EL_Make_Obdolbos.label>
+  <EL_Make_Obdolbos.description>Изготовить 1 коктейль «Обдолбос».</EL_Make_Obdolbos.description>
+  <EL_Make_Obdolbos.jobString>Изготавливает коктейль «Обдолбос»</EL_Make_Obdolbos.jobString>
+  <EL_Make_Obdolbos_Bulk.label>изготовить 4 коктейля «Обдолбос»</EL_Make_Obdolbos_Bulk.label>
+  <EL_Make_Obdolbos_Bulk.description>Изготовить 4 коктейля «Обдолбос».</EL_Make_Obdolbos_Bulk.description>
+  <EL_Make_Obdolbos_Bulk.jobString>Изготавливает коктейли «Обдолбос»</EL_Make_Obdolbos_Bulk.jobString>
+
+  <!-- P22 -->
+  <EL_Make_P22_22cpd.label>изготовить P22 (Препарат 22)</EL_Make_P22_22cpd.label>
+  <EL_Make_P22_22cpd.description>Изготовить 1 препарат P22.</EL_Make_P22_22cpd.description>
+  <EL_Make_P22_22cpd.jobString>Изготавливает P22 (Препарат 22)</EL_Make_P22_22cpd.jobString>
+  <EL_Make_P22_22cpd_Bulk.label>изготовить 4 P22 (Препарат 22)</EL_Make_P22_22cpd_Bulk.label>
+  <EL_Make_P22_22cpd_Bulk.description>Изготовить партию из 4 препаратов P22.</EL_Make_P22_22cpd_Bulk.description>
+  <EL_Make_P22_22cpd_Bulk.jobString>Изготавливает P22 (Препарат 22)</EL_Make_P22_22cpd_Bulk.jobString>
+
+  <!-- Perfotoran -->
+  <EL_Make_Perfotoran.label>изготовить стимулятор Пефторан (Синяя кровь)</EL_Make_Perfotoran.label>
+  <EL_Make_Perfotoran.description>Изготовить 1 стимулятор Пефторан (Синяя кровь).</EL_Make_Perfotoran.description>
+  <EL_Make_Perfotoran.jobString>Изготавливает стимулятор Пефторан (Синяя кровь)</EL_Make_Perfotoran.jobString>
+  <EL_Make_Perfotoran_Bulk.label>изготовить 4 стимулятора Пефторан (Синяя кровь)</EL_Make_Perfotoran_Bulk.label>
+  <EL_Make_Perfotoran_Bulk.description>Изготовить 4 стимулятора Пефторан (Синяя кровь).</EL_Make_Perfotoran_Bulk.description>
+  <EL_Make_Perfotoran_Bulk.jobString>Изготавливает стимуляторы Пефторан (Синяя кровь)</EL_Make_Perfotoran_Bulk.jobString>
+
+  <!-- PNB -->
+  <EL_Make_PNB.label>изготовить ПНБ (Препарат 16)</EL_Make_PNB.label>
+  <EL_Make_PNB.description>Изготовить 1 ПНБ (Препарат 16).</EL_Make_PNB.description>
+  <EL_Make_PNB.jobString>Изготавливает ПНБ (Препарат 16)</EL_Make_PNB.jobString>
+  <EL_Make_PNB_Bulk.label>изготовить 4 ПНБ (Препарат 16)</EL_Make_PNB_Bulk.label>
+  <EL_Make_PNB_Bulk.description>Изготовить партию из 4 ПНБ (Препарат 16).</EL_Make_PNB_Bulk.description>
+  <EL_Make_PNB_Bulk.jobString>Изготавливает ПНБ (Препарат 16)</EL_Make_PNB_Bulk.jobString>
+
+  <!-- Propital -->
+  <EL_Make_Propital.label>изготовить регенеративный препарат Пропитал</EL_Make_Propital.label>
+  <EL_Make_Propital.description>Изготовить 1 регенеративный препарат Пропитал.</EL_Make_Propital.description>
+  <EL_Make_Propital.jobString>Изготавливает регенеративный препарат Пропитал</EL_Make_Propital.jobString>
+  <EL_Make_Propital_Bulk.label>изготовить 4 регенеративных препарата Пропитал</EL_Make_Propital_Bulk.label>
+  <EL_Make_Propital_Bulk.description>Изготовить партию из 4 регенеративных препаратов Пропитал.</EL_Make_Propital_Bulk.description>
+  <EL_Make_Propital_Bulk.jobString>Изготавливает регенеративные препараты Пропитал</EL_Make_Propital_Bulk.jobString>
+
+  <!-- SJ1-TGLabs -->
+  <EL_Make_SJ1_TGLabs.label>изготовить боевой стимулятор SJ1 TGLabs</EL_Make_SJ1_TGLabs.label>
+  <EL_Make_SJ1_TGLabs.description>Изготовить 1 боевой стимулятор SJ1 TGLabs.</EL_Make_SJ1_TGLabs.description>
+  <EL_Make_SJ1_TGLabs.jobString>Изготавливает боевой стимулятор SJ1 TGLabs</EL_Make_SJ1_TGLabs.jobString>
+  <EL_Make_SJ1_TGLabs_Bulk.label>изготовить 4 боевых стимулятора SJ1 TGLabs</EL_Make_SJ1_TGLabs_Bulk.label>
+  <EL_Make_SJ1_TGLabs_Bulk.description>Изготовить партию из 4 боевых стимуляторов SJ1 TGLabs.</EL_Make_SJ1_TGLabs_Bulk.description>
+  <EL_Make_SJ1_TGLabs_Bulk.jobString>Изготавливает боевые стимуляторы SJ1 TGLabs</EL_Make_SJ1_TGLabs_Bulk.jobString>
+
+  <!-- SJ12-TGLabs -->
+  <EL_Make_SJ12_TGLabs.label>изготовить боевой стимулятор SJ12 TGLabs</EL_Make_SJ12_TGLabs.label>
+  <EL_Make_SJ12_TGLabs.description>Изготовить 1 боевой стимулятор SJ12 TGLabs.</EL_Make_SJ12_TGLabs.description>
+  <EL_Make_SJ12_TGLabs.jobString>Изготавливает боевой стимулятор SJ12 TGLabs</EL_Make_SJ12_TGLabs.jobString>
+  <EL_Make_SJ12_TGLabs_Bulk.label>изготовить 4 боевых стимулятора SJ12 TGLabs</EL_Make_SJ12_TGLabs_Bulk.label>
+  <EL_Make_SJ12_TGLabs_Bulk.description>Изготовить партию из 4 боевых стимуляторов SJ12 TGLabs.</EL_Make_SJ12_TGLabs_Bulk.description>
+  <EL_Make_SJ12_TGLabs_Bulk.jobString>Изготавливает боевые стимуляторы SJ12 TGLabs</EL_Make_SJ12_TGLabs_Bulk.jobString>
+
+  <!-- SJ6-TGLabs -->
+  <EL_Make_SJ6_TGLabs.label>изготовить боевой стимулятор SJ6 TGLabs</EL_Make_SJ6_TGLabs.label>
+  <EL_Make_SJ6_TGLabs.description>Изготовить 1 боевой стимулятор SJ6 TGLabs.</EL_Make_SJ6_TGLabs.description>
+  <EL_Make_SJ6_TGLabs.jobString>Изготавливает боевой стимулятор SJ6 TGLabs</EL_Make_SJ6_TGLabs.jobString>
+  <EL_Make_SJ6_TGLabs_Bulk.label>изготовить 4 боевых стимулятора SJ6 TGLabs</EL_Make_SJ6_TGLabs_Bulk.label>
+  <EL_Make_SJ6_TGLabs_Bulk.description>Изготовить партию из 4 боевых стимуляторов SJ6 TGLabs.</EL_Make_SJ6_TGLabs_Bulk.description>
+  <EL_Make_SJ6_TGLabs_Bulk.jobString>Изготавливает боевые стимуляторы SJ6 TGLabs</EL_Make_SJ6_TGLabs_Bulk.jobString>
+
+  <!-- SJ9-TGLabs -->
+  <EL_Make_SJ9_TGLabs.label>изготовить боевой стимулятор SJ9 TGLabs</EL_Make_SJ9_TGLabs.label>
+  <EL_Make_SJ9_TGLabs.description>Изготовить 1 боевой стимулятор SJ9 TGLabs.</EL_Make_SJ9_TGLabs.description>
+  <EL_Make_SJ9_TGLabs.jobString>Изготавливает боевой стимулятор SJ9 TGLabs</EL_Make_SJ9_TGLabs.jobString>
+  <EL_Make_SJ9_TGLabs_Bulk.label>изготовить 4 боевых стимулятора SJ9 TGLabs</EL_Make_SJ9_TGLabs_Bulk.label>
+  <EL_Make_SJ9_TGLabs_Bulk.description>Изготовить партию из 4 боевых стимуляторов SJ9 TGLabs.</EL_Make_SJ9_TGLabs_Bulk.description>
+  <EL_Make_SJ9_TGLabs_Bulk.jobString>Изготавливает боевые стимуляторы SJ9 TGLabs</EL_Make_SJ9_TGLabs_Bulk.jobString>
+
+  <!-- Trimadol -->
+  <EL_Make_Trimadol.label>изготовить препарат Тримадол</EL_Make_Trimadol.label>
+  <EL_Make_Trimadol.description>Изготовить 1 препарат Тримадол.</EL_Make_Trimadol.description>
+  <EL_Make_Trimadol.jobString>Изготавливает препарат Тримадол</EL_Make_Trimadol.jobString>
+  <EL_Make_Trimadol_Bulk.label>изготовить 4 препарата Тримадол</EL_Make_Trimadol_Bulk.label>
+  <EL_Make_Trimadol_Bulk.description>Изготовить партию из 4 препаратов Тримадол.</EL_Make_Trimadol_Bulk.description>
+  <EL_Make_Trimadol_Bulk.jobString>Изготавливает препараты Тримадол</EL_Make_Trimadol_Bulk.jobString>
+
+  <!-- xTG-12 -->
+  <EL_Make_xTG12.label>изготовить антидот хТГ-12</EL_Make_xTG12.label>
+  <EL_Make_xTG12.description>Изготовить 1 антидот хТГ-12.</EL_Make_xTG12.description>
+  <EL_Make_xTG12.jobString>Изготавливает антидот хТГ-12</EL_Make_xTG12.jobString>
+  <EL_Make_xTG12_Bulk.label>изготовить 4 антидота хТГ-12</EL_Make_xTG12_Bulk.label>
+  <EL_Make_xTG12_Bulk.description>Изготовить 4 антидота хТГ-12.</EL_Make_xTG12_Bulk.description>
+  <EL_Make_xTG12_Bulk.jobString>Изготавливает антидоты хТГ-12</EL_Make_xTG12_Bulk.jobString>
+
+  <!-- Zagustin -->
+  <EL_Make_Zagustin.label>изготовить гемостатическое средство Загустин</EL_Make_Zagustin.label>
+  <EL_Make_Zagustin.description>Изготовить 1 гемостатическое средство Загустин.</EL_Make_Zagustin.description>
+  <EL_Make_Zagustin.jobString>Изготавливает гемостатическое средство Загустин</EL_Make_Zagustin.jobString>
+  <EL_Make_Zagustin_Bulk.label>изготовить 4 гемостатических средства Загустин</EL_Make_Zagustin_Bulk.label>
+  <EL_Make_Zagustin_Bulk.description>Изготовить партию из 4 гемостатических средств Загустин.</EL_Make_Zagustin_Bulk.description>
+  <EL_Make_Zagustin_Bulk.jobString>Изготавливает гемостатические средства Загустин</EL_Make_Zagustin_Bulk.jobString>
+
+</LanguageData>

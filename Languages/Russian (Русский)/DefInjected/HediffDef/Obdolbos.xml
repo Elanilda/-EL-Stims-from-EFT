@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- EL_Hediff_Obdolbos 主Hediff -->
+  <EL_Hediff_Obdolbos.label>Дисфункция Обд</EL_Hediff_Obdolbos.label>
+  <EL_Hediff_Obdolbos.labelNoun>дисфункция Обд</EL_Hediff_Obdolbos.labelNoun>
+  <EL_Hediff_Obdolbos.description>«Коктейльное» разнообразие эффектов Обдолбоса в действии. А если конкретно — то, что в этом списке.</EL_Hediff_Obdolbos.description>
+
+  <!-- 15条子效果 -->
+  <EL_Hediff_Obd_Effect01.label>Эффект Обд: усиление движения</EL_Hediff_Obd_Effect01.label>
+  <EL_Hediff_Obd_Effect01.labelNoun>эффект Обд: усиление движения</EL_Hediff_Obd_Effect01.labelNoun>
+  <EL_Hediff_Obd_Effect01.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect01.description>
+
+  <EL_Hediff_Obd_Effect02.label>Эффект Обд: повышение работоспособности</EL_Hediff_Obd_Effect02.label>
+  <EL_Hediff_Obd_Effect02.labelNoun>эффект Обд: повышение работоспособности</EL_Hediff_Obd_Effect02.labelNoun>
+  <EL_Hediff_Obd_Effect02.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect02.description>
+
+  <EL_Hediff_Obd_Effect03.label>Эффект Обд: быстрые руки</EL_Hediff_Obd_Effect03.label>
+  <EL_Hediff_Obd_Effect03.labelNoun>эффект Обд: быстрые руки</EL_Hediff_Obd_Effect03.labelNoun>
+  <EL_Hediff_Obd_Effect03.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect03.description>
+
+  <EL_Hediff_Obd_Effect04.label>Эффект Обд: ловкость</EL_Hediff_Obd_Effect04.label>
+  <EL_Hediff_Obd_Effect04.labelNoun>эффект Обд: ловкость</EL_Hediff_Obd_Effect04.labelNoun>
+  <EL_Hediff_Obd_Effect04.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect04.description>
+
+  <EL_Hediff_Obd_Effect05.label>Эффект Обд: стрессоустойчивость</EL_Hediff_Obd_Effect05.label>
+  <EL_Hediff_Obd_Effect05.labelNoun>эффект Обд: стрессоустойчивость</EL_Hediff_Obd_Effect05.labelNoun>
+  <EL_Hediff_Obd_Effect05.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect05.description>
+
+  <EL_Hediff_Obd_Effect06.label>Эффект Обд: харизма</EL_Hediff_Obd_Effect06.label>
+  <EL_Hediff_Obd_Effect06.labelNoun>эффект Обд: харизма</EL_Hediff_Obd_Effect06.labelNoun>
+  <EL_Hediff_Obd_Effect06.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect06.description>
+
+  <EL_Hediff_Obd_Effect07.label>Эффект Обд: экономия сил</EL_Hediff_Obd_Effect07.label>
+  <EL_Hediff_Obd_Effect07.labelNoun>эффект Обд: экономия сил</EL_Hediff_Obd_Effect07.labelNoun>
+  <EL_Hediff_Obd_Effect07.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect07.description>
+
+  <EL_Hediff_Obd_Effect08.label>Эффект Обд: регенерация тканей</EL_Hediff_Obd_Effect08.label>
+  <EL_Hediff_Obd_Effect08.labelNoun>эффект Обд: регенерация тканей</EL_Hediff_Obd_Effect08.labelNoun>
+  <EL_Hediff_Obd_Effect08.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect08.description>
+
+  <EL_Hediff_Obd_Effect09.label>Эффект Обд: прилив выносливости</EL_Hediff_Obd_Effect09.label>
+  <EL_Hediff_Obd_Effect09.labelNoun>эффект Обд: прилив выносливости</EL_Hediff_Obd_Effect09.labelNoun>
+  <EL_Hediff_Obd_Effect09.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect09.description>
+
+  <EL_Hediff_Obd_Effect10.label>Эффект Обд: лёгкая нагрузка</EL_Hediff_Obd_Effect10.label>
+  <EL_Hediff_Obd_Effect10.labelNoun>эффект Обд: лёгкая нагрузка</EL_Hediff_Obd_Effect10.labelNoun>
+  <EL_Hediff_Obd_Effect10.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect10.description>
+
+  <EL_Hediff_Obd_Effect11.label>Эффект Обд: метаболическая нагрузка А</EL_Hediff_Obd_Effect11.label>
+  <EL_Hediff_Obd_Effect11.labelNoun>эффект Обд: метаболическая нагрузка А</EL_Hediff_Obd_Effect11.labelNoun>
+  <EL_Hediff_Obd_Effect11.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect11.description>
+
+  <EL_Hediff_Obd_Effect12.label>Эффект Обд: метаболическая нагрузка Б</EL_Hediff_Obd_Effect12.label>
+  <EL_Hediff_Obd_Effect12.labelNoun>эффект Обд: метаболическая нагрузка Б</EL_Hediff_Obd_Effect12.labelNoun>
+  <EL_Hediff_Obd_Effect12.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect12.description>
+
+  <EL_Hediff_Obd_Effect13.label>Эффект Обд: внезапный упадок</EL_Hediff_Obd_Effect13.label>
+  <EL_Hediff_Obd_Effect13.labelNoun>эффект Обд: внезапный упадок</EL_Hediff_Obd_Effect13.labelNoun>
+  <EL_Hediff_Obd_Effect13.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect13.description>
+
+  <EL_Hediff_Obd_Effect14.label>Эффект Обд: хрупкость</EL_Hediff_Obd_Effect14.label>
+  <EL_Hediff_Obd_Effect14.labelNoun>эффект Обд: хрупкость</EL_Hediff_Obd_Effect14.labelNoun>
+  <EL_Hediff_Obd_Effect14.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect14.description>
+
+  <EL_Hediff_Obd_Effect15.label>Эффект Обд: спутанность сознания</EL_Hediff_Obd_Effect15.label>
+  <EL_Hediff_Obd_Effect15.labelNoun>эффект Обд: спутанность сознания</EL_Hediff_Obd_Effect15.labelNoun>
+  <EL_Hediff_Obd_Effect15.description>Один из случайных эффектов Обдолбоса.</EL_Hediff_Obd_Effect15.description>
+
+</LanguageData>

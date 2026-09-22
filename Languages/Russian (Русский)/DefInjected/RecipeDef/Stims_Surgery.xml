@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Morphine -->
+  <EL_Surgery_InjectMorphine.label>ввести морфин</EL_Surgery_InjectMorphine.label>
+  <EL_Surgery_InjectMorphine.description>Ввести морфин для обезболивания.</EL_Surgery_InjectMorphine.description>
+  <EL_Surgery_InjectMorphine.jobString>Вводит морфин в TargetA</EL_Surgery_InjectMorphine.jobString>
+
+  <!-- AHF1-M -->
+  <EL_Surgery_InjectAHF1M.label>ввести AHF1-M</EL_Surgery_InjectAHF1M.label>
+  <EL_Surgery_InjectAHF1M.description>Ввести AHF1-M, чтобы остановить кровотечение и ненадолго укрепить иммунитет.</EL_Surgery_InjectAHF1M.description>
+  <EL_Surgery_InjectAHF1M.jobString>Вводит AHF1-M в TargetA</EL_Surgery_InjectAHF1M.jobString>
+
+  <!-- Zagustin -->
+  <EL_Surgery_InjectZagustin.label>ввести Загустин</EL_Surgery_InjectZagustin.label>
+  <EL_Surgery_InjectZagustin.description>Ввести Загустин для мощной и продолжительной остановки кровотечения.</EL_Surgery_InjectZagustin.description>
+  <EL_Surgery_InjectZagustin.jobString>Вводит Загустин в TargetA</EL_Surgery_InjectZagustin.jobString>
+
+  <!-- 2A2-(b-TG) -->
+  <EL_Surgery_Inject2A2_bTG.label>ввести 2А2-(b-ТГ)</EL_Surgery_Inject2A2_bTG.label>
+  <EL_Surgery_Inject2A2_bTG.description>Ввести 2А2-(b-ТГ), чтобы повысить грузоподъёмность и восприятие.</EL_Surgery_Inject2A2_bTG.description>
+  <EL_Surgery_Inject2A2_bTG.jobString>Вводит 2А2-(b-ТГ) в TargetA</EL_Surgery_Inject2A2_bTG.jobString>
+
+  <!-- L1 -->
+  <EL_Surgery_InjectL1.label>ввести L1</EL_Surgery_InjectL1.label>
+  <EL_Surgery_InjectL1.description>Ввести норадреналин L1, чтобы повысить физические возможности и притупить боль.</EL_Surgery_InjectL1.description>
+  <EL_Surgery_InjectL1.jobString>Вводит L1 в TargetA</EL_Surgery_InjectL1.jobString>
+
+  <!-- SJ1 -->
+  <EL_Surgery_InjectSJ1.label>ввести SJ1</EL_Surgery_InjectSJ1.label>
+  <EL_Surgery_InjectSJ1.description>Ввести боевой стимулятор SJ1 TGLabs, чтобы повысить скорость передвижения и эффективность работы.</EL_Surgery_InjectSJ1.description>
+  <EL_Surgery_InjectSJ1.jobString>Вводит SJ1 TGLabs в TargetA</EL_Surgery_InjectSJ1.jobString>
+
+  <!-- SJ6 -->
+  <EL_Surgery_InjectSJ6.label>ввести SJ6</EL_Surgery_InjectSJ6.label>
+  <EL_Surgery_InjectSJ6.description>Ввести боевой стимулятор SJ6 TGLabs, чтобы снизить расход сна и непрерывно восстанавливать его; в конце действия наступает угнетение центральной нервной системы.</EL_Surgery_InjectSJ6.description>
+  <EL_Surgery_InjectSJ6.jobString>Вводит SJ6 TGLabs в TargetA</EL_Surgery_InjectSJ6.jobString>
+
+  <!-- SJ12 -->
+  <EL_Surgery_InjectSJ12.label>ввести SJ12</EL_Surgery_InjectSJ12.label>
+  <EL_Surgery_InjectSJ12.description>Ввести боевой стимулятор SJ12 TGLabs, чтобы перенаправить процессы восстановления организма.</EL_Surgery_InjectSJ12.description>
+  <EL_Surgery_InjectSJ12.jobString>Вводит SJ12 TGLabs в TargetA</EL_Surgery_InjectSJ12.jobString>
+
+  <!-- P22 -->
+  <EL_Surgery_InjectP22.label>ввести P22</EL_Surgery_InjectP22.label>
+  <EL_Surgery_InjectP22.description>Ввести P22, чтобы расширить возможности организма, ускорить восстановление и повысить устойчивость.</EL_Surgery_InjectP22.description>
+  <EL_Surgery_InjectP22.jobString>Вводит P22 в TargetA</EL_Surgery_InjectP22.jobString>
+
+  <!-- 3-(b-TG) -->
+  <EL_Surgery_Inject3_bTG.label>ввести 3-(b-ТГ)</EL_Surgery_Inject3_bTG.label>
+  <EL_Surgery_Inject3_bTG.description>Ввести 3-(b-ТГ), чтобы повысить восприятие и работу.</EL_Surgery_Inject3_bTG.description>
+  <EL_Surgery_Inject3_bTG.jobString>Вводит 3-(b-ТГ) в TargetA</EL_Surgery_Inject3_bTG.jobString>
+
+  <!-- Trimadol -->
+  <EL_Surgery_InjectTrimadol.label>ввести Тримадол</EL_Surgery_InjectTrimadol.label>
+  <EL_Surgery_InjectTrimadol.description>Ввести препарат Тримадол, чтобы повысить физические возможности и притупить боль.</EL_Surgery_InjectTrimadol.description>
+  <EL_Surgery_InjectTrimadol.jobString>Вводит Тримадол в TargetA</EL_Surgery_InjectTrimadol.jobString>
+
+  <!-- Meldonin -->
+  <EL_Surgery_InjectMeldonin.label>ввести Мельдоний</EL_Surgery_InjectMeldonin.label>
+  <EL_Surgery_InjectMeldonin.description>Ввести препарат Мельдоний, чтобы восстановить энергию, а также повысить силу и выносливость.</EL_Surgery_InjectMeldonin.description>
+  <EL_Surgery_InjectMeldonin.jobString>Вводит Мельдоний в TargetA</EL_Surgery_InjectMeldonin.jobString>
+
+  <!-- Adrenaline -->
+  <EL_Surgery_InjectAdrenaline.label>ввести адреналин</EL_Surgery_InjectAdrenaline.label>
+  <EL_Surgery_InjectAdrenaline.description>Ввести адреналин, чтобы ненадолго повысить физические возможности и притупить боль.</EL_Surgery_InjectAdrenaline.description>
+  <EL_Surgery_InjectAdrenaline.jobString>Вводит адреналин в TargetA</EL_Surgery_InjectAdrenaline.jobString>
+
+  <!-- PNB -->
+  <EL_Surgery_InjectPNB.label>ввести ПНБ</EL_Surgery_InjectPNB.label>
+  <EL_Surgery_InjectPNB.description>Ввести ПНБ (Препарат 16), чтобы активировать внутренние мышцы и ускорить восстановление тканей.</EL_Surgery_InjectPNB.description>
+  <EL_Surgery_InjectPNB.jobString>Вводит ПНБ в TargetA</EL_Surgery_InjectPNB.jobString>
+
+  <!-- Propital -->
+  <EL_Surgery_InjectPropital.label>ввести Пропитал</EL_Surgery_InjectPropital.label>
+  <EL_Surgery_InjectPropital.description>Ввести регенеративный препарат Пропитал, чтобы стимулировать регенерацию тканей и притупить боль.</EL_Surgery_InjectPropital.description>
+  <EL_Surgery_InjectPropital.jobString>Вводит Пропитал в TargetA</EL_Surgery_InjectPropital.jobString>
+
+  <!-- M.U.L.E -->
+  <EL_Surgery_InjectMULE.label>ввести M.U.L.E</EL_Surgery_InjectMULE.label>
+  <EL_Surgery_InjectMULE.description>Ввести стимулятор M.U.L.E, чтобы значительно повысить грузоподъёмность.</EL_Surgery_InjectMULE.description>
+  <EL_Surgery_InjectMULE.jobString>Вводит M.U.L.E в TargetA</EL_Surgery_InjectMULE.jobString>
+
+  <!-- SJ9 -->
+  <EL_Surgery_InjectSJ9_TGLabs.label>ввести SJ9-TGLabs</EL_Surgery_InjectSJ9_TGLabs.label>
+  <EL_Surgery_InjectSJ9_TGLabs.description>Ввести боевой стимулятор SJ9 TGLabs, чтобы адаптироваться к экстремальным температурам окружающей среды.</EL_Surgery_InjectSJ9_TGLabs.description>
+  <EL_Surgery_InjectSJ9_TGLabs.jobString>Вводит SJ9 TGLabs в TargetA</EL_Surgery_InjectSJ9_TGLabs.jobString>
+
+  <!-- xTG-12 -->
+  <EL_Surgery_InjectxTG12.label>ввести хТГ-12</EL_Surgery_InjectxTG12.label>
+  <EL_Surgery_InjectxTG12.description>Ввести антидот хТГ-12, чтобы вывести токсины и получить временный иммунитет.</EL_Surgery_InjectxTG12.description>
+  <EL_Surgery_InjectxTG12.jobString>Вводит антидот хТГ-12 в TargetA</EL_Surgery_InjectxTG12.jobString>
+
+  <!-- Perfotoran -->
+  <EL_Surgery_InjectPerfotoran.label>ввести Пефторан</EL_Surgery_InjectPerfotoran.label>
+  <EL_Surgery_InjectPerfotoran.description>Ввести кровезаменитель Пефторан, чтобы вывести токсины, остановить кровотечение и ускорить восстановление тканей.</EL_Surgery_InjectPerfotoran.description>
+  <EL_Surgery_InjectPerfotoran.jobString>Вводит кровезаменитель Пефторан в TargetA</EL_Surgery_InjectPerfotoran.jobString>
+
+  <!-- eTG-change -->
+  <EL_Surgery_InjecteTGchange.label>ввести eTG-change</EL_Surgery_InjecteTGchange.label>
+  <EL_Surgery_InjecteTGchange.description>Ввести экстремальный регенератор eTG-change для быстрого восстановления после тяжёлых травм.</EL_Surgery_InjecteTGchange.description>
+  <EL_Surgery_InjecteTGchange.jobString>Вводит регенератор eTG-change в TargetA</EL_Surgery_InjecteTGchange.jobString>
+
+</LanguageData>

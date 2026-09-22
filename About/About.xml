@@ -9,7 +9,7 @@
   </supportedVersions>
   <packageId>Elanilda.StimsFromEFT</packageId>
   <url></url>
-  <modVersion>1.0.9</modVersion>
+  <modVersion>1.1.0</modVersion>
   <modIconPath>UI/EL_ModIcon</modIconPath>
   <modDependencies>
     <li>
@@ -45,10 +45,14 @@ Adds stimulants from Escape from Tarkov and multiple convenient usage methods.
 [使用方式 / Usage]
 - 选中殖民者，右键散落地面的针剂，点击"注射"即可为该殖民者注射针剂
   Select a colonist, right-click a stimulant on the ground, and click "Inject" to inject it into that colonist
-- 当殖民者携带针剂时，选中这个殖民者并右键其他殖民者，可由前者为后者注射针剂
-  When a colonist carries stimulants, select them and right-click another colonist to have the former inject the latter
+- 殖民者携带针剂时，选中该殖民者并右键目标 pawn，可为其注射针剂。可注射对象包括殖民者、囚犯与倒地单位。
+  When a colonist carries stimulants, select them and right-click a target pawn to inject them. Eligible targets include colonists, prisoners, and downed pawns.
 - 当殖民者携带针剂并处于征召状态时，可通过"使用针剂"能力选择所携带的针剂使用
   When a drafted colonist carries stimulants, use the "Use Stimulants" ability to select and use a carried stimulant
+- 打开“健康“界面，“手术”一栏添加“注射”手术，能以手术形式使用针剂。
+  Open the "Health" tab, switch to "Medical operations" and click "Add bill" to schedule an Inject surgery on a patient.
+- 每种针剂都能通过“方案”-“管理用药方案”来独立指定携带数量。
+  Each stimulant injector can be independently assigned a carry amount via Assign - Manage drug policies.
 </description>
 
 </ModMetaData>

@@ -39,6 +39,93 @@ namespace RimWorld
     }
 
     // ============================================================
+    // Harmony Postfix: 覆盖Thing.LabelCap/LabelCapNoCount getter的返回值
+    // 对白名单def(xTG-12/eTG-change针剂)返回未大写的Label
+    // 使物品名称在检视面板/物品栏等实例级界面保持首字母小写
+    // 采用Harmony而非thingClass子类: 旧存档立即生效且无需改XML
+    // ============================================================
+    [HarmonyPatch]
+    public static class EL_Patch_Thing_LabelCap
+    {
+        // 需保持首字母小写的defName白名单
+        private static readonly HashSet<string> RawLabelDefNames = new HashSet<string>
+        {
+            "EL_Stim_xTG12_Antidote",
+            "EL_Stim_eTGchange"
+        };
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Thing), nameof(Thing.LabelCap), MethodType.Getter)]
+        public static void LabelCapPostfix(Thing __instance, ref string __result)
+        {
+            if (__result != null && __instance?.def != null && RawLabelDefNames.Contains(__instance.def.defName))
+            {
+                __result = __instance.Label;
+            }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Thing), nameof(Thing.LabelCapNoCount), MethodType.Getter)]
+        public static void LabelCapNoCountPostfix(Thing __instance, ref string __result)
+        {
+            if (__result != null && __instance?.def != null && RawLabelDefNames.Contains(__instance.def.defName))
+            {
+                __result = __instance.LabelNoCount;
+            }
+        }
+    }
+
+    // ============================================================
+    // def级大写表面拦截: 覆盖信息卡标题/检索/菜单等不经过Thing实例的显示路径
+    // 1.6的Def.LabelCap为virtual且是def标签统一大写入口(ThingDef/HediffDef均未重写)
+    // Dialog_InfoCard.GetTitle后缀兜底: 标题若经其他路径大写则回退首字母
+    // ============================================================
+    [HarmonyPatch]
+    public static class EL_Patch_RawLabel_DefLevel
+    {
+        // 保持首字母小写的label前缀(同时命中xTG-12与eTG-change的hediff/thing def label)
+        private static readonly string[] RawPrefixes = { "xTG-12", "eTG-change" };
+
+        private static bool IsRawLabelDef(Def def)
+        {
+            if (def?.label == null) return false;
+            for (int i = 0; i < RawPrefixes.Length; i++)
+            {
+                if (def.label.StartsWith(RawPrefixes[i], System.StringComparison.Ordinal)) return true;
+            }
+            return false;
+        }
+
+        // 注意: Def.LabelCap返回TaggedString(非string), __result类型必须一致, 否则Harmony抛
+        // "Cannot assign method return type Verse.TaggedString to __result type System.String"
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Def), nameof(Def.LabelCap), MethodType.Getter)]
+        public static void DefLabelCapPostfix(Def __instance, ref TaggedString __result)
+        {
+            if (__result.RawText != null && IsRawLabelDef(__instance))
+            {
+                __result = __instance.label;  // string隐式转换为TaggedString
+            }
+        }
+
+        // Dialog_InfoCard.Def属性对mod程序集不可见(internal), 缓存反射访问
+        private static readonly PropertyInfo CardDefProp = AccessTools.Property(typeof(Dialog_InfoCard), "Def");
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Dialog_InfoCard), "GetTitle")]
+        public static void GetTitlePostfix(Dialog_InfoCard __instance, ref string __result)
+        {
+            if (__result == null || __result.Length == 0 || CardDefProp == null) return;
+            var cardDef = CardDefProp.GetValue(__instance, null) as Def;
+            if (IsRawLabelDef(cardDef))
+            {
+                // Def.LabelCap拦截已生效时此处幂等; 其他大写路径下仅回退首字母
+                __result = char.ToLowerInvariant(__result[0]) + __result.Substring(1);
+            }
+        }
+    }
+
+    // ============================================================
     // 使用效果Comp的Properties: 指定要施加的HediffDef和饮食消耗比例
     // ============================================================
     public class EL_CompProperties_UseEffect_ApplyHediff : CompProperties_UseEffect

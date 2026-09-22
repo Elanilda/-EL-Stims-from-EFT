@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageInfo>
+  <friendlyNameNative>Русский</friendlyNameNative>
+  <friendlyNameEnglish>Russian</friendlyNameEnglish>
+  <languageWorkerClass>LanguageWorker_Russian</languageWorkerClass>
+  <credits>
+    <li Class="CreditRecord_Role">
+      <roleKey>Translator</roleKey>
+      <creds>
+        <li>Elanilda (Translator, machine-assisted draft)</li>
+      </creds>
+    </li>
+  </credits>
+</LanguageInfo>

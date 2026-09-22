@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <EL_Make_Neutroamine.label>Экстрагировать нейтроамин</EL_Make_Neutroamine.label>
+  <EL_Make_Neutroamine.description>Переработать психиновые листья для получения нейтроамина.</EL_Make_Neutroamine.description>
+  <EL_Make_Neutroamine.jobString>Экстрагирует нейтроамин.</EL_Make_Neutroamine.jobString>
+
+  <EL_Make_Neutroamine_Bulk.label>Экстрагировать нейтроамин (партия)</EL_Make_Neutroamine_Bulk.label>
+  <EL_Make_Neutroamine_Bulk.description>Переработать психиновые листья для получения нейтроамина.</EL_Make_Neutroamine_Bulk.description>
+  <EL_Make_Neutroamine_Bulk.jobString>Экстрагирует нейтроамин.</EL_Make_Neutroamine_Bulk.jobString>
+</LanguageData>

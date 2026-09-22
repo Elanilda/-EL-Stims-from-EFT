@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- EL_Stim_Storage -->
+  <EL_Stim_Storage.label>Шкаф для стимуляторов</EL_Stim_Storage.label>
+  <EL_Stim_Storage.description>Высокий металлический шкаф с разделёнными отделениями для различных стимуляторов и нейтроамина. </EL_Stim_Storage.description>
+
+  <!-- EL_Cartridge -->
+  <EL_Cartridge.label>Шприц-ручка (заготовка)</EL_Cartridge.label>
+  <EL_Cartridge.description>Пустая заготовка шприц-ручки: корпус из инженерного пластика, стальной шток-поршень, прозрачная стеклянная ампула и игла из нержавеющей стали. Универсальный компонент для синтеза стимуляторов.</EL_Cartridge.description>
+
+  <!-- 2A2-(b-TG) -->
+  <EL_Stim_2A2_bTG.label>Препарат 2А2-(b-ТГ)</EL_Stim_2A2_bTG.label>
+  <EL_Stim_2A2_bTG.description>Боевой поддерживающий препарат для разведки и тактических перемещений: стабилизирует центральную нервную систему, помогает адаптироваться к разным условиям и повышает грузоподъёмность, но ускоряет обезвоживание.
+
+[Эффекты]
+грузоподъёмность ×130%, задержка 0 с/длительность 900 с;
+работа +20%, задержка 0 с/длительность 900 с;
+зрение +20%, задержка 0 с/длительность 900 с;
+слух +20%, задержка 0 с/длительность 900 с;
+потребляет 0,001 сытости/с, задержка 0 с/длительность 900 с.</EL_Stim_2A2_bTG.description>
+  <EL_Stim_2A2_bTG.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_2A2_bTG.comps.CompUsable.useLabel>
+
+  <!-- 3-(b-TG) -->
+  <EL_Stim_3_bTG.label>Препарат 3-(b-ТГ)</EL_Stim_3_bTG.label>
+  <EL_Stim_3_bTG.description>Стимулятор центральной нервной системы с действующим веществом 3-(b-фенилизопропил). Обостряет восприятие и внимание, а также увеличивает мышечную силу за счёт усиления электромиографических сигналов.
+
+[Эффекты]
+работа +60%, задержка 0 с/длительность 240 с;
+зрение +60%, задержка 0 с/длительность 240 с;
+слух +60%, задержка 0 с/длительность 240 с;
+общая скорость работы ×120%, задержка 0 с/длительность 240 с;
+восстанавливает 0,01 сна/с, задержка 0 с/длительность 240 с;
+потребляет 0,0025 сытости/с, задержка 120 с/длительность 120 с;
+сознание -15%, задержка 120 с/длительность 45 с.</EL_Stim_3_bTG.description>
+  <EL_Stim_3_bTG.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_3_bTG.comps.CompUsable.useLabel>
+
+  <!-- Adrenaline -->
+  <EL_Stim_Adrenaline.label>Шприц с адреналином</EL_Stim_Adrenaline.label>
+  <EL_Stim_Adrenaline.description>Шприц-ручка с дозой адреналина: усиливает физиологическую реакцию и готовит мышцы к интенсивной нагрузке. Кратковременно повышает физические возможности и подавляет боль.
+
+[Эффекты]
+боль ×10%, задержка 0 с/длительность 65 с;
+работа +20%, задержка 0 с/длительность 65 с;
+общая скорость работы ×120%, задержка 0 с/длительность 65 с;
+скорость передвижения ×120%, задержка 0 с/длительность 65 с;
+точность стрельбы ×120%, задержка 0 с/длительность 65 с;
+восстанавливает 4 ед. здоровья/с случайным частям тела (кроме костей), задержка 0 с/длительность 15 с;
+потребляет 0,018 сытости/с, задержка 30 с/длительность 30 с.</EL_Stim_Adrenaline.description>
+  <EL_Stim_Adrenaline.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Adrenaline.comps.CompUsable.useLabel>
+
+  <!-- AHF1-M -->
+  <EL_Stim_AHF1M.label>Препарат AHF1-M</EL_Stim_AHF1M.label>
+  <EL_Stim_AHF1M.description>Мощное гемостатическое средство, разработанное на основе факторов, применяемых при гемофилии. После инъекции временно останавливает кровотечение всех ран, повышает сопротивляемость кровопотере, непрерывно предотвращает кровотечение новых ран и слегка усиливает самовосстановление организма. Повышает метаболическую нагрузку и может вызвать лёгкое обезвоживание.
+
+[Эффекты]
+суммарный коэффициент кровотечения ×0%, задержка 0 с/длительность 60 с;
+скорость лечения ран +10%, задержка 0 с/длительность 60 с;
+потребляет 0,003 сытости/с, задержка 0 с/длительность 120 с.</EL_Stim_AHF1M.description>
+  <EL_Stim_AHF1M.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_AHF1M.comps.CompUsable.useLabel>
+
+  <!-- eTG-change -->
+  <EL_Stim_eTGchange.label>Регенеративный стимулятор eTG-change</EL_Stim_eTGchange.label>
+  <EL_Stim_eTGchange.description>Экстремально мощный стимулятор регенерации тканей: для лечения тяжёлых травм и быстрой стабилизации раненых при транспортировке. Имеет сильные побочные эффекты, поэтому применение строго ограничено профессиональными медиками.
+
+[Эффекты]
+пищеварение +20%, задержка 0 с/длительность 60 с;
+скорость выработки иммунитета +20%, задержка 0 с/длительность 60 с;
+восстанавливает 7 ед. здоровья/с случайным частям тела (лечит рубцы), задержка 0 с/длительность 60 с;
+снижает кровопотерю на 0,005/с, задержка 0 с/длительность 60 с;
+восстанавливает 0,05 сытости/с, задержка 0 с/длительность 60 с;
+потребляет 0,03 сытости/с, задержка 40 с/длительность 40 с;
+движение -10%, задержка 60 с/длительность 60 с;
+скорость лечения ран ×90%, задержка 60 с/длительность 60 с.</EL_Stim_eTGchange.description>
+  <EL_Stim_eTGchange.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_eTGchange.comps.CompUsable.useLabel>
+
+  <!-- L1 (Norepinephrine) -->
+  <EL_Stim_L1_Norepinephrine.label>Шприц с L1 (Норадреналин)</EL_Stim_L1_Norepinephrine.label>
+  <EL_Stim_L1_Norepinephrine.description>Одноразовая шприц-ручка с норадреналином: кратковременно повышает физические возможности и снижает влияние боли, а также усиливает выполнение реакций «бей или беги», но увеличивает метаболические затраты.
+
+[Эффекты]
+боль ×10%, задержка 0 с/длительность 120 с;
+общая скорость работы ×140%, задержка 0 с/длительность 120 с;
+скорость передвижения ×120%, задержка 0 с/длительность 120 с;
+скорость расхода сна ×70%, задержка 0 с/длительность 120 с;
+потребляет 0,009 сытости/с, задержка 0 с/длительность 60 с.</EL_Stim_L1_Norepinephrine.description>
+  <EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>
+
+  <!-- M.U.L.E -->
+  <EL_Stim_MULE.label>Стимулятор M.U.L.E</EL_Stim_MULE.label>
+  <EL_Stim_MULE.description>Экстремальный мышечный стимулятор для повышения несущей способности организма перед длительными маршами. Зарекомендовал себя в районах боевых действий со слабым снабжением, позволяя солдатам долго нести больше снаряжения — в честь этого он и назван.
+
+[Эффекты]
+грузоподъёмность ×200%, задержка 0 с/длительность 900 с;
+наносит 1 ед. метаболического урона случайным частям тела (кроме костей) каждые 10 с, задержка 0 с/длительность 900 с.</EL_Stim_MULE.description>
+  <EL_Stim_MULE.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_MULE.comps.CompUsable.useLabel>
+
+  <!-- Meldonin -->
+  <EL_Stim_Meldonin.label>Препарат Мельдоний</EL_Stim_Meldonin.label>
+  <EL_Stim_Meldonin.description>Препарат для спортсменов: позволяет тренироваться интенсивнее и быстрее восстанавливаться во время отдыха, временно повышая силу и выносливость и эффективно снижая влияние усталости, но увеличивает метаболическую нагрузку. У мельдония есть и незадокументированное свойство — повышение внутреннего мышечного напряжения и устойчивости тканей к физическим воздействиям; именно из-за него военные приняли препарат на вооружение как боевой стимулятор.
+
+[Эффекты]
+общая скорость работы ×120%, задержка 0 с/длительность 900 с;
+скорость передвижения ×140%, задержка 0 с/длительность 900 с;
+восстанавливает 0,005 сна/с, задержка 0 с/длительность 900 с;
+потребляет 0,002 сытости/с, задержка 30 с/длительность 870 с.</EL_Stim_Meldonin.description>
+  <EL_Stim_Meldonin.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Meldonin.comps.CompUsable.useLabel>
+
+  <!-- Morphine -->
+  <EL_Stim_Morphine.label>Шприц с морфием</EL_Stim_Morphine.label>
+  <EL_Stim_Morphine.description>Одноразовая шприц-ручка с большой дозой морфина: резко подавляет боль, но увеличивает метаболические затраты.
+
+[Эффекты]
+боль ×5%, задержка 0 с/длительность 305 с;
+при введении сразу расходует 15% сытости.</EL_Stim_Morphine.description>
+  <EL_Stim_Morphine.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Morphine.comps.CompUsable.useLabel>
+
+  <!-- Obd2 -->
+  <EL_Stim_Obd2_cocktail.label>Коктейль «Обдолбос 2»</EL_Stim_Obd2_cocktail.label>
+  <EL_Stim_Obd2_cocktail.description>Ещё одно творение бывшего медицинского эксперта Terragroup — обновлённая версия предшественника. Похоже, закрытие лабораторий Terragroup его эксперименты не остановило.
+
+[Эффекты]
+работа +40%, задержка 0 с/длительность 1800 с;
+зрение +40%, задержка 0 с/длительность 1800 с;
+слух +40%, задержка 0 с/длительность 1800 с;
+общая скорость работы ×140%, задержка 0 с/длительность 1800 с;
+скорость передвижения ×140%, задержка 0 с/длительность 1800 с;
+грузоподъёмность ×190%, задержка 0 с/длительность 1800 с;
+скорость расхода сна ×120%, задержка 0 с/длительность 1800 с;
+наносит 1 ед. метаболического урона случайным частям тела (кроме костей) каждую секунду, задержка 0 с/длительность 1800 с;
+потребляет 0,01 сна/с, задержка 0 с/длительность 1800 с.</EL_Stim_Obd2_cocktail.description>
+  <EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>
+
+  <!-- Obdolbos -->
+  <EL_Stim_Obdolbos.label>Коктейль «Обдолбос»</EL_Stim_Obdolbos.label>
+  <EL_Stim_Obdolbos.description>Шприц с неизвестным самодельным препаратом, созданным бывшим медицинским экспертом Terragroup. Каждый раз побочные эффекты разные. Если терять нечего — можно и рискнуть: сам изобретатель этого стимулятора так и поступил.
+
+[Эффекты]
+случайно срабатывают до 15 эффектов, каждый с независимым шансом 25%; длительность 600 с.</EL_Stim_Obdolbos.description>
+  <EL_Stim_Obdolbos.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Obdolbos.comps.CompUsable.useLabel>
+
+  <!-- P22 -->
+  <EL_Stim_P22_22cpd.label>P22 (Препарат 22)</EL_Stim_P22_22cpd.label>
+  <EL_Stim_P22_22cpd.description>Военный препарат для стимуляции мышц: применяется перед боем, чтобы расширить возможности организма, снизить получаемый урон и ускорить восстановление, но после окончания действия приходит усталость.
+
+[Эффекты]
+скорость лечения ран +30%, задержка 0 с/длительность 60 с;
+фильтрация крови +30%, задержка 0 с/длительность 60 с;
+порог нервного срыва ×70%, задержка 0 с/длительность 60 с;
+порог переносимости боли ×130%, задержка 0 с/длительность 60 с;
+скорость передвижения ×80%, задержка 60 с/длительность 65 с;
+потребляет 0,008 сна/с, задержка 60 с/длительность 65 с.</EL_Stim_P22_22cpd.description>
+  <EL_Stim_P22_22cpd.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_P22_22cpd.comps.CompUsable.useLabel>
+
+  <!-- Perfotoran -->
+  <EL_Stim_Perfotoran.label>Стимулятор Пефторан (Синяя кровь)</EL_Stim_Perfotoran.label>
+  <EL_Stim_Perfotoran.description>Искусственная кровь — субмикронная эмульсия на основе смеси ПФО, кровезаменитель, способный переносить кислород. После вливания временно выполняет функции плазмы, ускоряет обмен веществ и способствует восстановлению тканей. Применяется как универсальное противоядие при отравлениях, облучении и тяжёлой кровопотере, но злоупотребление влечёт тяжёлые физиологические последствия.
+
+[Эффекты]
+сразу снимает отравление токсинами, пищевое отравление, агриоз и трупную чахотку; на время действия даёт иммунитет, задержка 0 с/длительность 120 с;
+суммарный коэффициент кровотечения ×0%, задержка 0 с/длительность 120 с;
+снижает кровопотерю на 0,015/с, задержка 0 с/длительность 120 с;
+восстанавливает 2 ед. здоровья/с случайным частям тела (кроме костей, лечит рубцы), задержка 0 с/длительность 120 с;
+пищеварение +10%, задержка 0 с/длительность 120 с;
+скорость лечения ран ×85%, задержка 60 с/длительность 60 с;
+потребляет 0,011 сытости/с, задержка 60 с/длительность 60 с.</EL_Stim_Perfotoran.description>
+  <EL_Stim_Perfotoran.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Perfotoran.comps.CompUsable.useLabel>
+
+  <!-- PNB -->
+  <EL_Stim_PNB.label>ПНБ (Препарат 16)</EL_Stim_PNB.label>
+  <EL_Stim_PNB.description>Военный стимулятор, кратковременно активирующий внутренние мышцы: мышечная ткань становится малопроницаемой для повреждений. ПНБ также ускоряет транспорт белкового синтеза, ускоряя восстановление тканей. Имеет побочные эффекты, связанные с иммунной компенсацией.
+
+[Эффекты]
+сознание +20%, задержка 0 с/длительность 40 с;
+общая скорость работы ×140%, задержка 0 с/длительность 40 с;
+восстанавливает 3 ед. здоровья/с случайным частям тела (кроме костей), задержка 0 с/длительность 40 с;
+сознание -15%, задержка 40 с/длительность 20 с;
+скорость лечения ран ×80%, задержка 40 с/длительность 181 с;
+фильтрация крови -20%, задержка 40 с/длительность 181 с.</EL_Stim_PNB.description>
+  <EL_Stim_PNB.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_PNB.comps.CompUsable.useLabel>
+
+  <!-- Propital -->
+  <EL_Stim_Propital.label>Регенеративный препарат Пропитал</EL_Stim_Propital.label>
+  <EL_Stim_Propital.description>Военный препарат для физического усиления: стимулирует процессы регенерации за счёт усиления биосинтеза пуриновых и пиримидиновых оснований, РНК и функциональных ферментов. Повышает обмен веществ и подавляет боль, но имеет серьёзные отложенные побочные эффекты, поэтому применение обычно ограничено профессиональными медиками.
+
+[Эффекты]
+боль ×10%, задержка 0 с/длительность 245 с;
+пищеварение +20%, задержка 0 с/длительность 300 с;
+фильтрация крови +20%, задержка 0 с/длительность 300 с;
+скорость лечения ран ×120%, задержка 0 с/длительность 300 с;
+восстанавливает 1 ед. здоровья/с случайным частям тела, задержка 0 с/длительность 300 с;
+зрение -15%, задержка 270 с/длительность 30 с;
+сознание -15%, задержка 270 с/длительность 30 с.</EL_Stim_Propital.description>
+  <EL_Stim_Propital.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Propital.comps.CompUsable.useLabel>
+
+  <!-- SJ1-TGLabs -->
+  <EL_Stim_SJ1_TGLabs.label>Боевой стимулятор SJ1 TGLabs</EL_Stim_SJ1_TGLabs.label>
+  <EL_Stim_SJ1_TGLabs.description>Военный боевой стимулятор: вводится перед боем, повышает физические возможности и снижает чувствительность к боли. Имеет серьёзные метаболические побочные эффекты. Также служит сырьём в синтезе препаратов.
+
+[Эффекты]
+скорость передвижения ×120%, задержка 0 с/длительность 180 с;
+общая скорость работы ×120%, задержка 0 с/длительность 180 с;
+порог нервного срыва ×80%, задержка 0 с/длительность 180 с;
+порог переносимости боли ×120%, задержка 0 с/длительность 180 с;
+потребляет 0,005 сытости/с, задержка 100 с/длительность 200 с.</EL_Stim_SJ1_TGLabs.description>
+  <EL_Stim_SJ1_TGLabs.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_SJ1_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- SJ12-TGLabs -->
+  <EL_Stim_SJ12_TGLabs.label>Боевой стимулятор SJ12 TGLabs</EL_Stim_SJ12_TGLabs.label>
+  <EL_Stim_SJ12_TGLabs.description>Боевой стимулятор для специалистов: избирательно замедляет ряд функций организма, перенаправляя силы на восстановление. Его механизм заставляет гипоталамус выделять вазопрессин для смещения работы надпочечников, снижая температуру тела и обостряя восприятие. После окончания действия температура тела растёт из-за того, что органы не работают в обычном режиме.
+
+[Эффекты]
+зрение +30%, задержка 0 с/длительность 600 с;
+слух +30%, задержка 0 с/длительность 600 с;
+мин. комфортная температура -8 °C, задержка 0 с/длительность 600 с;
+восстанавливает 0,01 сытости/с, задержка 0 с/длительность 600 с;
+макс. комфортная температура -12 °C, задержка 600 с/длительность 300 с.</EL_Stim_SJ12_TGLabs.description>
+  <EL_Stim_SJ12_TGLabs.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_SJ12_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- SJ6-TGLabs -->
+  <EL_Stim_SJ6_TGLabs.label>Боевой стимулятор SJ6 TGLabs</EL_Stim_SJ6_TGLabs.label>
+  <EL_Stim_SJ6_TGLabs.description>Высокоэффективный военный спортивный стимулятор: вводится перед боем, заметно повышает общую физическую форму и устраняет усталость, но к концу действия проявляются побочные эффекты — угнетение центральной нервной системы.
+
+[Эффекты]
+скорость расхода сна ×70%, задержка 0 с/длительность 200 с;
+восстанавливает 0,02 сна/с, задержка 0 с/длительность 200 с;
+сознание -15%, задержка 200 с/длительность 40 с;
+зрение -15%, задержка 200 с/длительность 40 с.</EL_Stim_SJ6_TGLabs.description>
+  <EL_Stim_SJ6_TGLabs.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_SJ6_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- SJ9-TGLabs -->
+  <EL_Stim_SJ9_TGLabs.label>Боевой стимулятор SJ9 TGLabs</EL_Stim_SJ9_TGLabs.label>
+  <EL_Stim_SJ9_TGLabs.description>Специальный препарат адаптации к среде: значительно замедляет обмен веществ, повышая приспособляемость организма к экстремальным условиям. Также снижает тепловыделение, уменьшая заметность в тепловизорах, удерживая обмен веществ на низком, но безопасном уровне.
+
+[Эффекты]
+мин. комфортная температура -21 °C, задержка 0 с/длительность 300 с;
+макс. комфортная температура +14 °C, задержка 0 с/длительность 300 с;
+пищеварение -20%, задержка 0 с/длительность 300 с;
+наносит 1 ед. метаболического урона случайным частям тела (кроме костей) каждые 10 с, задержка 0 с/длительность 420 с;
+боль ×115%, задержка 300 с/длительность 120 с.</EL_Stim_SJ9_TGLabs.description>
+  <EL_Stim_SJ9_TGLabs.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_SJ9_TGLabs.comps.CompUsable.useLabel>
+
+  <!-- Trimadol -->
+  <EL_Stim_Trimadol.label>Препарат Тримадол</EL_Stim_Trimadol.label>
+  <EL_Stim_Trimadol.description>Комплексный опиоидный усилитель для сил специальных операций: способствует открытию калиевых и кальциевых каналов нервных клеток центральной и спинной нервной системы, вызывая гиперполяризацию мембран и подавляя боль, но создаёт огромную метаболическую нагрузку на организм.
+
+[Эффекты]
+боль ×5%, задержка 0 с/длительность 180 с;
+работа +20%, задержка 0 с/длительность 180 с;
+общая скорость работы ×110%, задержка 0 с/длительность 180 с;
+скорость передвижения ×110%, задержка 0 с/длительность 180 с;
+порог нервного срыва ×90%, задержка 0 с/длительность 180 с;
+порог переносимости боли ×110%, задержка 0 с/длительность 180 с;
+скорость расхода сна ×90%, задержка 0 с/длительность 180 с;
+восстанавливает 0,03 сна/с, задержка 0 с/длительность 180 с;
+потребляет 0,01 сытости/с, задержка 0 с/длительность 180 с.</EL_Stim_Trimadol.description>
+  <EL_Stim_Trimadol.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Trimadol.comps.CompUsable.useLabel>
+
+  <!-- xTG-12 -->
+  <EL_Stim_xTG12_Antidote.label>Антидот хТГ-12</EL_Stim_xTG12_Antidote.label>
+  <EL_Stim_xTG12_Antidote.description>Антидот широкого спектра: нейтрализует большинство искусственных и природных токсинов. Пока его компоненты циркулируют в крови, организм невосприимчив к ядам. Имеет побочные эффекты, влияющие на самовосстановление организма.
+
+[Эффекты]
+сразу снимает отравление токсинами, пищевое отравление, агриоз и трупную чахотку; на время действия даёт иммунитет, задержка 0 с/длительность 240 с;
+скорость лечения ран -10%, задержка 180 с/длительность 60 с.</EL_Stim_xTG12_Antidote.description>
+  <EL_Stim_xTG12_Antidote.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_xTG12_Antidote.comps.CompUsable.useLabel>
+
+  <!-- Zagustin -->
+  <EL_Stim_Zagustin.label>Гемостатическое средство Загустин</EL_Stim_Zagustin.label>
+  <EL_Stim_Zagustin.description>Мощное военное гемостатическое средство: подавляет катализ фибрина и замедляет его превращение в плазмин. После инъекции временно останавливает любое кровотечение и повышает сопротивляемость кровопотере. Период последействия усиливает метаболические потери и вызывает обезвоживание, возможна кратковременная спутанность сознания.
+
+[Эффекты]
+немедленная остановка кровотечения, задержка 0 с/длительность 180 с;
+фильтрация крови +40%, задержка 0 с/длительность 180 с;
+пищеварение -10%, задержка 0 с/длительность 180 с;
+сознание -15%, задержка 170 с/длительность 40 с;
+потребляет 0,014 сытости/с, задержка 170 с/длительность 40 с.</EL_Stim_Zagustin.description>
+  <EL_Stim_Zagustin.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Zagustin.comps.CompUsable.useLabel>
+
+  <!-- Ingest strings -->
+  <EL_Stim_2A2_bTG.ingestible.ingestCommandString>Ввести {0}</EL_Stim_2A2_bTG.ingestible.ingestCommandString>
+  <EL_Stim_2A2_bTG.ingestible.ingestReportString>Вводит {0}.</EL_Stim_2A2_bTG.ingestible.ingestReportString>
+  <EL_Stim_3_bTG.ingestible.ingestCommandString>Ввести {0}</EL_Stim_3_bTG.ingestible.ingestCommandString>
+  <EL_Stim_3_bTG.ingestible.ingestReportString>Вводит {0}.</EL_Stim_3_bTG.ingestible.ingestReportString>
+  <EL_Stim_Adrenaline.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Adrenaline.ingestible.ingestCommandString>
+  <EL_Stim_Adrenaline.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Adrenaline.ingestible.ingestReportString>
+  <EL_Stim_AHF1M.ingestible.ingestCommandString>Ввести {0}</EL_Stim_AHF1M.ingestible.ingestCommandString>
+  <EL_Stim_AHF1M.ingestible.ingestReportString>Вводит {0}.</EL_Stim_AHF1M.ingestible.ingestReportString>
+  <EL_Stim_eTGchange.ingestible.ingestCommandString>Ввести {0}</EL_Stim_eTGchange.ingestible.ingestCommandString>
+  <EL_Stim_eTGchange.ingestible.ingestReportString>Вводит {0}.</EL_Stim_eTGchange.ingestible.ingestReportString>
+  <EL_Stim_L1_Norepinephrine.ingestible.ingestCommandString>Ввести {0}</EL_Stim_L1_Norepinephrine.ingestible.ingestCommandString>
+  <EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>Вводит {0}.</EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>
+  <EL_Stim_MULE.ingestible.ingestCommandString>Ввести {0}</EL_Stim_MULE.ingestible.ingestCommandString>
+  <EL_Stim_MULE.ingestible.ingestReportString>Вводит {0}.</EL_Stim_MULE.ingestible.ingestReportString>
+  <EL_Stim_Meldonin.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Meldonin.ingestible.ingestCommandString>
+  <EL_Stim_Meldonin.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Meldonin.ingestible.ingestReportString>
+  <EL_Stim_Morphine.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Morphine.ingestible.ingestCommandString>
+  <EL_Stim_Morphine.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Morphine.ingestible.ingestReportString>
+  <EL_Stim_Obd2_cocktail.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Obd2_cocktail.ingestible.ingestCommandString>
+  <EL_Stim_Obd2_cocktail.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Obd2_cocktail.ingestible.ingestReportString>
+  <EL_Stim_Obdolbos.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Obdolbos.ingestible.ingestCommandString>
+  <EL_Stim_Obdolbos.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Obdolbos.ingestible.ingestReportString>
+  <EL_Stim_P22_22cpd.ingestible.ingestCommandString>Ввести {0}</EL_Stim_P22_22cpd.ingestible.ingestCommandString>
+  <EL_Stim_P22_22cpd.ingestible.ingestReportString>Вводит {0}.</EL_Stim_P22_22cpd.ingestible.ingestReportString>
+  <EL_Stim_Perfotoran.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Perfotoran.ingestible.ingestCommandString>
+  <EL_Stim_Perfotoran.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Perfotoran.ingestible.ingestReportString>
+  <EL_Stim_PNB.ingestible.ingestCommandString>Ввести {0}</EL_Stim_PNB.ingestible.ingestCommandString>
+  <EL_Stim_PNB.ingestible.ingestReportString>Вводит {0}.</EL_Stim_PNB.ingestible.ingestReportString>
+  <EL_Stim_Propital.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Propital.ingestible.ingestCommandString>
+  <EL_Stim_Propital.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Propital.ingestible.ingestReportString>
+  <EL_Stim_SJ1_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ1_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ12_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ12_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ6_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ6_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ9_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ9_TGLabs.ingestible.ingestCommandString>
+  <EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_Trimadol.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Trimadol.ingestible.ingestCommandString>
+  <EL_Stim_Trimadol.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Trimadol.ingestible.ingestReportString>
+  <EL_Stim_xTG12_Antidote.ingestible.ingestCommandString>Ввести {0}</EL_Stim_xTG12_Antidote.ingestible.ingestCommandString>
+  <EL_Stim_xTG12_Antidote.ingestible.ingestReportString>Вводит {0}.</EL_Stim_xTG12_Antidote.ingestible.ingestReportString>
+  <EL_Stim_Zagustin.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Zagustin.ingestible.ingestCommandString>
+  <EL_Stim_Zagustin.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Zagustin.ingestible.ingestReportString>
+
+</LanguageData>
