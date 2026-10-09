@@ -9,8 +9,8 @@
   </supportedVersions>
   <packageId>Elanilda.StimsFromEFT</packageId>
   <url></url>
-  <modVersion>1.1.0</modVersion>
-  <modIconPath>UI/EL_ModIcon</modIconPath>
+  <modVersion>1.1.1</modVersion>
+  <modIconPath>UI/EL_SFE_ModIcon</modIconPath>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
