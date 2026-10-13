@@ -16,9 +16,9 @@
   <EL_Surgery_InjectZagustin.jobString>Вводит Загустин в TargetA</EL_Surgery_InjectZagustin.jobString>
 
   <!-- 2A2-(b-TG) -->
-  <EL_Surgery_Inject2A2_bTG.label>ввести 2А2-(b-ТГ)</EL_Surgery_Inject2A2_bTG.label>
-  <EL_Surgery_Inject2A2_bTG.description>Ввести 2А2-(b-ТГ), чтобы повысить грузоподъёмность и восприятие.</EL_Surgery_Inject2A2_bTG.description>
-  <EL_Surgery_Inject2A2_bTG.jobString>Вводит 2А2-(b-ТГ) в TargetA</EL_Surgery_Inject2A2_bTG.jobString>
+  <EL_Surgery_Inject2A2_bTG.label>ввести 2A2-(b-TG)</EL_Surgery_Inject2A2_bTG.label>
+  <EL_Surgery_Inject2A2_bTG.description>Ввести 2A2-(b-TG), чтобы повысить грузоподъёмность и восприятие.</EL_Surgery_Inject2A2_bTG.description>
+  <EL_Surgery_Inject2A2_bTG.jobString>Вводит 2A2-(b-TG) в TargetA</EL_Surgery_Inject2A2_bTG.jobString>
 
   <!-- L1 -->
   <EL_Surgery_InjectL1.label>ввести L1</EL_Surgery_InjectL1.label>
@@ -46,9 +46,9 @@
   <EL_Surgery_InjectP22.jobString>Вводит P22 в TargetA</EL_Surgery_InjectP22.jobString>
 
   <!-- 3-(b-TG) -->
-  <EL_Surgery_Inject3_bTG.label>ввести 3-(b-ТГ)</EL_Surgery_Inject3_bTG.label>
-  <EL_Surgery_Inject3_bTG.description>Ввести 3-(b-ТГ), чтобы повысить восприятие и работу.</EL_Surgery_Inject3_bTG.description>
-  <EL_Surgery_Inject3_bTG.jobString>Вводит 3-(b-ТГ) в TargetA</EL_Surgery_Inject3_bTG.jobString>
+  <EL_Surgery_Inject3_bTG.label>ввести 3-(b-TG)</EL_Surgery_Inject3_bTG.label>
+  <EL_Surgery_Inject3_bTG.description>Ввести 3-(b-TG), чтобы повысить восприятие и работу.</EL_Surgery_Inject3_bTG.description>
+  <EL_Surgery_Inject3_bTG.jobString>Вводит 3-(b-TG) в TargetA</EL_Surgery_Inject3_bTG.jobString>
 
   <!-- Trimadol -->
   <EL_Surgery_InjectTrimadol.label>ввести Тримадол</EL_Surgery_InjectTrimadol.label>
@@ -86,9 +86,9 @@
   <EL_Surgery_InjectSJ9_TGLabs.jobString>Вводит SJ9 TGLabs в TargetA</EL_Surgery_InjectSJ9_TGLabs.jobString>
 
   <!-- xTG-12 -->
-  <EL_Surgery_InjectxTG12.label>ввести хТГ-12</EL_Surgery_InjectxTG12.label>
-  <EL_Surgery_InjectxTG12.description>Ввести антидот хТГ-12, чтобы вывести токсины и получить временный иммунитет.</EL_Surgery_InjectxTG12.description>
-  <EL_Surgery_InjectxTG12.jobString>Вводит антидот хТГ-12 в TargetA</EL_Surgery_InjectxTG12.jobString>
+  <EL_Surgery_InjectxTG12.label>ввести xTG-12</EL_Surgery_InjectxTG12.label>
+  <EL_Surgery_InjectxTG12.description>Ввести антидот xTG-12, чтобы вывести токсины и получить временный иммунитет.</EL_Surgery_InjectxTG12.description>
+  <EL_Surgery_InjectxTG12.jobString>Вводит антидот xTG-12 в TargetA</EL_Surgery_InjectxTG12.jobString>
 
   <!-- Perfotoran -->
   <EL_Surgery_InjectPerfotoran.label>ввести Пефторан</EL_Surgery_InjectPerfotoran.label>

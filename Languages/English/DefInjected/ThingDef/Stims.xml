@@ -2,7 +2,7 @@
 <LanguageData>
   <!-- EL_Stim_Storage -->
   <EL_Stim_Storage.label>Stimulant Storage Cabinet</EL_Stim_Storage.label>
-  <EL_Stim_Storage.description>A tall metal storage cabinet with divided compartments for various stimulants and neutroamine. </EL_Stim_Storage.description>
+  <EL_Stim_Storage.description>A tall metal storage cabinet with divided compartments for various stimulants and neutroamine.</EL_Stim_Storage.description>
 
   <!-- EL_Cartridge -->
   <EL_Cartridge.label>Injector Cartridge</EL_Cartridge.label>
@@ -322,14 +322,5 @@ consumes 0.014 food/s, 170s delay/40s duration.</EL_Stim_Zagustin.description>
   <EL_Stim_Zagustin.ingestible.ingestCommandString>Inject {0}</EL_Stim_Zagustin.ingestible.ingestCommandString>
   <EL_Stim_Zagustin.ingestible.ingestReportString>Injecting {0}.</EL_Stim_Zagustin.ingestible.ingestReportString>
 
-  <!-- EL_Blueprint_Obdolbos -->
-  <EL_Blueprint_Obdolbos.label>Obdolbos Recipe Notes</EL_Blueprint_Obdolbos.label>
-  <EL_Blueprint_Obdolbos.description>A notebook stored in a blueprint case, recording the complete formula for the Obdolbos cocktail stimulant injector. It is a manuscript copy left by a former Terragroup medical expert. Using it unlocks the Obdolbos crafting recipe at the drug lab.</EL_Blueprint_Obdolbos.description>
-  <EL_Blueprint_Obdolbos.comps.CompUsable.useLabel>Study {0}</EL_Blueprint_Obdolbos.comps.CompUsable.useLabel>
-
-  <!-- EL_Blueprint_Obd2_cocktail -->
-  <EL_Blueprint_Obd2_cocktail.label>Obd2 Crafting Manual</EL_Blueprint_Obd2_cocktail.label>
-  <EL_Blueprint_Obd2_cocktail.description>A technical manual stored in a blueprint case, recording the complete formula for the Obdolbos 2 cocktail stimulant injector. It is a printed publication based on the manuscript, seemingly more standardized. Using it unlocks the Obd2 crafting recipe at the drug lab.</EL_Blueprint_Obd2_cocktail.description>
-  <EL_Blueprint_Obd2_cocktail.comps.CompUsable.useLabel>Study {0}</EL_Blueprint_Obd2_cocktail.comps.CompUsable.useLabel>
 
 </LanguageData>

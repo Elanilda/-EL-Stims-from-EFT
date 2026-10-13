@@ -12,4 +12,8 @@
     <!-- 注意: 子文件夹不能带前导斜杠, Path.Combine会把"/xxx"当作根路径解析到盘符根目录, 导致文件夹静默不加载 -->
     <li IfModActive="CETeam.CombatExtended">ModPatches/Combat Extended</li>
   </v1.6>
+  <v1.7>
+    <li>/</li>
+    <li IfModActive="CETeam.CombatExtended">ModPatches/Combat Extended</li>
+  </v1.7>
 </loadFolders>

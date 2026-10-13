@@ -2,14 +2,14 @@
 <LanguageData>
   <!-- EL_Stim_Storage -->
   <EL_Stim_Storage.label>Шкаф для стимуляторов</EL_Stim_Storage.label>
-  <EL_Stim_Storage.description>Высокий металлический шкаф с разделёнными отделениями для различных стимуляторов и нейтроамина. </EL_Stim_Storage.description>
+  <EL_Stim_Storage.description>Высокий металлический шкаф с разделёнными отделениями для различных стимуляторов и нейтроамина.</EL_Stim_Storage.description>
 
   <!-- EL_Cartridge -->
   <EL_Cartridge.label>Шприц-ручка (заготовка)</EL_Cartridge.label>
   <EL_Cartridge.description>Пустая заготовка шприц-ручки: корпус из инженерного пластика, стальной шток-поршень, прозрачная стеклянная ампула и игла из нержавеющей стали. Универсальный компонент для синтеза стимуляторов.</EL_Cartridge.description>
 
   <!-- 2A2-(b-TG) -->
-  <EL_Stim_2A2_bTG.label>Препарат 2А2-(b-ТГ)</EL_Stim_2A2_bTG.label>
+  <EL_Stim_2A2_bTG.label>Препарат 2A2-(b-TG)</EL_Stim_2A2_bTG.label>
   <EL_Stim_2A2_bTG.description>Боевой поддерживающий препарат для разведки и тактических перемещений: стабилизирует центральную нервную систему, помогает адаптироваться к разным условиям и повышает грузоподъёмность, но ускоряет обезвоживание.
 
 [Эффекты]
@@ -21,7 +21,7 @@
   <EL_Stim_2A2_bTG.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_2A2_bTG.comps.CompUsable.useLabel>
 
   <!-- 3-(b-TG) -->
-  <EL_Stim_3_bTG.label>Препарат 3-(b-ТГ)</EL_Stim_3_bTG.label>
+  <EL_Stim_3_bTG.label>Препарат 3-(b-TG)</EL_Stim_3_bTG.label>
   <EL_Stim_3_bTG.description>Стимулятор центральной нервной системы с действующим веществом 3-(b-фенилизопропил). Обостряет восприятие и внимание, а также увеличивает мышечную силу за счёт усиления электромиографических сигналов.
 
 [Эффекты]
@@ -44,7 +44,7 @@
 общая скорость работы ×120%, задержка 0 с/длительность 65 с;
 скорость передвижения ×120%, задержка 0 с/длительность 65 с;
 точность стрельбы ×120%, задержка 0 с/длительность 65 с;
-восстанавливает 4 ед. здоровья/с случайным частям тела (кроме костей), задержка 0 с/длительность 15 с;
+восстанавливает 4 ед. здоровья/с в случайных частях тела (кроме костей), задержка 0 с/длительность 15 с;
 потребляет 0,018 сытости/с, задержка 30 с/длительность 30 с.</EL_Stim_Adrenaline.description>
   <EL_Stim_Adrenaline.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Adrenaline.comps.CompUsable.useLabel>
 
@@ -65,7 +65,7 @@
 [Эффекты]
 пищеварение +20%, задержка 0 с/длительность 60 с;
 скорость выработки иммунитета +20%, задержка 0 с/длительность 60 с;
-восстанавливает 7 ед. здоровья/с случайным частям тела (лечит рубцы), задержка 0 с/длительность 60 с;
+восстанавливает 7 ед. здоровья/с в случайных частях тела (лечит рубцы), задержка 0 с/длительность 60 с;
 снижает кровопотерю на 0,005/с, задержка 0 с/длительность 60 с;
 восстанавливает 0,05 сытости/с, задержка 0 с/длительность 60 с;
 потребляет 0,03 сытости/с, задержка 40 с/длительность 40 с;
@@ -81,7 +81,7 @@
 боль ×10%, задержка 0 с/длительность 120 с;
 общая скорость работы ×140%, задержка 0 с/длительность 120 с;
 скорость передвижения ×120%, задержка 0 с/длительность 120 с;
-скорость расхода сна ×70%, задержка 0 с/длительность 120 с;
+множитель потребности сна ×70%, задержка 0 с/длительность 120 с;
 потребляет 0,009 сытости/с, задержка 0 с/длительность 60 с.</EL_Stim_L1_Norepinephrine.description>
   <EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>
 
@@ -125,7 +125,7 @@
 общая скорость работы ×140%, задержка 0 с/длительность 1800 с;
 скорость передвижения ×140%, задержка 0 с/длительность 1800 с;
 грузоподъёмность ×190%, задержка 0 с/длительность 1800 с;
-скорость расхода сна ×120%, задержка 0 с/длительность 1800 с;
+множитель потребности сна ×120%, задержка 0 с/длительность 1800 с;
 наносит 1 ед. метаболического урона случайным частям тела (кроме костей) каждую секунду, задержка 0 с/длительность 1800 с;
 потребляет 0,01 сна/с, задержка 0 с/длительность 1800 с.</EL_Stim_Obd2_cocktail.description>
   <EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>
@@ -159,7 +159,7 @@
 сразу снимает отравление токсинами, пищевое отравление, агриоз и трупную чахотку; на время действия даёт иммунитет, задержка 0 с/длительность 120 с;
 суммарный коэффициент кровотечения ×0%, задержка 0 с/длительность 120 с;
 снижает кровопотерю на 0,015/с, задержка 0 с/длительность 120 с;
-восстанавливает 2 ед. здоровья/с случайным частям тела (кроме костей, лечит рубцы), задержка 0 с/длительность 120 с;
+восстанавливает 2 ед. здоровья/с в случайных частях тела (кроме костей, лечит рубцы), задержка 0 с/длительность 120 с;
 пищеварение +10%, задержка 0 с/длительность 120 с;
 скорость лечения ран ×85%, задержка 60 с/длительность 60 с;
 потребляет 0,011 сытости/с, задержка 60 с/длительность 60 с.</EL_Stim_Perfotoran.description>
@@ -172,7 +172,7 @@
 [Эффекты]
 сознание +20%, задержка 0 с/длительность 40 с;
 общая скорость работы ×140%, задержка 0 с/длительность 40 с;
-восстанавливает 3 ед. здоровья/с случайным частям тела (кроме костей), задержка 0 с/длительность 40 с;
+восстанавливает 3 ед. здоровья/с в случайных частях тела (кроме костей), задержка 0 с/длительность 40 с;
 сознание -15%, задержка 40 с/длительность 20 с;
 скорость лечения ран ×80%, задержка 40 с/длительность 181 с;
 фильтрация крови -20%, задержка 40 с/длительность 181 с.</EL_Stim_PNB.description>
@@ -187,7 +187,7 @@
 пищеварение +20%, задержка 0 с/длительность 300 с;
 фильтрация крови +20%, задержка 0 с/длительность 300 с;
 скорость лечения ран ×120%, задержка 0 с/длительность 300 с;
-восстанавливает 1 ед. здоровья/с случайным частям тела, задержка 0 с/длительность 300 с;
+восстанавливает 1 ед. здоровья/с в случайных частях тела, задержка 0 с/длительность 300 с;
 зрение -15%, задержка 270 с/длительность 30 с;
 сознание -15%, задержка 270 с/длительность 30 с.</EL_Stim_Propital.description>
   <EL_Stim_Propital.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Propital.comps.CompUsable.useLabel>
@@ -221,7 +221,7 @@
   <EL_Stim_SJ6_TGLabs.description>Высокоэффективный военный спортивный стимулятор: вводится перед боем, заметно повышает общую физическую форму и устраняет усталость, но к концу действия проявляются побочные эффекты — угнетение центральной нервной системы.
 
 [Эффекты]
-скорость расхода сна ×70%, задержка 0 с/длительность 200 с;
+множитель потребности сна ×70%, задержка 0 с/длительность 200 с;
 восстанавливает 0,02 сна/с, задержка 0 с/длительность 200 с;
 сознание -15%, задержка 200 с/длительность 40 с;
 зрение -15%, задержка 200 с/длительность 40 с.</EL_Stim_SJ6_TGLabs.description>
@@ -241,7 +241,7 @@
 
   <!-- Trimadol -->
   <EL_Stim_Trimadol.label>Препарат Тримадол</EL_Stim_Trimadol.label>
-  <EL_Stim_Trimadol.description>Комплексный опиоидный усилитель для сил специальных операций: способствует открытию калиевых и кальциевых каналов нервных клеток центральной и спинной нервной системы, вызывая гиперполяризацию мембран и подавляя боль, но создаёт огромную метаболическую нагрузку на организм.
+  <EL_Stim_Trimadol.description>Комплексный опиоидный усилитель для сил специальных операций: способствует открытию калиевых и кальциевых каналов нервных клеток центральной нервной системы, вызывая гиперполяризацию мембран и подавляя боль, но создаёт огромную метаболическую нагрузку на организм.
 
 [Эффекты]
 боль ×5%, задержка 0 с/длительность 180 с;
@@ -250,13 +250,13 @@
 скорость передвижения ×110%, задержка 0 с/длительность 180 с;
 порог нервного срыва ×90%, задержка 0 с/длительность 180 с;
 порог переносимости боли ×110%, задержка 0 с/длительность 180 с;
-скорость расхода сна ×90%, задержка 0 с/длительность 180 с;
+множитель потребности сна ×90%, задержка 0 с/длительность 180 с;
 восстанавливает 0,03 сна/с, задержка 0 с/длительность 180 с;
 потребляет 0,01 сытости/с, задержка 0 с/длительность 180 с.</EL_Stim_Trimadol.description>
   <EL_Stim_Trimadol.comps.CompUsable.useLabel>Ввести {0}</EL_Stim_Trimadol.comps.CompUsable.useLabel>
 
   <!-- xTG-12 -->
-  <EL_Stim_xTG12_Antidote.label>Антидот хТГ-12</EL_Stim_xTG12_Antidote.label>
+  <EL_Stim_xTG12_Antidote.label>Антидот xTG-12</EL_Stim_xTG12_Antidote.label>
   <EL_Stim_xTG12_Antidote.description>Антидот широкого спектра: нейтрализует большинство искусственных и природных токсинов. Пока его компоненты циркулируют в крови, организм невосприимчив к ядам. Имеет побочные эффекты, влияющие на самовосстановление организма.
 
 [Эффекты]
@@ -278,48 +278,48 @@
 
   <!-- Ingest strings -->
   <EL_Stim_2A2_bTG.ingestible.ingestCommandString>Ввести {0}</EL_Stim_2A2_bTG.ingestible.ingestCommandString>
-  <EL_Stim_2A2_bTG.ingestible.ingestReportString>Вводит {0}.</EL_Stim_2A2_bTG.ingestible.ingestReportString>
+  <EL_Stim_2A2_bTG.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_2A2_bTG.ingestible.ingestReportString>
   <EL_Stim_3_bTG.ingestible.ingestCommandString>Ввести {0}</EL_Stim_3_bTG.ingestible.ingestCommandString>
-  <EL_Stim_3_bTG.ingestible.ingestReportString>Вводит {0}.</EL_Stim_3_bTG.ingestible.ingestReportString>
+  <EL_Stim_3_bTG.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_3_bTG.ingestible.ingestReportString>
   <EL_Stim_Adrenaline.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Adrenaline.ingestible.ingestCommandString>
-  <EL_Stim_Adrenaline.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Adrenaline.ingestible.ingestReportString>
+  <EL_Stim_Adrenaline.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Adrenaline.ingestible.ingestReportString>
   <EL_Stim_AHF1M.ingestible.ingestCommandString>Ввести {0}</EL_Stim_AHF1M.ingestible.ingestCommandString>
-  <EL_Stim_AHF1M.ingestible.ingestReportString>Вводит {0}.</EL_Stim_AHF1M.ingestible.ingestReportString>
+  <EL_Stim_AHF1M.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_AHF1M.ingestible.ingestReportString>
   <EL_Stim_eTGchange.ingestible.ingestCommandString>Ввести {0}</EL_Stim_eTGchange.ingestible.ingestCommandString>
-  <EL_Stim_eTGchange.ingestible.ingestReportString>Вводит {0}.</EL_Stim_eTGchange.ingestible.ingestReportString>
+  <EL_Stim_eTGchange.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_eTGchange.ingestible.ingestReportString>
   <EL_Stim_L1_Norepinephrine.ingestible.ingestCommandString>Ввести {0}</EL_Stim_L1_Norepinephrine.ingestible.ingestCommandString>
-  <EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>Вводит {0}.</EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>
+  <EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_L1_Norepinephrine.ingestible.ingestReportString>
   <EL_Stim_MULE.ingestible.ingestCommandString>Ввести {0}</EL_Stim_MULE.ingestible.ingestCommandString>
-  <EL_Stim_MULE.ingestible.ingestReportString>Вводит {0}.</EL_Stim_MULE.ingestible.ingestReportString>
+  <EL_Stim_MULE.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_MULE.ingestible.ingestReportString>
   <EL_Stim_Meldonin.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Meldonin.ingestible.ingestCommandString>
-  <EL_Stim_Meldonin.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Meldonin.ingestible.ingestReportString>
+  <EL_Stim_Meldonin.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Meldonin.ingestible.ingestReportString>
   <EL_Stim_Morphine.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Morphine.ingestible.ingestCommandString>
-  <EL_Stim_Morphine.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Morphine.ingestible.ingestReportString>
+  <EL_Stim_Morphine.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Morphine.ingestible.ingestReportString>
   <EL_Stim_Obd2_cocktail.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Obd2_cocktail.ingestible.ingestCommandString>
-  <EL_Stim_Obd2_cocktail.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Obd2_cocktail.ingestible.ingestReportString>
+  <EL_Stim_Obd2_cocktail.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Obd2_cocktail.ingestible.ingestReportString>
   <EL_Stim_Obdolbos.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Obdolbos.ingestible.ingestCommandString>
-  <EL_Stim_Obdolbos.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Obdolbos.ingestible.ingestReportString>
+  <EL_Stim_Obdolbos.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Obdolbos.ingestible.ingestReportString>
   <EL_Stim_P22_22cpd.ingestible.ingestCommandString>Ввести {0}</EL_Stim_P22_22cpd.ingestible.ingestCommandString>
-  <EL_Stim_P22_22cpd.ingestible.ingestReportString>Вводит {0}.</EL_Stim_P22_22cpd.ingestible.ingestReportString>
+  <EL_Stim_P22_22cpd.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_P22_22cpd.ingestible.ingestReportString>
   <EL_Stim_Perfotoran.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Perfotoran.ingestible.ingestCommandString>
-  <EL_Stim_Perfotoran.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Perfotoran.ingestible.ingestReportString>
+  <EL_Stim_Perfotoran.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Perfotoran.ingestible.ingestReportString>
   <EL_Stim_PNB.ingestible.ingestCommandString>Ввести {0}</EL_Stim_PNB.ingestible.ingestCommandString>
-  <EL_Stim_PNB.ingestible.ingestReportString>Вводит {0}.</EL_Stim_PNB.ingestible.ingestReportString>
+  <EL_Stim_PNB.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_PNB.ingestible.ingestReportString>
   <EL_Stim_Propital.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Propital.ingestible.ingestCommandString>
-  <EL_Stim_Propital.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Propital.ingestible.ingestReportString>
+  <EL_Stim_Propital.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Propital.ingestible.ingestReportString>
   <EL_Stim_SJ1_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ1_TGLabs.ingestible.ingestCommandString>
-  <EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_SJ1_TGLabs.ingestible.ingestReportString>
   <EL_Stim_SJ12_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ12_TGLabs.ingestible.ingestCommandString>
-  <EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_SJ12_TGLabs.ingestible.ingestReportString>
   <EL_Stim_SJ6_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ6_TGLabs.ingestible.ingestCommandString>
-  <EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_SJ6_TGLabs.ingestible.ingestReportString>
   <EL_Stim_SJ9_TGLabs.ingestible.ingestCommandString>Ввести {0}</EL_Stim_SJ9_TGLabs.ingestible.ingestCommandString>
-  <EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>Вводит {0}.</EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>
+  <EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_SJ9_TGLabs.ingestible.ingestReportString>
   <EL_Stim_Trimadol.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Trimadol.ingestible.ingestCommandString>
-  <EL_Stim_Trimadol.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Trimadol.ingestible.ingestReportString>
+  <EL_Stim_Trimadol.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Trimadol.ingestible.ingestReportString>
   <EL_Stim_xTG12_Antidote.ingestible.ingestCommandString>Ввести {0}</EL_Stim_xTG12_Antidote.ingestible.ingestCommandString>
-  <EL_Stim_xTG12_Antidote.ingestible.ingestReportString>Вводит {0}.</EL_Stim_xTG12_Antidote.ingestible.ingestReportString>
+  <EL_Stim_xTG12_Antidote.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_xTG12_Antidote.ingestible.ingestReportString>
   <EL_Stim_Zagustin.ingestible.ingestCommandString>Ввести {0}</EL_Stim_Zagustin.ingestible.ingestCommandString>
-  <EL_Stim_Zagustin.ingestible.ingestReportString>Вводит {0}.</EL_Stim_Zagustin.ingestible.ingestReportString>
+  <EL_Stim_Zagustin.ingestible.ingestReportString>Вводит {lookup: {0}; Case; 3}</EL_Stim_Zagustin.ingestible.ingestReportString>
 
 </LanguageData>

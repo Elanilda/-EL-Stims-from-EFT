@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <EL_Stim_UseStim>Использовать стимуляторы</EL_Stim_UseStim>
-  <EL_Stim_UseStimDesc>Выбрать и ввести перенесённый стимулятор.</EL_Stim_UseStimDesc>
-  <EL_Stim_CompHealDesc>Каждые {1} с восстанавливает {0} ед. здоровья случайной части тела.</EL_Stim_CompHealDesc>
+  <EL_Stim_UseStimDesc>Выбрать и ввести переносимый стимулятор.</EL_Stim_UseStimDesc>
+  <EL_Stim_CompHealDesc>Каждые {1} с восстанавливает {0} ед. здоровья в случайной части тела.</EL_Stim_CompHealDesc>
   <EL_Stim_InjectTarget>Ввести стимулятор: {0}</EL_Stim_InjectTarget>
   <EL_Stim_InjectTargetCooldown>Ввести стимулятор: {0} (перезарядка)</EL_Stim_InjectTargetCooldown>
-
-  <!-- Blueprint System -->
-  <EL_Blueprint_Unlocked>Изучен рецепт: {0}</EL_Blueprint_Unlocked>
-  <EL_Blueprint_AlreadyUnlocked>Этот чертёж уже изучен.</EL_Blueprint_AlreadyUnlocked>
-  <EL_Blueprint_Desc>Открывает рецепты: {0}</EL_Blueprint_Desc>
 
   <!-- Stimulant Storage Cabinet -->
   <EL_Tab_StimStorageContents>Содержимое</EL_Tab_StimStorageContents>

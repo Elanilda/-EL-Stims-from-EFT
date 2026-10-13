@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- EL_Hediff_2A2_bTG -->
-  <EL_Hediff_2A2_bTG.label>Усиление 2А2-(b-ТГ)</EL_Hediff_2A2_bTG.label>
-  <EL_Hediff_2A2_bTG.labelNoun>усиление 2А2-(b-ТГ)</EL_Hediff_2A2_bTG.labelNoun>
-  <EL_Hediff_2A2_bTG.description>Действует 2А2-(b-ТГ): центральная нервная система стабилизирована, грузоподъёмность и восприятие существенно повышены.</EL_Hediff_2A2_bTG.description>
+  <EL_Hediff_2A2_bTG.label>Усиление 2A2-(b-TG)</EL_Hediff_2A2_bTG.label>
+  <EL_Hediff_2A2_bTG.labelNoun>усиление 2A2-(b-TG)</EL_Hediff_2A2_bTG.labelNoun>
+  <EL_Hediff_2A2_bTG.description>Действие препарата 2A2-(b-TG): центральная нервная система стабилизирована, грузоподъёмность и восприятие существенно повышены.</EL_Hediff_2A2_bTG.description>
   <EL_Hediff_2A2_bTG.stages.0.label>Пик</EL_Hediff_2A2_bTG.stages.0.label>
 
   <!-- EL_Hediff_3_bTG -->
-  <EL_Hediff_3_bTG.label>Сенсорное усиление 3-(b-ТГ)</EL_Hediff_3_bTG.label>
-  <EL_Hediff_3_bTG.labelNoun>сенсорное усиление 3-(b-ТГ)</EL_Hediff_3_bTG.labelNoun>
-  <EL_Hediff_3_bTG.description>Действует 3-(b-ТГ): восприятие и работа значительно усилены, центральная нервная система стимулирована.</EL_Hediff_3_bTG.description>
+  <EL_Hediff_3_bTG.label>Сенсорное усиление 3-(b-TG)</EL_Hediff_3_bTG.label>
+  <EL_Hediff_3_bTG.labelNoun>сенсорное усиление 3-(b-TG)</EL_Hediff_3_bTG.labelNoun>
+  <EL_Hediff_3_bTG.description>Действие препарата 3-(b-TG): восприятие и работа значительно усилены, центральная нервная система стимулирована.</EL_Hediff_3_bTG.description>
   <EL_Hediff_3_bTG.stages.0.label>Затухание</EL_Hediff_3_bTG.stages.0.label>
   <EL_Hediff_3_bTG.stages.1.label>Поддержание</EL_Hediff_3_bTG.stages.1.label>
   <EL_Hediff_3_bTG.stages.2.label>Пик</EL_Hediff_3_bTG.stages.2.label>
@@ -17,20 +17,20 @@
   <!-- EL_Hediff_Adrenaline -->
   <EL_Hediff_Adrenaline.label>Адреналиновый всплеск</EL_Hediff_Adrenaline.label>
   <EL_Hediff_Adrenaline.labelNoun>адреналиновый всплеск</EL_Hediff_Adrenaline.labelNoun>
-  <EL_Hediff_Adrenaline.description>Действует адреналин: физические возможности и скорость реакции повышены, боль подавлена.</EL_Hediff_Adrenaline.description>
+  <EL_Hediff_Adrenaline.description>Действие препарата адреналина: физические возможности и скорость реакции повышены, боль подавлена.</EL_Hediff_Adrenaline.description>
   <EL_Hediff_Adrenaline.stages.0.label>Пик</EL_Hediff_Adrenaline.stages.0.label>
 
   <!-- EL_Hediff_AHF1M -->
   <EL_Hediff_AHF1M.label>Гемостаз AHF1-M</EL_Hediff_AHF1M.label>
   <EL_Hediff_AHF1M.labelNoun>гемостаз AHF1-M</EL_Hediff_AHF1M.labelNoun>
-  <EL_Hediff_AHF1M.description>Действует AHF1-M: кровотечение остановлено, самовосстановление организма кратковременно усилено.</EL_Hediff_AHF1M.description>
+  <EL_Hediff_AHF1M.description>Действие препарата AHF1-M: кровотечение остановлено, самовосстановление организма кратковременно усилено.</EL_Hediff_AHF1M.description>
   <EL_Hediff_AHF1M.stages.0.label>Затухание</EL_Hediff_AHF1M.stages.0.label>
   <EL_Hediff_AHF1M.stages.1.label>Пик</EL_Hediff_AHF1M.stages.1.label>
 
   <!-- EL_Hediff_eTGchange -->
   <EL_Hediff_eTGchange.label>Регенерация eTG-change</EL_Hediff_eTGchange.label>
   <EL_Hediff_eTGchange.labelNoun>регенерация eTG-change</EL_Hediff_eTGchange.labelNoun>
-  <EL_Hediff_eTGchange.description>Действует eTG-change: ткани организма стремительно регенерируют. В поздней фазе — снижение функций организма и заметная метаболическая нагрузка.</EL_Hediff_eTGchange.description>
+  <EL_Hediff_eTGchange.description>Действие препарата eTG-change: ткани организма стремительно регенерируют. В поздней фазе — снижение функций организма и заметная метаболическая нагрузка.</EL_Hediff_eTGchange.description>
   <EL_Hediff_eTGchange.stages.0.label>Последействие</EL_Hediff_eTGchange.stages.0.label>
   <EL_Hediff_eTGchange.stages.1.label>Переход</EL_Hediff_eTGchange.stages.1.label>
   <EL_Hediff_eTGchange.stages.2.label>Переход</EL_Hediff_eTGchange.stages.2.label>
@@ -39,52 +39,52 @@
   <!-- EL_Hediff_L1 -->
   <EL_Hediff_L1.label>Норадреналиновый всплеск</EL_Hediff_L1.label>
   <EL_Hediff_L1.labelNoun>норадреналиновый всплеск</EL_Hediff_L1.labelNoun>
-  <EL_Hediff_L1.description>Действует L1: боль подавлена, физические возможности и скорость реакции повышены, расход сна снижен. В поздней фазе растёт метаболическая нагрузка.</EL_Hediff_L1.description>
+  <EL_Hediff_L1.description>Действие препарата L1: боль подавлена, физические возможности и скорость реакции повышены, расход сна снижен. В поздней фазе растёт метаболическая нагрузка.</EL_Hediff_L1.description>
   <EL_Hediff_L1.stages.0.label>Затухание</EL_Hediff_L1.stages.0.label>
   <EL_Hediff_L1.stages.1.label>Пик</EL_Hediff_L1.stages.1.label>
 
   <!-- EL_Hediff_Meldonin -->
   <EL_Hediff_Meldonin.label>Усиление мельдонием</EL_Hediff_Meldonin.label>
   <EL_Hediff_Meldonin.labelNoun>усиление мельдонием</EL_Hediff_Meldonin.labelNoun>
-  <EL_Hediff_Meldonin.description>Действует мельдоний: эффективность работы и скорость передвижения повышены, организм восстанавливает силы, метаболическая нагрузка повышена.</EL_Hediff_Meldonin.description>
+  <EL_Hediff_Meldonin.description>Действие препарата мельдония: эффективность работы и скорость передвижения повышены, организм восстанавливает силы, метаболическая нагрузка повышена.</EL_Hediff_Meldonin.description>
   <EL_Hediff_Meldonin.stages.0.label>Поддержание</EL_Hediff_Meldonin.stages.0.label>
   <EL_Hediff_Meldonin.stages.1.label>Пик</EL_Hediff_Meldonin.stages.1.label>
 
   <!-- EL_Hediff_Morphine -->
   <EL_Hediff_Morphine.label>Морфиновая анальгезия</EL_Hediff_Morphine.label>
   <EL_Hediff_Morphine.labelNoun>морфиновая анальгезия</EL_Hediff_Morphine.labelNoun>
-  <EL_Hediff_Morphine.description>Действует обезболивающий эффект морфина.</EL_Hediff_Morphine.description>
+  <EL_Hediff_Morphine.description>Обезболивающее действие морфина.</EL_Hediff_Morphine.description>
 
   <!-- EL_Hediff_MULE -->
   <EL_Hediff_MULE.label>Усиление M.U.L.E</EL_Hediff_MULE.label>
   <EL_Hediff_MULE.labelNoun>усиление M.U.L.E</EL_Hediff_MULE.labelNoun>
-  <EL_Hediff_MULE.description>Действует экстремальный мышечный стимулятор: грузоподъёмность существенно повышена, но каждые 10 секунд он наносит 1 ед. метаболического урона случайной части тела.</EL_Hediff_MULE.description>
+  <EL_Hediff_MULE.description>Действие экстремального мышечного стимулятора: грузоподъёмность существенно повышена, но каждые 10 секунд он наносит 1 ед. метаболического урона случайной части тела.</EL_Hediff_MULE.description>
   <EL_Hediff_MULE.stages.0.label>Пик</EL_Hediff_MULE.stages.0.label>
 
   <!-- EL_Hediff_Obd2_cocktail -->
   <EL_Hediff_Obd2_cocktail.label>Перегрузка Обд2</EL_Hediff_Obd2_cocktail.label>
   <EL_Hediff_Obd2_cocktail.labelNoun>перегрузка Обд2</EL_Hediff_Obd2_cocktail.labelNoun>
-  <EL_Hediff_Obd2_cocktail.description>Действует Обд2: экстремальное и длительное усиление организма вместе с тяжёлыми продолжительными метаболическими побочными эффектами.</EL_Hediff_Obd2_cocktail.description>
+  <EL_Hediff_Obd2_cocktail.description>Действие препарата Обд2: экстремальное и длительное усиление организма вместе с тяжёлыми продолжительными метаболическими побочными эффектами.</EL_Hediff_Obd2_cocktail.description>
   <EL_Hediff_Obd2_cocktail.stages.0.label>Пик</EL_Hediff_Obd2_cocktail.stages.0.label>
 
   <!-- EL_Hediff_P22_22cpd -->
   <EL_Hediff_P22_22cpd.label>Улучшение P22</EL_Hediff_P22_22cpd.label>
   <EL_Hediff_P22_22cpd.labelNoun>улучшение P22</EL_Hediff_P22_22cpd.labelNoun>
-  <EL_Hediff_P22_22cpd.description>Действует P22: восстановительные способности организма усилены, переносимость нагрузок повышена.</EL_Hediff_P22_22cpd.description>
+  <EL_Hediff_P22_22cpd.description>Действие препарата P22: восстановительные способности организма усилены, переносимость нагрузок повышена.</EL_Hediff_P22_22cpd.description>
   <EL_Hediff_P22_22cpd.stages.0.label>Затухание</EL_Hediff_P22_22cpd.stages.0.label>
   <EL_Hediff_P22_22cpd.stages.1.label>Пик</EL_Hediff_P22_22cpd.stages.1.label>
 
   <!-- EL_Hediff_Perfotoran -->
   <EL_Hediff_Perfotoran.label>Регенерация Пефторана</EL_Hediff_Perfotoran.label>
   <EL_Hediff_Perfotoran.labelNoun>регенерация Пефторана</EL_Hediff_Perfotoran.labelNoun>
-  <EL_Hediff_Perfotoran.description>Действует Пефторан: искусственная кровь заменяет плазму, непрерывно выводя токсины, останавливая кровотечения и восстанавливая ткани.</EL_Hediff_Perfotoran.description>
+  <EL_Hediff_Perfotoran.description>Действие препарата Пефторана: искусственная кровь заменяет плазму, непрерывно выводя токсины, останавливая кровотечения и восстанавливая ткани.</EL_Hediff_Perfotoran.description>
   <EL_Hediff_Perfotoran.stages.0.label>Затухание</EL_Hediff_Perfotoran.stages.0.label>
   <EL_Hediff_Perfotoran.stages.1.label>Пик</EL_Hediff_Perfotoran.stages.1.label>
 
   <!-- EL_Hediff_PNB -->
   <EL_Hediff_PNB.label>Восстановление ПНБ</EL_Hediff_PNB.label>
   <EL_Hediff_PNB.labelNoun>восстановление ПНБ</EL_Hediff_PNB.labelNoun>
-  <EL_Hediff_PNB.description>Действует ПНБ: сознание и работоспособность усилены, ткани организма быстро восстанавливаются.</EL_Hediff_PNB.description>
+  <EL_Hediff_PNB.description>Действие препарата ПНБ: сознание и работоспособность усилены, ткани организма быстро восстанавливаются.</EL_Hediff_PNB.description>
   <EL_Hediff_PNB.stages.0.label>Последействие</EL_Hediff_PNB.stages.0.label>
   <EL_Hediff_PNB.stages.1.label>Затухание</EL_Hediff_PNB.stages.1.label>
   <EL_Hediff_PNB.stages.2.label>Пик</EL_Hediff_PNB.stages.2.label>
@@ -92,7 +92,7 @@
   <!-- EL_Hediff_Propital -->
   <EL_Hediff_Propital.label>Действие Пропитала</EL_Hediff_Propital.label>
   <EL_Hediff_Propital.labelNoun>действие Пропитала</EL_Hediff_Propital.labelNoun>
-  <EL_Hediff_Propital.description>Действует Пропитал: боль подавлена, организм непрерывно самовосстанавливается.</EL_Hediff_Propital.description>
+  <EL_Hediff_Propital.description>Действие препарата Пропитала: боль подавлена, организм непрерывно самовосстанавливается.</EL_Hediff_Propital.description>
   <EL_Hediff_Propital.stages.0.label>Затухание</EL_Hediff_Propital.stages.0.label>
   <EL_Hediff_Propital.stages.1.label>Поддержание</EL_Hediff_Propital.stages.1.label>
   <EL_Hediff_Propital.stages.2.label>Пик</EL_Hediff_Propital.stages.2.label>
@@ -100,7 +100,7 @@
   <!-- EL_Hediff_SJ1_TGLabs -->
   <EL_Hediff_SJ1_TGLabs.label>Усиление SJ1</EL_Hediff_SJ1_TGLabs.label>
   <EL_Hediff_SJ1_TGLabs.labelNoun>усиление SJ1</EL_Hediff_SJ1_TGLabs.labelNoun>
-  <EL_Hediff_SJ1_TGLabs.description>Действует SJ1: подвижность и эффективность работы повышены, устойчивость к нагрузкам выросла. В поздней фазе — тяжёлая метаболическая нагрузка.</EL_Hediff_SJ1_TGLabs.description>
+  <EL_Hediff_SJ1_TGLabs.description>Действие препарата SJ1: подвижность и эффективность работы повышены, устойчивость к нагрузкам выросла. В поздней фазе — тяжёлая метаболическая нагрузка.</EL_Hediff_SJ1_TGLabs.description>
   <EL_Hediff_SJ1_TGLabs.stages.0.label>Затухание</EL_Hediff_SJ1_TGLabs.stages.0.label>
   <EL_Hediff_SJ1_TGLabs.stages.1.label>Поддержание</EL_Hediff_SJ1_TGLabs.stages.1.label>
   <EL_Hediff_SJ1_TGLabs.stages.2.label>Пик</EL_Hediff_SJ1_TGLabs.stages.2.label>
@@ -108,41 +108,41 @@
   <!-- EL_Hediff_SJ12_TGLabs -->
   <EL_Hediff_SJ12_TGLabs.label>Эндогенный метаболизм SJ12</EL_Hediff_SJ12_TGLabs.label>
   <EL_Hediff_SJ12_TGLabs.labelNoun>эндогенный метаболизм SJ12</EL_Hediff_SJ12_TGLabs.labelNoun>
-  <EL_Hediff_SJ12_TGLabs.description>Действует SJ12: ряд функций организма избирательно замедлен для перенаправления восстановления; в поздней фазе — нарушение терморегуляции.</EL_Hediff_SJ12_TGLabs.description>
+  <EL_Hediff_SJ12_TGLabs.description>Действие препарата SJ12: ряд функций организма избирательно замедлен для перенаправления восстановления; в поздней фазе — нарушение терморегуляции.</EL_Hediff_SJ12_TGLabs.description>
   <EL_Hediff_SJ12_TGLabs.stages.0.label>Затухание</EL_Hediff_SJ12_TGLabs.stages.0.label>
   <EL_Hediff_SJ12_TGLabs.stages.1.label>Пик</EL_Hediff_SJ12_TGLabs.stages.1.label>
 
   <!-- EL_Hediff_SJ6_TGLabs -->
   <EL_Hediff_SJ6_TGLabs.label>Усиление SJ6</EL_Hediff_SJ6_TGLabs.label>
   <EL_Hediff_SJ6_TGLabs.labelNoun>усиление SJ6</EL_Hediff_SJ6_TGLabs.labelNoun>
-  <EL_Hediff_SJ6_TGLabs.description>Действует SJ6: расход сна снижен, силы непрерывно восстанавливаются. В конце — угнетение ЦНС со снижением сознания и зрения.</EL_Hediff_SJ6_TGLabs.description>
+  <EL_Hediff_SJ6_TGLabs.description>Действие препарата SJ6: расход сна снижен, силы непрерывно восстанавливаются. В конце — угнетение ЦНС со снижением сознания и зрения.</EL_Hediff_SJ6_TGLabs.description>
   <EL_Hediff_SJ6_TGLabs.stages.0.label>Затухание</EL_Hediff_SJ6_TGLabs.stages.0.label>
   <EL_Hediff_SJ6_TGLabs.stages.1.label>Пик</EL_Hediff_SJ6_TGLabs.stages.1.label>
 
   <!-- EL_Hediff_SJ9_TGLabs -->
   <EL_Hediff_SJ9_TGLabs.label>Термическая адаптация SJ9</EL_Hediff_SJ9_TGLabs.label>
   <EL_Hediff_SJ9_TGLabs.labelNoun>термическая адаптация SJ9</EL_Hediff_SJ9_TGLabs.labelNoun>
-  <EL_Hediff_SJ9_TGLabs.description>Действует SJ9: обмен веществ замедлен для адаптации к экстремальным условиям, но ткани организма непрерывно получают метаболические повреждения.</EL_Hediff_SJ9_TGLabs.description>
+  <EL_Hediff_SJ9_TGLabs.description>Действие препарата SJ9: обмен веществ замедлен для адаптации к экстремальным условиям, но ткани организма непрерывно получают метаболические повреждения.</EL_Hediff_SJ9_TGLabs.description>
   <EL_Hediff_SJ9_TGLabs.stages.0.label>Затухание</EL_Hediff_SJ9_TGLabs.stages.0.label>
   <EL_Hediff_SJ9_TGLabs.stages.1.label>Пик</EL_Hediff_SJ9_TGLabs.stages.1.label>
 
   <!-- EL_Hediff_Trimadol -->
   <EL_Hediff_Trimadol.label>Усиление Тримадолом</EL_Hediff_Trimadol.label>
   <EL_Hediff_Trimadol.labelNoun>усиление Тримадолом</EL_Hediff_Trimadol.labelNoun>
-  <EL_Hediff_Trimadol.description>Действует Тримадол: боль подавлена, физические возможности и скорость реакции повышены; значительная метаболическая нагрузка.</EL_Hediff_Trimadol.description>
+  <EL_Hediff_Trimadol.description>Действие препарата Тримадола: боль подавлена, физические возможности и скорость реакции повышены; значительная метаболическая нагрузка.</EL_Hediff_Trimadol.description>
   <EL_Hediff_Trimadol.stages.0.label>Пик</EL_Hediff_Trimadol.stages.0.label>
 
   <!-- EL_Hediff_xTG12 -->
-  <EL_Hediff_xTG12.label>Антидот хТГ-12</EL_Hediff_xTG12.label>
-  <EL_Hediff_xTG12.labelNoun>антидот хТГ-12</EL_Hediff_xTG12.labelNoun>
-  <EL_Hediff_xTG12.description>Действует хТГ-12: антидотные компоненты нейтрализуют большинство токсинов, но в конце действия самовосстановление кратковременно снижено.</EL_Hediff_xTG12.description>
+  <EL_Hediff_xTG12.label>Антидот xTG-12</EL_Hediff_xTG12.label>
+  <EL_Hediff_xTG12.labelNoun>антидот xTG-12</EL_Hediff_xTG12.labelNoun>
+  <EL_Hediff_xTG12.description>Действие препарата xTG-12: антидотные компоненты нейтрализуют большинство токсинов, но в конце действия самовосстановление кратковременно снижено.</EL_Hediff_xTG12.description>
   <EL_Hediff_xTG12.stages.0.label>Затухание</EL_Hediff_xTG12.stages.0.label>
   <EL_Hediff_xTG12.stages.1.label>Иммунитет</EL_Hediff_xTG12.stages.1.label>
 
   <!-- EL_Hediff_Zagustin -->
   <EL_Hediff_Zagustin.label>Гемостаз Загустина</EL_Hediff_Zagustin.label>
   <EL_Hediff_Zagustin.labelNoun>гемостаз Загустина</EL_Hediff_Zagustin.labelNoun>
-  <EL_Hediff_Zagustin.description>Действует Загустин: кровотечение остановлено, фильтрация крови значительно усилена.</EL_Hediff_Zagustin.description>
+  <EL_Hediff_Zagustin.description>Действие препарата Загустина: кровотечение остановлено, фильтрация крови значительно усилена.</EL_Hediff_Zagustin.description>
   <EL_Hediff_Zagustin.stages.0.label>Затухание</EL_Hediff_Zagustin.stages.0.label>
   <EL_Hediff_Zagustin.stages.1.label>Переход</EL_Hediff_Zagustin.stages.1.label>
   <EL_Hediff_Zagustin.stages.2.label>Пик</EL_Hediff_Zagustin.stages.2.label>

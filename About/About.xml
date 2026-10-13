@@ -6,10 +6,11 @@
   <author>Elanilda</author>
   <supportedVersions>
     <li>1.6</li>
+    <li>1.7</li>
   </supportedVersions>
   <packageId>Elanilda.StimsFromEFT</packageId>
-  <url></url>
-  <modVersion>1.1.1</modVersion>
+  <url>https://github.com/Elanilda/-EL-Stims-from-EFT</url>
+  <modVersion>1.2.1</modVersion>
   <modIconPath>UI/EL_SFE_ModIcon</modIconPath>
   <modDependencies>
     <li>

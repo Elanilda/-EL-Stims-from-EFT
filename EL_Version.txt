@@ -2,6 +2,26 @@
 ========================================
 
 ----------------------------------------
+v1.2.1
+[新增]
+- 1.7封面图
+
+----------------------------------------
+v1.2.0
+[新增]
+- RimWorld 1.7兼容
+
+[修复]
+- 清理蓝图系统(v0.9.1移除)的残留翻译词条：English DefInjected 6条(启动日志Translation errors的来源)与三语言Keyed死键
+- 清除English DefInjected中EL_Stim_Storage.description的尾随空格：该词条在加载时注入def本体，触发启动日志的"description has trailing whitespace"报错(Frame_EL_Stim_Storage为同源派生def)
+
+----------------------------------------
+v1.1.1
+[调整]
+- 根据反馈更改了俄文版本针剂效果描述的用词
+- ModIcon名称修改，添加mod名称缩写进行区分防止跨mod复用
+
+----------------------------------------
 v1.1.0
 [新增]
 - 完整的Russian(Русский)语言支持，与English翻译同样无法对Stage型Hediff的stage描述进行翻译。
