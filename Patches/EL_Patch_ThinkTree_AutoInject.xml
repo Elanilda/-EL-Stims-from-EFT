@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  针剂自动使用思考树节点:
+  - 插入位置: Humanlike根节点 排队job(ThinkNode_QueuedJob)之后、征召指令分支(ThinkNode_ConditionalColonist)之前
+    → 满足条件时自动注射优先于待机/征召指令执行(含战斗状态), 玩家手动指令仍由其后的节点接管
+  - 门控在JobGiver内部完成(玩家阵营/方案开关/条件/冷却), 未满足时节点空转无害
+  - 兼容性: C#组件随mod本体加载, 不依赖DLC, 无需MayRequire
+-->
+<Patch>
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]</xpath>
+    <value>
+      <li Class="EL_JobGiver_AutoInjectStim" />
+    </value>
+  </Operation>
+</Patch>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -20,7 +20,12 @@
 疼痛休克阈值×120%，延迟0秒/持续180秒；
 休息值下降速率×80%，延迟0秒/持续180秒；
 每秒恢复0.03休息值，延迟0秒/持续180秒；
-每秒消耗0.01饮食值，延迟0秒/持续180秒。</description>
+每秒消耗0.01饮食值，延迟0秒/持续180秒。
+
+【自主治疗条件】
+处于征召状态且有消耗休息值的针剂hediff正在生效/处于征召状态且休息值小于0.2。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：3(高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Trimadol</HediffDef>
     </descriptionHyperlinks>
@@ -56,6 +61,40 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>体能</li>
+        </autoUseCategories>
+        <autoUsePriority>3</autoUsePriority>
+        <injectedHediff>EL_Hediff_Trimadol</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>StimDrainActive</type>
+                <drainRest>true</drainRest>
+              </li>
+            </conditions>
+          </li>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>RestBelow</type>
+                <threshold>0.2</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

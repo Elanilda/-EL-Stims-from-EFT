@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj": {}
+    "c:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj": {
+    "c:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj",
+        "projectUniqueName": "c:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj",
         "projectName": "StimsFromEFT",
-        "projectPath": "C:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj",
+        "projectPath": "c:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj",
         "packagesPath": "C:\\Users\\73595\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\obj\\",
+        "outputPath": "c:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\73595\\AppData\\Roaming\\NuGet\\NuGet.Config"

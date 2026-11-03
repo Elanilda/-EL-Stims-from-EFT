@@ -9,7 +9,6 @@
     <AssemblyTitle>StimsFromEFT</AssemblyTitle>
     <Description>EL Stims from EFT - Morphine injector system</Description>
     <Configuration>Release</Configuration>
-    <OutputPath>..\Assemblies\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <DebugType>none</DebugType>
@@ -19,36 +18,56 @@
   <PropertyGroup>
     <!-- RimWorld installation path -->
     <RimWorldPath>D:\steam\steamapps\common\RimWorld</RimWorldPath>
-    <ManagedPath>$(RimWorldPath)\RimWorldWin64_Data\Managed</ManagedPath>
   </PropertyGroup>
+
+  <!-- 1.6: 程序集在 RimWorldWin64_Data\Managed(无RimWorld.dll, RimWorld命名空间在Assembly-CSharp内),
+       Unity走原生模块。1.6.4871与1.7的成员级API一致, 源码无需条件编译, 仅引用布局不同 -->
+  <PropertyGroup Condition="'$(Configuration)'=='Release16'">
+    <ManagedPath>$(RimWorldPath)\RimWorldWin64_Data\Managed</ManagedPath>
+    <OutputPath>..\Assemblies\1.6\</OutputPath>
+  </PropertyGroup>
+
+  <!-- 1.7+: 程序集在游戏根目录(Unity已替换为Waylith引擎), 输出 Assemblies\1.7 -->
+  <PropertyGroup Condition="'$(Configuration)'!='Release16'">
+    <ManagedPath>$(RimWorldPath)</ManagedPath>
+    <OutputPath>..\Assemblies\1.7\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(Configuration)'!='Release16'">
+    <!-- 1.7: RimWorld命名空间独立成dll, Unity API由UnityStubs提供 -->
+    <Reference Include="RimWorld">
+      <HintPath>$(ManagedPath)\RimWorld.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>$(ManagedPath)\UnityStubs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>$(ManagedPath)\Assembly-CSharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>$(ManagedPath)\UnityEngine.dll</HintPath>
+    <Reference Include="0Harmony">
+      <HintPath>$(UserProfile)\.nuget\packages\lib.harmony\2.3.6\lib\net48\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
+  </ItemGroup>
+
+  <!-- 1.6引擎: 引用原生UnityEngine模块 -->
+  <ItemGroup Condition="'$(Configuration)'=='Release16'">
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>$(ManagedPath)\UnityEngine.CoreModule.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>$(ManagedPath)\UnityEngine.AnimationModule.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>$(ManagedPath)\UnityEngine.PhysicsModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
       <HintPath>$(ManagedPath)\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>$(UserProfile)\.nuget\packages\lib.harmony\2.3.6\lib\net48\0Harmony.dll</HintPath>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(ManagedPath)\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>

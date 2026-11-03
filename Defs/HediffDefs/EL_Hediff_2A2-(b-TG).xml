@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -9,6 +9,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_2A2_bTG</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsHunger>true</drainsHunger>
+      </li>
+    </modExtensions>
+
     <label>2A2-(b-TG)体能提升</label>
     <labelNoun>2A2-(b-TG)体能提升</labelNoun>
     <description>2A2-(b-TG)正在发挥药效，中枢神经系统受到维稳，承载能力和感知能力全面提升。</description>

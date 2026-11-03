@@ -150,6 +150,9 @@ namespace RimWorld
 
             // 启动冷却
             StartCooldown(pawn);
+
+            // 分类冷却结算(自动使用系统): 按效果hediff的接收方记账
+            EL_StimAutoUseTracker.NotifyInjected(pawn, stimDef);
         }
 
         /// <summary>
@@ -191,6 +194,9 @@ namespace RimWorld
 
             // 冷却挂在user(执行注射动作的人)
             StartCooldown(user);
+
+            // 分类冷却结算挂在效果接收方target(自动使用条件检测的是接收方hediff)
+            EL_StimAutoUseTracker.NotifyInjected(target, stimDef);
         }
 
         /// <summary>

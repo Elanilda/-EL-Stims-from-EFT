@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GRxSoPruGxBgjMab2/9BNmvJyMkRMRAapRS+IBSs7+cxqYVBcA62T43rdh4x8wYrGslob7fZDsC+XIB0HJCrDw==",
+  "dgSpecHash": "KLYG7EXnNQ5BLtoUMAC9u4l+Zuc00WQqidcgJZXYuQGjJsKzIWE1HE5IwybfSckiY/K/2W9eYPykzp6Nni3xMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj",
+  "projectFilePath": "c:\\Users\\73595\\Desktop\\艾兰\\workplace\\[EL]Stims from EFT\\Source\\StimsFromEFT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\73595\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
     "C:\\Users\\73595\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net48\\1.0.3\\microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512"

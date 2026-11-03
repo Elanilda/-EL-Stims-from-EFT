@@ -17,7 +17,12 @@ carrying capacity ×130%, 0s delay/900s duration;
 manipulation +20%, 0s delay/900s duration;
 sight +20%, 0s delay/900s duration;
 hearing +20%, 0s delay/900s duration;
-consumes 0.001 food/s, 0s delay/900s duration.</EL_Stim_2A2_bTG.description>
+consumes 0.001 food/s, 0s delay/900s duration.
+
+[Auto-treat Condition]
+Applied while drafted.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 2 (medium).</EL_Stim_2A2_bTG.description>
   <EL_Stim_2A2_bTG.comps.CompUsable.useLabel>Inject {0}</EL_Stim_2A2_bTG.comps.CompUsable.useLabel>
 
   <!-- 3-(b-TG) -->
@@ -31,7 +36,12 @@ hearing +60%, 0s delay/240s duration;
 global work speed ×120%, 0s delay/240s duration;
 restores 0.01 sleep/s, 0s delay/240s duration;
 consumes 0.0025 food/s, 120s delay/120s duration;
-consciousness -15%, 120s delay/45s duration.</EL_Stim_3_bTG.description>
+consciousness -15%, 120s delay/45s duration.
+
+[Auto-treat Condition]
+Applied while drafted and rest below 40%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 2 (medium).</EL_Stim_3_bTG.description>
   <EL_Stim_3_bTG.comps.CompUsable.useLabel>Inject {0}</EL_Stim_3_bTG.comps.CompUsable.useLabel>
 
   <!-- Adrenaline -->
@@ -45,7 +55,12 @@ global work speed ×120%, 0s delay/65s duration;
 move speed ×120%, 0s delay/65s duration;
 shooting accuracy ×120%, 0s delay/65s duration;
 repairs 4 HP/s to random non-solid body parts, 0s delay/15s duration;
-consumes 0.018 food/s, 30s delay/30s duration.</EL_Stim_Adrenaline.description>
+consumes 0.018 food/s, 30s delay/30s duration.
+
+[Auto-treat Condition]
+Applied while drafted and total damage of injury hediffs on non-solid parts reaches 45.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 1 (low).</EL_Stim_Adrenaline.description>
   <EL_Stim_Adrenaline.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Adrenaline.comps.CompUsable.useLabel>
 
   <!-- AHF1-M -->
@@ -55,7 +70,12 @@ consumes 0.018 food/s, 30s delay/30s duration.</EL_Stim_Adrenaline.description>
 [Applied Effects]
 total bleed factor ×0%, 0s delay/60s duration;
 injury healing factor +10%, 0s delay/60s duration;
-consumes 0.003 food/s, 0s delay/120s duration.</EL_Stim_AHF1M.description>
+consumes 0.003 food/s, 0s delay/120s duration.
+
+[Auto-treat Condition]
+Applied when estimated time until death from blood loss is 8 in-game hours or less.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 2 (medium).</EL_Stim_AHF1M.description>
   <EL_Stim_AHF1M.comps.CompUsable.useLabel>Inject {0}</EL_Stim_AHF1M.comps.CompUsable.useLabel>
 
   <!-- eTG-change -->
@@ -70,7 +90,12 @@ reduces blood loss by 0.005/s, 0s delay/60s duration;
 restores 0.05 food/s, 0s delay/60s duration;
 consumes 0.03 food/s, 40s delay/40s duration;
 moving -10%, 60s delay/60s duration;
-injury healing factor ×90%, 60s delay/60s duration.</EL_Stim_eTGchange.description>
+injury healing factor ×90%, 60s delay/60s duration.
+
+[Auto-treat Condition]
+Applied while drafted and total injury damage exceeds 180 / when estimated time until death from blood loss is 4 in-game hours or less.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 5 (highest).</EL_Stim_eTGchange.description>
   <EL_Stim_eTGchange.comps.CompUsable.useLabel>Inject {0}</EL_Stim_eTGchange.comps.CompUsable.useLabel>
 
   <!-- L1 (Norepinephrine) -->
@@ -82,7 +107,12 @@ pain ×10%, 0s delay/120s duration;
 global work speed ×140%, 0s delay/120s duration;
 move speed ×120%, 0s delay/120s duration;
 sleep fall rate ×70%, 0s delay/120s duration;
-consumes 0.009 food/s, 0s delay/60s duration.</EL_Stim_L1_Norepinephrine.description>
+consumes 0.009 food/s, 0s delay/60s duration.
+
+[Auto-treat Condition]
+Applied while drafted and food above 54%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 1 (low).</EL_Stim_L1_Norepinephrine.description>
   <EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>Inject {0}</EL_Stim_L1_Norepinephrine.comps.CompUsable.useLabel>
 
   <!-- M.U.L.E -->
@@ -91,7 +121,12 @@ consumes 0.009 food/s, 0s delay/60s duration.</EL_Stim_L1_Norepinephrine.descrip
 
 [Applied Effects]
 carrying capacity ×200%, 0s delay/900s duration;
-deals 1 metabolic damage to random non-solid body parts every 10s, 0s delay/900s duration.</EL_Stim_MULE.description>
+deals 1 metabolic damage to random non-solid body parts every 10s, 0s delay/900s duration.
+
+[Auto-treat Condition]
+Applied while drafted and carried weight exceeds carrying capacity.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 3 (high).</EL_Stim_MULE.description>
   <EL_Stim_MULE.comps.CompUsable.useLabel>Inject {0}</EL_Stim_MULE.comps.CompUsable.useLabel>
 
   <!-- Meldonin -->
@@ -102,7 +137,12 @@ deals 1 metabolic damage to random non-solid body parts every 10s, 0s delay/900s
 global work speed ×120%, 0s delay/900s duration;
 move speed ×140%, 0s delay/900s duration;
 restores 0.005 sleep/s, 0s delay/900s duration;
-consumes 0.002 food/s, 30s delay/870s duration.</EL_Stim_Meldonin.description>
+consumes 0.002 food/s, 30s delay/870s duration.
+
+[Auto-treat Condition]
+Applied while drafted and food above 80%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 3 (high).</EL_Stim_Meldonin.description>
   <EL_Stim_Meldonin.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Meldonin.comps.CompUsable.useLabel>
 
   <!-- Morphine -->
@@ -111,7 +151,12 @@ consumes 0.002 food/s, 30s delay/870s duration.</EL_Stim_Meldonin.description>
 
 [Applied Effects]
 pain ×5%, 0s delay/305s duration;
-immediately consumes 15% food on use.</EL_Stim_Morphine.description>
+immediately consumes 15% food on use.
+
+[Auto-treat Condition]
+Applied while drafted and pain at least 30%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 2 (medium).</EL_Stim_Morphine.description>
   <EL_Stim_Morphine.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Morphine.comps.CompUsable.useLabel>
 
   <!-- Obd2 -->
@@ -127,7 +172,12 @@ move speed ×140%, 0s delay/1800s duration;
 carrying capacity ×190%, 0s delay/1800s duration;
 sleep fall rate ×120%, 0s delay/1800s duration;
 deals 1 metabolic damage to random non-solid body parts every second, 0s delay/1800s duration;
-consumes 0.01 sleep/s, 0s delay/1800s duration.</EL_Stim_Obd2_cocktail.description>
+consumes 0.01 sleep/s, 0s delay/1800s duration.
+
+[Auto-treat Condition]
+Applied while drafted, total injury damage not exceeding 90, and rest above 90%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 1 (low).</EL_Stim_Obd2_cocktail.description>
   <EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Obd2_cocktail.comps.CompUsable.useLabel>
 
   <!-- Obdolbos -->
@@ -135,7 +185,12 @@ consumes 0.01 sleep/s, 0s delay/1800s duration.</EL_Stim_Obd2_cocktail.descripti
   <EL_Stim_Obdolbos.description>An injector containing an unknown homemade drug, created by a former Terragroup medical expert. Each dose has different side effects. If you feel you have nothing left to lose, you might as well take the risk, at least the inventor of this stimulant did so himself.
 
 [Applied Effects]
-randomly triggers 15 effects in total, each with an independent 25% chance, lasting 600s.</EL_Stim_Obdolbos.description>
+randomly triggers 15 effects in total, each with an independent 25% chance, lasting 600s.
+
+[Auto-treat Condition]
+Never used automatically.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 1 (low).</EL_Stim_Obdolbos.description>
   <EL_Stim_Obdolbos.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Obdolbos.comps.CompUsable.useLabel>
 
   <!-- P22 -->
@@ -148,7 +203,12 @@ blood filtration +30%, 0s delay/60s duration;
 mental break threshold ×70%, 0s delay/60s duration;
 pain shock threshold ×130%, 0s delay/60s duration;
 move speed ×80%, 60s delay/65s duration;
-consumes 0.008 sleep/s, 60s delay/65s duration.</EL_Stim_P22_22cpd.description>
+consumes 0.008 sleep/s, 60s delay/65s duration.
+
+[Auto-treat Condition]
+Applied while drafted and suffering a disease requiring immunity / while drafted with bandaged injuries totaling over 60 damage or at least 5 bandaged injuries.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 3 (high).</EL_Stim_P22_22cpd.description>
   <EL_Stim_P22_22cpd.comps.CompUsable.useLabel>Inject {0}</EL_Stim_P22_22cpd.comps.CompUsable.useLabel>
 
   <!-- Perfotoran -->
@@ -162,7 +222,12 @@ reduces blood loss by 0.015/s, 0s delay/120s duration;
 repairs 2 HP/s to random non-solid body parts (can heal scars), 0s delay/120s duration;
 metabolism +10%, 0s delay/120s duration;
 injury healing factor ×85%, 60s delay/60s duration;
-consumes 0.011 food/s, 60s delay/60s duration.</EL_Stim_Perfotoran.description>
+consumes 0.011 food/s, 60s delay/60s duration.
+
+[Auto-treat Condition]
+Applied when estimated time until death from blood loss is 6 in-game hours or less.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 3 (high).</EL_Stim_Perfotoran.description>
   <EL_Stim_Perfotoran.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Perfotoran.comps.CompUsable.useLabel>
 
   <!-- PNB -->
@@ -175,7 +240,12 @@ global work speed ×140%, 0s delay/40s duration;
 repairs 3 HP/s to random non-solid body parts, 0s delay/40s duration;
 consciousness -15%, 40s delay/20s duration;
 injury healing factor ×80%, 40s delay/181s duration;
-blood filtration -20%, 40s delay/181s duration.</EL_Stim_PNB.description>
+blood filtration -20%, 40s delay/181s duration.
+
+[Auto-treat Condition]
+Applied while drafted and total damage on non-solid parts exceeds 80.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 2 (medium).</EL_Stim_PNB.description>
   <EL_Stim_PNB.comps.CompUsable.useLabel>Inject {0}</EL_Stim_PNB.comps.CompUsable.useLabel>
 
   <!-- Propital -->
@@ -189,7 +259,12 @@ blood filtration +20%, 0s delay/300s duration;
 injury healing factor ×120%, 0s delay/300s duration;
 repairs 1 HP/s to random body parts, 0s delay/300s duration;
 sight -15%, 270s delay/30s duration;
-consciousness -15%, 270s delay/30s duration.</EL_Stim_Propital.description>
+consciousness -15%, 270s delay/30s duration.
+
+[Auto-treat Condition]
+Applied while drafted and pain above 30% / while a stimulant hediff dealing random part damage is active.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 4 (very high).</EL_Stim_Propital.description>
   <EL_Stim_Propital.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Propital.comps.CompUsable.useLabel>
 
   <!-- SJ1-TGLabs -->
@@ -201,7 +276,12 @@ move speed ×120%, 0s delay/180s duration;
 global work speed ×120%, 0s delay/180s duration;
 mental break threshold ×80%, 0s delay/180s duration;
 pain shock threshold ×120%, 0s delay/180s duration;
-consumes 0.005 food/s, 100s delay/200s duration.</EL_Stim_SJ1_TGLabs.description>
+consumes 0.005 food/s, 100s delay/200s duration.
+
+[Auto-treat Condition]
+Applied while drafted and food above 50%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 1 (low).</EL_Stim_SJ1_TGLabs.description>
   <EL_Stim_SJ1_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ1_TGLabs.comps.CompUsable.useLabel>
 
   <!-- SJ12-TGLabs -->
@@ -213,7 +293,12 @@ sight +30%, 0s delay/600s duration;
 hearing +30%, 0s delay/600s duration;
 minimum comfortable temperature -8°C, 0s delay/600s duration;
 restores 0.01 food/s, 0s delay/600s duration;
-maximum comfortable temperature -12°C, 600s delay/300s duration.</EL_Stim_SJ12_TGLabs.description>
+maximum comfortable temperature -12°C, 600s delay/300s duration.
+
+[Auto-treat Condition]
+Applied while drafted, a food-draining stimulant hediff is active, and food not above 80%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 3 (high).</EL_Stim_SJ12_TGLabs.description>
   <EL_Stim_SJ12_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ12_TGLabs.comps.CompUsable.useLabel>
 
   <!-- SJ6-TGLabs -->
@@ -224,7 +309,12 @@ maximum comfortable temperature -12°C, 600s delay/300s duration.</EL_Stim_SJ12_
 sleep fall rate ×70%, 0s delay/200s duration;
 restores 0.02 sleep/s, 0s delay/200s duration;
 consciousness -15%, 200s delay/40s duration;
-sight -15%, 200s delay/40s duration.</EL_Stim_SJ6_TGLabs.description>
+sight -15%, 200s delay/40s duration.
+
+[Auto-treat Condition]
+Applied while drafted, rest below 60% and a rest-draining stimulant hediff is active / while drafted and rest below 40%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 4 (very high).</EL_Stim_SJ6_TGLabs.description>
   <EL_Stim_SJ6_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ6_TGLabs.comps.CompUsable.useLabel>
 
   <!-- SJ9-TGLabs -->
@@ -236,7 +326,12 @@ minimum comfortable temperature -21°C, 0s delay/300s duration;
 maximum comfortable temperature +14°C, 0s delay/300s duration;
 metabolism -20%, 0s delay/300s duration;
 deals 1 metabolic damage to random non-solid body parts every 10s, 0s delay/420s duration;
-pain ×115%, 300s delay/120s duration.</EL_Stim_SJ9_TGLabs.description>
+pain ×115%, 300s delay/120s duration.
+
+[Auto-treat Condition]
+Applied while drafted, temperature uncomfortable, and no injury hediffs.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 2 (medium).</EL_Stim_SJ9_TGLabs.description>
   <EL_Stim_SJ9_TGLabs.comps.CompUsable.useLabel>Inject {0}</EL_Stim_SJ9_TGLabs.comps.CompUsable.useLabel>
 
   <!-- Trimadol -->
@@ -252,7 +347,12 @@ mental break threshold ×90%, 0s delay/180s duration;
 pain shock threshold ×110%, 0s delay/180s duration;
 sleep fall rate ×90%, 0s delay/180s duration;
 restores 0.03 sleep/s, 0s delay/180s duration;
-consumes 0.01 food/s, 0s delay/180s duration.</EL_Stim_Trimadol.description>
+consumes 0.01 food/s, 0s delay/180s duration.
+
+[Auto-treat Condition]
+Applied while drafted and a rest-draining stimulant hediff is active / while drafted and rest below 20%.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 3 (high).</EL_Stim_Trimadol.description>
   <EL_Stim_Trimadol.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Trimadol.comps.CompUsable.useLabel>
 
   <!-- xTG-12 -->
@@ -261,7 +361,12 @@ consumes 0.01 food/s, 0s delay/180s duration.</EL_Stim_Trimadol.description>
 
 [Applied Effects]
 instantly removes toxic buildup, food poisoning, scaria infection, and lung rot, and grants immunity while active, 0s delay/240s duration;
-injury healing factor -10%, 180s delay/60s duration.</EL_Stim_xTG12_Antidote.description>
+injury healing factor -10%, 180s delay/60s duration.
+
+[Auto-treat Condition]
+Applied while drafted and affected by a hediff within the antidote's scope.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 3 (high).</EL_Stim_xTG12_Antidote.description>
   <EL_Stim_xTG12_Antidote.comps.CompUsable.useLabel>Inject {0}</EL_Stim_xTG12_Antidote.comps.CompUsable.useLabel>
 
   <!-- Zagustin -->
@@ -273,7 +378,12 @@ immediate hemostasis, 0s delay/180s duration;
 blood filtration +40%, 0s delay/180s duration;
 metabolism -10%, 0s delay/180s duration;
 consciousness -15%, 170s delay/40s duration;
-consumes 0.014 food/s, 170s delay/40s duration.</EL_Stim_Zagustin.description>
+consumes 0.014 food/s, 170s delay/40s duration.
+
+[Auto-treat Condition]
+Applied when estimated time until death from blood loss is 6 in-game hours or less.
+[Auto-treat Priority]
+How highly this stimulant is prioritized for auto-injection when its condition is met: 2 (medium).</EL_Stim_Zagustin.description>
   <EL_Stim_Zagustin.comps.CompUsable.useLabel>Inject {0}</EL_Stim_Zagustin.comps.CompUsable.useLabel>
 
   <!-- Ingest strings (drug policy integration; overrides the Chinese text inherited from EL_StimBase) -->

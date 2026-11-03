@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -13,12 +13,17 @@
 【施加效果】
 消化能力+20%，延迟0秒/持续60秒；
 免疫速度+20%，延迟0秒/持续60秒；
-随机修复任意身体部位7点/秒（可修复疤痕），延迟0秒/持续60秒；
+随机修复任意身体部位7点/秒(可修复疤痕)，延迟0秒/持续60秒；
 每秒减少0.005失血度，延迟0秒/持续60秒；
 每秒恢复0.05饮食值，延迟0秒/持续60秒；
 每秒消耗0.03饮食值，延迟40秒/持续40秒；
 移动能力-10%，延迟60秒/持续60秒；
-愈合系数×90%，延迟60秒/持续60秒。</description>
+愈合系数×90%，延迟60秒/持续60秒。
+
+【自主治疗条件】
+处于征召状态且损伤hediff累计大于180/失血预计死亡时间小于等于游戏内4小时。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：5(最高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_eTGchange</HediffDef>
     </descriptionHyperlinks>
@@ -54,6 +59,37 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>机体修复</li>
+        </autoUseCategories>
+        <autoUsePriority>5</autoUsePriority>
+        <injectedHediff>EL_Hediff_eTGchange</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>InjuryDamageSumMin</type>
+                <threshold>180</threshold>
+              </li>
+            </conditions>
+          </li>
+          <li>
+            <conditions>
+              <li>
+                <type>BleedDeathWithinHours</type>
+                <threshold>4</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

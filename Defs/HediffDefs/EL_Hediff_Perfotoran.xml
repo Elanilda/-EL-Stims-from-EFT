@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -11,6 +11,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_Perfotoran</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsHunger>true</drainsHunger>
+      </li>
+    </modExtensions>
+
     <label>Perfotoran再生修复</label>
     <labelNoun>Perfotoran再生修复</labelNoun>
     <description>Perfotoran正在发挥药效，人造血代行血浆功能，持续清除毒素、止血并促进组织恢复。</description>

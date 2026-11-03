@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -10,6 +10,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_AHF1M</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsHunger>true</drainsHunger>
+      </li>
+    </modExtensions>
+
     <label>AHF1-M止血</label>
     <labelNoun>AHF1-M止血</labelNoun>
     <description>AHF1-M正在发挥药效，伤口停止出血，人体自修复能力短暂增强。</description>

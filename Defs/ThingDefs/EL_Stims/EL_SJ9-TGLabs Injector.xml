@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -18,7 +18,12 @@
 最高舒适温度+14℃，延迟0秒/持续300秒；
 消化能力-20%，延迟0秒/持续300秒；
 每10秒对随机非骨骼身体部位造成1点代谢损伤，延迟0秒/持续420秒；
-痛苦×115%，延迟300秒/持续120秒。</description>
+痛苦×115%，延迟300秒/持续120秒。
+
+【自主治疗条件】
+处于征召状态且当前温度不适宜且无损伤hediff。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：2(中等优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_SJ9_TGLabs</HediffDef>
     </descriptionHyperlinks>
@@ -54,6 +59,31 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>特种</li>
+        </autoUseCategories>
+        <autoUsePriority>2</autoUsePriority>
+        <injectedHediff>EL_Hediff_SJ9_TGLabs</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>TemperatureUncomfortable</type>
+              </li>
+              <li>
+                <type>HasNoInjury</type>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

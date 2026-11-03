@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -18,7 +18,12 @@
 愈合系数×120%，延迟0秒/持续300秒；
 随机修复任意身体部位1点/秒，延迟0秒/持续300秒；
 视觉能力-15%，延迟270秒/持续30秒；
-意识-15%，延迟270秒/持续30秒。</description>
+意识-15%，延迟270秒/持续30秒。
+
+【自主治疗条件】
+处于征召状态且疼痛大于30%/有正在生效的包含随机造成部位伤害效果的针剂hediff。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：4(极高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Propital</HediffDef>
     </descriptionHyperlinks>
@@ -51,6 +56,40 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>镇痛</li>
+          <li>机体修复</li>
+        </autoUseCategories>
+        <autoUsePriority>4</autoUsePriority>
+        <injectedHediff>EL_Hediff_Propital</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>PainAtLeast</type>
+                <threshold>0.3</threshold>
+              </li>
+            </conditions>
+          </li>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>RandomDamageStimActive</type>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

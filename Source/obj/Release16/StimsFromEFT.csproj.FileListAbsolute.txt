@@ -1,0 +1,7 @@
+c:\Users\73595\Desktop\艾兰\workplace\[EL]Stims from EFT\Assemblies\1.6\StimsFromEFT.dll
+c:\Users\73595\Desktop\艾兰\workplace\[EL]Stims from EFT\Source\obj\Release16\StimsFromEFT.csproj.AssemblyReference.cache
+c:\Users\73595\Desktop\艾兰\workplace\[EL]Stims from EFT\Source\obj\Release16\StimsFromEFT.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\73595\Desktop\艾兰\workplace\[EL]Stims from EFT\Source\obj\Release16\StimsFromEFT.AssemblyInfoInputs.cache
+c:\Users\73595\Desktop\艾兰\workplace\[EL]Stims from EFT\Source\obj\Release16\StimsFromEFT.AssemblyInfo.cs
+c:\Users\73595\Desktop\艾兰\workplace\[EL]Stims from EFT\Source\obj\Release16\StimsFromEFT.csproj.CoreCompileInputs.cache
+c:\Users\73595\Desktop\艾兰\workplace\[EL]Stims from EFT\Source\obj\Release16\StimsFromEFT.dll

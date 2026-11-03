@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -10,6 +10,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_3_bTG</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsHunger>true</drainsHunger>
+      </li>
+    </modExtensions>
+
     <label>3-(b-TG)感觉增敏</label>
     <labelNoun>3-(b-TG)感觉增敏</labelNoun>
     <description>3-(b-TG)正在发挥药效，感知能力和操作能力大幅提升，中枢神经受到刺激。</description>

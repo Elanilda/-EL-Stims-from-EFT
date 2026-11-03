@@ -12,4 +12,10 @@
   <!-- CE Loadouts: "Any Stimulant Injector" generic slot -->
   <EL_CE_GenericStims>Any Stimulant Injector</EL_CE_GenericStims>
   <EL_CE_GenericStimsDesc>Contains 22 stimulant injectors from [EL] Stims from EFT.</EL_CE_GenericStimsDesc>
+
+  <!-- Drug policy dialog: auto-treat column (stimulant auto-use) -->
+  <EL_AutoTreatHeader>Auto-treat</EL_AutoTreatHeader>
+  <EL_AutoTreatHeaderTip>Auto-treat
+
+When enabled, a colonist carrying this stimulant will automatically inject it once its use conditions are met.</EL_AutoTreatHeaderTip>
 </LanguageData>

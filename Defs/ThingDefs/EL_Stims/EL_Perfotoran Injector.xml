@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -16,10 +16,15 @@
 立即清除中毒、食物中毒、狂暴症感染与肺瘟，药效期间免疫，延迟0秒/持续120秒；
 失血量系数×0%，延迟0秒/持续120秒；
 每秒减少0.015失血度，延迟0秒/持续120秒；
-随机修复非骨骼身体部位2点/秒（可修复疤痕），延迟0秒/持续120秒；
+随机修复非骨骼身体部位2点/秒(可修复疤痕)，延迟0秒/持续120秒；
 消化能力+10%，延迟0秒/持续120秒；
 愈合系数×85%，延迟60秒/持续60秒；
-每秒消耗0.011饮食值，延迟60秒/持续60秒。</description>
+每秒消耗0.011饮食值，延迟60秒/持续60秒。
+
+【自主治疗条件】
+失血速率预计死亡时间小于等于游戏内6小时。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：3(高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Perfotoran</HediffDef>
     </descriptionHyperlinks>
@@ -55,6 +60,27 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>止血</li>
+          <li>机体修复</li>
+        </autoUseCategories>
+        <autoUsePriority>3</autoUsePriority>
+        <injectedHediff>EL_Hediff_Perfotoran</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>BleedDeathWithinHours</type>
+                <threshold>6</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

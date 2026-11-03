@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -16,7 +16,12 @@
 听觉能力+30%，延迟0秒/持续600秒；
 最低舒适温度-8℃，延迟0秒/持续600秒；
 每秒恢复0.01饮食值，延迟0秒/持续600秒；
-最高舒适温度-12℃，延迟600秒/持续300秒。</description>
+最高舒适温度-12℃，延迟600秒/持续300秒。
+
+【自主治疗条件】
+处于征召状态且有消耗饮食值的针剂hediff正在生效且饮食值不大于0.8。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：3(高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_SJ12_TGLabs</HediffDef>
     </descriptionHyperlinks>
@@ -52,6 +57,33 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>特种</li>
+        </autoUseCategories>
+        <autoUsePriority>3</autoUsePriority>
+        <injectedHediff>EL_Hediff_SJ12_TGLabs</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>StimDrainActive</type>
+                <drainHunger>true</drainHunger>
+              </li>
+              <li>
+                <type>FoodBelow</type>
+                <threshold>0.8</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

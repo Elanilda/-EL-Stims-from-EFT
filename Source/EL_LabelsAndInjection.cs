@@ -479,9 +479,33 @@ namespace RimWorld
         // 不允许对自己注射
         protected override bool CanSelfTarget => false;
 
+        // 双保险: 原版FloatMenuMakerMap对每个provider有独立try-catch隔离,
+        // 本provider异常本不会中断其他菜单项, 此处再拦一层使故障只记日志不进错误循环;
+        // 迭代器体内不能写try-catch(C# yield限制), 故外壳物化为List整体兜底
+        private static bool _errorLogged;
+
         public override IEnumerable<FloatMenuOption> GetOptionsFor(Pawn clickedPawn, FloatMenuContext context)
         {
+            try
+            {
+                return GetOptionsForInner(clickedPawn, context).ToList();
+            }
+            catch (System.Exception e)
+            {
+                if (!_errorLogged)
+                {
+                    _errorLogged = true;
+                    Log.Error("[EL]Stims: InjectStim float menu provider error (logged once, further suppressed): " + e);
+                }
+                return new List<FloatMenuOption>();
+            }
+        }
+
+        private IEnumerable<FloatMenuOption> GetOptionsForInner(Pawn clickedPawn, FloatMenuContext context)
+        {
             Pawn user = context.FirstSelectedPawn;
+            // 无选中pawn时(如菜单在失焦瞬间重验证)直接返回空, 防NRE
+            if (user == null) yield break;
 
             // 三档适用范围: 玩家阵营 / 玩家关押囚犯 / 倒地者, 均要求血肉生物(排除机械体)
             if (clickedPawn.Dead) yield break;

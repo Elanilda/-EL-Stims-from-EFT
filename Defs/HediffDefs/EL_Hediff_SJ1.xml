@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -8,6 +8,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_SJ1_TGLabs</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsHunger>true</drainsHunger>
+      </li>
+    </modExtensions>
+
     <label>SJ1体能提升</label>
     <labelNoun>SJ1体能提升</labelNoun>
     <description>SJ1正在发挥药效，移动能力和工作效率提升，抗压能力增强。药效后期会有严重代谢负担。</description>

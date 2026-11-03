@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -8,7 +8,7 @@
   <!-- ============================================================ -->
   <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_P22_22cpd</defName>
-    <label>P22（22号化合物）兴奋剂注射器</label>
+    <label>P22(22号化合物)兴奋剂注射器</label>
     <description>军用的肌肉促进剂，被用来在投入战斗前扩展身体能力，减少身体受到的损伤并加快身体修复，但药效过后有疲劳的副作用。
 
 【施加效果】
@@ -17,7 +17,12 @@
 崩溃临界值×70%，延迟0秒/持续60秒；
 疼痛休克阈值×130%，延迟0秒/持续60秒；
 移动速度×80%，延迟60秒/持续65秒；
-每秒消耗0.008休息值，延迟60秒/持续65秒。</description>
+每秒消耗0.008休息值，延迟60秒/持续65秒。
+
+【自主治疗条件】
+处于征召状态且身患需进行免疫的疾病hediff/处于征召状态且身上有累计伤害量大于60的已包扎的损伤hediff或数量合计大于等于5的已包扎的损伤hediff。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：3(高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_P22_22cpd</HediffDef>
     </descriptionHyperlinks>
@@ -53,6 +58,50 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>生理改良</li>
+        </autoUseCategories>
+        <autoUsePriority>3</autoUsePriority>
+        <injectedHediff>EL_Hediff_P22_22cpd</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>NeedsImmunity</type>
+              </li>
+            </conditions>
+          </li>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>BandagedInjuryDamageMin</type>
+                <threshold>60</threshold>
+              </li>
+            </conditions>
+          </li>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>BandagedInjuryCountMin</type>
+                <threshold>5</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">
@@ -75,7 +124,7 @@
   <!-- ============================================================ -->
   <RecipeDef>
     <defName>EL_Make_P22_22cpd</defName>
-    <label>制作P22（22号化合物）兴奋剂注射器</label>
+    <label>制作P22(22号化合物)兴奋剂注射器</label>
     <description>制作1支P22兴奋剂注射器。</description>
     <jobString>正在制作P22兴奋剂注射器。</jobString>
     <workAmount>400</workAmount>
@@ -127,7 +176,7 @@
   <!-- ============================================================ -->
   <RecipeDef>
     <defName>EL_Make_P22_22cpd_Bulk</defName>
-    <label>制作4个P22（22号化合物）兴奋剂注射器</label>
+    <label>制作4个P22(22号化合物)兴奋剂注射器</label>
     <description>制作一批4支P22兴奋剂注射器。</description>
     <jobString>正在制作P22兴奋剂注射器。</jobString>
     <workAmount>1600</workAmount>

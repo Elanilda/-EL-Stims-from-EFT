@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -12,6 +12,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_eTGchange</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsHunger>true</drainsHunger>
+      </li>
+    </modExtensions>
+
     <label>eTG-change再生修复</label>
     <labelNoun>eTG-change再生修复</labelNoun>
     <description>eTG-change正在发挥药效，极效化机体再生使得全身组织正在高速恢复，药效后期会出现身体机能下降与显著的代谢压力。</description>

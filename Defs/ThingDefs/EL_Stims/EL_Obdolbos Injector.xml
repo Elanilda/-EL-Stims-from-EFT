@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -12,7 +12,12 @@
     <description>装有未知自制药物的注射器，由某位前Terragroup的医药专家制作，每次用药的副作用都不一样，如果觉得已经没什么可失去的了，也可以冒这个险，至少这款针剂的发明者已经这么做过了。
 
 【施加效果】
-随机触发共15种效果，每种独立25%几率，持续600秒。</description>
+随机触发共15种效果，每种独立25%几率，持续600秒。
+
+【自主治疗条件】
+不自动使用。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：1(低优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Obdolbos</HediffDef>
     </descriptionHyperlinks>
@@ -48,6 +53,16 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>特种</li>
+        </autoUseCategories>
+        <autoUsePriority>1</autoUsePriority>
+        <injectedHediff>EL_Hediff_Obdolbos</injectedHediff>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

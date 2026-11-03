@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -11,6 +11,11 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_SJ9_TGLabs</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <dealsRandomPartDamage>true</dealsRandomPartDamage>
+      </li>
+    </modExtensions>
     <label>SJ9温度适应</label>
     <labelNoun>SJ9温度适应</labelNoun>
     <description>SJ9正在发挥药效，机体代谢减缓以适应极端环境，但会对身体组织造成持续的代谢损伤。</description>

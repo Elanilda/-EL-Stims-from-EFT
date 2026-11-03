@@ -23,6 +23,13 @@ namespace RimWorld
     //    移除征召状态下背包栏"服用"gizmo与装备页"消耗"按钮
     // 4. DoEntryRow Transpiler: 针剂行不绘制"定时"复选框, 并强制重置勾选状态
     //
+    // "自主治疗"列(针剂自动使用开关, 位于"定时"列右半区):
+    // 5. CalculateColumnsWidths Postfix: 定时列宽36→72, 右半区扩为"自主治疗"列,
+    //    并缓存列宽供列头/行内补绘定位
+    // 6. DoColumnLabels Postfix: 在新列位置绘制"自主治疗"列头(文字+提示)
+    // 7. DoEntryRow Transpiler(扩展): SelectedPolicy作为额外实参传入helper,
+    //    针剂行的"自主治疗"复选框绘制于新列, 读写EL_AutoTreatState(方案级持久化)
+    //
     // 无需补丁的路径(已天然安全):
     // - 地面/背包右键"服用": ingestible.showIngestFloatOption=false(基类XML已设),
     //   FloatMenuOptionProvider_Ingest 对此类def直接返回null
@@ -134,10 +141,13 @@ namespace RimWorld
                         typeof(Texture2D)
                     });
                 var allowScheduled = AccessTools.Field(typeof(DrugPolicyEntry), nameof(DrugPolicyEntry.allowScheduled));
+                // 基类Dialog_ManagePolicies<DrugPolicy>.SelectedPolicy属性getter,
+                // 作为额外实参传给helper(裁定: helper签名直接收DrugPolicy)
+                var selectedPolicyGetter = AccessTools.PropertyGetter(typeof(Dialog_ManageDrugPolicies), "SelectedPolicy");
                 var helper = AccessTools.Method(typeof(Patch_DoEntryRow_HideScheduledCheckbox), nameof(CheckboxScheduled));
                 // 兜底守卫: 任一符号查找失败时保留原方法体并记红字,
                 // 保证补丁失败不阻塞游戏启动(代价仅是"定时"复选框未被隐藏)
-                if (checkbox == null || allowScheduled == null || helper == null)
+                if (checkbox == null || allowScheduled == null || helper == null || selectedPolicyGetter == null)
                 {
                     Log.Error("[EL]Stims: DoEntryRow transpiler symbol lookup failed, scheduled-checkbox patch skipped.");
                     return instructions;
@@ -184,9 +194,11 @@ namespace RimWorld
                     if (!isScheduledCheckbox) continue;
                     replaced++;
 
-                    // 注入entry(DoEntryRow第3个参数)作为辅助方法最后一个实参
-                    codes.Insert(i, new CodeInstruction(OpCodes.Ldarg_2));
-                    i++;
+                    // 注入entry(DoEntryRow第3个参数)与SelectedPolicy作为helper末尾两个实参
+                    codes.Insert(i, new CodeInstruction(OpCodes.Ldarg_2));                            // entry
+                    codes.Insert(i + 1, new CodeInstruction(OpCodes.Ldarg_0));                        // this(DoEntryRow实例)
+                    codes.Insert(i + 2, new CodeInstruction(OpCodes.Callvirt, selectedPolicyGetter)); // SelectedPolicy
+                    i += 3;
                     var original = codes[i];
                     codes[i] = new CodeInstruction(OpCodes.Call, helper);
                     foreach (var label in original.labels)
@@ -206,16 +218,104 @@ namespace RimWorld
             }
 
             // 签名与Widgets.Checkbox(float, float, ref bool, float, bool, bool, Texture2D, Texture2D)一致
-            // (可选参数在IL调用点会补齐全部实参), 末尾追加entry
+            // (可选参数在IL调用点会补齐全部实参), 末尾追加entry与SelectedPolicy
+            // 返回值void(1.6/1.7原版Checkbox同签名, 实测均返回void, 无栈差异)
             public static void CheckboxScheduled(float x, float y, ref bool checkOn, float size, bool disabled, bool paintable,
-                Texture2D texChecked, Texture2D texUnchecked, DrugPolicyEntry entry)
+                Texture2D texChecked, Texture2D texUnchecked, DrugPolicyEntry entry, DrugPolicy policy)
             {
                 if (entry?.drug != null && IsStimDef(entry.drug))
                 {
                     checkOn = false; // 强制重置, 清理旧存档遗留的勾选
-                    return;          // 针剂行不绘制"定时"复选框
+                    // 针剂行不绘制"定时"复选框, 改在定时列右半区(新列)绘制"自主治疗"复选框
+                    // (列头补绘与列宽扩列均依赖CalculateColumnsWidths补丁, 未生效时不绘制防错位)
+                    if (Patch_CalculateColumnsWidths_AutoTreatColumn.ColumnExtensionActive)
+                    {
+                        // 1.7: Widgets.Checkbox重载返回void, 用状态变化检测点击
+                        bool autoTreat = EL_AutoTreatState.IsEnabled(policy, entry.drug);
+                        bool before = autoTreat;
+                        Widgets.Checkbox(x + 36f, y, ref autoTreat, size, disabled, paintable, texChecked, texUnchecked);
+                        if (autoTreat != before)
+                        {
+                            EL_AutoTreatState.Set(policy, entry.drug, autoTreat);
+                        }
+                    }
+                    return;
                 }
                 Widgets.Checkbox(x, y, ref checkOn, size, disabled, paintable, texChecked, texUnchecked);
+            }
+        }
+
+        // ------------------------------------------------------------
+        // "自主治疗"列宽: 定时列36→72, 右半区(36px)扩为自主治疗列
+        // 列头与行内绘制均依赖本补丁, 失效时经ColumnExtensionActive联动禁用
+        // 同时缓存列宽, 供列头补绘定位(界面单线程, 每次调用后缓存即为本帧最新值)
+        // ------------------------------------------------------------
+        [HarmonyPatch(typeof(Dialog_ManageDrugPolicies), "CalculateColumnsWidths")]
+        public static class Patch_CalculateColumnsWidths_AutoTreatColumn
+        {
+            // 列宽缓存(定位用: 自主治疗列x = 行起点 + 图标 + 药名 + 携带 + 成瘾 + 娱乐 + 36)
+            public static float CachedDrugIconWidth;
+
+            public static float CachedDrugNameWidth;
+
+            public static float CachedTakeToInventoryWidth;
+
+            public static float CachedAddictionWidth;
+
+            public static float CachedAllowJoyWidth;
+
+            // 本补丁是否生效(转译helper与列头补绘据此联动禁用)
+            public static bool ColumnExtensionActive;
+
+            public static void Postfix(ref float scheduledWidth, float drugIconWidth, float drugNameWidth,
+                float addictionWidth, float allowJoyWidth, float takeToInventoryWidth)
+            {
+                scheduledWidth += 36f;
+                CachedDrugIconWidth = drugIconWidth;
+                CachedDrugNameWidth = drugNameWidth;
+                CachedTakeToInventoryWidth = takeToInventoryWidth;
+                CachedAddictionWidth = addictionWidth;
+                CachedAllowJoyWidth = allowJoyWidth;
+                ColumnExtensionActive = true;
+            }
+        }
+
+        // ------------------------------------------------------------
+        // "自主治疗"列头: 在定时列图标右侧的新列位置绘制文字与提示
+        // (原版列头为图标, 此处用小字号文字, 避免新增贴图资源)
+        // ------------------------------------------------------------
+        [HarmonyPatch(typeof(Dialog_ManageDrugPolicies), "DoColumnLabels")]
+        public static class Patch_DoColumnLabels_AutoTreatHeader
+        {
+            public static void Postfix(Rect rect)
+            {
+                if (!Patch_CalculateColumnsWidths_AutoTreatColumn.ColumnExtensionActive) return;
+                float x = rect.x + Patch_CalculateColumnsWidths_AutoTreatColumn.CachedDrugNameWidth
+                    + Patch_CalculateColumnsWidths_AutoTreatColumn.CachedDrugIconWidth
+                    + Patch_CalculateColumnsWidths_AutoTreatColumn.CachedTakeToInventoryWidth
+                    + Patch_CalculateColumnsWidths_AutoTreatColumn.CachedAddictionWidth
+                    + Patch_CalculateColumnsWidths_AutoTreatColumn.CachedAllowJoyWidth + 36f;
+                Rect colRect = new Rect(x, rect.y, 36f, rect.height);
+                // 与原版逐参数一致: 图标锚定列底(yMax-24)靠左, 整张贴图StretchToFill拉伸到24x24
+                // (原版DoColumnLabels: new Rect(x, rect.yMax - 24f, 24f, 24f) + GUI.DrawTexture默认ScaleMode)
+                Texture2D icon = ContentFinder<Texture2D>.Get("UI/Icons/DrugPolicy/EL_AutoTreat", false);
+                if (icon != null)
+                {
+                    Rect iconRect = new Rect(colRect.x, rect.yMax - 24f, 24f, 24f);
+                    GUI.DrawTexture(iconRect, icon);
+                }
+                else
+                {
+                    // 图标缺失兜底: 绘制文字(小字号)
+                    GameFont fontBefore = Text.Font;
+                    TextAnchor anchorBefore = Text.Anchor;
+                    Text.Font = GameFont.Tiny;
+                    Text.Anchor = TextAnchor.MiddleCenter;
+                    Widgets.Label(colRect, "EL_AutoTreatHeader".Translate());
+                    Text.Anchor = anchorBefore;
+                    Text.Font = fontBefore;
+                }
+                TooltipHandler.TipRegion(colRect, "EL_AutoTreatHeaderTip".Translate());
             }
         }
     }

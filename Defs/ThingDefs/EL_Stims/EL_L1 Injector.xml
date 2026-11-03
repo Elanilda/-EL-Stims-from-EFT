@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
-  <!-- L1（去甲肾上腺素）注射器 -->
+  <!-- L1(去甲肾上腺素)注射器 -->
   <!-- 120秒: 痛觉×0.10, 全局工作速度+40%, 移动+20%, 休息下降-30% -->
   <!-- 前60秒每秒消耗0.009饮食 -->
   <!-- ============================================================ -->
   <ThingDef ParentName="EL_StimBase">
     <defName>EL_Stim_L1_Norepinephrine</defName>
-    <label>L1（去甲肾上腺素）</label>
+    <label>L1(去甲肾上腺素)</label>
     <description>内部装有去甲肾上腺素的一次性笔式注射器，用来短期增强体能并减少疼痛的影响，并且能够增强生理反应的执行力比如"该打还是该跑"，当然，也会增加代谢消耗。
 
 【施加效果】
@@ -16,7 +16,12 @@
 全局工作速度×140%，延迟0秒/持续120秒；
 移动速度×120%，延迟0秒/持续120秒；
 休息值下降速率×70%，延迟0秒/持续120秒；
-每秒消耗0.009饮食值，延迟0秒/持续60秒。</description>
+每秒消耗0.009饮食值，延迟0秒/持续60秒。
+
+【自主治疗条件】
+处于征召状态且饮食值大于0.54。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：1(低优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_L1</HediffDef>
     </descriptionHyperlinks>
@@ -52,6 +57,29 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>体能</li>
+        </autoUseCategories>
+        <autoUsePriority>1</autoUsePriority>
+        <injectedHediff>EL_Hediff_L1</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>FoodAbove</type>
+                <threshold>0.54</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">
@@ -74,7 +102,7 @@
   <!-- ============================================================ -->
   <RecipeDef>
     <defName>EL_Make_L1</defName>
-    <label>制作L1（去甲肾上腺素）</label>
+    <label>制作L1(去甲肾上腺素)</label>
     <description>制作1支L1去甲肾上腺素注射器。</description>
     <jobString>正在制作L1去甲肾上腺素注射器。</jobString>
     <workAmount>350</workAmount>
@@ -126,7 +154,7 @@
   <!-- ============================================================ -->
   <RecipeDef>
     <defName>EL_Make_L1_Bulk</defName>
-    <label>制作4个L1（去甲肾上腺素）</label>
+    <label>制作4个L1(去甲肾上腺素)</label>
     <description>制作一批4支L1去甲肾上腺素注射器。</description>
     <jobString>正在制作L1去甲肾上腺素注射器。</jobString>
     <workAmount>1400</workAmount>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -12,7 +12,12 @@
 
 【施加效果】
 携带能力×200%，延迟0秒/持续900秒；
-每10秒对随机非骨骼身体部位造成1点代谢损伤，延迟0秒/持续900秒。</description>
+每10秒对随机非骨骼身体部位造成1点代谢损伤，延迟0秒/持续900秒。
+
+【自主治疗条件】
+处于征召状态且身上携带物品超过携带能力上限。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：3(高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_MULE</HediffDef>
     </descriptionHyperlinks>
@@ -48,6 +53,28 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>携行强化</li>
+        </autoUseCategories>
+        <autoUsePriority>3</autoUsePriority>
+        <injectedHediff>EL_Hediff_MULE</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>OverEncumbered</type>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

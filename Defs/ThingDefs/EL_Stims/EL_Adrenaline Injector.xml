@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -18,7 +18,12 @@
 移动速度×120%，延迟0秒/持续65秒；
 射击精度×120%，延迟0秒/持续65秒；
 随机修复非骨骼身体部位4点/秒，延迟0秒/持续15秒；
-每秒消耗0.018饮食值，延迟30秒/持续30秒。</description>
+每秒消耗0.018饮食值，延迟30秒/持续30秒。
+
+【自主治疗条件】
+处于征召状态且非solid部位各损伤hediff合计伤害量达到45。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：1(低优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Adrenaline</HediffDef>
     </descriptionHyperlinks>
@@ -51,6 +56,30 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>机体修复</li>
+        </autoUseCategories>
+        <autoUsePriority>1</autoUsePriority>
+        <injectedHediff>EL_Hediff_Adrenaline</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>InjuryDamageSumMin</type>
+                <threshold>45</threshold>
+                <nonSolidOnly>true</nonSolidOnly>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

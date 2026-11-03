@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -12,7 +12,12 @@
 
 【施加效果】
 疼痛×5%，延迟0秒/持续305秒；
-使用时立即扣除0.15饮食值。</description>
+使用时立即扣除0.15饮食值。
+
+【自主治疗条件】
+处于征召状态且疼痛大于等于30%。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：2(中等优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Morphine</HediffDef>
     </descriptionHyperlinks>
@@ -52,6 +57,29 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>镇痛</li>
+        </autoUseCategories>
+        <autoUsePriority>2</autoUsePriority>
+        <injectedHediff>EL_Hediff_Morphine</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>PainAtLeast</type>
+                <threshold>0.3</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

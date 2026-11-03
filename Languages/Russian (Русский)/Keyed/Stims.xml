@@ -12,4 +12,10 @@
   <!-- CE Loadouts: "Any Stimulant Injector" generic slot -->
   <EL_CE_GenericStims>Любой стимулятор</EL_CE_GenericStims>
   <EL_CE_GenericStimsDesc>Содержит 22 стимулятора из [EL] Stims from EFT.</EL_CE_GenericStimsDesc>
+
+  <!-- Управление схемами приёма: колонка самолечения (автоиспользование стимуляторов) -->
+  <EL_AutoTreatHeader>Самолечение</EL_AutoTreatHeader>
+  <EL_AutoTreatHeaderTip>Самолечение
+
+Если включено, колонист с этим стимулятором введёт его автоматически при выполнении условий применения.</EL_AutoTreatHeaderTip>
 </LanguageData>

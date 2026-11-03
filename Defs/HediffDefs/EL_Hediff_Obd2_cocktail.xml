@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -13,6 +13,13 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_Obd2_cocktail</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsRest>true</drainsRest>
+        <dealsRandomPartDamage>true</dealsRandomPartDamage>
+      </li>
+    </modExtensions>
+
     <label>Obd2超载</label>
     <labelNoun>Obd2超载</labelNoun>
     <description>Obd2正在发挥药效，带来了极致且长效的身体强化与严重且漫长的致命性代谢副作用。</description>

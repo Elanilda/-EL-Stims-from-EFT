@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -17,7 +17,12 @@
 随机修复非骨骼身体部位3点/秒，延迟0秒/持续40秒；
 意识-15%，延迟40秒/持续20秒；
 愈合系数×80%，延迟40秒/持续181秒；
-血液过滤-20%，延迟40秒/持续181秒。</description>
+血液过滤-20%，延迟40秒/持续181秒。
+
+【自主治疗条件】
+处于征召状态且非solid部位累计伤害大于80。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：2(中等优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_PNB</HediffDef>
     </descriptionHyperlinks>
@@ -50,6 +55,30 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>机体修复</li>
+        </autoUseCategories>
+        <autoUsePriority>2</autoUsePriority>
+        <injectedHediff>EL_Hediff_PNB</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>InjuryDamageSumMin</type>
+                <threshold>80</threshold>
+                <nonSolidOnly>true</nonSolidOnly>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("EL Stims from EFT - Morphine injector system")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2383794112cb50d7529e61dc23b3a44d9f2384b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f6e904f35ed1fba6979f80aa2b8a09d92a4f84c")]
 [assembly: System.Reflection.AssemblyProductAttribute("StimsFromEFT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StimsFromEFT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

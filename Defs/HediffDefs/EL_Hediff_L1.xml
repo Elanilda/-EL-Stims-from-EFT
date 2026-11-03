@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -11,6 +11,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_L1</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <drainsHunger>true</drainsHunger>
+      </li>
+    </modExtensions>
+
     <label>去甲肾上腺素兴奋</label>
     <labelNoun>去甲肾上腺素兴奋</labelNoun>
     <description>L1正在发挥药效，痛觉受到抑制，体能和反应力全面提升，休息消耗速率降低。药效后期会增加代谢压力。</description>

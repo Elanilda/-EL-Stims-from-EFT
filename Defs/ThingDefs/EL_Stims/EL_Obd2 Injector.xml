@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -21,7 +21,12 @@
 携带能力×190%，延迟0秒/持续1800秒；
 休息值下降速率×120%，延迟0秒/持续1800秒；
 每秒对随机非骨骼身体部位造成1点代谢损伤，延迟0秒/持续1800秒；
-每秒消耗0.01休息值，延迟0秒/持续1800秒。</description>
+每秒消耗0.01休息值，延迟0秒/持续1800秒。
+
+【自主治疗条件】
+处于征召状态、损伤hediff累计不大于90、休息值大于0.9。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：1(低优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Obd2_cocktail</HediffDef>
     </descriptionHyperlinks>
@@ -57,6 +62,34 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>感官增强</li>
+          <li>携行强化</li>
+        </autoUseCategories>
+        <autoUsePriority>1</autoUsePriority>
+        <injectedHediff>EL_Hediff_Obd2_cocktail</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>InjuryDamageSumMax</type>
+                <threshold>90</threshold>
+              </li>
+              <li>
+                <type>RestAbove</type>
+                <threshold>0.9</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

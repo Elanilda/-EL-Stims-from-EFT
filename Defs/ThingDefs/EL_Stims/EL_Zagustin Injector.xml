@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -17,7 +17,12 @@
 血液过滤+40%，延迟0秒/持续180秒；
 消化能力-10%，延迟0秒/持续180秒；
 意识-15%，延迟170秒/持续40秒；
-每秒消耗0.014饮食值，延迟170秒/持续40秒。</description>
+每秒消耗0.014饮食值，延迟170秒/持续40秒。
+
+【自主治疗条件】
+失血预计死亡时间小于等于游戏内6小时。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：2(中等优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_Zagustin</HediffDef>
     </descriptionHyperlinks>
@@ -53,6 +58,26 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>止血</li>
+        </autoUseCategories>
+        <autoUsePriority>2</autoUsePriority>
+        <injectedHediff>EL_Hediff_Zagustin</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>BleedDeathWithinHours</type>
+                <threshold>6</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

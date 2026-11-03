@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -18,7 +18,12 @@
 休息值下降速率×70%，延迟0秒/持续200秒；
 每秒恢复0.02休息值，延迟0秒/持续200秒；
 意识-15%，延迟200秒/持续40秒；
-视觉能力-15%，延迟200秒/持续40秒。</description>
+视觉能力-15%，延迟200秒/持续40秒。
+
+【自主治疗条件】
+处于征召状态且当前休息值小于0.6且有消耗休息值的针剂hediff正在生效/处于征召状态且休息值小于0.4。
+【自主治疗优先等级】
+在满足自主治疗条件时有多高的优先级选取该针剂：4(极高优先)。</description>
     <descriptionHyperlinks>
       <HediffDef>EL_Hediff_SJ6_TGLabs</HediffDef>
     </descriptionHyperlinks>
@@ -54,6 +59,44 @@
         </li>
       </outcomeDoers>
     </ingestible>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimAutoUse">
+        <autoUseCategories>
+          <li>体能</li>
+        </autoUseCategories>
+        <autoUsePriority>4</autoUsePriority>
+        <injectedHediff>EL_Hediff_SJ6_TGLabs</injectedHediff>
+        <conditionGroups>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>RestBelow</type>
+                <threshold>0.6</threshold>
+              </li>
+              <li>
+                <type>StimDrainActive</type>
+                <drainRest>true</drainRest>
+              </li>
+            </conditions>
+          </li>
+          <li>
+            <conditions>
+              <li>
+                <type>Drafted</type>
+              </li>
+              <li>
+                <type>RestBelow</type>
+                <threshold>0.4</threshold>
+              </li>
+            </conditions>
+          </li>
+        </conditionGroups>
+      </li>
+    </modExtensions>
+
     <comps>
       <!-- 空CompDrug: 修复无组件时药物方案GeneratePolicy按listOrder排序的NRE; addictiveness默认0无成瘾性 -->
       <li Class="CompProperties_Drug">

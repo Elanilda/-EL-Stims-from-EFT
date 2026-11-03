@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -8,6 +8,12 @@
   <!-- ============================================================ -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>EL_Hediff_MULE</defName>
+    <modExtensions>
+      <li Class="EL_DefModExtension_StimDrainMarker">
+        <dealsRandomPartDamage>true</dealsRandomPartDamage>
+      </li>
+    </modExtensions>
+
     <label>M.U.L.E体能提升</label>
     <labelNoun>M.U.L.E体能提升</labelNoun>
     <description>极效肌肉激励兴奋剂正在发挥药效，携带能力大幅提升，但每10秒会对随机身体部位造成1点代谢损伤。</description>

@@ -10,7 +10,7 @@
   </supportedVersions>
   <packageId>Elanilda.StimsFromEFT</packageId>
   <url>https://github.com/Elanilda/-EL-Stims-from-EFT</url>
-  <modVersion>1.2.1</modVersion>
+  <modVersion>1.3.1</modVersion>
   <modIconPath>UI/EL_SFE_ModIcon</modIconPath>
   <modDependencies>
     <li>
@@ -38,6 +38,8 @@ Adds stimulants from Escape from Tarkov and multiple convenient usage methods.
   Covers hemostasis, organ repair, analgesia, physical and sensory enhancement
 - 多种便捷的针剂使用方式：右键注射、殖民者互相注射、"使用针剂"能力、手术注射
   Multiple convenient injection methods: right-click injection, pawn-to-pawn injection, "Use Stimulants" ability, and surgical injection
+- 自主注射：可在满足条件时由殖民者自主注射针剂
+  Auto-treat column: automatically inject stimulants once their conditions are met
 - 针剂储存柜：可存放针剂与中性胺的高大冰箱，配备内容物列表标签页
   Stimulant Storage: a tall cabinet for stims and neutroamine with a contents tab
 - 中性胺合成配方：在药物实验台将精神叶与草药加工为中性胺
@@ -52,8 +54,8 @@ Adds stimulants from Escape from Tarkov and multiple convenient usage methods.
   When a drafted colonist carries stimulants, use the "Use Stimulants" ability to select and use a carried stimulant
 - 打开“健康“界面，“手术”一栏添加“注射”手术，能以手术形式使用针剂。
   Open the "Health" tab, switch to "Medical operations" and click "Add bill" to schedule an Inject surgery on a patient.
-- 每种针剂都能通过“方案”-“管理用药方案”来独立指定携带数量。
-  Each stimulant injector can be independently assigned a carry amount via Assign - Manage drug policies.
+- 每种针剂都能通过“方案”-“管理用药方案”来独立指定携带数量，并可单独设定是否开启自主注射功能。
+  Each stimulant injector can be independently assigned a carry amount via Assign - Manage drug policies, with a per-stimulant toggle to enable auto-injection.
 </description>
 
 </ModMetaData>
